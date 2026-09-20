@@ -849,6 +849,24 @@
         width: 100%;
       }
 
+      /* Keep the hero buttons side by side on mobile, like desktop */
+      .button-row.hero-buttons {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
+      }
+
+      .hero-buttons .button {
+        width: auto;
+        flex: 1 1 0;
+        min-width: 0;
+        min-height: 46px;
+        padding: 0 12px;
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+      }
+
       .property-header {
         align-items: start;
         flex-direction: column;
@@ -981,8 +999,8 @@
         </h1>
 
         <div class="button-row hero-buttons">
-          <a class="button button-primary" href="#contact">
-            Get Started
+          <a class="button button-primary" href="tel:0800838383">
+            Get A Quote
           </a>
 
           <a class="button button-outline" href="#services">
@@ -1462,7 +1480,7 @@
                 </div>
 
                 <blockquote>
-                  P. Jeet communicated and kept us in the loop at each step.
+                  Prashant Jeet communicated and kept us in the loop at each step.
                   I highly recommend them to anyone looking for property
                   management.
                 </blockquote>
@@ -1551,7 +1569,7 @@
 
             <p>
               We began as Auckland Property Rentals & Management, founded by
-              P. Jeet with a simple focus: give landlords and tenants a
+              Prashant Jeet with a simple focus: give landlords and tenants a
               property management experience they could actually rely on.
             </p>
 
@@ -1638,7 +1656,7 @@
         <div class="team-grid">
 
 
-          <!-- P. Jeet -->
+          <!-- Prashant Jeet -->
 
           <article class="team-card">
 
@@ -1646,14 +1664,14 @@
               class="team-card-button"
               type="button"
               data-modal="prashant"
-              aria-label="View P. Jeet profile"
+              aria-label="View Prashant Jeet profile"
             >
 
               <div class="team-image">
 
                 <img
                   src="images/prashant-jeet.jpg"
-                  alt="P. Jeet"
+                  alt="Prashant Jeet"
                   loading="lazy"
                 >
 
@@ -1669,11 +1687,11 @@
               </div>
 
               <h3>
-                P. Jeet
+                Prashant Jeet
               </h3>
 
               <p>
-                The Director of Dream Property.
+                The Director of Dream Property
               </p>
 
               <button
@@ -1689,7 +1707,58 @@
           </article>
 
 
-          <!-- A. Chand -->
+          <!-- Calix Mojica -->
+
+          <article class="team-card">
+
+            <button
+              class="team-card-button"
+              type="button"
+              data-modal="calix"
+              aria-label="View Calix Mojica profile"
+            >
+
+              <div class="team-image">
+
+                <img
+                  src="images/calix-mojica.jpg"
+                  alt="Calix Mojica"
+                  loading="lazy"
+                >
+
+              </div>
+
+            </button>
+
+
+            <div class="team-body">
+
+              <div class="team-role">
+                Managing Partner | Property Manager
+              </div>
+
+              <h3>
+                Calix Mojica
+              </h3>
+
+              <p>
+                The visionary behind Dream Property
+              </p>
+
+              <button
+                class="button button-outline button-small"
+                type="button"
+                data-modal="calix"
+              >
+                View Profile
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <!-- Aachal Chand -->
 
           <article class="team-card">
 
@@ -1697,14 +1766,14 @@
               class="team-card-button"
               type="button"
               data-modal="aachal"
-              aria-label="View A. Chand profile"
+              aria-label="View Aachal Chand profile"
             >
 
               <div class="team-image">
 
                 <img
                   src="images/aachal-chand.jpg"
-                  alt="A. Chand"
+                  alt="Aachal Chand"
                   loading="lazy"
                 >
 
@@ -1720,11 +1789,11 @@
               </div>
 
               <h3>
-                A. Chand
+                Aachal Chand
               </h3>
 
               <p>
-                The adminstrator for Dream Property.
+                The adminstrator for Dream Property
               </p>
 
               <button
@@ -1797,7 +1866,7 @@
               </strong>
 
               <span class="contact-action">
-                Auckland 1010 · Open Maps →
+                Open Google Maps →
               </span>
 
             </a>
@@ -2844,7 +2913,7 @@
         class="modal-close"
         type="button"
         data-close-modal
-        aria-label="Close P. Jeet profile"
+        aria-label="Close Prashant Jeet profile"
       >
         ×
       </button>
@@ -2854,7 +2923,7 @@
 
         <img
           src="images/prashant-jeet.jpg"
-          alt="P. Jeet"
+          alt="Prashant Jeet"
         >
 
       </div>
@@ -2866,18 +2935,18 @@
 
 
       <h2 id="prashantTitle">
-        P. Jeet
+        Prashant Jeet
       </h2>
 
 
       <p class="modal-intro">
-        P. Jeet brings 10 years of property experience to Dream Property,
+        Prashant Jeet brings 10 years of property experience to Dream Property,
         including more than 7 years as a Senior Property Manager.
       </p>
 
 
       <p class="modal-body-copy">
-        Having owned rental properties himself, P. Jeet understands the
+        Having owned rental properties himself, Prashant Jeet understands the
         experience from both sides. His approach is centred around protecting
         the landlord's investment while maintaining a professional and
         respectful relationship with tenants.
@@ -2930,6 +2999,117 @@
 
 
   <!-- =========================================================
+       CALIX PROFILE
+       ========================================================= -->
+
+  <div
+    class="modal"
+    id="modal-calix"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="calixTitle"
+  >
+
+    <div
+      class="modal-backdrop"
+      data-close-modal
+    ></div>
+
+
+    <div class="modal-panel team-modal">
+
+      <button
+        class="modal-close"
+        type="button"
+        data-close-modal
+        aria-label="Close Calix Mojica profile"
+      >
+        ×
+      </button>
+
+
+      <div class="team-modal-image">
+
+        <img
+          src="images/calix-mojica.jpg"
+          alt="Calix Mojica"
+        >
+
+      </div>
+
+
+      <div class="eyebrow">
+        Managing Partner | Property Manager
+      </div>
+
+
+      <h2 id="calixTitle">
+        Calix Mojica
+      </h2>
+
+
+      <p class="modal-intro">
+        Calix Mojica brings residential property management experience
+        to Dream Property, helping landlords and tenants enjoy a smooth
+        and well organised tenancy.
+      </p>
+
+
+      <p class="modal-body-copy">
+        Calix studied at the University of Auckland and holds a Bachelor
+        of Property. His education and hands on experience give him a
+        strong understanding of the property industry and the standard
+        of service Dream Property aims to deliver.
+      </p>
+
+
+      <div class="modal-socials">
+
+        <a
+          href="https://facebook.com/DreamPropertyNZ"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93v-1.9c0-.86.24-1.44 1.47-1.44h1.57V4.14C16.24 4.06 15.3 4 14.2 4c-2.3 0-3.87 1.4-3.87 4v2.44H7.77v2.96h2.56V21h3.17Z"/></svg>
+        </a>
+
+        <a
+          href="https://instagram.com/CalixMojicaRealEstate"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.15" cy="6.85" r="1"/></svg>
+        </a>
+
+        <a
+          href="https://tiktok.com/@CalixMojicaRealEstate"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TikTok"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"/></svg>
+        </a>
+
+        <a
+          href="https://youtube.com/@CalixMojicaRealEstate"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
        AACHAL PROFILE
        ========================================================= -->
 
@@ -2954,7 +3134,7 @@
         class="modal-close"
         type="button"
         data-close-modal
-        aria-label="Close A. Chand profile"
+        aria-label="Close Aachal Chand profile"
       >
         ×
       </button>
@@ -2964,7 +3144,7 @@
 
         <img
           src="images/aachal-chand.jpg"
-          alt="A. Chand"
+          alt="Aachal Chand"
         >
 
       </div>
@@ -2976,12 +3156,12 @@
 
 
       <h2 id="aachalTitle">
-        A. Chand
+        Aachal Chand
       </h2>
 
 
       <p class="modal-intro">
-        With a background in education, A. Chand brings organisation,
+        With a background in education, Aachal Chand brings organisation,
         patience, and clear communication to the day to day running
         of Dream Property.
       </p>
@@ -3157,11 +3337,6 @@
 
       <div class="legal-warning">
 
-        <strong>Important:</strong>
-
-        This is a general website template and is not legal advice.
-        It should be reviewed and updated by Dream Property and a
-        qualified New Zealand lawyer before publication.
 
       </div>
 
@@ -3212,8 +3387,8 @@
 
 
       <p class="modal-intro">
-        These terms and conditions are a general website template
-        for Dream Property.
+        These terms and conditions apply to your use of the
+        Dream Property website.
       </p>
 
 
@@ -3286,15 +3461,16 @@
       </p>
 
 
-      <div class="legal-warning">
+      <h3>
+        Contact
+      </h3>
 
-        <strong>Important:</strong>
-
-        This is a general website template and is not legal advice.
-        It should be reviewed and updated by Dream Property and a
-        qualified New Zealand lawyer before publication.
-
-      </div>
+      <p>
+        For questions about these terms, contact
+        <a href="mailto:info@dreamproperty.co.nz">
+          info@dreamproperty.co.nz
+        </a>.
+      </p>
 
     </div>
 
