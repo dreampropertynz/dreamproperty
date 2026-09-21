@@ -485,153 +485,9 @@
       background: var(--navy-light);
     }
 
-    .property-section {
-      overflow: hidden;
-    }
-
-    .property-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 36px;
-    }
-
-    .property-header .section-heading {
-      margin-bottom: 0;
-    }
-
-    .property-track {
+    .login-grid {
       display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(290px, 360px);
-      gap: 22px;
-      overflow-x: auto;
-      padding: 4px 4px 22px;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: thin;
-      scrollbar-color: var(--gold) transparent;
-    }
-
-    .property-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 360px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.05),
-          rgba(255, 255, 255, 0.015)
-        );
-      scroll-snap-align: start;
-      transition:
-        transform var(--transition),
-        border-color var(--transition);
-    }
-
-    .property-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-5px);
-    }
-
-    .property-image {
-      position: relative;
-      height: 190px;
-      overflow: hidden;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(214, 184, 120, 0.18),
-          rgba(10, 20, 34, 0.9)
-        );
-    }
-
-    .property-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .property-placeholder {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
-      color: var(--gold);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    .property-status {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      padding: 6px 10px;
-      border: 1px solid rgba(214, 184, 120, 0.45);
-      border-radius: 6px;
-      background: rgba(4, 11, 21, 0.82);
-      color: var(--gold);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .property-body {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      padding: 25px;
-    }
-
-    .property-address {
-      font-size: 1.12rem;
-      font-weight: 500;
-      line-height: 1.3;
-    }
-
-    .property-price {
-      margin-top: 10px;
-      color: var(--gold);
-      font-size: 1.25rem;
-      font-weight: 700;
-    }
-
-    .property-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 0.78rem;
-    }
-
-    .property-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .property-link {
-      margin-top: auto;
-      padding-top: 24px;
-      color: var(--gold);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
 
@@ -684,96 +540,6 @@
       text-transform: uppercase;
     }
 
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      align-items: stretch;
-    }
-
-    .pricing-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      padding: 42px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.025);
-    }
-
-    .pricing-card.featured {
-      border-color: var(--gold);
-      background:
-        linear-gradient(
-          145deg,
-          rgba(214, 184, 120, 0.12),
-          rgba(255, 255, 255, 0.025)
-        );
-    }
-
-    .pricing-badge {
-      position: absolute;
-      top: 25px;
-      right: 25px;
-      color: var(--gold);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .pricing-card h3 {
-      margin-bottom: 20px;
-    }
-
-    .pricing-amount {
-      color: var(--gold);
-      font-size: clamp(2.7rem, 5vw, 4.5rem);
-      font-weight: 500;
-      letter-spacing: -0.06em;
-      line-height: 1;
-    }
-
-    .pricing-amount small {
-      color: var(--muted);
-      font-size: 0.9rem;
-      letter-spacing: 0;
-    }
-
-    .pricing-description {
-      margin-top: 20px;
-      font-size: 0.9rem;
-    }
-
-    .pricing-note {
-      margin-bottom: 24px;
-    }
-
-    .pricing-list {
-      display: grid;
-      gap: 13px;
-      margin: 30px 0;
-      list-style: none;
-    }
-
-    .pricing-list li {
-      position: relative;
-      padding-left: 23px;
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .pricing-list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-    }
-
-    .pricing-card .button {
-      margin-top: auto;
-    }
-
     @media (max-width: 900px) {
       .main-navigation {
         position: absolute;
@@ -800,10 +566,6 @@
 
       .menu-toggle {
         display: flex;
-      }
-
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -867,22 +629,8 @@
         white-space: nowrap;
       }
 
-      .property-header {
-        align-items: start;
-        flex-direction: column;
-      }
-
-      .property-track {
-        grid-auto-columns: minmax(270px, 85vw);
-      }
-
-      .services-grid,
-      .pricing-grid {
+      .login-grid {
         grid-template-columns: 1fr;
-      }
-
-      .pricing-card {
-        padding: 30px;
       }
 
       .service-card {
@@ -959,11 +707,8 @@
       </button>
 
       <nav class="main-navigation" id="mainNavigation" aria-label="Main navigation">
-        <a href="#properties">Properties</a>
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#login">Login</a>
         <a href="#about">About Us</a>
-        <a href="#team">Dream Team</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -999,12 +744,12 @@
         </h1>
 
         <div class="button-row hero-buttons">
-          <button class="button button-primary" type="button" data-modal="quote">
+          <a class="button button-primary" href="mailto:info@dreamproperty.co.nz">
             Get In Touch
-          </button>
+          </a>
 
-          <a class="button button-outline" href="#services">
-            Our Services
+          <a class="button button-outline" href="#login">
+            Login
           </a>
         </div>
 
@@ -1012,535 +757,70 @@
 
     </section>
 
-    <!-- Available properties -->
-    <section class="section section-dark property-section" id="properties">
-      <div class="container">
-
-        <div class="property-header">
-          <div class="section-heading">
-            <div class="eyebrow">Available Properties</div>
-
-            <h2>
-              Find your next
-              <span class="gold-text">dream home</span>
-            </h2>
-
-            <p>
-              Explore a selection of homes available through Dream Property.
-              More listings will be added soon.
-            </p>
-          </div>
-
-        </div>
-
-        <div class="property-track" id="propertyTrack">
-
-          <a
-            class="property-card"
-            href="https://www.trademe.co.nz/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="property-image">
-              <div class="property-placeholder">
-                [Image Placeholder]
-              </div>
-
-              <div class="property-status">
-                Available Soon
-              </div>
-            </div>
-
-            <div class="property-body">
-              <div class="property-address">
-                1 Example Road, Auckland
-              </div>
-
-              <div class="property-price">
-                $650 / week
-              </div>
-
-              <div class="property-meta">
-                <span>🛏 3 beds</span>
-                <span>🛁 2 baths</span>
-                <span>🚗 1 parking</span>
-              </div>
-
-              <div class="property-link">
-                View Listing →
-              </div>
-            </div>
-          </a>
-
-          <a
-            class="property-card"
-            href="https://www.trademe.co.nz/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="property-image">
-              <div class="property-placeholder">
-                [Image Placeholder]
-              </div>
-
-              <div class="property-status">
-                Available Soon
-              </div>
-            </div>
-
-            <div class="property-body">
-              <div class="property-address">
-                2 Example Road, Auckland
-              </div>
-
-              <div class="property-price">
-                $720 / week
-              </div>
-
-              <div class="property-meta">
-                <span>🛏 4 beds</span>
-                <span>🛁 2 baths</span>
-                <span>🚗 2 parking</span>
-              </div>
-
-              <div class="property-link">
-                View Listing →
-              </div>
-            </div>
-          </a>
-
-          <a
-            class="property-card"
-            href="https://www.trademe.co.nz/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="property-image">
-              <div class="property-placeholder">
-                [Image Placeholder]
-              </div>
-
-              <div class="property-status">
-                Available Soon
-              </div>
-            </div>
-
-            <div class="property-body">
-              <div class="property-address">
-                3 Example Road, Auckland
-              </div>
-
-              <div class="property-price">
-                $580 / week
-              </div>
-
-              <div class="property-meta">
-                <span>🛏 2 beds</span>
-                <span>🛁 1 bath</span>
-                <span>🚗 1 parking</span>
-              </div>
-
-              <div class="property-link">
-                View Listing →
-              </div>
-            </div>
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section class="section section-soft" id="services">
-      <div class="container">
-
-        <div class="section-heading">
-          <div class="eyebrow">What We Do</div>
-
-          <h2>
-            Our
-            <span class="gold-text">Services</span>
-          </h2>
-
-          <p>
-            From everyday care to long term planning, we bring clarity,
-            consistency, and a more thoughtful approach to property.
-          </p>
-        </div>
-
-        <div class="services-grid">
-
-          <article class="service-card">
-            <div class="service-number"> </div>
-
-            <h3>Property Management</h3>
-
-            <p>
-              Reliable day to day management designed to protect your
-              investment and give you greater peace of mind.
-            </p>
-
-            <button
-              class="service-action"
-              type="button"
-              data-modal="property-management"
-            >
-              Explore Service →
-            </button>
-          </article>
-
-          <article class="service-card">
-            <div class="service-number"> </div>
-
-            <h3>Tenant Find & Letting</h3>
-
-            <p>
-              Helping the right tenants discover the right home through
-              organised viewings, careful screening, and clear communication.
-            </p>
-
-            <button
-              class="service-action"
-              type="button"
-              data-modal="tenant-letting"
-            >
-              Explore Service →
-            </button>
-          </article>
-
-          <article class="service-card">
-            <div class="service-number"> </div>
-
-            <h3>Healthy Homes</h3>
-
-            <p>
-              Practical support with Healthy Homes requirements and the
-              standards that help create safer, more comfortable homes.
-            </p>
-
-            <button
-              class="service-action"
-              type="button"
-              data-modal="healthy-homes"
-            >
-              Explore Service →
-            </button>
-          </article>
-
-          <article class="service-card">
-            <div class="service-number"> </div>
-
-            <h3>Property Inspections</h3>
-
-            <p>
-              Clear property updates and detailed inspections that help
-              landlords understand how their investment is being cared for.
-            </p>
-
-            <button
-              class="service-action"
-              type="button"
-              data-modal="inspections"
-            >
-              Explore Service →
-            </button>
-          </article>
-
-          <article class="service-card">
-            <div class="service-number"> </div>
-
-            <h3>Rent Collection</h3>
-
-            <p>
-              Consistent rent monitoring, arrears follow up, and reporting
-              that keeps your investment financially organised.
-            </p>
-
-            <button
-              class="service-action"
-              type="button"
-              data-modal="rent-collection"
-            >
-              Explore Service →
-            </button>
-          </article>
-
-          <article class="service-card">
-            <div class="service-number"> </div>
-
-            <h3>Maintenance & Repairs</h3>
-
-            <p>
-              Coordinated maintenance and responsive communication to help
-              keep properties in good condition.
-            </p>
-
-            <button
-              class="service-action"
-              type="button"
-              data-modal="maintenance"
-            >
-              Explore Service →
-            </button>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="section section-dark" id="pricing">
-      <div class="container">
-
-        <div class="section-heading">
-          <div class="eyebrow">Simple Pricing</div>
-
-          <h2>
-            Service
-            <span class="gold-text">Prices</span>
-          </h2>
-
-          <p>
-            Straightforward management options designed around the way
-            you want your property to be looked after.
-          </p>
-        </div>
-
-        <div class="pricing-grid">
-
-          <article class="pricing-card">
-            <h3>Basic Management</h3>
-
-            <div class="pricing-amount">
-              4.99%
-              <small>+ GST</small>
-            </div>
-
-            <p class="pricing-description">
-              Essential property management for landlords who want dependable
-              support and clear communication.
-            </p>
-
-            <ul class="pricing-list">
-              <li>Rent collection</li>
-              <li>Arrears monitoring</li>
-              <li>Tenant communication</li>
-              <li>Financial reporting</li>
-              <li>Maintenance coordination</li>
-              <li>Water invoice processing</li>
-              <li>Tribunal representation</li>
-              <li>Insurance claim assistance</li>
-              <li>Lease administration</li>
-              <li>Routine inspections</li>
-            </ul>
-
-            <p class="pricing-description pricing-note">
-              Advertising and letting fees are charged separately.
-            </p>
-
-            <button
-              class="button button-outline"
-              type="button"
-              data-modal="basic-pricing"
-            >
-              View Details
-            </button>
-          </article>
-
-          <article class="pricing-card featured">
-            <div class="pricing-badge">
-              Most Popular
-            </div>
-
-            <h3>Premium Management</h3>
-
-            <div class="pricing-amount">
-              6.99%
-              <small>+ GST</small>
-            </div>
-
-            <p class="pricing-description">
-              A complete property management experience for landlords who
-              want greater support from start to finish.
-            </p>
-
-            <ul class="pricing-list">
-              <li>Everything in Basic Management</li>
-              <li>Advertising</li>
-              <li>Tenant placement</li>
-              <li>Property viewings</li>
-              <li>Credit and reference checks</li>
-              <li>Tenancy paperwork</li>
-              <li>Priority landlord support</li>
-              <li>Regular property reviews</li>
-              <li>Maintenance planning</li>
-              <li>Investment advice</li>
-            </ul>
-
-            <p class="pricing-description pricing-note">
-              All fees included, with no advertising or letting costs on top.
-            </p>
-
-            <button
-              class="button button-primary"
-              type="button"
-              data-modal="premium-pricing"
-            >
-              View Details
-            </button>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
     <!-- =========================================================
-         TESTIMONIALS
+         LOGIN
          ========================================================= -->
 
-    <section class="section section-soft testimonials-section" id="testimonials">
+    <section class="section section-dark" id="login">
       <div class="container">
 
         <div class="section-heading">
-          <div class="eyebrow">Testimonials</div>
+          <div class="eyebrow">Login</div>
 
           <h2>
-            What others have to
-            <span class="gold-text">say</span>
+            Welcome
+            <span class="gold-text">back</span>
           </h2>
 
           <p>
-            A few words from others who have experienced our approach to
-            property services.
+            Choose the portal that suits you to sign in.
           </p>
         </div>
 
-        <div
-          class="testimonial-slider"
-          id="testimonialSlider"
-          aria-label="Client testimonials"
-        >
+        <div class="login-grid">
 
-          <button
-            class="testimonial-arrow testimonial-prev"
-            id="testimonialPrev"
-            type="button"
-            aria-label="Previous testimonial"
-          >
-            <span aria-hidden="true">←</span>
-          </button>
+          <article class="service-card">
+            <div class="service-number"> </div>
 
-          <div class="testimonial-window">
+            <h3>Tenant Login</h3>
 
-            <div
-              class="testimonial-track"
-              id="testimonialTrack"
+            <p>
+              Sign in to your tenant account.
+            </p>
+
+            <button
+              class="service-action"
+              type="button"
+              data-modal="tenant-login"
             >
+              Tenant Login →
+            </button>
+          </article>
 
-              <article class="testimonial-slide">
-                <div class="testimonial-quote" aria-hidden="true">
-                  "
-                </div>
+          <article class="service-card">
+            <div class="service-number"> </div>
 
-                <blockquote>
-                  I am very happy with the service provided. Dream Property
-                  kept us updated and communicated clearly throughout. I would
-                  highly recommend them.
-                </blockquote>
+            <h3>Landlord Login</h3>
 
-                <div class="testimonial-author">
-                  <strong>D. Padilla</strong>
-                  <span>Landlord</span>
-                </div>
-              </article>
+            <p>
+              Sign in to your landlord account.
+            </p>
 
-
-              <article class="testimonial-slide">
-                <div class="testimonial-quote" aria-hidden="true">
-                  "
-                </div>
-
-                <blockquote>
-                  I am impressed with the amazing service I received from them.
-                  Professional in all aspects and care for their clients.
-                </blockquote>
-
-                <div class="testimonial-author">
-                  <strong>T. Gonzaga</strong>
-                  <span>Landlord</span>
-                </div>
-              </article>
-
-
-              <article class="testimonial-slide">
-                <div class="testimonial-quote" aria-hidden="true">
-                  "
-                </div>
-
-                <blockquote>
-                  They communicated and kept us in the loop at each step.
-                  I highly recommend them to anyone looking for property
-                  management.
-                </blockquote>
-
-                <div class="testimonial-author">
-                  <strong>E. Gil</strong>
-                  <span>Landlord</span>
-                </div>
-              </article>
-
-            </div>
-
-          </div>
-
-          <button
-            class="testimonial-arrow testimonial-next"
-            id="testimonialNext"
-            type="button"
-            aria-label="Next testimonial"
-          >
-            <span aria-hidden="true">→</span>
-          </button>
-
-        </div>
-
-
-        <div
-          class="testimonial-dots"
-          id="testimonialDots"
-          aria-label="Choose testimonial"
-        >
-
-          <button
-            class="testimonial-dot active"
-            type="button"
-            aria-label="Show testimonial 1"
-            aria-current="true"
-          ></button>
-
-          <button
-            class="testimonial-dot"
-            type="button"
-            aria-label="Show testimonial 2"
-            aria-current="false"
-          ></button>
-
-          <button
-            class="testimonial-dot"
-            type="button"
-            aria-label="Show testimonial 3"
-            aria-current="false"
-          ></button>
+            <button
+              class="service-action"
+              type="button"
+              data-modal="landlord-login"
+            >
+              Landlord Login →
+            </button>
+          </article>
 
         </div>
 
       </div>
     </section>
 
-
-    <!-- =========================================================
+        <!-- =========================================================
          ABOUT US
          ========================================================= -->
 
@@ -1795,26 +1075,6 @@
 
             <a
               class="contact-item"
-              href="tel:0800838383"
-            >
-
-              <span class="contact-label">
-                Call Us
-              </span>
-
-              <strong>
-                0800 83 83 83
-              </strong>
-
-              <span class="contact-action">
-                Give us a call →
-              </span>
-
-            </a>
-
-
-            <a
-              class="contact-item"
               href="mailto:info@dreamproperty.co.nz"
             >
 
@@ -1938,17 +1198,13 @@
               Explore
             </span>
 
-            <a href="#properties">
-              Properties
-            </a>
+            <button type="button" data-modal="tenant-login">
+              Tenant Login
+            </button>
 
-            <a href="#services">
-              Services
-            </a>
-
-            <a href="#pricing">
-              Pricing
-            </a>
+            <button type="button" data-modal="landlord-login">
+              Landlord Login
+            </button>
 
           </div>
 
@@ -1997,10 +1253,6 @@
               Contact
             </span>
 
-            <a href="tel:0800838383">
-              0800 83 83 83
-            </a>
-
             <a href="mailto:info@dreamproperty.co.nz">
               info@dreamproperty.co.nz
             </a>
@@ -2034,16 +1286,16 @@
 
 
   <!-- =========================================================
-       GET A QUOTE
+       TENANT LOGIN
        ========================================================= -->
 
   <div
     class="modal"
-    id="modal-quote"
+    id="modal-tenant-login"
     aria-hidden="true"
     role="dialog"
     aria-modal="true"
-    aria-labelledby="quoteTitle"
+    aria-labelledby="tenantLoginTitle"
   >
 
     <div
@@ -2052,7 +1304,7 @@
     ></div>
 
 
-    <div class="modal-panel">
+    <div class="modal-panel login-modal">
 
       <button
         class="modal-close"
@@ -2065,666 +1317,49 @@
 
 
       <div class="eyebrow">
-        Get In Touch
+        Tenants
       </div>
 
 
-      <h2 id="quoteTitle">
-        Let's talk
+      <h2 id="tenantLoginTitle">
+        Tenant Login
       </h2>
 
 
-      <p class="modal-intro">
-        Choose how you would like to reach us.
-      </p>
-
-
-      <div class="contact-details" style="margin-top: 30px;">
-
-        <a
-          class="contact-item"
-          href="tel:0800838383"
-          data-close-modal
-        >
-
-          <span class="contact-label">
-            Call Us
-          </span>
-
-          <strong>
-            0800 83 83 83
-          </strong>
-
-          <span class="contact-action">
-            Give us a call →
-          </span>
-
-        </a>
-
-
-        <a
-          class="contact-item"
-          href="mailto:info@dreamproperty.co.nz?subject=Quote%20Request"
-          data-close-modal
-        >
-
-          <span class="contact-label">
-            Email Us
-          </span>
-
-          <strong>
-            info@dreamproperty.co.nz
-          </strong>
-
-          <span class="contact-action">
-            Send an email →
-          </span>
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- PROPERTY MANAGEMENT -->
-
-  <div
-    class="modal"
-    id="modal-property-management"
-    aria-hidden="true"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="propertyManagementTitle"
-  >
-
-    <div
-      class="modal-backdrop"
-      data-close-modal
-    ></div>
-
-
-    <div class="modal-panel">
-
-      <button
-        class="modal-close"
-        type="button"
-        data-close-modal
-        aria-label="Close modal"
-      >
-        ×
-      </button>
-
-
-      <div class="eyebrow">
-        
-      </div>
-
-
-      <h2 id="propertyManagementTitle">
-        Property Management
-      </h2>
-
-
-      <p class="modal-intro">
-        Your property deserves more than simply collecting the rent.
-        We take care of the details, communication, and everyday
-        responsibilities that keep your investment moving forward.
-      </p>
-
-
-      <div class="modal-list">
-
-        <div>
-          <strong>Rent & arrears</strong>
-
-          <span>
-            Regular rent monitoring and follow up where required.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Tenant communication</strong>
-
-          <span>
-            Clear communication throughout the tenancy.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Property care</strong>
-
-          <span>
-            Maintenance coordination, inspections, and property records.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Landlord support</strong>
-
-          <span>
-            Financial reporting, tenancy administration, and assistance
-            with insurance claims and Tribunal matters.
-          </span>
-        </div>
-
-      </div>
-
-
-      <a
-        class="button button-primary"
-        href="#contact"
-        data-close-modal
-      >
-        Talk To Us
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- TENANT FIND -->
-
-  <div
-    class="modal"
-    id="modal-tenant-letting"
-    aria-hidden="true"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="tenantLettingTitle"
-  >
-
-    <div
-      class="modal-backdrop"
-      data-close-modal
-    ></div>
-
-
-    <div class="modal-panel">
-
-      <button
-        class="modal-close"
-        type="button"
-        data-close-modal
-        aria-label="Close modal"
-      >
-        ×
-      </button>
-
-
-      <div class="eyebrow">
-        
-      </div>
-
-
-      <h2 id="tenantLettingTitle">
-        Tenant Find & Letting
-      </h2>
-
-
-      <p class="modal-intro">
-        Finding the right tenant is about more than filling a vacancy.
-        We help present your property, attract suitable applicants,
-        and guide the process from viewing through to tenancy commencement.
-      </p>
-
-
-      <div class="modal-list">
-
-        <div>
-          <strong>Advertising</strong>
-
-          <span>
-            Professional property presentation designed to attract
-            suitable tenants.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Viewings</strong>
-
-          <span>
-            Organised property viewings and communication with
-            prospective tenants.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Screening</strong>
-
-          <span>
-            Credit and reference checks as part of the application process.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Tenancy paperwork</strong>
-
-          <span>
-            Assistance with the documentation required to establish
-            the tenancy.
-          </span>
-        </div>
-
-      </div>
-
-
-      <a
-        class="button button-primary"
-        href="#contact"
-        data-close-modal
-      >
-        Find A Tenant
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- HEALTHY HOMES -->
-
-  <div
-    class="modal"
-    id="modal-healthy-homes"
-    aria-hidden="true"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="healthyHomesTitle"
-  >
-
-    <div
-      class="modal-backdrop"
-      data-close-modal
-    ></div>
-
-
-    <div class="modal-panel">
-
-      <button
-        class="modal-close"
-        type="button"
-        data-close-modal
-        aria-label="Close modal"
-      >
-        ×
-      </button>
-
-
-      <div class="eyebrow">
-        
-      </div>
-
-
-      <h2 id="healthyHomesTitle">
-        Healthy Homes
-      </h2>
-
-
-      <p class="modal-intro">
-        A well maintained home matters to both landlords and tenants.
-        We can assist landlords with the practical management of
-        Healthy Homes related requirements.
-      </p>
-
-
-      <div class="modal-list">
-
-        <div>
-          <strong>Assessment support</strong>
-
-          <span>
-            Help identifying areas that may require attention.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Maintenance coordination</strong>
-
-          <span>
-            Assistance coordinating relevant work with appropriate
-            contractors.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Documentation</strong>
-
-          <span>
-            Keeping relevant property information organised.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Ongoing care</strong>
-
-          <span>
-            Keeping property requirements visible as part of ongoing
-            property management.
-          </span>
-        </div>
-
-      </div>
-
-
-      <a
-        class="button button-primary"
-        href="#contact"
-        data-close-modal
-      >
-        Discuss Your Property
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- INSPECTIONS -->
-
-  <div
-    class="modal"
-    id="modal-inspections"
-    aria-hidden="true"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="inspectionsTitle"
-  >
-
-    <div
-      class="modal-backdrop"
-      data-close-modal
-    ></div>
-
-
-    <div class="modal-panel">
-
-      <button
-        class="modal-close"
-        type="button"
-        data-close-modal
-        aria-label="Close modal"
-      >
-        ×
-      </button>
-
-
-      <div class="eyebrow">
-        
-      </div>
-
-
-      <h2 id="inspectionsTitle">
-        Property Inspections
-      </h2>
-
-
-      <p class="modal-intro">
-        Regular inspections give landlords visibility over their
-        property while helping identify maintenance concerns before
-        they become larger problems.
-      </p>
-
-
-      <div class="modal-list">
-
-        <div>
-          <strong>Routine inspections</strong>
-
-          <span>
-            Scheduled inspections throughout the tenancy.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Property condition</strong>
-
-          <span>
-            Reviewing the general condition of the property.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Landlord updates</strong>
-
-          <span>
-            Clear information following inspections.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Maintenance identification</strong>
-
-          <span>
-            Highlighting areas that may require attention.
-          </span>
-        </div>
-
-      </div>
-
-
-      <a
-        class="button button-primary"
-        href="#contact"
-        data-close-modal
-      >
-        Talk To Us
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- RENT COLLECTION -->
-
-  <div
-    class="modal"
-    id="modal-rent-collection"
-    aria-hidden="true"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="rentCollectionTitle"
-  >
-
-    <div
-      class="modal-backdrop"
-      data-close-modal
-    ></div>
-
-
-    <div class="modal-panel">
-
-      <button
-        class="modal-close"
-        type="button"
-        data-close-modal
-        aria-label="Close modal"
-      >
-        ×
-      </button>
-
-
-      <div class="eyebrow">
-        
-      </div>
-
-
-      <h2 id="rentCollectionTitle">
-        Rent Collection
-      </h2>
-
-
-      <p class="modal-intro">
-        Consistent rent collection helps keep your investment organised.
-        We monitor payments, follow up on arrears, and provide landlords
-        with clear financial information.
-      </p>
-
-
-      <div class="modal-list">
-
-        <div>
-          <strong>Payment monitoring</strong>
-
-          <span>
-            Keeping track of rental payments.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Arrears follow up</strong>
-
-          <span>
-            Prompt communication where rental payments fall behind.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Financial reporting</strong>
-
-          <span>
-            Clear information to help landlords understand their
-            property's financial position.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Water invoices</strong>
-
-          <span>
-            Processing relevant water invoices as part of management.
-          </span>
-        </div>
-
-      </div>
-
-
-      <a
-        class="button button-primary"
-        href="#contact"
-        data-close-modal
-      >
-        Manage My Property
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- MAINTENANCE -->
-
-  <div
-    class="modal"
-    id="modal-maintenance"
-    aria-hidden="true"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="maintenanceTitle"
-  >
-
-    <div
-      class="modal-backdrop"
-      data-close-modal
-    ></div>
-
-
-    <div class="modal-panel">
-
-      <button
-        class="modal-close"
-        type="button"
-        data-close-modal
-        aria-label="Close modal"
-      >
-        ×
-      </button>
-
-
-      <div class="eyebrow">
-        
-      </div>
-
-
-      <h2 id="maintenanceTitle">
-        Maintenance & Repairs
-      </h2>
-
-
-      <p class="modal-intro">
-        Property maintenance should be handled before a small issue
-        becomes a larger one. We coordinate maintenance and keep
-        communication clear throughout the process.
-      </p>
-
-
-      <div class="modal-list">
-
-        <div>
-          <strong>Maintenance requests</strong>
-
-          <span>
-            Receiving and managing tenant maintenance concerns.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Contractor coordination</strong>
-
-          <span>
-            Organising appropriate trades where required.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Landlord communication</strong>
-
-          <span>
-            Keeping owners informed about relevant maintenance matters.
-          </span>
-        </div>
-
-
-        <div>
-          <strong>Preventative planning</strong>
-
-          <span>
-            Helping identify maintenance considerations before they
-            become larger concerns.
-          </span>
-        </div>
-
-      </div>
-
-
-      <a
-        class="button button-primary"
-        href="#contact"
-        data-close-modal
-      >
-        Discuss Maintenance
-      </a>
+      <form class="login-form" data-login-form novalidate>
+
+        <label class="login-field">
+          <span>Username</span>
+          <input
+            type="text"
+            name="username"
+            autocomplete="username"
+            autocapitalize="none"
+            spellcheck="false"
+          >
+        </label>
+
+
+        <label class="login-field">
+          <span>Password</span>
+          <input
+            type="password"
+            name="password"
+            autocomplete="current-password"
+          >
+        </label>
+
+
+        <p class="login-error" role="alert" hidden>
+          Incorrect Username/Password. Please Try Again.
+        </p>
+
+
+        <button class="button button-primary" type="submit">
+          Login
+        </button>
+
+      </form>
 
     </div>
 
@@ -2732,16 +1367,16 @@
 
 
   <!-- =========================================================
-       BASIC PRICING MODAL
+       LANDLORD LOGIN
        ========================================================= -->
 
   <div
     class="modal"
-    id="modal-basic-pricing"
+    id="modal-landlord-login"
     aria-hidden="true"
     role="dialog"
     aria-modal="true"
-    aria-labelledby="basicPricingTitle"
+    aria-labelledby="landlordLoginTitle"
   >
 
     <div
@@ -2750,7 +1385,7 @@
     ></div>
 
 
-    <div class="modal-panel">
+    <div class="modal-panel login-modal">
 
       <button
         class="modal-close"
@@ -2763,142 +1398,49 @@
 
 
       <div class="eyebrow">
-        Basic Management
+        Landlords
       </div>
 
 
-      <h2 id="basicPricingTitle">
-        Essential care
+      <h2 id="landlordLoginTitle">
+        Landlord Login
       </h2>
 
 
-      <p class="modal-intro">
-        A straightforward management option covering the essential
-        day to day responsibilities of looking after your rental property.
-      </p>
+      <form class="login-form" data-login-form novalidate>
+
+        <label class="login-field">
+          <span>Username</span>
+          <input
+            type="text"
+            name="username"
+            autocomplete="username"
+            autocapitalize="none"
+            spellcheck="false"
+          >
+        </label>
 
 
-      <div class="modal-price">
-        4.99%
-        <span>+ GST</span>
-      </div>
+        <label class="login-field">
+          <span>Password</span>
+          <input
+            type="password"
+            name="password"
+            autocomplete="current-password"
+          >
+        </label>
 
 
-      <ul class="modal-feature-list">
-
-        <li>Rent collection</li>
-        <li>Arrears monitoring</li>
-        <li>Tenant communication</li>
-        <li>Financial reporting</li>
-        <li>Maintenance coordination</li>
-        <li>Water invoice processing</li>
-        <li>Tribunal representation</li>
-        <li>Insurance claim assistance</li>
-        <li>Lease administration</li>
-        <li>Routine inspections</li>
-
-      </ul>
+        <p class="login-error" role="alert" hidden>
+          Incorrect Username/Password. Please Try Again.
+        </p>
 
 
-      <p class="modal-note">
-        Advertising and letting fees are charged separately.
-      </p>
+        <button class="button button-primary" type="submit">
+          Login
+        </button>
 
-
-      <a
-        class="button button-primary"
-        href="#contact"
-        data-close-modal
-      >
-        Enquire About Basic
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- =========================================================
-       PREMIUM PRICING MODAL
-       ========================================================= -->
-
-  <div
-    class="modal"
-    id="modal-premium-pricing"
-    aria-hidden="true"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="premiumPricingTitle"
-  >
-
-    <div
-      class="modal-backdrop"
-      data-close-modal
-    ></div>
-
-
-    <div class="modal-panel">
-
-      <button
-        class="modal-close"
-        type="button"
-        data-close-modal
-        aria-label="Close modal"
-      >
-        ×
-      </button>
-
-
-      <div class="eyebrow">
-        Premium Management
-      </div>
-
-
-      <h2 id="premiumPricingTitle">
-        Complete care
-      </h2>
-
-
-      <p class="modal-intro">
-        A complete management experience covering the journey from
-        finding a tenant through to ongoing property care.
-      </p>
-
-
-      <div class="modal-price">
-        6.99%
-        <span>+ GST</span>
-      </div>
-
-
-      <ul class="modal-feature-list">
-
-        <li>Everything in Basic Management</li>
-        <li>Advertising</li>
-        <li>Tenant placement</li>
-        <li>Property viewings</li>
-        <li>Credit and reference checks</li>
-        <li>Tenancy paperwork</li>
-        <li>Priority landlord support</li>
-        <li>Regular property reviews</li>
-        <li>Maintenance planning</li>
-        <li>Investment advice</li>
-
-      </ul>
-
-
-      <p class="modal-note">
-        All fees included, with no advertising or letting costs on top.
-      </p>
-
-
-      <a
-        class="button button-primary"
-        href="#contact"
-        data-close-modal
-      >
-        Enquire About Premium
-      </a>
+      </form>
 
     </div>
 
@@ -3813,242 +2355,6 @@
 
 
     /* =========================================================
-       TESTIMONIALS
-       ========================================================= */
-
-    .testimonials-section {
-
-      overflow: hidden;
-
-    }
-
-
-    .testimonial-slider {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 20px;
-
-    }
-
-
-    .testimonial-window {
-
-      width: 100%;
-
-      overflow: hidden;
-
-      border-radius: var(--radius);
-
-    }
-
-
-    .testimonial-track {
-
-      display: flex;
-
-      transition:
-        transform 600ms cubic-bezier(
-          0.22,
-          1,
-          0.36,
-          1
-        );
-
-    }
-
-
-    .testimonial-slide {
-
-      min-width: 100%;
-
-      padding:
-        55px 70px;
-
-      border:
-        1px solid var(--border);
-
-      border-radius: var(--radius);
-
-      background:
-        rgba(4, 11, 21, 0.42);
-
-      text-align: center;
-
-    }
-
-
-    .testimonial-quote {
-
-      color: var(--gold);
-
-      font-family:
-        Georgia,
-        serif;
-
-      font-size: 5rem;
-
-      line-height: 0.7;
-
-    }
-
-
-    .testimonial-slide blockquote {
-
-      max-width: 780px;
-
-      margin:
-        28px auto 0;
-
-      color: var(--white);
-
-      font-size:
-        clamp(1.2rem, 2.3vw, 1.8rem);
-
-      font-weight: 400;
-
-      letter-spacing: -0.025em;
-
-      line-height: 1.55;
-
-    }
-
-
-    .testimonial-author {
-
-      display: flex;
-
-      align-items: center;
-
-      flex-direction: column;
-
-      gap: 3px;
-
-      margin-top: 30px;
-
-    }
-
-
-    .testimonial-author strong {
-
-      color: var(--white);
-
-      font-size: 0.82rem;
-
-      font-weight: 600;
-
-    }
-
-
-    .testimonial-author span {
-
-      color: var(--muted);
-
-      font-size: 0.66rem;
-
-      letter-spacing: 0.08em;
-
-      text-transform: uppercase;
-
-    }
-
-
-    .testimonial-arrow {
-
-      flex: 0 0 auto;
-
-      width: 48px;
-
-      height: 48px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding: 0;
-
-      border:
-        1px solid var(--border);
-
-      border-radius: 50%;
-
-      background: transparent;
-
-      color: var(--gold);
-
-      font-size: 1rem;
-
-      transition:
-        background var(--transition),
-        border-color var(--transition),
-        transform var(--transition);
-
-    }
-
-
-    .testimonial-arrow:hover {
-
-      border-color: var(--gold);
-
-      background:
-        rgba(214, 184, 120, 0.08);
-
-      transform:
-        translateY(-2px);
-
-    }
-
-
-    .testimonial-dots {
-
-      display: flex;
-
-      justify-content: center;
-
-      gap: 9px;
-
-      margin-top: 25px;
-
-    }
-
-
-    .testimonial-dot {
-
-      width: 7px;
-
-      height: 7px;
-
-      padding: 0;
-
-      border: 0;
-
-      border-radius: 50%;
-
-      background:
-        rgba(214, 184, 120, 0.3);
-
-      transition:
-        background var(--transition),
-        transform var(--transition);
-
-    }
-
-
-    .testimonial-dot.active {
-
-      background: var(--gold);
-
-      transform:
-        scale(1.35);
-
-    }
-
-
-    /* =========================================================
        FOOTER
        ========================================================= */
 
@@ -4771,39 +3077,6 @@
       }
 
 
-      .testimonial-slider {
-
-        gap: 8px;
-
-      }
-
-
-      .testimonial-arrow {
-
-        width: 38px;
-
-        height: 38px;
-
-        font-size: 0.9rem;
-
-      }
-
-
-      .testimonial-slide {
-
-        padding:
-          38px 24px;
-
-      }
-
-
-      .testimonial-slide blockquote {
-
-        font-size: 1.08rem;
-
-      }
-
-
       .contact-socials {
 
         margin-top: 55px;
@@ -4890,6 +3163,144 @@
 
     }
 
+      /* =========================================================
+       HERO BLEND + LOGIN
+       ========================================================= */
+
+    .hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      z-index: -1;
+
+      right: 0;
+
+      bottom: 0;
+
+      left: 0;
+
+      height: 240px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(4, 11, 21, 0),
+          var(--navy)
+        );
+
+      pointer-events: none;
+
+    }
+
+
+    .login-modal {
+
+      width:
+        min(520px, 100%);
+
+    }
+
+
+    .login-modal h2 {
+
+      font-size:
+        clamp(2.1rem, 5vw, 3.2rem);
+
+    }
+
+
+    .login-form {
+
+      display: grid;
+
+      gap: 18px;
+
+      margin-top: 32px;
+
+    }
+
+
+    .login-field {
+
+      display: grid;
+
+      gap: 8px;
+
+    }
+
+
+    .login-field span {
+
+      color: var(--muted);
+
+      font-size: 0.7rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .login-field input {
+
+      width: 100%;
+
+      min-height: 52px;
+
+      padding: 0 16px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 10px;
+
+      background:
+        rgba(255, 255, 255, 0.04);
+
+      color: var(--white);
+
+      transition:
+        border-color var(--transition),
+        background var(--transition);
+
+    }
+
+
+    .login-field input:focus {
+
+      outline: none;
+
+      border-color: var(--gold);
+
+      background:
+        rgba(214, 184, 120, 0.06);
+
+    }
+
+
+    .login-error {
+
+      color: #F2A0A0;
+
+      font-size: 0.84rem;
+
+      line-height: 1.6;
+
+    }
+
+
+    .login-form .button {
+
+      width: 100%;
+
+    }
+
+
   </style>
 
 
@@ -4898,72 +3309,6 @@
        ========================================================= -->
 
   <script>
-
-    /* =========================================================
-       PROPERTY LISTINGS
-       =========================================================
-
-       THIS IS THE ONLY SECTION YOU NEED TO EDIT WHEN REAL
-       PROPERTIES ARE AVAILABLE.
-
-       Add or remove objects from this array.
-
-       Example:
-
-       {
-         address: "1 Example Road, Auckland",
-         price: "$700 / week",
-         bedrooms: 3,
-         bathrooms: 2,
-         parking: 2,
-         image: "images/property-1.jpg",
-         tradeMeUrl: "https://www.trademe.co.nz/..."
-       }
-
-       image:
-       Leave as "" if there is no image yet.
-
-       tradeMeUrl:
-       Replace with the actual Trade Me listing URL.
-
-       ========================================================= */
-
-    const propertyListings = [
-
-      {
-        address: "1 Example Road, Auckland",
-        price: "$650 / week",
-        bedrooms: 3,
-        bathrooms: 2,
-        parking: 1,
-        image: "",
-        tradeMeUrl: "https://www.trademe.co.nz/"
-      },
-
-
-      {
-        address: "2 Example Road, Auckland",
-        price: "$720 / week",
-        bedrooms: 4,
-        bathrooms: 2,
-        parking: 2,
-        image: "",
-        tradeMeUrl: "https://www.trademe.co.nz/"
-      },
-
-
-      {
-        address: "3 Example Road, Auckland",
-        price: "$580 / week",
-        bedrooms: 2,
-        bathrooms: 1,
-        parking: 1,
-        image: "",
-        tradeMeUrl: "https://www.trademe.co.nz/"
-      }
-
-    ];
-
 
     /* =========================================================
        MOBILE NAVIGATION
@@ -5175,6 +3520,73 @@
 
 
     /* =========================================================
+       LOGIN FORMS
+       =========================================================
+
+       PLACEHOLDER: every attempt currently shows the error message.
+
+       When the real login is ready, replace the body of the submit
+       handler below with the actual authentication request, and only
+       show the error when that request fails.
+
+       ========================================================= */
+
+    document
+      .querySelectorAll("[data-login-form]")
+      .forEach(form => {
+
+        const loginError =
+          form.querySelector(".login-error");
+
+        const passwordInput =
+          form.querySelector('input[type="password"]');
+
+
+        form.addEventListener(
+          "submit",
+          event => {
+
+            event.preventDefault();
+
+
+            if (loginError) {
+              loginError.hidden = false;
+            }
+
+
+            if (passwordInput) {
+
+              passwordInput.value = "";
+
+              passwordInput.focus();
+
+            }
+
+          }
+        );
+
+
+        form
+          .querySelectorAll("input")
+          .forEach(input => {
+
+            input.addEventListener(
+              "input",
+              () => {
+
+                if (loginError) {
+                  loginError.hidden = true;
+                }
+
+              }
+            );
+
+          });
+
+      });
+
+
+    /* =========================================================
        MODAL SYSTEM
        ========================================================= */
 
@@ -5265,6 +3677,22 @@
         "aria-hidden",
         "true"
       );
+
+
+      modalToClose
+        .querySelectorAll("form")
+        .forEach(form => {
+
+          form.reset();
+
+          const formError =
+            form.querySelector(".login-error");
+
+          if (formError) {
+            formError.hidden = true;
+          }
+
+        });
 
 
       document.body.classList.remove(
@@ -5400,443 +3828,6 @@
 
 
     /* =========================================================
-       TESTIMONIAL CAROUSEL
-       ========================================================= */
-
-    const testimonialTrack =
-      document.getElementById(
-        "testimonialTrack"
-      );
-
-
-    const testimonialSlides =
-      document.querySelectorAll(
-        ".testimonial-slide"
-      );
-
-
-    const testimonialDots =
-      document.querySelectorAll(
-        ".testimonial-dot"
-      );
-
-
-    const testimonialPrev =
-      document.getElementById(
-        "testimonialPrev"
-      );
-
-
-    const testimonialNext =
-      document.getElementById(
-        "testimonialNext"
-      );
-
-
-    let testimonialIndex = 0;
-
-    let testimonialTimer = null;
-
-
-    function updateTestimonial(index) {
-
-      if (
-        !testimonialTrack ||
-        !testimonialSlides.length
-      ) {
-
-        return;
-
-      }
-
-
-      testimonialIndex =
-        (
-          index +
-          testimonialSlides.length
-        ) %
-        testimonialSlides.length;
-
-
-      testimonialTrack.style.transform =
-        `translateX(-${testimonialIndex * 100}%)`;
-
-
-      testimonialDots.forEach(
-        (dot, dotIndex) => {
-
-          const isActive =
-            dotIndex === testimonialIndex;
-
-
-          dot.classList.toggle(
-            "active",
-            isActive
-          );
-
-
-          dot.setAttribute(
-            "aria-current",
-            String(isActive)
-          );
-
-        }
-      );
-
-    }
-
-
-    function nextTestimonial() {
-
-      updateTestimonial(
-        testimonialIndex + 1
-      );
-
-    }
-
-
-    function previousTestimonial() {
-
-      updateTestimonial(
-        testimonialIndex - 1
-      );
-
-    }
-
-
-    function stopTestimonialTimer() {
-
-      if (testimonialTimer) {
-
-        clearInterval(
-          testimonialTimer
-        );
-
-
-        testimonialTimer = null;
-
-      }
-
-    }
-
-
-    function startTestimonialTimer() {
-
-      stopTestimonialTimer();
-
-
-      testimonialTimer =
-        setInterval(
-          nextTestimonial,
-          6000
-        );
-
-    }
-
-
-    function restartTestimonialTimer() {
-
-      stopTestimonialTimer();
-
-      startTestimonialTimer();
-
-    }
-
-
-    if (testimonialNext) {
-
-      testimonialNext.addEventListener(
-        "click",
-        () => {
-
-          nextTestimonial();
-
-          restartTestimonialTimer();
-
-        }
-      );
-
-    }
-
-
-    if (testimonialPrev) {
-
-      testimonialPrev.addEventListener(
-        "click",
-        () => {
-
-          previousTestimonial();
-
-          restartTestimonialTimer();
-
-        }
-      );
-
-    }
-
-
-    testimonialDots.forEach(
-      (dot, index) => {
-
-        dot.addEventListener(
-          "click",
-          () => {
-
-            updateTestimonial(index);
-
-            restartTestimonialTimer();
-
-          }
-        );
-
-      }
-    );
-
-
-    /* =========================================================
-       TESTIMONIAL SWIPE
-       ========================================================= */
-
-    let touchStartX = 0;
-
-    let touchEndX = 0;
-
-
-    if (testimonialTrack) {
-
-      testimonialTrack.addEventListener(
-        "touchstart",
-        event => {
-
-          touchStartX =
-            event.changedTouches[0].screenX;
-
-
-          stopTestimonialTimer();
-
-        },
-        {
-          passive: true
-        }
-      );
-
-
-      testimonialTrack.addEventListener(
-        "touchend",
-        event => {
-
-          touchEndX =
-            event.changedTouches[0].screenX;
-
-
-          const distance =
-            touchStartX -
-            touchEndX;
-
-
-          if (
-            Math.abs(distance) > 45
-          ) {
-
-            if (distance > 0) {
-
-              nextTestimonial();
-
-            } else {
-
-              previousTestimonial();
-
-            }
-
-          }
-
-
-          startTestimonialTimer();
-
-        },
-        {
-          passive: true
-        }
-      );
-
-
-      testimonialTrack.addEventListener(
-        "mouseenter",
-        stopTestimonialTimer
-      );
-
-
-      testimonialTrack.addEventListener(
-        "mouseleave",
-        startTestimonialTimer
-      );
-
-
-      testimonialTrack.addEventListener(
-        "focusin",
-        stopTestimonialTimer
-      );
-
-
-      testimonialTrack.addEventListener(
-        "focusout",
-        startTestimonialTimer
-      );
-
-    }
-
-
-    /* =========================================================
-       PROPERTY LISTING RENDERER
-       =========================================================
-
-       The three placeholder cards are already in the HTML from
-       Part 1 so the website displays immediately.
-
-       To use the JavaScript array above as the single source of
-       truth, simply uncomment the function call at the bottom.
-
-       ========================================================= */
-
-    function renderPropertyListings() {
-
-      const track =
-        document.getElementById(
-          "propertyTrack"
-        );
-
-
-      if (
-        !track ||
-        !Array.isArray(propertyListings)
-      ) {
-
-        return;
-
-      }
-
-
-      track.innerHTML = "";
-
-
-      propertyListings.forEach(
-        property => {
-
-          const card =
-            document.createElement("a");
-
-
-          card.className =
-            "property-card";
-
-
-          card.href =
-            property.tradeMeUrl || "#";
-
-
-          card.target =
-            "_blank";
-
-
-          card.rel =
-            "noopener noreferrer";
-
-
-          let imageHTML =
-            `
-              <div class="property-placeholder">
-                Property Image Placeholder
-              </div>
-            `;
-
-
-          if (property.image) {
-
-            imageHTML =
-              `
-                <img
-                  src="${property.image}"
-                  alt="${property.address}"
-                  loading="lazy"
-                >
-              `;
-
-          }
-
-
-          card.innerHTML =
-            `
-
-              <div class="property-image">
-
-                ${imageHTML}
-
-                <div class="property-status">
-                  Available
-                </div>
-
-              </div>
-
-
-              <div class="property-body">
-
-                <div class="property-address">
-                  ${property.address}
-                </div>
-
-
-                <div class="property-price">
-                  ${property.price}
-                </div>
-
-
-                <div class="property-meta">
-
-                  <span>
-                    🛏 ${property.bedrooms} beds
-                  </span>
-
-                  <span>
-                    🛁 ${property.bathrooms} baths
-                  </span>
-
-                  <span>
-                    🚗 ${property.parking} parking
-                  </span>
-
-                </div>
-
-
-                <div class="property-link">
-                  View Trade Me Listing →
-                </div>
-
-              </div>
-
-            `;
-
-
-          track.appendChild(card);
-
-        }
-      );
-
-    }
-
-
-    /*
-      WHEN REAL PROPERTIES ARE READY:
-
-      Remove the three placeholder cards from Part 1 and uncomment:
-
-      renderPropertyListings();
-
-      Then the propertyListings array above becomes the only place
-      you need to edit.
-    */
-
-
-    /* =========================================================
        CURRENT YEAR
        ========================================================= */
 
@@ -5850,25 +3841,6 @@
 
       currentYear.textContent =
         new Date().getFullYear();
-
-    }
-
-
-    /* =========================================================
-       REDUCED MOTION
-       ========================================================= */
-
-    const prefersReducedMotion =
-      window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      );
-
-
-    if (
-      prefersReducedMotion.matches
-    ) {
-
-      stopTestimonialTimer();
 
     }
 
@@ -6005,13 +3977,6 @@
 
       }
     );
-
-
-    /* =========================================================
-       INITIALISE
-       ========================================================= */
-
-    updateTestimonial(0);
 
   </script>
 
