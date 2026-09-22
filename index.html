@@ -595,6 +595,13 @@
       text-transform: uppercase;
     }
 
+
+    @media (max-width: 1000px) {
+      .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 900px) {
       .main-navigation {
         position: absolute;
@@ -2279,9 +2286,8 @@
 
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 380px));
-      justify-content: center;
-      gap: 22px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
     }
 
     .team-card {
