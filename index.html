@@ -14,7 +14,7 @@
 
   <title>Dream Property</title>
 
-  <!-- Search engines and social platforms -->
+  
   <link rel="canonical" href="https://www.dreamproperty.co.nz/">
 
   <meta property="og:type" content="website">
@@ -33,12 +33,12 @@
   <meta name="twitter:image" content="https://www.dreamproperty.co.nz/images/link-preview.jpg">
   <meta name="twitter:image:alt" content="Dream Property">
 
-  <!-- Use a padded square PNG so the logo is not cropped or zoomed in as a favicon. -->
+  
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
 
-  <!-- Structured data helps Google understand the official site name and Dream Property's connection with Calix Mojica. -->
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -433,24 +433,20 @@
         url("images/hero-fallback.jpg") center / cover;
     }
 
-    .hero-video iframe {
+    .hero-video video {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 177.78vh;
+      width: 100%;
+      height: 100%;
       min-width: 100%;
-      height: 56.25vw;
       min-height: 100%;
       transform: translate(-50%, -50%) scale(1.12);
       border: 0;
-      opacity: 0;
+      opacity: 0.65;
+      object-fit: cover;
       filter: blur(2px);
       pointer-events: none;
-      transition: opacity 700ms ease;
-    }
-
-    .hero-video iframe.video-ready {
-      opacity: 0.65;
     }
 
     .hero-overlay {
@@ -670,7 +666,7 @@
         width: 100%;
       }
 
-      /* Keep the hero buttons side by side on mobile, like desktop */
+      
       .button-row.hero-buttons {
         flex-direction: row;
         flex-wrap: nowrap;
@@ -712,7 +708,7 @@
         transition-duration: 1ms !important;
       }
 
-      .hero-video iframe {
+      .hero-video video {
         display: none;
       }
     }
@@ -721,7 +717,7 @@
 
 <body>
 
-  <!-- Opening logo animation -->
+  
   <div class="site-intro" id="siteIntro" aria-hidden="true">
     <div class="intro-brand">
       <img
@@ -736,7 +732,7 @@
     </div>
   </div>
 
-  <!-- Header -->
+  
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
 
@@ -776,17 +772,21 @@
 
   <main>
 
-    <!-- Hero -->
+    
     <section class="hero" id="home">
 
       <div class="hero-video" aria-hidden="true">
-        <iframe
-          id="heroVideoFrame"
-          src="https://www.youtube.com/embed/iEK7Gds1rDc?autoplay=1&mute=1&controls=0&loop=1&playlist=iEK7Gds1rDc&playsinline=1&rel=0&modestbranding=1&enablejsapi=1"
-          title="Dream Property background video"
-          allow="autoplay; encrypted-media"
-          loading="eager"
-        ></iframe>
+        <video
+          id="heroVideo"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="images/hero-fallback.jpg"
+        >
+          <source src="videos/dream-property-hero.mp4" type="video/mp4">
+        </video>
       </div>
 
       <div class="hero-overlay" aria-hidden="true"></div>
@@ -816,9 +816,7 @@
 
     </section>
 
-    <!-- =========================================================
-         LOGIN
-         ========================================================= -->
+    
 
     <section class="section section-dark" id="login">
       <div class="container">
@@ -879,9 +877,7 @@
       </div>
     </section>
 
-        <!-- =========================================================
-         ABOUT US
-         ========================================================= -->
+        
 
     <section class="section section-dark" id="about">
 
@@ -942,9 +938,7 @@
     </section>
 
 
-    <!-- =========================================================
-         DREAM TEAM
-         ========================================================= -->
+    
 
     <section class="section section-soft" id="team">
 
@@ -967,7 +961,7 @@
         <div class="team-grid">
 
 
-          <!-- Calix Mojica -->
+          
 
           <article class="team-card">
 
@@ -1018,7 +1012,7 @@
           </article>
 
 
-          <!-- Rae Lillo -->
+          
 
           <article class="team-card">
 
@@ -1068,6 +1062,66 @@
 
           </article>
 
+          <article class="team-card">
+
+            <div class="team-image team-placeholder" aria-hidden="true">
+              Profile coming soon
+            </div>
+
+            <div class="team-body">
+
+              <div class="team-role">
+                Business Development Associate
+              </div>
+
+              <h3 aria-label="Name hidden">Name hidden</h3>
+
+              <p>
+                Profile coming soon
+              </p>
+
+              <button
+                class="button button-outline button-small"
+                type="button"
+                disabled
+              >
+                Profile Coming Soon
+              </button>
+
+            </div>
+
+          </article>
+
+          <article class="team-card">
+
+            <div class="team-image team-placeholder" aria-hidden="true">
+              Profile coming soon
+            </div>
+
+            <div class="team-body">
+
+              <div class="team-role">
+                Accountant
+              </div>
+
+              <h3 aria-label="Name hidden">Name hidden</h3>
+
+              <p>
+                Profile coming soon
+              </p>
+
+              <button
+                class="button button-outline button-small"
+                type="button"
+                disabled
+              >
+                Profile Coming Soon
+              </button>
+
+            </div>
+
+          </article>
+
 
         </div>
 
@@ -1076,9 +1130,7 @@
     </section>
 
 
-    <!-- =========================================================
-         CONTACT
-         ========================================================= -->
+    
 
     <section class="section section-dark" id="contact">
 
@@ -1189,9 +1241,7 @@
   </main>
 
 
-  <!-- =========================================================
-       FOOTER
-       ========================================================= -->
+  
 
   <footer class="site-footer">
 
@@ -1315,14 +1365,10 @@
   </footer>
 
 
-  <!-- =========================================================
-       MODALS
-       ========================================================= -->
+  
 
 
-  <!-- =========================================================
-       TENANT LOGIN
-       ========================================================= -->
+  
 
   <div
     class="modal"
@@ -1401,9 +1447,7 @@
   </div>
 
 
-  <!-- =========================================================
-       OWNER LOGIN
-       ========================================================= -->
+  
 
   <div
     class="modal"
@@ -1482,9 +1526,7 @@
   </div>
 
 
-  <!-- =========================================================
-       CALIX PROFILE
-       ========================================================= -->
+  
 
   <div
     class="modal"
@@ -1579,9 +1621,7 @@
   </div>
 
 
-  <!-- =========================================================
-       RAE PROFILE
-       ========================================================= -->
+  
 
   <div
     class="modal"
@@ -1685,9 +1725,7 @@
   </div>
 
 
-  <!-- =========================================================
-       PRIVACY POLICY
-       ========================================================= -->
+  
 
   <div
     class="modal"
@@ -1838,8 +1876,8 @@
       </h3>
 
       <p>
-        Some of the tools and services we use, including website hosting and
-        embedded video, may store or process information outside New Zealand.
+        Some of the tools and services we use, including website hosting, may store
+        or process information outside New Zealand.
         Where personal information is sent overseas, we take reasonable steps
         to make sure it is protected by comparable safeguards.
       </p>
@@ -1850,8 +1888,8 @@
       </h3>
 
       <p>
-        This website is hosted by a third party and may embed third party
-        content, such as our background video from YouTube. Those providers
+        This website is hosted by a third party and may include locally hosted video.
+        Hosting providers
         may collect technical information such as your IP address, device
         type, and browser details, and may use cookies or similar
         technologies under their own privacy policies. You can control cookies
@@ -1949,9 +1987,7 @@
   </div>
 
 
-  <!-- =========================================================
-       TERMS & CONDITIONS
-       ========================================================= -->
+  
 
   <div
     class="modal"
@@ -2184,13 +2220,11 @@
   </div>
 
 
-  <!-- =========================================================
-       PART 2 CSS
-       ========================================================= -->
+  
 
   <style>
 
-    /* ABOUT */
+    
 
     .about-layout {
       display: grid;
@@ -2241,7 +2275,7 @@
     }
 
 
-    /* TEAM */
+    
 
     .team-grid {
       display: grid;
@@ -2321,8 +2355,28 @@
       margin-top: 24px;
     }
 
+    .team-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-align: center;
+      text-transform: uppercase;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(4, 11, 21, 0.72));
+    }
 
-    /* CONTACT */
+    .team-body .button:disabled {
+      cursor: default;
+      opacity: 0.55;
+    }
+
+
+    
 
     .contact-layout {
       display: grid;
@@ -2421,7 +2475,7 @@
     }
 
 
-    /* FOOTER */
+    
 
     .site-footer {
       padding: 65px 0 25px;
@@ -2512,7 +2566,7 @@
     }
 
 
-    /* MODALS */
+    
 
     .modal {
       position: fixed;
@@ -2723,7 +2777,7 @@
     }
 
 
-    /* LEGAL MODALS */
+    
 
     .legal-modal h3 {
       margin-top: 35px;
@@ -2771,7 +2825,7 @@
     }
 
 
-    /* RESPONSIVE */
+    
 
     @media (max-width: 900px) {
 
@@ -2853,7 +2907,7 @@
     }
 
 
-    /* HERO BLEND + LOGIN */
+    
 
     .hero::after {
       content: "";
@@ -2924,8 +2978,7 @@
     }
 
 
-    /* LIQUID GLASS
-       Shared by every box and modal so they match exactly. */
+    
 
     :root {
 
@@ -3009,13 +3062,11 @@
   </style>
 
 
-  <!-- =========================================================
-       JAVASCRIPT
-       ========================================================= -->
+  
 
   <script>
 
-    /* MOBILE NAVIGATION */
+    
 
     const menuToggle = document.getElementById("menuToggle");
     const mainNavigation = document.getElementById("mainNavigation");
@@ -3050,7 +3101,7 @@
     }
 
 
-    /* HEADER SCROLL */
+    
 
     const siteHeader = document.getElementById("siteHeader");
 
@@ -3073,7 +3124,7 @@
     updateHeader();
 
 
-    /* INTRO */
+    
 
     const siteIntro = document.getElementById("siteIntro");
 
@@ -3088,50 +3139,7 @@
       }, 1450);
 
     });
-
-
-    /* HERO VIDEO (HIDE PLAY BUTTON FLASH) */
-
-    (function () {
-
-      const heroFrame = document.getElementById("heroVideoFrame");
-
-      if (!heroFrame) {
-        return;
-      }
-
-      window.onYouTubeIframeAPIReady = function () {
-
-        new YT.Player("heroVideoFrame", {
-          events: {
-            onStateChange: function (event) {
-
-              if (event.data === YT.PlayerState.PLAYING) {
-                heroFrame.classList.add("video-ready");
-              }
-
-            }
-          }
-        });
-
-      };
-
-      const apiScript = document.createElement("script");
-
-      apiScript.src = "https://www.youtube.com/iframe_api";
-
-      document.head.appendChild(apiScript);
-
-    })();
-
-
-    /* LOGIN FORMS
-       PLACEHOLDER: every attempt currently shows the error message.
-       When the real login is ready, replace the body of the submit
-       handler below with the actual authentication request, and only
-       show the error when that request fails. */
-
-    document.querySelectorAll("[data-login-form]").forEach(form => {
+document.querySelectorAll("[data-login-form]").forEach(form => {
 
       const loginError = form.querySelector(".login-error");
       const passwordInput = form.querySelector('input[type="password"]');
@@ -3166,7 +3174,7 @@
     });
 
 
-    /* MODAL SYSTEM */
+    
 
     const modalTriggers = document.querySelectorAll("[data-modal]");
 
@@ -3254,8 +3262,7 @@
 
       element.addEventListener("click", event => {
 
-        /* If the element is a link to a section,
-           remember the destination before closing. */
+        
 
         const destination = element.getAttribute("href");
 
@@ -3290,7 +3297,7 @@
     });
 
 
-    /* CURRENT YEAR */
+    
 
     const currentYear = document.getElementById("currentYear");
 
@@ -3299,7 +3306,7 @@
     }
 
 
-    /* CLICK OUTSIDE MOBILE NAVIGATION */
+    
 
     document.addEventListener("click", event => {
 
@@ -3321,7 +3328,7 @@
     });
 
 
-    /* MODAL FOCUS TRAP */
+    
 
     document.addEventListener("keydown", event => {
 
