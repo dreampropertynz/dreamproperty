@@ -490,7 +490,7 @@
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
 
-      <a class="brand" href="#home" aria-label="Dream Property home">
+      <a class="brand" href="/" data-route aria-label="Dream Property home">
         <img class="brand-logo" src="dream-property-logo.svg" alt="Dream Property logo">
 
         <div class="brand-name">
@@ -512,9 +512,9 @@
       </button>
 
       <nav class="main-navigation" id="mainNavigation" aria-label="Main navigation">
-        <a href="#login">Login</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
+        <a href="/login" data-route>Login</a>
+        <a href="/about" data-route>About Us</a>
+        <a href="/contact" data-route>Contact</a>
       </nav>
 
     </div>
@@ -556,7 +556,7 @@
             Get In Touch
           </a>
 
-          <a class="button button-outline" href="#login">
+          <a class="button button-outline" href="/login" data-route>
             Login
           </a>
         </div>
@@ -956,7 +956,7 @@
 
         <div class="footer-brand">
 
-          <a class="brand" href="#home" aria-label="Dream Property home">
+          <a class="brand" href="/" data-route aria-label="Dream Property home">
 
             <img class="brand-logo" src="dream-property-logo.svg" alt="Dream Property logo">
 
@@ -994,15 +994,15 @@
               Company
             </span>
 
-            <a href="#about">
+            <a href="/about" data-route>
               About Us
             </a>
 
-            <a href="#team">
+            <a href="/team" data-route>
               Dream Team
             </a>
 
-            <a href="#contact">
+            <a href="/contact" data-route>
               Contact
             </a>
 
@@ -2508,14 +2508,74 @@
 
     let activeModal = null;
     let previousFocusedElement = null;
+    let skipRouteOnClose = false;
 
-    function openModal(modalName) {
+    const PROFILE_PATHS = {
+      calix: "/calixmojica",
+      rae: "/raelillo",
+      monica: "/monicalillo"
+    };
+
+    const PATH_TO_PROFILE = {
+      "/calixmojica": "calix",
+      "/raelillo": "rae",
+      "/monicalillo": "monica"
+    };
+
+    const SECTION_PATHS = {
+      "/": "home",
+      "/login": "login",
+      "/about": "about",
+      "/team": "team",
+      "/contact": "contact"
+    };
+
+    function normalizePath(path) {
+      if (!path) {
+        return "/";
+      }
+
+      const clean = path.replace(/\/+$/, "");
+
+      return clean === "" ? "/" : clean;
+    }
+
+    function setPath(path, replace) {
+      const next = normalizePath(path);
+
+      if (normalizePath(window.location.pathname) === next) {
+        return;
+      }
+
+      if (replace) {
+        history.replaceState({ path: next }, "", next);
+      } else {
+        history.pushState({ path: next }, "", next);
+      }
+    }
+
+    function scrollToSection(sectionId, behavior) {
+      if (sectionId === "home") {
+        window.scrollTo({ top: 0, behavior: behavior || "smooth" });
+        return;
+      }
+
+      const target = document.getElementById(sectionId);
+
+      if (target) {
+        target.scrollIntoView({ behavior: behavior || "smooth" });
+      }
+    }
+
+    function openModal(modalName, options) {
 
       const modal = document.getElementById(`modal-${modalName}`);
 
       if (!modal) {
         return;
       }
+
+      const opts = options || {};
 
       previousFocusedElement = document.activeElement;
 
@@ -2524,6 +2584,10 @@
       modal.classList.add("open");
       modal.setAttribute("aria-hidden", "false");
       document.body.classList.add("modal-open");
+
+      if (PROFILE_PATHS[modalName] && !opts.skipPath) {
+        setPath(PROFILE_PATHS[modalName], opts.replacePath);
+      }
 
       const closeButton = modal.querySelector(".modal-close");
 
@@ -2535,13 +2599,15 @@
 
     }
 
-    function closeModal() {
+    function closeModal(options) {
 
       if (!activeModal) {
         return;
       }
 
+      const opts = options || {};
       const modalToClose = activeModal;
+      const closedId = modalToClose.id.replace(/^modal-/, "");
 
       modalToClose.classList.remove("open");
       modalToClose.setAttribute("aria-hidden", "true");
@@ -2562,6 +2628,12 @@
 
       activeModal = null;
 
+      if (PROFILE_PATHS[closedId] && !opts.skipPath && !skipRouteOnClose) {
+        setPath("/team", opts.replacePath);
+      }
+
+      skipRouteOnClose = false;
+
       const elementToFocus = previousFocusedElement;
 
       previousFocusedElement = null;
@@ -2572,6 +2644,38 @@
         }, 20);
       }
 
+    }
+
+    function applyRoute(path, options) {
+      const opts = options || {};
+      const clean = normalizePath(path);
+      const profile = PATH_TO_PROFILE[clean];
+
+      if (profile) {
+        if (activeModal && activeModal.id !== `modal-${profile}`) {
+          skipRouteOnClose = true;
+          closeModal({ skipPath: true });
+        }
+
+        openModal(profile, { skipPath: true, replacePath: opts.replacePath });
+        scrollToSection("team", opts.instant ? "auto" : "smooth");
+        return;
+      }
+
+      if (activeModal) {
+        skipRouteOnClose = true;
+        closeModal({ skipPath: true });
+      }
+
+      const sectionId = SECTION_PATHS[clean];
+
+      if (sectionId) {
+        scrollToSection(sectionId, opts.instant ? "auto" : "smooth");
+        return;
+      }
+
+      scrollToSection("home", opts.instant ? "auto" : "smooth");
+      setPath("/", true);
     }
 
     modalTriggers.forEach(trigger => {
@@ -2621,6 +2725,37 @@
       }
 
     });
+
+    document.querySelectorAll("[data-route]").forEach(link => {
+
+      link.addEventListener("click", event => {
+
+        const href = link.getAttribute("href");
+
+        if (!href || href.startsWith("http") || href.startsWith("mailto:")) {
+          return;
+        }
+
+        event.preventDefault();
+
+        setPath(href);
+        applyRoute(href);
+
+        if (mainNavigation && menuToggle) {
+          mainNavigation.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.setAttribute("aria-label", "Open navigation menu");
+        }
+
+      });
+
+    });
+
+    window.addEventListener("popstate", () => {
+      applyRoute(window.location.pathname, { instant: false });
+    });
+
+    applyRoute(window.location.pathname, { instant: true, replacePath: true });
 
 
     const currentYear = document.getElementById("currentYear");
