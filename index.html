@@ -99,7 +99,9 @@
     body {
       background: var(--navy);
       color: var(--white);
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, system-ui, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -110,7 +112,7 @@
 
     button, a { -webkit-tap-highlight-color: transparent; }
 
-    button, input, textarea { font: inherit; }
+    button, input, textarea, select { font: inherit; }
 
     button { cursor: pointer; }
 
@@ -2230,24 +2232,31 @@
     .login-form .button { width: 100%; }
 
 
+    /* iOS style liquid glass for boxes and modals */
+
+    @property --glow {
+      syntax: "<number>";
+      inherits: false;
+      initial-value: 0;
+    }
+
     :root {
 
-      --glass-fill:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 45%, rgba(255, 255, 255, 0.10) 100%),
-        rgba(16, 29, 45, 0.42);
+      --glass-tint: rgba(16, 29, 45, 0.36);
+      --glass-tint-modal: rgba(9, 18, 32, 0.68);
 
-      --glass-fill-hover:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.08) 45%, rgba(255, 255, 255, 0.14) 100%),
-        rgba(16, 29, 45, 0.42);
+      --glass-rim:
+        inset 0 1px 0 rgba(255, 255, 255, 0.55),
+        inset 1px 0 0 rgba(255, 255, 255, 0.20),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.14),
+        inset -1px 0 0 rgba(255, 255, 255, 0.07),
+        inset 10px 10px 22px -12px rgba(255, 255, 255, 0.36),
+        inset -10px -10px 22px -12px rgba(255, 255, 255, 0.20),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 
-      --glass-border: rgba(255, 255, 255, 0.16);
-
-      --glass-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.34),
-        inset 0 -1px 0 rgba(255, 255, 255, 0.06),
-        inset 1px 0 0 rgba(255, 255, 255, 0.10),
-        inset -1px 0 0 rgba(255, 255, 255, 0.04),
-        0 24px 60px rgba(0, 0, 0, 0.38);
+      --glass-drop:
+        0 22px 54px rgba(0, 0, 0, 0.38),
+        0 2px 8px rgba(0, 0, 0, 0.22);
 
     }
 
@@ -2255,18 +2264,63 @@
     .team-card,
     .contact-item,
     .modal-panel {
-      border: 1px solid var(--glass-border);
-      background: var(--glass-fill);
-      box-shadow: var(--glass-shadow);
-      -webkit-backdrop-filter: blur(28px) saturate(180%);
-      backdrop-filter: blur(28px) saturate(180%);
+      --mx: 30%;
+      --my: 0%;
+      --glow-max: 0.2;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background:
+        radial-gradient(circle at var(--mx) var(--my), rgba(255, 255, 255, calc(var(--glow, 0) * var(--glow-max))) 0%, rgba(255, 255, 255, 0) 55%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.04) 30%, rgba(255, 255, 255, 0.02) 62%, rgba(255, 255, 255, 0.09) 100%),
+        var(--glass-tint);
+      box-shadow: var(--glass-rim), var(--glass-drop);
+      -webkit-backdrop-filter: blur(22px) saturate(190%) brightness(1.06);
+      backdrop-filter: blur(22px) saturate(190%) brightness(1.06);
+      transition:
+        transform var(--transition),
+        border-color var(--transition),
+        --glow 400ms ease;
     }
 
     .service-card:hover,
     .team-card:hover,
-    .contact-item:hover {
-      border-color: rgba(255, 255, 255, 0.28);
-      background: var(--glass-fill-hover);
+    .contact-item:hover,
+    .modal-panel:hover {
+      --glow: 1;
+      border-color: rgba(255, 255, 255, 0.26);
+    }
+
+    .service-card:active,
+    .team-card:active { transform: translateY(-3px) scale(0.985); }
+
+    .contact-item:active { transform: translateX(4px) scale(0.985); }
+
+    .service-card.is-locked:active { transform: translateY(-5px); }
+
+    .team-card {
+      position: relative;
+      box-shadow: var(--glass-drop);
+    }
+
+    .team-card::after {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: var(--glass-rim);
+      pointer-events: none;
+    }
+
+    .modal-panel {
+      --glow-max: 0.09;
+      background:
+        radial-gradient(circle at var(--mx) var(--my), rgba(255, 255, 255, calc(var(--glow, 0) * var(--glow-max))) 0%, rgba(255, 255, 255, 0) 55%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.03) 30%, rgba(255, 255, 255, 0.02) 65%, rgba(255, 255, 255, 0.08) 100%),
+        var(--glass-tint-modal);
+      box-shadow: var(--glass-rim), 0 30px 90px rgba(0, 0, 0, 0.5);
+      transition:
+        transform 550ms cubic-bezier(0.32, 1.25, 0.5, 1),
+        --glow 400ms ease;
     }
 
     .modal-backdrop {
@@ -2278,6 +2332,16 @@
     .modal-close:hover { border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.1); color: var(--white); }
 
     .login-field input:focus { border-color: rgba(255, 255, 255, 0.45); background: rgba(255, 255, 255, 0.1); }
+
+    @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+
+      .service-card,
+      .team-card,
+      .contact-item { background: #101D2D; }
+
+      .modal-panel { background: #0A1422; }
+
+    }
 
     @media (prefers-reduced-transparency: reduce) {
 
@@ -2619,6 +2683,34 @@
         first.focus();
 
       }
+
+    });
+
+
+    const glassElements = document.querySelectorAll(".service-card, .team-card, .contact-item, .modal-panel");
+
+    glassElements.forEach(element => {
+
+      function moveHighlight(event) {
+
+        const box = element.getBoundingClientRect();
+
+        if (!box.width || !box.height) {
+          return;
+        }
+
+        element.style.setProperty("--mx", ((event.clientX - box.left) / box.width * 100).toFixed(1) + "%");
+        element.style.setProperty("--my", ((event.clientY - box.top) / box.height * 100).toFixed(1) + "%");
+
+      }
+
+      element.addEventListener("pointermove", moveHighlight, { passive: true });
+      element.addEventListener("pointerdown", moveHighlight, { passive: true });
+
+      element.addEventListener("pointerleave", () => {
+        element.style.removeProperty("--mx");
+        element.style.removeProperty("--my");
+      });
 
     });
 
