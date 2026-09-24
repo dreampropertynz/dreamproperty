@@ -88,7 +88,8 @@
       --muted: #AAB4C2;
       --border: rgba(255, 255, 255, 0.14);
       --glass: rgba(4, 11, 21, 0.72);
-      --radius: 22px;
+      --radius: 28px;
+      --radius-sm: 16px;
       --transition: 300ms ease;
     }
 
@@ -157,7 +158,7 @@
       gap: 12px;
       padding: 0 28px;
       border: 1px solid transparent;
-      border-radius: 10px;
+      border-radius: var(--radius-sm);
       font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -228,7 +229,7 @@
       flex-direction: column;
       gap: 5px;
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: var(--radius-sm);
       background: transparent;
     }
 
@@ -408,7 +409,7 @@
         gap: 0;
         padding: 10px;
         border: 1px solid var(--border);
-        border-radius: 15px;
+        border-radius: var(--radius);
         background: rgba(4, 11, 21, 0.98);
       }
 
@@ -1888,7 +1889,7 @@
 
     .team-card:hover .team-image img { transform: scale(1.035); }
 
-    .team-body { display: flex; flex: 1; flex-direction: column; padding: 28px; }
+    .team-body { display: flex; flex: 1; flex-direction: column; padding: 28px 24px 24px; }
 
     .team-role {
       color: var(--gold);
@@ -1903,7 +1904,12 @@
 
     .team-body p { margin-top: 15px; color: var(--muted); font-size: 0.86rem; line-height: 1.7; }
 
-    .team-body .button { width: 100%; margin-top: auto; padding: 0 18px; }
+    .team-body .button {
+      width: 100%;
+      margin-top: auto;
+      padding: 0 18px;
+      border-radius: var(--radius-sm);
+    }
 
     .team-placeholder {
       display: flex;
@@ -1936,7 +1942,7 @@
       flex-direction: column;
       padding: 25px;
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.025);
       transition:
         border-color var(--transition),
@@ -2046,7 +2052,7 @@
       overflow-y: auto;
       padding: 45px;
       border: 1px solid var(--border);
-      border-radius: 24px;
+      border-radius: var(--radius);
       background: linear-gradient(145deg, #0A1422, #040B15);
       box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
       transform: translateY(20px) scale(0.98);
@@ -2181,7 +2187,7 @@
 
       .modal { padding: 12px; }
 
-      .modal-panel { max-height: calc(100svh - 24px); padding: 32px 24px; border-radius: 18px; }
+      .modal-panel { max-height: calc(100svh - 24px); padding: 32px 24px; border-radius: var(--radius); }
 
       .modal-panel h2 { font-size: 2.3rem; }
 
@@ -2219,7 +2225,7 @@
       min-height: 52px;
       padding: 0 16px;
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: var(--radius-sm);
       background: rgba(255, 255, 255, 0.04);
       color: var(--white);
       transition: border-color var(--transition), background var(--transition);
@@ -2232,101 +2238,47 @@
     .login-form .button { width: 100%; }
 
 
-    /* iOS style liquid glass for boxes and modals */
-
-    @property --glow {
-      syntax: "<number>";
-      inherits: false;
-      initial-value: 0;
-    }
-
-    :root {
-
-      --glass-tint: rgba(16, 29, 45, 0.36);
-      --glass-tint-modal: rgba(9, 18, 32, 0.68);
-
-      --glass-rim:
-        inset 0 1px 0 rgba(255, 255, 255, 0.55),
-        inset 1px 0 0 rgba(255, 255, 255, 0.20),
-        inset 0 -1px 0 rgba(255, 255, 255, 0.14),
-        inset -1px 0 0 rgba(255, 255, 255, 0.07),
-        inset 10px 10px 22px -12px rgba(255, 255, 255, 0.36),
-        inset -10px -10px 22px -12px rgba(255, 255, 255, 0.20),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-
-      --glass-drop:
-        0 22px 54px rgba(0, 0, 0, 0.38),
-        0 2px 8px rgba(0, 0, 0, 0.22);
-
-    }
+    /* Frosted glass — minimal, modern */
 
     .service-card,
     .team-card,
     .contact-item,
     .modal-panel {
-      --mx: 30%;
-      --my: 0%;
-      --glow-max: 0.2;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      background:
-        radial-gradient(circle at var(--mx) var(--my), rgba(255, 255, 255, calc(var(--glow, 0) * var(--glow-max))) 0%, rgba(255, 255, 255, 0) 55%),
-        linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.04) 30%, rgba(255, 255, 255, 0.02) 62%, rgba(255, 255, 255, 0.09) 100%),
-        var(--glass-tint);
-      box-shadow: var(--glass-rim), var(--glass-drop);
-      -webkit-backdrop-filter: blur(22px) saturate(190%) brightness(1.06);
-      backdrop-filter: blur(22px) saturate(190%) brightness(1.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(16, 29, 45, 0.55);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      backdrop-filter: blur(18px) saturate(140%);
       transition:
         transform var(--transition),
         border-color var(--transition),
-        --glow 400ms ease;
+        background var(--transition);
     }
 
     .service-card:hover,
     .team-card:hover,
-    .contact-item:hover,
-    .modal-panel:hover {
-      --glow: 1;
-      border-color: rgba(255, 255, 255, 0.26);
+    .contact-item:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(16, 29, 45, 0.68);
     }
 
     .service-card:active,
-    .team-card:active { transform: translateY(-3px) scale(0.985); }
+    .team-card:active { transform: translateY(-3px); }
 
-    .contact-item:active { transform: translateX(4px) scale(0.985); }
+    .contact-item:active { transform: translateX(4px); }
 
     .service-card.is-locked:active { transform: translateY(-5px); }
 
-    .team-card {
-      position: relative;
-      box-shadow: var(--glass-drop);
-    }
-
-    .team-card::after {
-      content: "";
-      position: absolute;
-      z-index: 3;
-      inset: 0;
-      border-radius: inherit;
-      box-shadow: var(--glass-rim);
-      pointer-events: none;
-    }
-
     .modal-panel {
-      --glow-max: 0.09;
-      background:
-        radial-gradient(circle at var(--mx) var(--my), rgba(255, 255, 255, calc(var(--glow, 0) * var(--glow-max))) 0%, rgba(255, 255, 255, 0) 55%),
-        linear-gradient(135deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.03) 30%, rgba(255, 255, 255, 0.02) 65%, rgba(255, 255, 255, 0.08) 100%),
-        var(--glass-tint-modal);
-      box-shadow: var(--glass-rim), 0 30px 90px rgba(0, 0, 0, 0.5);
-      transition:
-        transform 550ms cubic-bezier(0.32, 1.25, 0.5, 1),
-        --glow 400ms ease;
+      background: rgba(10, 20, 34, 0.88);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+      transition: transform 350ms ease;
     }
 
     .modal-backdrop {
-      background: rgba(2, 6, 12, 0.55);
-      -webkit-backdrop-filter: blur(16px);
-      backdrop-filter: blur(16px);
+      background: rgba(2, 6, 12, 0.6);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
     }
 
     .modal-close:hover { border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.1); color: var(--white); }
@@ -2357,7 +2309,7 @@
     }
 
 
-    /* Compact, squarer staff cards on mobile: name, title and View Profile each stay on one line */
+    /* Compact staff cards on mobile — more padding from edges */
 
     @media (max-width: 650px) {
 
@@ -2369,28 +2321,38 @@
 
       .team-image img { object-position: center 20%; }
 
-      .team-image.team-placeholder { padding: 8px; font-size: 0.6rem; letter-spacing: 0.08em; }
+      .team-image.team-placeholder { padding: 12px; font-size: 0.6rem; letter-spacing: 0.08em; }
 
-      .team-body { padding: 10px 8px 12px; padding: 6cqw 5cqw 7cqw; }
+      .team-body {
+        padding: 16px 14px 16px;
+        padding: 9cqw 8cqw 9cqw;
+      }
 
       .team-role {
         font-size: 0.45rem;
-        font-size: 4.4cqw;
+        font-size: 4.2cqw;
         font-weight: 600;
         letter-spacing: 0.02em;
         line-height: 1.3;
         white-space: nowrap;
       }
 
-      .team-body h3 { margin-top: 3px; margin-bottom: 8px; font-size: 0.95rem; font-size: 9.5cqw; white-space: nowrap; }
+      .team-body h3 {
+        margin-top: 4px;
+        margin-bottom: 12px;
+        font-size: 0.95rem;
+        font-size: 9cqw;
+        white-space: nowrap;
+      }
 
       .team-body .button.button-small {
-        min-height: 28px;
-        padding: 0 6px;
+        min-height: 32px;
+        padding: 0 10px;
         font-size: 0.55rem;
-        font-size: 6cqw;
+        font-size: 5.8cqw;
         letter-spacing: 0.04em;
         white-space: nowrap;
+        border-radius: 12px;
       }
 
     }
