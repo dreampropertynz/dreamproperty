@@ -7,7 +7,7 @@
 
   <meta
     name="description"
-    content="Dream Property provides professional real estate services across Auckland."
+    content="Dream Property provides professional property management across Auckland and builds a real estate management app for property companies."
   >
 
   <meta name="theme-color" content="#040B15">
@@ -20,7 +20,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Dream Property">
   <meta property="og:title" content="Dream Property">
-  <meta property="og:description" content="Dream Property provides professional real estate services across Auckland.">
+  <meta property="og:description" content="Dream Property provides professional property management across Auckland and builds a real estate management app for property companies.">
   <meta property="og:url" content="https://www.dreamproperty.co.nz/">
   <meta property="og:image" content="https://www.dreamproperty.co.nz/images/link-preview.jpg">
   <meta property="og:image:width" content="1200">
@@ -29,7 +29,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dream Property">
-  <meta name="twitter:description" content="Dream Property provides professional real estate services across Auckland.">
+  <meta name="twitter:description" content="Dream Property provides professional property management across Auckland and builds a real estate management app for property companies.">
   <meta name="twitter:image" content="https://www.dreamproperty.co.nz/images/link-preview.jpg">
   <meta name="twitter:image:alt" content="Dream Property">
 
@@ -50,7 +50,7 @@
         "url": "https://www.dreamproperty.co.nz/",
         "name": "Dream Property",
         "alternateName": ["DreamProperty", "dreamproperty.co.nz"],
-        "description": "Dream Property provides professional real estate services across Auckland.",
+        "description": "Dream Property provides professional property management across Auckland and builds a real estate management app for property companies.",
         "publisher": {
           "@id": "https://www.dreamproperty.co.nz/#organization"
         }
@@ -546,8 +546,17 @@
 
     .login-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
+    }
+
+    .service-card.is-locked {
+      opacity: 0.48;
+    }
+
+    .service-card.is-locked .service-action {
+      cursor: not-allowed;
+      opacity: 0.85;
     }
 
     .service-card {
@@ -697,6 +706,10 @@
         grid-template-columns: 1fr;
       }
 
+      .service-card.is-locked {
+        opacity: 0.55;
+      }
+
       .service-card {
         min-height: 250px;
         padding: 28px;
@@ -839,7 +852,7 @@
           </h2>
 
           <p>
-            Residential, commercial, and industrial. Choose the portal that suits you to sign in.
+            Choose the portal that suits you. Tenants and owners can sign in today. Partner access for other property companies is coming soon.
           </p>
         </div>
 
@@ -881,6 +894,25 @@
             </button>
           </article>
 
+          <article class="service-card is-locked" aria-disabled="true">
+            <div class="service-number"> </div>
+
+            <h3>Partner Login</h3>
+
+            <p>
+              For property management and real estate companies that will use the Dream Property app. Coming soon.
+            </p>
+
+            <button
+              class="service-action"
+              type="button"
+              disabled
+              aria-disabled="true"
+            >
+              Coming Soon
+            </button>
+          </article>
+
         </div>
 
       </div>
@@ -911,27 +943,23 @@
           <div class="about-copy">
 
             <p>
-              At Dream Property, our goal is to provide real estate services that sets higher standards through genuine care, clear communication, professionalism, and innovation.
+              Dream Property not only manages real estate, we also develop software. We manage residential, commercial, and industrial property, and we developed an exclusive app that makes property management clearer, faster, and more professional.
             </p>
 
             <p>
-              Calix recognised early in his real estate career that there was an opportunity to do things differently. Real estate management comes with challenges, from balancing the needs of owners and tenants to managing the everyday demands of the industry. He believed there had to be a smarter, more efficient way to deliver a better experience for everyone.
+              Our app brings together the best ideas from the top property management tools, plus our own original features. One platform. One place to work. No more jumping between different systems. We built it to do the job better.
             </p>
 
             <p>
-              Driven by this vision, Calix spent several months developing an exclusive real estate management app designed to simplify administrative tasks, improve everyday operations, and work more efficiently.
+              We already use the app on our own portfolio. The feedback has been strongly positive from our clients.
             </p>
 
             <p>
-              That idea became the foundation of <strong>Dream Property</strong>.
+              The app is not available to other companies yet. We are still testing it in real use and working through the practical steps needed before we can offer it more widely. When we are ready, other property management and real estate companies will be able to use it too.
             </p>
 
             <p>
-              We want to set the dream standard for real estate services. We use technology and innovation to make residential, commercial, and industrial real estate management easier, more efficient, and more professional. Our goal is to create a better experience for owners, tenants, and real estate professionals.
-            </p>
-
-            <p>
-              Following a successful start and positive client feedback, we are preparing for future growth beyond residential, commercial, and industrial real estate management. We are focused on strengthening our foundations, refining our systems, and continuing to deliver exceptional service.
+              Until then, we continue to deliver property management with care, clear communication, and high standards.
             </p>
 
             <p>
@@ -1073,7 +1101,7 @@
             >
 
               <div class="team-image team-placeholder" aria-hidden="true">
-                Photo Coming Soon
+                Profile Coming Soon
               </div>
 
             </button>
@@ -1753,12 +1781,12 @@
 
 
       <p class="modal-body-copy">
-        Her degree grounded her in software development, programming languages, databases, and systems design. Building the Dream Property platform expanded that into practical product work - web development for the company site and client-facing tools, and mobile development for iOS and Android so owners and tenants can manage their properties from any device.
+        Her degree grounded her in software development, programming languages, databases, and systems design. Building the Dream Property platform expanded that into practical product work — web development for the company site and client-facing tools, and mobile development for iOS and Android so owners and tenants can manage their properties from any device.
       </p>
 
 
       <p class="modal-body-copy">
-        Monica contributes across the stack: writing and refining application code, improving interfaces, and helping shape features that make everyday real estate management clearer and more efficient. Her focus is reliable software that supports the standard of service Dream Property is built on.
+        Monica contributes across the stack: writing and refining application code, improving interfaces, and helping shape features that make everyday property management clearer and more efficient. Her focus is reliable software that supports the standard of service Dream Property is built on.
       </p>
 
     </div>
@@ -1805,17 +1833,14 @@
       </h2>
 
 
-      <p class="modal-note">
-        Last updated: September 11, 2026
-      </p>
-
-
       <p class="modal-intro">
         Your privacy matters to us. This policy explains how Dream Property
         collects, uses, protects, and shares personal information through this
-        website and in connection with our real estate management services.
-        We handle personal information in line with the Privacy Act 2020 and
-        the information privacy principles it sets out.
+        website, our property management services, and our real estate
+        management software and app. We handle personal information in line
+        with the Privacy Act 2020 and the information privacy principles it
+        sets out. The version of this policy shown on this website is the
+        current and up-to-date version.
       </p>
 
 
@@ -1824,9 +1849,11 @@
       </h3>
 
       <p>
-        Dream Property provides residential, commercial, and industrial real
-        estate management services in Auckland, New Zealand. In this policy,
-        "we", "us", and "our" mean Dream Property.
+        Dream Property provides residential, commercial, and industrial
+        property management services in Auckland, New Zealand. We also develop
+        and will offer a real estate management app for property management
+        and real estate companies. In this policy, "we", "us", and "our" mean
+        Dream Property.
       </p>
 
 
@@ -1856,10 +1883,12 @@
       <p>
         We may collect information you provide when you contact us, enquire
         about a property, request a service, apply for a tenancy or lease,
-        enter into a real estate management agreement, or otherwise
-        communicate with us. This may include your name, contact details,
-        property details, tenancy or lease details, and the content of your
-        messages.
+        enter into a property management agreement, register interest in or
+        use our app or software, create a login account (including tenant,
+        owner, or future partner accounts), or otherwise communicate with us.
+        This may include your name, contact details, property details,
+        tenancy or lease details, business details (for partner or company
+        users), and the content of your messages.
       </p>
 
       <p>
@@ -1874,13 +1903,14 @@
       </h3>
 
       <p>
-        Information may be used to respond to enquiries, provide real estate
-        management services, communicate with owners and tenants, manage
+        Information may be used to respond to enquiries, provide property
+        management services, operate and improve our website and app,
+        communicate with owners, tenants, and partner companies, manage
         properties and tenancies or leases, arrange maintenance, process
-        applications, meet our legal obligations, and carry out business
-        administration. We will not use your information for a purpose
-        unrelated to those above without your consent, unless the law allows
-        or requires it.
+        applications, support software accounts, meet our legal obligations,
+        and carry out business administration. We will not use your
+        information for a purpose unrelated to those above without your
+        consent, unless the law allows or requires it.
       </p>
 
 
@@ -2005,9 +2035,9 @@
       </h3>
 
       <p>
-        We may update this policy from time to time. The latest version will
-        always be available on this website, with the date it was last
-        updated shown at the top.
+        We may update this policy from time to time. The version published on
+        this website is always the current one. Please check this page if you
+        want to know the latest privacy policy.
       </p>
 
 
@@ -2067,15 +2097,13 @@
       </h2>
 
 
-      <p class="modal-note">
-        Last updated: September 11, 2026
-      </p>
-
-
       <p class="modal-intro">
         These terms and conditions apply to your use of the Dream Property
-        website. By using this website, you agree to them. If you do not
-        agree, please do not use the website.
+        website and, where relevant, our property management services and
+        real estate management software and app. By using this website, you
+        agree to them. If you do not agree, please do not use the website.
+        The version of these terms shown on this website is the current and
+        up-to-date version.
       </p>
 
 
@@ -2085,8 +2113,10 @@
 
       <p>
         Information on this website is provided for general information
-        purposes. Property availability, pricing, services, and other details
-        may change without notice.
+        purposes. Property availability, pricing, services, software features,
+        and other details may change without notice. Our app is not yet
+        available for other companies to use; we will open partner access when
+        we are ready.
       </p>
 
 
@@ -2107,13 +2137,14 @@
       </h3>
 
       <p>
-        Information on this website does not itself create a real estate
-        management agreement, tenancy agreement, lease, agency agreement, or
-        other contractual relationship. Our services are provided under the
-        specific written agreements we enter into with owners, tenants, and
-        other clients. Nothing on this website is legal, financial, tax, or
-        investment advice, and you should seek independent professional advice
-        where appropriate.
+        Information on this website does not itself create a property
+        management agreement, tenancy agreement, lease, agency agreement,
+        software licence, or other contractual relationship. Our property
+        management services and any future use of our app by partner companies
+        are provided under the specific written agreements we enter into with
+        owners, tenants, partners, and other clients. Nothing on this website
+        is legal, financial, tax, or investment advice, and you should seek
+        independent professional advice where appropriate.
       </p>
 
 
@@ -2122,13 +2153,14 @@
       </h3>
 
       <p>
-        If you are given login access to a Dream Property portal, you are
-        responsible for keeping your login details confidential and for
-        activity that happens under your account. Please do not share your
-        login details with anyone, and let us know straight away at
-        info@dreamproperty.co.nz if you think someone else has accessed your
-        account. We may suspend or close an account if we reasonably believe
-        it is being misused.
+        If you are given login access to a Dream Property portal (including
+        tenant, owner, or future partner access), you are responsible for
+        keeping your login details confidential and for activity that happens
+        under your account. Please do not share your login details with
+        anyone, and let us know straight away at info@dreamproperty.co.nz if
+        you think someone else has accessed your account. We may suspend or
+        close an account if we reasonably believe it is being misused.
+        Partner login for other property companies is not available yet.
       </p>
 
 
@@ -2179,10 +2211,12 @@
 
       <p>
         The Dream Property name, logo, website content, design, and any app or
-        software we provide belong to Dream Property or its licensors. You may
-        view the website for your own personal use, but you may not copy,
-        reproduce, or reuse our content for commercial purposes without our
-        written permission.
+        software we provide (including our real estate management platform)
+        belong to Dream Property or its licensors. You may view the website
+        for your own personal use, but you may not copy, reproduce, reverse
+        engineer, or reuse our content, software, or features for commercial
+        purposes without our written permission. Use of the app by partner
+        companies will be subject to a separate licence agreement.
       </p>
 
 
@@ -2226,9 +2260,9 @@
       </h3>
 
       <p>
-        We may update these terms from time to time. The latest version will
-        always be available on this website, and your continued use of the
-        website means you accept the updated terms.
+        We may update these terms from time to time. The version published on
+        this website is always the current one. Your continued use of the
+        website means you accept the terms as they appear here.
       </p>
 
 
