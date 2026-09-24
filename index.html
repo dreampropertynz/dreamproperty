@@ -1044,7 +1044,7 @@
             <div class="team-body">
 
               <div class="team-role">
-                Co-Founder
+                Co-Founder | Co-Owner
               </div>
 
               <h3>
@@ -1065,9 +1065,19 @@
 
           <article class="team-card">
 
-            <div class="team-image team-placeholder" aria-hidden="true">
-              Profile Coming Soon
-            </div>
+            <button
+              class="team-card-button"
+              type="button"
+              data-modal="monica"
+              aria-label="View Monica Lillo profile"
+            >
+
+              <div class="team-image team-placeholder" aria-hidden="true">
+                Photo Coming Soon
+              </div>
+
+            </button>
+
 
             <div class="team-body">
 
@@ -1075,46 +1085,21 @@
                 Associate Software Developer
               </div>
 
-              <h3 aria-label="Name hidden">Monica Lillo</h3>
+              <h3>
+                Monica Lillo
+              </h3>
 
               <button
                 class="button button-outline button-small"
                 type="button"
-                disabled
+                data-modal="monica"
               >
-                Profile Coming Soon
+                View Profile
               </button>
 
             </div>
 
           </article>
-
-          <article class="team-card">
-
-            <div class="team-image team-placeholder" aria-hidden="true">
-              Profile Coming Soon
-            </div>
-
-            <div class="team-body">
-
-              <div class="team-role">
-                Accountant
-              </div>
-
-              <h3 aria-label="Name hidden">A. P.</h3>
-
-              <button
-                class="button button-outline button-small"
-                type="button"
-                disabled
-              >
-                Profile Coming Soon
-              </button>
-
-            </div>
-
-          </article>
-
 
         </div>
 
@@ -1654,7 +1639,7 @@
 
 
       <div class="eyebrow">
-        Co-Founder
+        Co-Founder | Co-Owner
       </div>
 
 
@@ -1664,12 +1649,12 @@
 
 
       <p class="modal-intro">
-        Rae is the Co-Founder of Dream Property. She holds a Bachelor of Psychology and is completing a Bachelor of Health Science (Nursing), giving her a strong foundation in communication, decision-making, and understanding individual needs.
+        Rae is Co-Founder and Co-Owner of Dream Property. She holds a Bachelor of Psychology and a Bachelor of Health Science (Nursing), and works as a Registered Nurse specialising in mental health. She is not involved in day-to-day operations.
       </p>
 
 
       <p class="modal-body-copy">
-        Rae applies this knowledge to help shape a more thoughtful and people-focused approach to real estate management. Her background supports clear communication, empathy, and an understanding of how people respond to different situations, complementing Calix’s focus on real estate innovation and technology.
+        Her background in psychology gives her a deep understanding of how people think, behave, and respond in different situations. That insight has shaped how Dream Property approaches user experience — from the way owners and tenants interact with the platform, through to the design of clearer, more human-centred journeys inside the app. Rae’s perspective helps ensure the technology is built around real people, not just processes.
       </p>
 
 
@@ -1712,6 +1697,69 @@
         </a>
 
       </div>
+
+    </div>
+
+  </div>
+
+
+  
+
+  <div
+    class="modal"
+    id="modal-monica"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="monicaTitle"
+  >
+
+    <div
+      class="modal-backdrop"
+      data-close-modal
+    ></div>
+
+
+    <div class="modal-panel team-modal">
+
+      <button
+        class="modal-close"
+        type="button"
+        data-close-modal
+        aria-label="Close Monica Lillo profile"
+      >
+        ×
+      </button>
+
+
+      <div class="team-modal-image team-placeholder" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">
+        Photo Coming Soon
+      </div>
+
+
+      <div class="eyebrow">
+        Associate Software Developer
+      </div>
+
+
+      <h2 id="monicaTitle">
+        Monica Lillo
+      </h2>
+
+
+      <p class="modal-intro">
+        Monica is Associate Software Developer at Dream Property. She holds a Bachelor of Computer and Information Sciences and worked with Calix to develop Dream Property’s real estate management app.
+      </p>
+
+
+      <p class="modal-body-copy">
+        Her degree grounded her in software development, programming languages, databases, and systems design. Building the Dream Property platform expanded that into practical product work - web development for the company site and client-facing tools, and mobile development for iOS and Android so owners and tenants can manage their properties from any device.
+      </p>
+
+
+      <p class="modal-body-copy">
+        Monica contributes across the stack: writing and refining application code, improving interfaces, and helping shape features that make everyday real estate management clearer and more efficient. Her focus is reliable software that supports the standard of service Dream Property is built on.
+      </p>
 
     </div>
 
@@ -2272,7 +2320,7 @@
 
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
     }
 
@@ -2855,7 +2903,13 @@
     @media (max-width: 650px) {
 
       .team-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: stretch;
+      }
+
+      .team-grid .team-card:last-child:nth-child(odd) {
+        justify-self: stretch;
+        grid-column: 1;
       }
 
       .contact-socials {
