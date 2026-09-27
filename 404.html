@@ -2,41 +2,27 @@
 <html lang="en-NZ">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Dream Property provides professional property management across Auckland and builds a real estate management app for property companies."
-  >
-
+  <meta name="description" content="Dream Property is a New Zealand property marketplace and technology platform. Search, discover, buy, rent and sell residential, commercial and rural property across New Zealand.">
   <meta name="theme-color" content="#040B15">
-
   <title>Dream Property</title>
-
   <link rel="canonical" href="https://www.dreamproperty.co.nz/">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Dream Property">
   <meta property="og:title" content="Dream Property">
-  <meta property="og:description" content="Dream Property provides professional property management across Auckland and builds a real estate management app for property companies.">
+  <meta property="og:description" content="Find your dream property across New Zealand. Residential, commercial and rural. Buy, rent, sell and understand property in one place.">
   <meta property="og:url" content="https://www.dreamproperty.co.nz/">
   <meta property="og:image" content="https://www.dreamproperty.co.nz/images/link-preview.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Dream Property">
-
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dream Property">
-  <meta name="twitter:description" content="Dream Property provides professional property management across Auckland and builds a real estate management app for property companies.">
+  <meta name="twitter:description" content="Find your dream property across New Zealand. Residential, commercial and rural. Buy, rent, sell and understand property in one place.">
   <meta name="twitter:image" content="https://www.dreamproperty.co.nz/images/link-preview.jpg">
-  <meta name="twitter:image:alt" content="Dream Property">
-
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,10 +33,8 @@
         "url": "https://www.dreamproperty.co.nz/",
         "name": "Dream Property",
         "alternateName": ["DreamProperty", "dreamproperty.co.nz"],
-        "description": "Dream Property provides professional property management across Auckland and builds a real estate management app for property companies.",
-        "publisher": {
-          "@id": "https://www.dreamproperty.co.nz/#organization"
-        }
+        "description": "Dream Property is a New Zealand property marketplace and technology platform.",
+        "publisher": { "@id": "https://www.dreamproperty.co.nz/#organization" }
       },
       {
         "@type": "Organization",
@@ -58,25 +42,20 @@
         "name": "Dream Property",
         "url": "https://www.dreamproperty.co.nz/",
         "logo": "https://www.dreamproperty.co.nz/dream-property-logo.svg",
-        "founder": {
-          "@id": "https://www.dreamproperty.co.nz/#calix-mojica"
-        }
+        "founder": { "@id": "https://www.dreamproperty.co.nz/#calix-mojica" }
       },
       {
         "@type": "Person",
         "@id": "https://www.dreamproperty.co.nz/#calix-mojica",
         "name": "Calix Mojica",
-        "jobTitle": "Director | Co-Founder",
-        "url": "https://www.dreamproperty.co.nz/#team",
+        "jobTitle": "Director | CEO | Co-Founder",
+        "url": "https://www.dreamproperty.co.nz/about",
         "image": "https://www.dreamproperty.co.nz/images/calix-mojica.jpg",
-        "worksFor": {
-          "@id": "https://www.dreamproperty.co.nz/#organization"
-        }
+        "worksFor": { "@id": "https://www.dreamproperty.co.nz/#organization" }
       }
     ]
   }
   </script>
-
   <style>
     :root {
       --navy: #040B15;
@@ -90,6 +69,7 @@
       --glass: rgba(4, 11, 21, 0.72);
       --radius: 28px;
       --radius-sm: 16px;
+      --radius-xs: 12px;
       --transition: 300ms ease;
     }
 
@@ -107,23 +87,18 @@
       overflow-x: hidden;
     }
 
+    body.chat-open { overflow: hidden; }
     body.modal-open { overflow: hidden; }
 
     a { color: inherit; text-decoration: none; }
-
     button, a { -webkit-tap-highlight-color: transparent; }
-
     button, input, textarea, select { font: inherit; }
-
     button { cursor: pointer; }
-
     img { display: block; max-width: 100%; }
 
     .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
 
-    .section { padding: 110px 0; position: relative; }
-
-    .section-heading { max-width: 700px; margin-bottom: 50px; }
+    .section { padding: 100px 0; position: relative; }
 
     .eyebrow {
       color: var(--gold);
@@ -131,110 +106,43 @@
       font-weight: 700;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
 
     h1, h2, h3, h4 { font-weight: 500; letter-spacing: -0.035em; line-height: 1.12; }
-
-    h1 { font-size: clamp(3rem, 8vw, 7.5rem); }
-
-    h2 { font-size: clamp(2.3rem, 5vw, 4.5rem); }
-
-    h3 { font-size: 1.5rem; }
-
+    h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); }
+    h2 { font-size: clamp(2rem, 4.5vw, 3.4rem); }
+    h3 { font-size: 1.35rem; }
     p { color: var(--muted); }
-
-    .section-heading p { margin-top: 20px; max-width: 600px; font-size: 1.05rem; }
 
     .gold-text { color: var(--gold); }
 
-    .button-row { display: flex; flex-wrap: wrap; gap: 14px; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
 
     .button {
-      min-height: 54px;
+      min-height: 52px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      padding: 0 28px;
+      gap: 10px;
+      padding: 0 26px;
       border: 1px solid transparent;
       border-radius: var(--radius-sm);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      transition:
-        background var(--transition),
-        color var(--transition),
-        border-color var(--transition),
-        transform var(--transition);
+      transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
     }
 
-    .button:hover { transform: translateY(-3px); }
-
+    .button:hover { transform: translateY(-2px); }
     .button-primary { background: var(--gold); color: var(--navy); }
-
     .button-primary:hover { background: var(--gold-light); }
-
-    .button-outline { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.4); }
-
+    .button-outline { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.35); }
     .button-outline:hover { border-color: var(--gold); color: var(--gold); }
-
     .button-small { min-height: 42px; padding: 0 18px; font-size: 0.7rem; }
 
-    .site-header {
-      position: fixed;
-      z-index: 100;
-      top: 0;
-      left: 0;
-      width: 100%;
-      border-bottom: 1px solid transparent;
-      background: transparent;
-      transition:
-        background var(--transition),
-        border-color var(--transition),
-        backdrop-filter var(--transition);
-    }
-
-    .site-header.scrolled { background: rgba(4, 11, 21, 0.9); backdrop-filter: blur(18px); }
-
-    .header-inner { min-height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
-
-    .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 0; }
-
-    .brand-logo { width: 46px; height: 46px; object-fit: contain; }
-
-    .brand-name { font-size: 1.3rem; font-weight: 600; letter-spacing: -0.035em; white-space: nowrap; }
-
-    .brand-name span { color: var(--gold); }
-
-    .main-navigation { display: flex; align-items: center; gap: 28px; }
-
-    .main-navigation a {
-      color: var(--muted);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      transition: color var(--transition);
-    }
-
-    .main-navigation a:hover { color: var(--gold); }
-
-    .menu-toggle {
-      display: none;
-      width: 45px;
-      height: 45px;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 5px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: transparent;
-    }
-
-    .menu-toggle span { width: 20px; height: 1px; background: var(--gold); }
-
+    /* Intro */
     .site-intro {
       position: fixed;
       z-index: 200;
@@ -259,9 +167,7 @@
     }
 
     .intro-logo { width: 120px; height: 120px; object-fit: contain; }
-
     .intro-name { color: var(--white); font-size: clamp(2rem, 5vw, 4rem); font-weight: 500; letter-spacing: -0.05em; }
-
     .intro-name span { color: var(--gold); }
 
     @keyframes introReveal {
@@ -269,6 +175,78 @@
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
+    /* Header */
+    .site-header {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid transparent;
+      background: transparent;
+      transition: background var(--transition), border-color var(--transition), backdrop-filter var(--transition);
+    }
+
+    .site-header.scrolled {
+      background: rgba(4, 11, 21, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom-color: var(--border);
+    }
+
+    .header-inner {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-logo { width: 42px; height: 42px; object-fit: contain; }
+    .brand-name { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.035em; white-space: nowrap; }
+    .brand-name span { color: var(--gold); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-actions .button { min-height: 44px; padding: 0 20px; font-size: 0.72rem; }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: transparent;
+    }
+
+    .menu-toggle span { width: 18px; height: 1.5px; background: var(--gold); }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 88px;
+      right: 20px;
+      left: 20px;
+      flex-direction: column;
+      gap: 8px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(4, 11, 21, 0.98);
+    }
+
+    .mobile-nav.open { display: flex; }
+    .mobile-nav .button { width: 100%; }
+
+    /* Hero */
     .hero {
       min-height: 100svh;
       position: relative;
@@ -277,6 +255,7 @@
       justify-content: center;
       isolation: isolate;
       overflow: hidden;
+      padding: 120px 0 80px;
     }
 
     .hero-video {
@@ -301,9 +280,9 @@
       min-height: 100%;
       transform: translate(-50%, -50%) scale(1.12);
       border: 0;
-      opacity: 0.65;
+      opacity: 0.6;
       object-fit: cover;
-      filter: blur(2px);
+      filter: blur(1.5px);
       pointer-events: none;
     }
 
@@ -312,155 +291,950 @@
       z-index: -2;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(4, 11, 21, 0.96) 0%, rgba(4, 11, 21, 0.64) 50%, rgba(4, 11, 21, 0.82) 100%),
-        linear-gradient(0deg, rgba(4, 11, 21, 0.9), transparent 50%, rgba(4, 11, 21, 0.4));
+        linear-gradient(90deg, rgba(4, 11, 21, 0.88) 0%, rgba(4, 11, 21, 0.55) 50%, rgba(4, 11, 21, 0.78) 100%),
+        linear-gradient(0deg, rgba(4, 11, 21, 0.92), transparent 45%, rgba(4, 11, 21, 0.35));
     }
 
-    .hero-content { width: min(900px, 100%); padding: 150px 0 100px; text-align: center; }
+    .hero-content {
+      width: min(920px, calc(100% - 48px));
+      margin: 0 auto;
+      text-align: center;
+    }
 
-    .hero-content .eyebrow { opacity: 0; animation: heroFade 900ms 1800ms ease forwards; }
+    .hero-title {
+      margin: 0 auto 12px;
+      opacity: 0;
+      animation: heroFade 900ms 1800ms ease forwards;
+    }
 
-    .hero-title { max-width: 900px; margin: 0 auto; opacity: 0; animation: heroFade 900ms 1950ms ease forwards; }
-
-    .hero-description { max-width: 620px; margin: 28px auto 0; font-size: 1.08rem; opacity: 0; animation: heroFade 900ms 2100ms ease forwards; }
-
-    .hero-buttons { justify-content: center; margin-top: 38px; opacity: 0; animation: heroFade 900ms 2250ms ease forwards; }
+    .hero-search-wrap {
+      margin-top: 36px;
+      opacity: 0;
+      animation: heroFade 900ms 2000ms ease forwards;
+    }
 
     @keyframes heroFade {
-      from { opacity: 0; transform: translateY(18px); }
+      from { opacity: 0; transform: translateY(16px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .hero-scroll {
+    /* Search panel */
+    .search-panel {
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      background: rgba(10, 20, 34, 0.78);
+      backdrop-filter: blur(20px) saturate(140%);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .search-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      padding: 0 8px;
+    }
+
+    .search-tab {
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 52px;
+      padding: 0 16px;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color var(--transition), border-color var(--transition);
+    }
+
+    .search-tab:hover { color: var(--white); }
+    .search-tab.active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    .search-body { padding: 24px; }
+
+    .search-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .search-field { display: flex; flex-direction: column; gap: 6px; }
+    .search-field.full { grid-column: 1 / -1; }
+
+    .search-field label {
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .search-field input,
+    .search-field select {
+      width: 100%;
+      min-height: 48px;
+      padding: 0 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xs);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--white);
+      transition: border-color var(--transition), background var(--transition);
+    }
+
+    .search-field input::placeholder { color: rgba(170, 180, 194, 0.55); }
+    .search-field input:focus,
+    .search-field select:focus {
+      outline: none;
+      border-color: rgba(214, 184, 120, 0.55);
+      background: rgba(214, 184, 120, 0.06);
+    }
+
+    .search-field select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23AAB4C2' d='M1.4 0.6L6 5.2 10.6 0.6 12 2 6 8 0 2z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+
+    .search-field select option { background: #0A1422; color: var(--white); }
+
+    .search-advanced {
+      display: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .search-advanced.open { display: block; }
+
+    .search-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .advanced-toggle {
+      border: 0;
+      background: transparent;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 8px 0;
+    }
+
+    .advanced-toggle:hover { color: var(--gold-light); }
+
+    .search-submit {
+      min-width: 180px;
+    }
+
+    .search-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .search-checkbox input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--gold);
+    }
+
+    /* Below-hero sections */
+    .section-soft { background: var(--navy-light); }
+    .section-dark { background: var(--navy); }
+
+    .section-heading {
+      max-width: 640px;
+      margin-bottom: 40px;
+    }
+
+    .section-heading p {
+      margin-top: 16px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* Property Details */
+    .details-card {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(16, 29, 45, 0.55);
+      backdrop-filter: blur(16px);
+    }
+
+    .details-search {
+      padding: 40px 36px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .details-search h3 { margin-bottom: 10px; }
+    .details-search p { margin-bottom: 24px; font-size: 0.95rem; line-height: 1.7; }
+
+    .address-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+    }
+
+    .address-input-wrap {
+      position: relative;
+    }
+
+    .address-form input {
+      width: 100%;
+      min-height: 52px;
+      padding: 0 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--white);
+    }
+
+    .address-form input:focus {
+      outline: none;
+      border-color: rgba(214, 184, 120, 0.5);
+    }
+
+    .address-attribution {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+    }
+
+    .address-suggestion-status {
+      padding: 12px 16px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .address-suggestions {
+      display: none;
       position: absolute;
-      bottom: 30px;
-      left: 50%;
+      z-index: 20;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      max-height: 260px;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: #0A1422;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .address-suggestions.open { display: block; }
+
+    .address-suggestion {
+      width: 100%;
+      display: block;
+      padding: 12px 16px;
+      border: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: transparent;
+      color: var(--white);
+      font-size: 0.9rem;
+      text-align: left;
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    .address-suggestion:last-child { border-bottom: 0; }
+    .address-suggestion:hover,
+    .address-suggestion.active {
+      background: rgba(214, 184, 120, 0.1);
+      color: var(--gold-light);
+    }
+
+    .address-suggestion span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-top: 2px;
+    }
+
+    .details-preview {
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      background: rgba(4, 11, 21, 0.35);
+      min-height: 280px;
+    }
+
+    .preview-empty {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 10px;
+      color: var(--muted);
+      padding: 24px 12px;
+    }
+
+    .preview-empty p {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      max-width: 260px;
+    }
+
+    .preview-content { display: none; flex-direction: column; gap: 18px; }
+    .preview-content.visible { display: flex; }
+
+    .preview-label {
+      color: var(--gold);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .preview-address {
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+
+    .preview-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .preview-estimate {
+      margin-top: 8px;
+      padding: 18px;
+      border: 1px solid rgba(214, 184, 120, 0.25);
+      border-radius: var(--radius-sm);
+      background: rgba(214, 184, 120, 0.06);
+    }
+
+    .preview-estimate strong {
+      display: block;
+      color: var(--gold);
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-top: 4px;
+    }
+
+    .preview-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-top: 8px;
+    }
+
+    .preview-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .preview-sale {
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+
+    /* Categories */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .category-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 28px 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(16, 29, 45, 0.45);
+      transition: border-color var(--transition), transform var(--transition), background var(--transition);
+    }
+
+    .category-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.22);
+      background: rgba(16, 29, 45, 0.65);
+    }
+
+    .category-card h3 { color: var(--white); }
+    .category-card p { font-size: 0.9rem; line-height: 1.65; }
+
+    /* Owner tools */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .tool-card {
+      padding: 32px 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(16, 29, 45, 0.45);
+      transition: border-color var(--transition), transform var(--transition);
+    }
+
+    .tool-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .tool-card h3 { margin-bottom: 10px; }
+    .tool-card p { font-size: 0.92rem; line-height: 1.7; margin-bottom: 20px; }
+
+    /* Management brief */
+    .mgmt-block {
+      max-width: 720px;
+    }
+
+    .mgmt-block p {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      margin-top: 16px;
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 70px 0 28px;
+      background: #02070E;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 60px;
+      padding-bottom: 50px;
+    }
+
+    .footer-brand p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      max-width: 260px;
+      line-height: 1.6;
+    }
+
+    .footer-nav {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      gap: 36px;
+    }
+
+    .footer-nav > div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-heading {
+      margin-bottom: 6px;
+      color: var(--gold);
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .footer-nav a {
+      color: var(--muted);
+      font-size: 0.8rem;
+      transition: color var(--transition);
+      width: fit-content;
+    }
+
+    .footer-nav a:hover { color: var(--white); }
+
+    .footer-link-btn {
+      width: fit-content;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-align: left;
+      cursor: pointer;
+      transition: color var(--transition);
+    }
+
+    .footer-link-btn:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .footer-bottom p {
+      color: var(--muted);
+      font-size: 0.7rem;
+    }
+
+
+    /* Auth and legal modals */
+    .modal {
+      position: fixed;
+      z-index: 300;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 280ms ease, visibility 280ms ease;
+    }
+
+    .modal.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(2, 6, 12, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .modal-panel {
+      position: relative;
+      z-index: 1;
+      width: min(480px, 100%);
+      max-height: min(860px, calc(100svh - 48px));
+      overflow-y: auto;
+      padding: 36px 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(10, 20, 34, 0.96);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+      transform: translateY(16px) scale(0.98);
+      transition: transform 300ms ease;
+    }
+
+    .modal.open .modal-panel { transform: translateY(0) scale(1); }
+
+    .modal-panel.legal-modal { width: min(720px, 100%); }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--muted);
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: color var(--transition), border-color var(--transition);
+    }
+
+    .modal-close:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .modal-panel .eyebrow { margin-bottom: 10px; }
+
+    .modal-panel h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .modal-lead {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .auth-form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .auth-field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .auth-field label,
+    .auth-field > span {
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .auth-field input,
+    .auth-field select {
+      width: 100%;
+      min-height: 50px;
+      padding: 0 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xs);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--white);
+    }
+
+    .auth-field input:focus,
+    .auth-field select:focus {
+      outline: none;
+      border-color: rgba(214, 184, 120, 0.55);
+      background: rgba(214, 184, 120, 0.06);
+    }
+
+    .auth-error {
+      color: #F2A0A0;
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .auth-success {
+      color: var(--gold-light);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .auth-hint {
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    .auth-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-top: 4px;
+    }
+
+    .auth-links button {
+      border: 0;
+      background: transparent;
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0;
+    }
+
+    .auth-links button:hover { color: var(--gold-light); }
+
+    .auth-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .auth-check input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .legal-modal h3 {
+      margin-top: 28px;
+      color: var(--white);
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    .legal-modal h3:first-of-type { margin-top: 18px; }
+
+    .legal-modal p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.75;
+    }
+
+    .legal-modal a { color: var(--gold); }
+
+    @media (max-width: 650px) {
+      .modal { padding: 12px; }
+      .modal-panel { padding: 28px 20px; max-height: calc(100svh - 24px); }
+    }
+
+    /* DREAM·E launcher */
+    .dreame-launcher {
+      position: fixed;
+      z-index: 150;
+      right: 22px;
+      bottom: 22px;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(214, 184, 120, 0.35);
+      border-radius: 50%;
+      background: rgba(10, 20, 34, 0.92);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+      color: var(--gold);
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+
+    .dreame-launcher:hover {
+      transform: translateY(-3px) scale(1.04);
+      border-color: var(--gold);
+      background: rgba(16, 29, 45, 0.98);
+    }
+
+    .dreame-launcher svg { width: 32px; height: 32px; }
+
+    /* Chat panel (slide-in, not modal) */
+    .chat-panel {
+      position: fixed;
+      z-index: 160;
+      right: 22px;
+      bottom: 94px;
+      width: min(380px, calc(100vw - 32px));
+      height: min(520px, calc(100svh - 140px));
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(10, 20, 34, 0.96);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(16px) scale(0.98);
+      transition: opacity 280ms ease, visibility 280ms ease, transform 280ms ease;
+      overflow: hidden;
+    }
+
+    .chat-panel.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chat-header-info {
       display: flex;
       align-items: center;
       gap: 12px;
-      color: var(--muted);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      transform: translateX(-50%);
     }
 
-    .hero-scroll::after { content: ""; width: 1px; height: 40px; background: var(--gold); }
+    .chat-avatar {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid rgba(214, 184, 120, 0.3);
+      background: rgba(214, 184, 120, 0.08);
+      color: var(--gold);
+    }
 
-    .section-dark { background: var(--navy); }
+    .chat-avatar svg { width: 22px; height: 22px; }
 
-    .section-soft { background: var(--navy-light); }
+    .chat-header h3 {
+      font-size: 1rem;
+      color: var(--white);
+    }
 
-    .login-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .chat-header span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      margin-top: 2px;
+    }
 
-    .service-card.is-locked { opacity: 0.48; }
+    .chat-close {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--muted);
+      font-size: 1.3rem;
+      line-height: 1;
+      transition: color var(--transition), border-color var(--transition);
+    }
 
-    .service-card.is-locked .service-action { cursor: not-allowed; opacity: 0.85; }
+    .chat-close:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
 
-    .service-card {
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 18px;
       display: flex;
       flex-direction: column;
-      min-height: 290px;
-      padding: 32px;
+      gap: 12px;
+    }
+
+    .chat-bubble {
+      max-width: 88%;
+      padding: 12px 14px;
+      border-radius: 16px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .chat-bubble.bot {
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--white);
+      border-bottom-left-radius: 4px;
+    }
+
+    .chat-bubble.user {
+      align-self: flex-end;
+      background: rgba(214, 184, 120, 0.18);
+      color: var(--white);
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-bubble a { color: var(--gold); text-decoration: underline; }
+
+    .chat-input-row {
+      display: flex;
+      gap: 8px;
+      padding: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .chat-input-row input {
+      flex: 1;
+      min-height: 44px;
+      padding: 0 14px;
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.025);
-      transition:
-        border-color var(--transition),
-        transform var(--transition),
-        background var(--transition);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--white);
     }
 
-    .service-card:hover { transform: translateY(-5px); }
+    .chat-input-row input:focus {
+      outline: none;
+      border-color: rgba(214, 184, 120, 0.5);
+    }
 
-    .service-number { color: var(--gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; }
-
-    .service-card h3 { margin-top: 55px; }
-
-    .service-card p { margin-top: 15px; font-size: 0.92rem; }
-
-    .service-action {
-      margin-top: auto;
-      padding-top: 25px;
-      color: var(--gold);
+    .chat-send {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border: 0;
-      background: transparent;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-align: left;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      background: var(--gold);
+      color: var(--navy);
+      flex-shrink: 0;
     }
 
+    .chat-send:hover { background: var(--gold-light); }
 
-    @media (max-width: 1000px) {
-      .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
+    /* Responsive */
     @media (max-width: 900px) {
-      .main-navigation {
-        position: absolute;
-        top: 92px;
-        right: 20px;
-        left: 20px;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 10px;
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        background: rgba(4, 11, 21, 0.98);
-      }
-
-      .main-navigation.open { display: flex; }
-
-      .main-navigation a { padding: 14px; }
-
+      .header-actions .button-outline { display: none; }
       .menu-toggle { display: flex; }
+
+      .details-card { grid-template-columns: 1fr; }
+      .details-search { border-right: 0; border-bottom: 1px solid var(--border); }
+
+      .category-grid { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: 1fr; }
+
+      .footer-main { flex-direction: column; gap: 40px; }
+      .footer-nav { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
     }
 
     @media (max-width: 650px) {
-      .container { width: min(1180px, calc(100% - 64px)); }
-
-      .section { padding: 80px 0; }
-
-      .header-inner { min-height: 78px; }
-
-      .main-navigation { top: 78px; }
-
+      .container { width: min(1180px, calc(100% - 32px)); }
+      .section { padding: 72px 0; }
+      .header-inner { min-height: 76px; }
       .brand-name { font-size: 1.05rem; }
+      .brand-logo { width: 36px; height: 36px; }
 
-      .brand-logo { width: 40px; height: 40px; }
+      .hero { padding: 110px 0 60px; }
+      .hero-content { width: min(920px, calc(100% - 32px)); }
 
-      .hero-content { padding: 130px 0 90px; }
+      .search-tabs { padding: 0 4px; }
+      .search-tab { min-height: 48px; font-size: 0.68rem; padding: 0 8px; letter-spacing: 0.02em; }
+      .search-body { padding: 18px; }
+      .search-grid { grid-template-columns: 1fr; }
 
-      .hero-description { font-size: 0.95rem; }
+      .search-actions { flex-direction: column; align-items: stretch; }
+      .search-submit { width: 100%; min-width: 0; }
 
-      .button-row { flex-direction: column; }
+      .details-search, .details-preview { padding: 28px 22px; }
 
-      .button { width: 100%; }
+      .footer-nav { grid-template-columns: 1fr 1fr; }
 
-      .button-row.hero-buttons { flex-direction: row; flex-wrap: nowrap; gap: 10px; }
-
-      .hero-buttons .button {
-        width: auto;
-        flex: 1 1 0;
-        min-width: 0;
-        min-height: 46px;
-        padding: 0 12px;
-        font-size: 0.7rem;
-        letter-spacing: 0.06em;
-        white-space: nowrap;
-      }
-
-      .login-grid { grid-template-columns: 1fr; }
-
-      .service-card.is-locked { opacity: 0.55; }
-
-      .service-card { min-height: 250px; padding: 28px; }
-
-      .service-card h3 { margin-top: 35px; }
+      .dreame-launcher { right: 16px; bottom: 16px; width: 54px; height: 54px; }
+      .chat-panel { right: 12px; bottom: 80px; width: calc(100vw - 24px); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -470,2348 +1244,1294 @@
         animation-iteration-count: 1 !important;
         transition-duration: 1ms !important;
       }
-
       .hero-video video { display: none; }
+    }
+
+    @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+      .search-panel { background: #0A1422; }
+      .details-card, .category-card, .tool-card { background: #101D2D; }
     }
   </style>
 </head>
-
 <body>
 
   <div class="site-intro" id="siteIntro" aria-hidden="true">
     <div class="intro-brand">
       <img class="intro-logo" src="dream-property-logo.svg" alt="">
-
-      <div class="intro-name">
-        Dream <span>Property</span>
-      </div>
+      <div class="intro-name">Dream <span>Property</span></div>
     </div>
   </div>
 
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-
-      <a class="brand" href="/" data-route aria-label="Dream Property home">
+      <a class="brand" href="/" aria-label="Dream Property home">
         <img class="brand-logo" src="dream-property-logo.svg" alt="Dream Property logo">
-
-        <div class="brand-name">
-          Dream <span>Property</span>
-        </div>
+        <div class="brand-name">Dream <span>Property</span></div>
       </a>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="mainNavigation"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="main-navigation" id="mainNavigation" aria-label="Main navigation">
-        <a href="/login" data-route>Login</a>
-        <a href="/about" data-route>About Us</a>
-        <a href="/contact" data-route>Contact</a>
-      </nav>
-
+      <div class="header-actions">
+        <button class="button button-outline" type="button" data-open-modal="listing">Start a Listing</button>
+        <button class="button button-outline" type="button" data-open-modal="login">Log In</button>
+        <button class="button button-primary" type="button" data-open-modal="signup">Sign Up</button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <button class="button button-outline" type="button" data-open-modal="listing">Start a Listing</button>
+      <button class="button button-outline" type="button" data-open-modal="login">Log In</button>
+      <button class="button button-primary" type="button" data-open-modal="signup">Sign Up</button>
+    </nav>
   </header>
 
   <main>
 
     <section class="hero" id="home">
-
       <div class="hero-video" aria-hidden="true">
-        <video
-          id="heroVideo"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="auto"
-          poster="images/hero-fallback.jpg"
-        >
+        <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="images/hero-fallback.jpg">
           <source src="videos/dream-property-hero.mp4" type="video/mp4">
         </video>
       </div>
-
       <div class="hero-overlay" aria-hidden="true"></div>
 
-      <div class="container hero-content">
+      <div class="hero-content">
+        <h1 class="hero-title">Find your dream <span class="gold-text">property</span></h1>
 
-        <div class="eyebrow">
-          providing dream real estate services
+        <div class="hero-search-wrap">
+          <div class="search-panel">
+            <div class="search-tabs" role="tablist" aria-label="Search type">
+              <button class="search-tab active" type="button" role="tab" aria-selected="true" data-search-type="sale">For Sale</button>
+              <button class="search-tab" type="button" role="tab" aria-selected="false" data-search-type="rent">For Rent</button>
+              <button class="search-tab" type="button" role="tab" aria-selected="false" data-search-type="flatmates">Flatmates</button>
+              <button class="search-tab" type="button" role="tab" aria-selected="false" data-search-type="agent">Find an Agent</button>
+            </div>
+
+            <form class="search-body" id="propertySearchForm" action="/listings" method="get">
+              <input type="hidden" name="type" id="searchTypeInput" value="sale">
+
+              <div class="search-grid" id="searchFields">
+                <!-- Fields injected by JS based on tab -->
+              </div>
+
+              <div class="search-advanced" id="advancedSearch">
+                <div class="search-grid" id="advancedFields"></div>
+              </div>
+
+              <div class="search-actions">
+                <button class="advanced-toggle" type="button" id="advancedToggle" hidden>
+                  Advanced search
+                </button>
+                <button class="button button-primary search-submit" type="submit">
+                  Search properties
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-
-        <h1 class="hero-title">
-          Dream
-          <span class="gold-text">Property</span>
-        </h1>
-
-        <div class="button-row hero-buttons">
-          <a class="button button-primary" href="mailto:info@dreamproperty.co.nz">
-            Get In Touch
-          </a>
-
-          <a class="button button-outline" href="/login" data-route>
-            Login
-          </a>
-        </div>
-
       </div>
-
     </section>
 
-
-    <section class="section section-dark" id="login">
+    <section class="section section-dark" id="property-details">
       <div class="container">
-
         <div class="section-heading">
-          <div class="eyebrow">Login</div>
-
-          <h2>
-            Welcome
-            <span class="gold-text">back</span>
-          </h2>
-
-          <p>
-            Choose the portal that suits you. Tenants and owners can sign in today. Partner access for other property companies is coming soon.
-          </p>
+          <div class="eyebrow">Property details</div>
+          <h2>Know the property before you make your move</h2>
+          <p>Search an address to explore available property information from appropriate sources. Information is provided for general guidance and may not always be current or complete.</p>
         </div>
 
-        <div class="login-grid">
-
-          <article class="service-card">
-            <div class="service-number"> </div>
-
-            <h3>Tenant Login</h3>
-
-            <p>
-              Sign in to your account as a residential, commercial, or industrial tenant.
-            </p>
-
-            <button
-              class="service-action"
-              type="button"
-              data-modal="tenant-login"
-            >
-              Tenant Login →
-            </button>
-          </article>
-
-          <article class="service-card">
-            <div class="service-number"> </div>
-
-            <h3>Owner Login</h3>
-
-            <p>
-              Sign in to your account as a residential, commercial, or industrial property owner.
-            </p>
-
-            <button
-              class="service-action"
-              type="button"
-              data-modal="landlord-login"
-            >
-              Owner Login →
-            </button>
-          </article>
-
-          <article class="service-card is-locked" aria-disabled="true">
-            <div class="service-number"> </div>
-
-            <h3>Partner Login</h3>
-
-            <p>
-              For property management and real estate companies that will use the Dream Property app. Coming soon.
-            </p>
-
-            <button
-              class="service-action"
-              type="button"
-              disabled
-              aria-disabled="true"
-            >
-              Coming Soon
-            </button>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <section class="section section-dark" id="about">
-
-      <div class="container">
-
-        <div class="about-layout">
-
-          <div class="section-heading">
-
-            <div class="eyebrow">
-              About Dream Property
+        <div class="details-card">
+          <div class="details-search">
+            <h3>Search an address</h3>
+            <p>Look up a New Zealand address. Autofill uses New Zealand Post address data. Further property attributes appear when licensed data sources are connected.</p>
+            <form class="address-form" id="addressSearchForm" action="/property" method="get" autocomplete="off">
+              <div class="address-input-wrap">
+                <input
+                  type="text"
+                  name="address"
+                  id="addressInput"
+                  placeholder="Start typing a street address"
+                  autocomplete="off"
+                  aria-autocomplete="list"
+                  aria-controls="addressSuggestions"
+                  aria-expanded="false"
+                >
+                <div class="address-suggestions" id="addressSuggestions" role="listbox" hidden></div>
+              </div>
+              <button class="button button-primary" type="submit">Search address</button>
+              <p class="address-attribution" id="addressAttribution">Address lookup powered by New Zealand Post</p>
+            </form>
+          </div>
+          <div class="details-preview" id="detailsPreview">
+            <div class="preview-empty" id="previewEmpty">
+              <p>Enter or select an address to view property details.</p>
             </div>
-
-            <h2>
-              <span class="gold-text">Beyond</span>
-              expectations
-            </h2>
-
+            <div class="preview-content" id="previewContent">
+              <div class="preview-label">Property profile</div>
+              <div class="preview-address" id="previewAddress"></div>
+              <div class="preview-meta" id="previewMeta"></div>
+              <div class="preview-sale" id="previewSale"></div>
+              <div class="preview-estimate" id="previewEstimateBlock" hidden>
+                <span class="preview-label">Dream Property Estimate</span>
+                <strong id="previewEstimate"></strong>
+                <p class="preview-note">Automated market indication based on available data. Not a registered valuation or guaranteed sale price.</p>
+              </div>
+              <div class="preview-actions">
+                <a class="button button-outline button-small" id="previewMoreLink" href="/property" target="_blank" rel="noopener">View more details</a>
+                <a class="button button-outline button-small" href="/verify-owner" target="_blank" rel="noopener">I am the owner</a>
+              </div>
+            </div>
           </div>
-
-
-          <div class="about-copy">
-
-            <p>
-              Dream Property not only manages residential, commercial, and industrial property. We also developed an exclusive app that makes property management easier, faster, and more professional. Other property management and real estate companies will be able to use it once it is ready.
-            </p>
-
-            <p>
-              Our app brings together the best ideas from property management tools used in the industry, plus our own original features. One platform. One place to work. No more jumping between different systems. We built it to do the job better.
-            </p>
-
-            <p>
-              The app is not available to other companies yet. We are still perfecting it and working through the practical steps needed before we can offer it more widely. Until then, we continue to deliver property management at the <strong>dream</strong> standard.
-            </p>
-
-            <p>
-              <strong>Your Dream. Your Property. Your Future.</strong>
-            </p>
-
-          </div>
-
         </div>
-
       </div>
-
     </section>
 
-
-    <section class="section section-soft" id="team">
-
+    <section class="section section-soft" id="owner-tools">
       <div class="container">
-
         <div class="section-heading">
+          <div class="eyebrow">For owners</div>
+          <h2>List, sell or explore your options</h2>
+          <p>Verified owners can list their property, connect with agents, or explore Prop Swap matching.</p>
+        </div>
 
-          <div class="eyebrow">
-            Meet the team
+        <div class="tools-grid">
+          <div class="tool-card">
+            <h3>Start a listing</h3>
+            <p>List your property for sale or rent. Private owners and verified agents are both welcome. A listing guide is available to help you present your property clearly.</p>
+            <button class="button button-outline button-small" type="button" data-open-modal="listing">Start a Listing</button>
           </div>
-
-          <h2>
-            The
-            <span class="gold-text">Dream Team</span>
-          </h2>
-
+          <div class="tool-card">
+            <h3>Prop Swap</h3>
+            <p>Explore potential property exchange matches. Prop Swap helps identify owners who may be interested in each other’s properties. Any transfer still follows normal legal and conveyancing processes.</p>
+            <a class="button button-outline button-small" href="/prop-swap" target="_blank" rel="noopener">Explore Prop Swap</a>
+          </div>
         </div>
-
-
-        <div class="team-grid">
-
-          <article class="team-card">
-
-            <button
-              class="team-card-button"
-              type="button"
-              data-modal="calix"
-              aria-label="View Calix Mojica profile"
-            >
-
-              <div class="team-image">
-
-                <img
-                  src="images/calix-mojica.jpg"
-                  alt="Calix Mojica"
-                  loading="lazy"
-                >
-
-              </div>
-
-            </button>
-
-
-            <div class="team-body">
-
-              <div class="team-role">
-                Director | Co-Founder
-              </div>
-
-              <h3>
-                Calix Mojica
-              </h3>
-
-              <button
-                class="button button-outline button-small"
-                type="button"
-                data-modal="calix"
-              >
-                View Profile
-              </button>
-
-            </div>
-
-          </article>
-
-
-          <article class="team-card">
-
-            <button
-              class="team-card-button"
-              type="button"
-              data-modal="rae"
-              aria-label="View Rae Lillo profile"
-            >
-
-              <div class="team-image">
-
-                <img
-                  src="images/rae-lillo.jpg"
-                  alt="Rae Lillo"
-                  loading="lazy"
-                >
-
-              </div>
-
-            </button>
-
-
-            <div class="team-body">
-
-              <div class="team-role">
-                Co-Founder
-              </div>
-
-              <h3>
-                Rae Lillo
-              </h3>
-
-              <button
-                class="button button-outline button-small"
-                type="button"
-                data-modal="rae"
-              >
-                View Profile
-              </button>
-
-            </div>
-
-          </article>
-
-          <article class="team-card">
-
-            <button
-              class="team-card-button"
-              type="button"
-              data-modal="monica"
-              aria-label="View Monica Lillo profile"
-            >
-
-              <div class="team-image team-placeholder" aria-hidden="true">
-                Photo Coming Soon
-              </div>
-
-            </button>
-
-
-            <div class="team-body">
-
-              <div class="team-role">
-                Associate Software Developer
-              </div>
-
-              <h3>
-                Monica Lillo
-              </h3>
-
-              <button
-                class="button button-outline button-small"
-                type="button"
-                data-modal="monica"
-              >
-                View Profile
-              </button>
-
-            </div>
-
-          </article>
-
-        </div>
-
       </div>
-
     </section>
 
-
-    <section class="section section-dark" id="contact">
-
+    <section class="section section-dark" id="management">
       <div class="container">
-
-        <div class="contact-layout">
-
-
-          <div class="section-heading">
-
-            <div class="eyebrow">
-              Get In Touch
-            </div>
-
-            <h2>
-              Ready to
-              <span class="gold-text">leave your property nightmare behind</span>?
-            </h2>
-
-            <p>
-              Experience real estate management the way it should be. Dream Property is here to make your real estate journey easier, more professional, and stress-free. Let us start the conversation today.
-            </p>
-
-          </div>
-
-
-          <div class="contact-details">
-
-            <a
-              class="contact-item"
-              href="mailto:info@dreamproperty.co.nz"
-            >
-
-              <span class="contact-label">
-                Email Us
-              </span>
-
-              <strong>
-                info@dreamproperty.co.nz
-              </strong>
-
-              <span class="contact-action">
-                Send an email →
-              </span>
-
-            </a>
-
-          </div>
-
+        <div class="section-heading mgmt-block">
+          <div class="eyebrow">Property management</div>
+          <h2>Management tools, when you need them</h2>
+          <p>Dream Property is building a property management platform for owners who want to manage their own rentals more easily, with the option of professional support when required. The platform is currently used exclusively by Dream Property and will be released more widely once it is ready.</p>
         </div>
-
-
-        <div class="contact-socials">
-
-          <div class="social-links">
-
-            <a
-              href="https://facebook.com/DreamPropertyNZ"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Dream Property Facebook"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93v-1.9c0-.86.24-1.44 1.47-1.44h1.57V4.14C16.24 4.06 15.3 4 14.2 4c-2.3 0-3.87 1.4-3.87 4v2.44H7.77v2.96h2.56V21h3.17Z"/></svg>
-            </a>
-
-            <a
-              href="https://instagram.com/DreamPropertyNZ"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Dream Property Instagram"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.15" cy="6.85" r="1"/></svg>
-            </a>
-
-            <a
-              href="https://tiktok.com/@DreamPropertyNZ"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Dream Property TikTok"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"/></svg>
-            </a>
-
-            <a
-              href="https://youtube.com/@DreamPropertyNZ"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Dream Property YouTube"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
-            </a>
-
-          </div>
-
-        </div>
-
       </div>
-
     </section>
 
   </main>
 
-
   <footer class="site-footer">
-
     <div class="container">
-
       <div class="footer-main">
-
         <div class="footer-brand">
-
-          <a class="brand" href="/" data-route aria-label="Dream Property home">
-
+          <a class="brand" href="/" aria-label="Dream Property home">
             <img class="brand-logo" src="dream-property-logo.svg" alt="Dream Property logo">
-
-            <div class="brand-name">
-              Dream <span>Property</span>
-            </div>
-
+            <div class="brand-name">Dream <span>Property</span></div>
           </a>
-
+          <p>A New Zealand property marketplace and technology platform.</p>
         </div>
 
-
-        <div class="footer-navigation">
-
+        <div class="footer-nav">
           <div>
-
-            <span class="footer-heading">
-              Explore
-            </span>
-
-            <button type="button" data-modal="tenant-login">
-              Tenant Login
-            </button>
-
-            <button type="button" data-modal="landlord-login">
-              Owner Login
-            </button>
-
+            <span class="footer-heading">Marketplace</span>
+            <a href="/listings?type=sale" target="_blank" rel="noopener">For Sale</a>
+            <a href="/listings?type=rent" target="_blank" rel="noopener">For Rent</a>
+            <a href="/listings?type=flatmates" target="_blank" rel="noopener">Flatmates</a>
+            <a href="/agents" target="_blank" rel="noopener">Find an Agent</a>
+            <button type="button" data-open-modal="listing" style="width:fit-content;padding:0;border:0;background:transparent;color:var(--muted);font-size:0.8rem;text-align:left;cursor:pointer;">Start a Listing</button>
           </div>
-
-
           <div>
-
-            <span class="footer-heading">
-              Company
-            </span>
-
-            <a href="/about" data-route>
-              About Us
-            </a>
-
-            <a href="/team" data-route>
-              Dream Team
-            </a>
-
-            <a href="/contact" data-route>
-              Contact
-            </a>
-
+            <span class="footer-heading">Company</span>
+            <a href="/about" target="_blank" rel="noopener">About Us</a>
+            <a href="/team" target="_blank" rel="noopener">Dream Team</a>
+            <a href="/help" target="_blank" rel="noopener">Help &amp; Support</a>
+            <a href="/contact" target="_blank" rel="noopener">Contact</a>
           </div>
-
-
           <div>
-
-            <span class="footer-heading">
-              Legal
-            </span>
-
-            <button type="button" data-modal="privacy">
-              Privacy Policy
-            </button>
-
-            <button type="button" data-modal="terms">
-              Terms &amp; Conditions
-            </button>
-
+            <span class="footer-heading">Safety</span>
+            <button type="button" data-open-modal="listing-rules" class="footer-link-btn">Listing Rules</button>
+            <button type="button" data-open-modal="safety" class="footer-link-btn">Safety &amp; Reporting</button>
+            <button type="button" data-open-modal="accessibility" class="footer-link-btn">Accessibility</button>
           </div>
-
-
           <div>
-
-            <span class="footer-heading">
-              Contact
-            </span>
-
-            <a href="mailto:info@dreamproperty.co.nz">
-              info@dreamproperty.co.nz
-            </a>
-
+            <span class="footer-heading">Legal</span>
+            <button type="button" data-open-modal="privacy" class="footer-link-btn">Privacy Policy</button>
+            <button type="button" data-open-modal="terms" class="footer-link-btn">Terms &amp; Conditions</button>
           </div>
-
         </div>
-
       </div>
-
 
       <div class="footer-bottom">
-
-        <p>
-          © <span id="currentYear"></span>
-          Dream Property
-        </p>
-
+        <p>© <span id="currentYear"></span> Dream Property Limited</p>
       </div>
-
     </div>
-
   </footer>
 
 
-  <div
-    class="modal"
-    id="modal-tenant-login"
-    aria-hidden="true"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="tenantLoginTitle"
-  >
-
+  <!-- Start a Listing -->
+  <div class="modal" id="modal-listing" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="listingTitle">
     <div class="modal-backdrop" data-close-modal></div>
-
-    <div class="modal-panel login-modal">
-
-      <button class="modal-close" type="button" data-close-modal aria-label="Close modal">
-        ×
-      </button>
-
-      <div class="eyebrow">
-        Tenants
-      </div>
-
-      <h2 id="tenantLoginTitle">
-        Tenant Login
-      </h2>
-
-      <form class="login-form" data-login-form novalidate>
-
-        <label class="login-field">
-          <span>Username</span>
-          <input
-            type="text"
-            name="username"
-            autocomplete="username"
-            autocapitalize="none"
-            spellcheck="false"
-          >
+    <div class="modal-panel">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
+      <div class="eyebrow">List a property</div>
+      <h2 id="listingTitle">Start a Listing</h2>
+      <p class="modal-lead">Enter the property address and confirm you are the owner, or log in to continue.</p>
+      <form class="auth-form" id="listingForm" novalidate>
+        <div class="auth-field">
+          <label for="listingAddress">Property address</label>
+          <input type="text" id="listingAddress" name="address" placeholder="Street address, suburb, city" required autocomplete="street-address">
+        </div>
+        <label class="auth-check">
+          <input type="checkbox" id="listingOwner" name="owner" value="1">
+          <span>I confirm I am the owner of this property, or I have authority to list it.</span>
         </label>
-
-        <label class="login-field">
-          <span>Password</span>
-          <input
-            type="password"
-            name="password"
-            autocomplete="current-password"
-          >
-        </label>
-
-        <p class="login-error" role="alert" hidden>
-          Incorrect Username/Password. Please Try Again.
-        </p>
-
-        <button class="button button-primary" type="submit">
-          Login
-        </button>
-
+        <p class="auth-error" id="listingError" hidden></p>
+        <button class="button button-primary" type="submit" style="width:100%">Continue</button>
+        <div class="auth-links">
+          <button type="button" data-open-modal="login" data-close-modal>Log in to continue</button>
+        </div>
       </form>
-
     </div>
-
   </div>
 
-
-  <div
-    class="modal"
-    id="modal-landlord-login"
-    aria-hidden="true"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="landlordLoginTitle"
-  >
-
+  <!-- Log In -->
+  <div class="modal" id="modal-login" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
     <div class="modal-backdrop" data-close-modal></div>
-
-    <div class="modal-panel login-modal">
-
-      <button class="modal-close" type="button" data-close-modal aria-label="Close modal">
-        ×
-      </button>
-
-      <div class="eyebrow">
-        Owners
-      </div>
-
-      <h2 id="landlordLoginTitle">
-        Owner Login
-      </h2>
-
-      <form class="login-form" data-login-form novalidate>
-
-        <label class="login-field">
-          <span>Username</span>
-          <input
-            type="text"
-            name="username"
-            autocomplete="username"
-            autocapitalize="none"
-            spellcheck="false"
-          >
-        </label>
-
-        <label class="login-field">
-          <span>Password</span>
-          <input
-            type="password"
-            name="password"
-            autocomplete="current-password"
-          >
-        </label>
-
-        <p class="login-error" role="alert" hidden>
-          Incorrect Username/Password. Please Try Again.
-        </p>
-
-        <button class="button button-primary" type="submit">
-          Login
-        </button>
-
+    <div class="modal-panel">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
+      <div class="eyebrow">Account</div>
+      <h2 id="loginTitle">Log In</h2>
+      <p class="modal-lead">Sign in to your Dream Property account.</p>
+      <form class="auth-form" id="loginForm" novalidate>
+        <div class="auth-field">
+          <label for="loginUsername">Username</label>
+          <input type="text" id="loginUsername" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+        </div>
+        <div class="auth-field">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" name="password" autocomplete="current-password" required>
+        </div>
+        <p class="auth-error" id="loginError" hidden>Incorrect username / password.</p>
+        <button class="button button-primary" type="submit" style="width:100%">Log In</button>
+        <div class="auth-links">
+          <button type="button" id="forgotPasswordBtn">Forgot password?</button>
+          <button type="button" data-open-modal="signup" data-close-modal>Create an account</button>
+        </div>
+        <p class="auth-hint" id="forgotPasswordMsg" hidden>If an account exists for that username, password reset instructions will be sent when accounts are available. Please try again later.</p>
       </form>
-
     </div>
-
   </div>
 
-
-  <div
-    class="modal"
-    id="modal-calix"
-    aria-hidden="true"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="calixTitle"
-  >
-
+  <!-- Sign Up -->
+  <div class="modal" id="modal-signup" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="signupTitle">
     <div class="modal-backdrop" data-close-modal></div>
-
-    <div class="modal-panel team-modal">
-
-      <button class="modal-close" type="button" data-close-modal aria-label="Close Calix Mojica profile">
-        ×
-      </button>
-
-      <div class="team-modal-image">
-        <img src="images/calix-mojica.jpg" alt="Calix Mojica">
-      </div>
-
-      <div class="eyebrow">
-        Director | Co-Founder
-      </div>
-
-      <h2 id="calixTitle">
-        Calix Mojica
-      </h2>
-
-      <p class="modal-intro">
-        Calix brings residential property management experience and a Bachelor of Property from the University of Auckland to Dream Property. His degree gave him a strong understanding of property, investment, development, marketing, and the wider property industry. He has taken what he learned through his studies and combined it with his hands on experience to look at real estate management from a different perspective.
-      </p>
-
-      <p class="modal-body-copy">
-        This approach led Calix to develop Dream Property’s own real estate management app, creating smarter ways to manage everyday tasks, improve efficiency, and make real estate management easier for everyone involved. His goal is to keep finding new ways to use technology and fresh ideas to raise the standard of real estate services.
-      </p>
-
-      <div class="modal-socials">
-
-        <a
-          href="https://instagram.com/CalixMojicaRealEstate"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram @CalixMojicaRealEstate"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.15" cy="6.85" r="1"/></svg>
-        </a>
-
-        <a
-          href="https://tiktok.com/@CalixMojicaRealEstate"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="TikTok @CalixMojicaRealEstate"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"/></svg>
-        </a>
-
-        <a
-          href="https://youtube.com/@CalixMojicaRealEstate"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="YouTube @CalixMojicaRealEstate"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
-        </a>
-
-      </div>
-
+    <div class="modal-panel">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
+      <div class="eyebrow">Account</div>
+      <h2 id="signupTitle">Sign Up</h2>
+      <p class="modal-lead">Create a Dream Property account. Account creation is not available yet.</p>
+      <form class="auth-form" id="signupForm" novalidate>
+        <div class="auth-field">
+          <label for="signupUsername">Username</label>
+          <input type="text" id="signupUsername" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required minlength="3">
+        </div>
+        <div class="auth-field">
+          <label for="signupEmail">Email</label>
+          <input type="email" id="signupEmail" name="email" autocomplete="email" required>
+        </div>
+        <div class="auth-field">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" name="password" autocomplete="new-password" required minlength="8">
+          <p class="auth-hint">At least 8 characters, including one uppercase letter, one number, and one special character.</p>
+        </div>
+        <div class="auth-field">
+          <label for="signupPassword2">Confirm password</label>
+          <input type="password" id="signupPassword2" name="password2" autocomplete="new-password" required>
+        </div>
+        <p class="auth-error" id="signupError" hidden></p>
+        <p class="auth-success" id="signupBlocked" hidden>You cannot make an account right now. Please try again later.</p>
+        <button class="button button-primary" type="submit" style="width:100%">Create account</button>
+        <div class="auth-links">
+          <button type="button" data-open-modal="login" data-close-modal>Already have an account? Log in</button>
+        </div>
+      </form>
     </div>
-
   </div>
 
-
-  <div
-    class="modal"
-    id="modal-rae"
-    aria-hidden="true"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="raeTitle"
-  >
-
+  <!-- Privacy -->
+  <div class="modal" id="modal-privacy" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
     <div class="modal-backdrop" data-close-modal></div>
-
-    <div class="modal-panel team-modal">
-
-      <button class="modal-close" type="button" data-close-modal aria-label="Close Rae Lillo profile">
-        ×
-      </button>
-
-      <div class="team-modal-image">
-        <img src="images/rae-lillo.jpg" alt="Rae Lillo">
-      </div>
-
-      <div class="eyebrow">
-        Co-Founder
-      </div>
-
-      <h2 id="raeTitle">
-        Rae Lillo
-      </h2>
-
-      <p class="modal-intro">
-        Rae is the co-founder and co-owner of Dream Property. She holds a Bachelor of Psychology and a Bachelor of Health Science (Nursing), and works as a Registered Nurse specialising in mental health. She is not involved in day-to-day operations.
-      </p>
-
-      <p class="modal-body-copy">
-        Her background in psychology gives her a deep understanding of how people think, behave, and respond in different situations. That insight has shaped how Dream Property approaches user experience, from the way owners and tenants interact with the platform, through to the design of clearer, more human-centred journeys inside the app. Rae’s perspective helps ensure the technology is built around real people, not just processes.
-      </p>
-
-      <div class="modal-socials">
-
-        <a
-          href="https://facebook.com/DreamPropertyNZ"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93v-1.9c0-.86.24-1.44 1.47-1.44h1.57V4.14C16.24 4.06 15.3 4 14.2 4c-2.3 0-3.87 1.4-3.87 4v2.44H7.77v2.96h2.56V21h3.17Z"/></svg>
-        </a>
-
-        <a
-          href="https://instagram.com/DreamPropertyNZ"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.15" cy="6.85" r="1"/></svg>
-        </a>
-
-        <a
-          href="https://tiktok.com/@DreamPropertyNZ"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="TikTok"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"/></svg>
-        </a>
-
-        <a
-          href="https://youtube.com/@DreamPropertyNZ"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="YouTube"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div
-    class="modal"
-    id="modal-monica"
-    aria-hidden="true"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="monicaTitle"
-  >
-
-    <div class="modal-backdrop" data-close-modal></div>
-
-    <div class="modal-panel team-modal">
-
-      <button class="modal-close" type="button" data-close-modal aria-label="Close Monica Lillo profile">
-        ×
-      </button>
-
-      <div class="team-modal-image team-placeholder" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">
-        Photo Coming Soon
-      </div>
-
-      <div class="eyebrow">
-        Associate Software Developer
-      </div>
-
-      <h2 id="monicaTitle">
-        Monica Lillo
-      </h2>
-
-      <p class="modal-intro">
-        Monica is the Associate Software Developer at Dream Property. She holds a Bachelor of Computer and Information Sciences and worked with Calix to develop Dream Property’s real estate management app.
-      </p>
-
-      <p class="modal-body-copy">
-        Her degree grounded her in software development, programming languages, databases, and systems design. Building the Dream Property platform expanded that into practical product work - web development for the company site and client-facing tools, and mobile development for iOS and Android so owners and tenants can manage their properties from any device.
-      </p>
-
-      <p class="modal-body-copy">
-        Monica contributes across the stack: writing and refining application code, improving interfaces, and helping shape features that make everyday property management clearer and more efficient. Her focus is reliable software that supports the standard of service Dream Property is built on.
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <div
-    class="modal"
-    id="modal-privacy"
-    aria-hidden="true"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="privacyTitle"
-  >
-
-    <div class="modal-backdrop" data-close-modal></div>
-
     <div class="modal-panel legal-modal">
-
-      <button class="modal-close" type="button" data-close-modal aria-label="Close Privacy Policy">
-        ×
-      </button>
-
-      <div class="eyebrow">
-        Legal
-      </div>
-
-      <h2 id="privacyTitle">
-        Privacy Policy
-      </h2>
-
-      <p class="modal-intro">
-        Your privacy matters to us. This policy explains how Dream Property
-        collects, uses, protects, and shares personal information through this
-        website, our property management services, and our real estate
-        management software and app. We handle personal information in line
-        with the Privacy Act 2020 and the information privacy principles it
-        sets out. The version of this policy shown on this website is the
-        current and up-to-date version.
-      </p>
-
-      <h3>
-        Who we are
-      </h3>
-
-      <p>
-        Dream Property provides residential, commercial, and industrial
-        property management services in Auckland, New Zealand. We also develop
-        and will offer a real estate management app for property management
-        and real estate companies. In this policy, "we", "us", and "our" mean
-        Dream Property.
-      </p>
-
-      <h3>
-        Your password is never stored
-      </h3>
-
-      <p>
-        We do not store your password anywhere in a readable form. We never
-        see, keep, or share your password in plain text, and we never record
-        it in emails, documents, spreadsheets, or notes.
-      </p>
-
-      <p>
-        Dream Property will never ask you for your password by email, phone,
-        text message, or social media. If someone contacts you claiming to be
-        from Dream Property and asks for your password, do not share it and
-        let us know straight away at
-        <a href="mailto:info@dreamproperty.co.nz">info@dreamproperty.co.nz</a>.
-      </p>
-
-      <h3>
-        Information we may collect
-      </h3>
-
-      <p>
-        We may collect information you provide when you contact us, enquire
-        about a property, request a service, apply for a tenancy or lease,
-        enter into a property management agreement, register interest in or
-        use our app or software, create a login account (including tenant,
-        owner, or future partner accounts), or otherwise communicate with us.
-        This may include your name, contact details, property details,
-        tenancy or lease details, business details (for partner or company
-        users), and the content of your messages.
-      </p>
-
-      <p>
-        We only collect personal information that is necessary for a lawful
-        purpose connected with our services, and we collect it directly from
-        you wherever we reasonably can.
-      </p>
-
-      <h3>
-        How information may be used
-      </h3>
-
-      <p>
-        Information may be used to respond to enquiries, provide property
-        management services, operate and improve our website and app,
-        communicate with owners, tenants, and partner companies, manage
-        properties and tenancies or leases, arrange maintenance, process
-        applications, support software accounts, meet our legal obligations,
-        and carry out business administration. We will not use your
-        information for a purpose unrelated to those above without your
-        consent, unless the law allows or requires it.
-      </p>
-
-      <h3>
-        Identity checks and legal requirements
-      </h3>
-
-      <p>
-        In some circumstances the law may require us to verify identity or
-        keep certain records, including under New Zealand anti-money
-        laundering legislation, residential tenancy legislation, and tax
-        requirements. Where this applies, we will let you know what we need
-        and why.
-      </p>
-
-      <h3>
-        Sharing information
-      </h3>
-
-      <p>
-        We do not sell your personal information. Information may be shared
-        with relevant service providers where necessary to provide real
-        estate management, maintenance, tenancy, legal, accounting, insurance,
-        or other related services. We only share what is needed, and we expect
-        those providers to protect it. We may also disclose information where
-        the law requires it, including to courts, the Tenancy Tribunal, the
-        Disputes Tribunal, regulators, or the Police.
-      </p>
-
-      <h3>
-        Information held or processed overseas
-      </h3>
-
-      <p>
-        Some of the tools and services we use, including website hosting, may store
-        or process information outside New Zealand.
-        Where personal information is sent overseas, we take reasonable steps
-        to make sure it is protected by comparable safeguards.
-      </p>
-
-      <h3>
-        Website hosting, cookies, and third party content
-      </h3>
-
-      <p>
-        This website is hosted by a third party and may include locally hosted video.
-        Hosting providers
-        may collect technical information such as your IP address, device
-        type, and browser details, and may use cookies or similar
-        technologies under their own privacy policies. You can control cookies
-        through your browser settings.
-      </p>
-
-      <h3>
-        Information security
-      </h3>
-
-      <p>
-        We take reasonable steps to protect personal information from loss,
-        misuse, unauthorised access, disclosure, alteration, or destruction.
-        If a privacy breach occurs that is likely to cause serious harm, we
-        will notify the Office of the Privacy Commissioner and the people
-        affected as required by the Privacy Act 2020.
-      </p>
-
-      <h3>
-        How long we keep information
-      </h3>
-
-      <p>
-        We keep personal information only for as long as we need it for the
-        purposes described in this policy or as the law requires, and then
-        we take reasonable steps to delete or de-identify it.
-      </p>
-
-      <h3>
-        Access and correction
-      </h3>
-
-      <p>
-        You have the right to ask for access to the personal information we
-        hold about you and to ask us to correct it. To make a request,
-        contact us using the details below. We will respond within the
-        timeframes required by the Privacy Act 2020.
-      </p>
-
-      <h3>
-        Marketing messages
-      </h3>
-
-      <p>
-        We will only send you marketing or promotional messages with your
-        consent, and every such message will include a simple way to opt out,
-        in line with the Unsolicited Electronic Messages Act 2007. Messages
-        about your tenancy, lease, or property are service messages and are
-        not marketing.
-      </p>
-
-      <h3>
-        Privacy complaints
-      </h3>
-
-      <p>
-        If you have a concern about how we have handled your personal
-        information, please contact us first so we can put it right. If you
-        are not satisfied with our response, you have the right to complain
-        to the Office of the Privacy Commissioner at
-        <a href="https://www.privacy.org.nz" target="_blank" rel="noopener noreferrer">privacy.org.nz</a>.
-      </p>
-
-      <h3>
-        Changes to this policy
-      </h3>
-
-      <p>
-        We may update this policy from time to time. The version published on
-        this website is always the current one. Please check this page if you
-        want to know the latest privacy policy.
-      </p>
-
-      <h3>
-        Contact
-      </h3>
-
-      <p>
-        For privacy related enquiries, or to make an access or correction
-        request, contact our privacy officer at
-        <a href="mailto:info@dreamproperty.co.nz">
-          info@dreamproperty.co.nz
-        </a>.
-      </p>
-
+      <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
+      <div class="eyebrow">Legal</div>
+      <h2 id="privacyTitle">Privacy Policy</h2>
+      <p>Your privacy matters to us. This policy explains how Dream Property Limited collects, uses, protects, and shares personal information through this website, our marketplace, and related services. We handle personal information in line with the Privacy Act 2020. The version shown on this website is the current version.</p>
+      <h3>Who we are</h3>
+      <p>Dream Property Limited operates a New Zealand property marketplace and technology platform. In this policy, "we", "us", and "our" mean Dream Property Limited.</p>
+      <h3>Your password is never stored in plain text</h3>
+      <p>We do not store your password in a readable form. Dream Property will never ask you for your password by email, phone, text message, or social media. If someone claims to be from Dream Property and asks for your password, do not share it.</p>
+      <h3>Information we may collect</h3>
+      <p>We may collect information you provide when you contact us, create or attempt to create an account, start a listing, search addresses, use marketplace features, or otherwise communicate with us. This may include your name, contact details, property address details, and the content of your messages.</p>
+      <p>We only collect personal information that is necessary for a lawful purpose connected with our services, and we collect it directly from you wherever we reasonably can.</p>
+      <h3>How information may be used</h3>
+      <p>Information may be used to respond to enquiries, operate and improve the website and marketplace, support listings and accounts, meet legal obligations, and carry out business administration. We will not use your information for an unrelated purpose without your consent, unless the law allows or requires it.</p>
+      <h3>Sharing information</h3>
+      <p>We do not sell your personal information. Information may be shared with service providers where necessary to operate the platform, and where the law requires disclosure. We only share what is needed.</p>
+      <h3>Information held or processed overseas</h3>
+      <p>Some tools we use, including website hosting, may store or process information outside New Zealand. Where personal information is sent overseas, we take reasonable steps to ensure comparable safeguards.</p>
+      <h3>Website, cookies, and third party services</h3>
+      <p>This website may use hosting providers and similar technologies that collect technical information such as IP address, device type, and browser details. You can control cookies through your browser settings.</p>
+      <h3>Address and property information</h3>
+      <p>Address lookup may use New Zealand Post address data under applicable terms. Property attribute data, where shown, is drawn from authorised or licensed sources and may be incomplete or not current.</p>
+      <h3>Information security</h3>
+      <p>We take reasonable steps to protect personal information from loss, misuse, unauthorised access, disclosure, alteration, or destruction. If a privacy breach is likely to cause serious harm, we will notify the Office of the Privacy Commissioner and affected people as required by the Privacy Act 2020.</p>
+      <h3>Access and correction</h3>
+      <p>You may ask for access to personal information we hold about you and ask us to correct it. Contact us using the details below. We will respond within the timeframes required by the Privacy Act 2020.</p>
+      <h3>Privacy complaints</h3>
+      <p>If you have a concern about how we have handled your personal information, contact us first. If you are not satisfied, you may complain to the Office of the Privacy Commissioner at <a href="https://www.privacy.org.nz" target="_blank" rel="noopener noreferrer">privacy.org.nz</a>.</p>
+      <h3>Contact</h3>
+      <p>For privacy related enquiries, contact our privacy officer via DREAM·E on this website, or by email when account services are available.</p>
     </div>
-
   </div>
 
-
-  <div
-    class="modal"
-    id="modal-terms"
-    aria-hidden="true"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="termsTitle"
-  >
-
+  <!-- Terms -->
+  <div class="modal" id="modal-terms" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
     <div class="modal-backdrop" data-close-modal></div>
-
     <div class="modal-panel legal-modal">
-
-      <button class="modal-close" type="button" data-close-modal aria-label="Close Terms and Conditions">
-        ×
-      </button>
-
-      <div class="eyebrow">
-        Legal
-      </div>
-
-      <h2 id="termsTitle">
-        Terms &amp; Conditions
-      </h2>
-
-      <p class="modal-intro">
-        These terms and conditions apply to your use of the Dream Property
-        website and, where relevant, our property management services and
-        real estate management software and app. By using this website, you
-        agree to them. If you do not agree, please do not use the website.
-        The version of these terms shown on this website is the current and
-        up-to-date version.
-      </p>
-
-      <h3>
-        Website information
-      </h3>
-
-      <p>
-        Information on this website is provided for general information
-        purposes. Property availability, pricing, services, software features,
-        and other details may change without notice. Our app is not yet
-        available for other companies to use; we will open partner access when
-        we are ready.
-      </p>
-
-      <h3>
-        Property listings
-      </h3>
-
-      <p>
-        Property information displayed on this website should be confirmed
-        with Dream Property or the relevant listing before relying on it.
-        External property listings may be subject to the terms of the
-        relevant platform.
-      </p>
-
-      <h3>
-        Professional services
-      </h3>
-
-      <p>
-        Information on this website does not itself create a property
-        management agreement, tenancy agreement, lease, agency agreement,
-        software licence, or other contractual relationship. Our property
-        management services and any future use of our app by partner companies
-        are provided under the specific written agreements we enter into with
-        owners, tenants, partners, and other clients. Nothing on this website
-        is legal, financial, tax, or investment advice, and you should seek
-        independent professional advice where appropriate.
-      </p>
-
-      <h3>
-        Accounts and login
-      </h3>
-
-      <p>
-        If you are given login access to a Dream Property portal (including
-        tenant, owner, or future partner access), you are responsible for
-        keeping your login details confidential and for activity that happens
-        under your account. Please do not share your login details with
-        anyone, and let us know straight away at info@dreamproperty.co.nz if
-        you think someone else has accessed your account. We may suspend or
-        close an account if we reasonably believe it is being misused.
-        Partner login for other property companies is not available yet.
-      </p>
-
-      <h3>
-        Your password is never stored
-      </h3>
-
-      <p>
-        We do not store your password anywhere in a readable form, and Dream
-        Property will never ask you to share your password by email, phone,
-        text message, or social media. Please treat any such request as
-        suspicious and report it to us.
-      </p>
-
-      <h3>
-        Acceptable use
-      </h3>
-
-      <p>
-        You agree not to use this website to break the law, to attempt to gain
-        unauthorised access to any account, system, or data, to interfere with
-        the website or its security, to send harmful code, or to misrepresent
-        your identity.
-      </p>
-
-      <h3>
-        Compliance with New Zealand law
-      </h3>
-
-      <p>
-        We carry out our services in line with the New Zealand laws that apply
-        to them. Depending on the property and the service, this may include
-        the Residential Tenancies Act 1986 (including healthy homes and
-        insulation standards), the Property Law Act 2007, the Real Estate
-        Agents Act 2008, the Fair Trading Act 1986, the Consumer Guarantees
-        Act 1993, the Contract and Commercial Law Act 2017, the Privacy Act
-        2020, and anti-money laundering legislation. Commercial and industrial
-        tenancies are governed by the terms of the relevant lease and the law
-        that applies to it, rather than the Residential Tenancies Act 1986.
-      </p>
-
-      <h3>
-        Intellectual property
-      </h3>
-
-      <p>
-        The Dream Property name, logo, website content, design, and any app or
-        software we provide (including our real estate management platform)
-        belong to Dream Property or its licensors. You may view the website
-        for your own personal use, but you may not copy, reproduce, reverse
-        engineer, or reuse our content, software, or features for commercial
-        purposes without our written permission. Use of the app by partner
-        companies will be subject to a separate licence agreement.
-      </p>
-
-      <h3>
-        External websites
-      </h3>
-
-      <p>
-        This website may contain links to third party websites. Dream Property
-        is not responsible for the content, availability, or privacy practices
-        of external websites.
-      </p>
-
-      <h3>
-        Website availability
-      </h3>
-
-      <p>
-        While reasonable care may be taken to keep website information
-        accurate and available, no guarantee is made that the website will
-        always be uninterrupted, error free, or completely up to date.
-      </p>
-
-      <h3>
-        Limitation of liability
-      </h3>
-
-      <p>
-        To the fullest extent permitted by law, Dream Property is not liable
-        for any loss arising from your use of, or reliance on, this website.
-        Nothing in these terms limits or excludes any right or remedy you have
-        under the Consumer Guarantees Act 1993, the Fair Trading Act 1986, or
-        any other law that cannot be excluded.
-      </p>
-
-      <h3>
-        Changes to these terms
-      </h3>
-
-      <p>
-        We may update these terms from time to time. The version published on
-        this website is always the current one. Your continued use of the
-        website means you accept the terms as they appear here.
-      </p>
-
-      <h3>
-        New Zealand law
-      </h3>
-
-      <p>
-        These terms are governed by the laws of New Zealand, and the New
-        Zealand courts have jurisdiction over any dispute about them. Services
-        provided by Dream Property are subject to applicable New Zealand laws
-        and the specific agreements entered into with clients, owners, tenants,
-        sellers, buyers, or other parties.
-      </p>
-
-      <h3>
-        Contact
-      </h3>
-
-      <p>
-        For questions about these terms, contact
-        <a href="mailto:info@dreamproperty.co.nz">
-          info@dreamproperty.co.nz
-        </a>.
-      </p>
-
+      <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
+      <div class="eyebrow">Legal</div>
+      <h2 id="termsTitle">Terms &amp; Conditions</h2>
+      <p>These terms apply to your use of the Dream Property website and marketplace. By using this website, you agree to them. If you do not agree, please do not use the website. The version shown here is the current version.</p>
+      <h3>About Dream Property</h3>
+      <p>Dream Property Limited operates a property marketplace and technology platform. Dream Property is not presenting itself as a licensed real estate agency on this website. Marketplace and platform functions are distinct from licensed real estate agency work, which is carried out only where appropriately authorised.</p>
+      <h3>Website information</h3>
+      <p>Information on this website is for general information. Property availability, pricing, services, and features may change without notice. Automated estimates are not registered valuations or guaranteed prices.</p>
+      <h3>Accounts and login</h3>
+      <p>If you are given login access, you are responsible for keeping your details confidential and for activity under your account. Account registration may not always be available. We may suspend or close an account if we reasonably believe it is being misused.</p>
+      <h3>Listings</h3>
+      <p>Users who list property must have the right to do so. Listings must be accurate and not misleading. We may remove listings that breach these terms or our listing rules.</p>
+      <h3>Acceptable use</h3>
+      <p>You agree not to use this website to break the law, attempt unauthorised access, interfere with security, send harmful code, or misrepresent your identity.</p>
+      <h3>Intellectual property</h3>
+      <p>The Dream Property name, logo, website content, and design belong to Dream Property Limited or its licensors. You may view the website for your own use, but you may not copy or reuse our content for commercial purposes without written permission.</p>
+      <h3>Limitation of liability</h3>
+      <p>To the fullest extent permitted by law, Dream Property is not liable for loss arising from your use of, or reliance on, this website. Nothing in these terms limits rights you have under the Consumer Guarantees Act 1993, the Fair Trading Act 1986, or other law that cannot be excluded.</p>
+      <h3>New Zealand law</h3>
+      <p>These terms are governed by the laws of New Zealand, and the New Zealand courts have jurisdiction over disputes about them.</p>
     </div>
-
   </div>
 
-
-  <style>
-
-    .about-layout {
-      display: grid;
-      grid-template-columns: minmax(280px, 0.85fr) minmax(320px, 1.15fr);
-      gap: 100px;
-      align-items: start;
-    }
-
-    .about-layout .section-heading { position: sticky; top: 140px; margin-bottom: 0; }
-
-    .about-copy { display: grid; gap: 25px; }
-
-    .about-copy p { color: var(--muted); font-size: 1.05rem; line-height: 1.85; }
-
-    .about-signature {
-      display: flex;
-      flex-direction: column;
-      margin-top: 20px;
-      padding-top: 25px;
-      border-top: 1px solid var(--border);
-    }
-
-    .about-signature span {
-      color: var(--muted);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .about-signature strong {
-      margin-top: 5px;
-      color: var(--gold);
-      font-size: 1.4rem;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-    }
-
-
-    .team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-
-    .team-card {
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgba(4, 11, 21, 0.55);
-      transition: transform var(--transition), border-color var(--transition);
-    }
-
-    .team-card:hover { transform: translateY(-5px); }
-
-    .team-card-button { display: block; width: 100%; padding: 0; border: 0; background: transparent; text-align: left; }
-
-    .team-image { position: relative; aspect-ratio: 4 / 4.7; overflow: hidden; background: var(--navy); }
-
-    .team-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms ease; }
-
-    .team-card:hover .team-image img { transform: scale(1.035); }
-
-    .team-body { display: flex; flex: 1; flex-direction: column; padding: 28px 24px 24px; }
-
-    .team-role {
-      color: var(--gold);
-      font-size: 0.64rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      line-height: 1.5;
-      text-transform: uppercase;
-    }
-
-    .team-body h3 { margin-top: 8px; margin-bottom: 24px; font-size: 1.65rem; }
-
-    .team-body p { margin-top: 15px; color: var(--muted); font-size: 0.86rem; line-height: 1.7; }
-
-    .team-body .button {
-      width: 100%;
-      margin-top: auto;
-      padding: 0 18px;
-      border-radius: var(--radius-sm);
-    }
-
-    .team-placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
-      color: var(--muted);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-align: center;
-      text-transform: uppercase;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(4, 11, 21, 0.72));
-    }
-
-    .team-body .button:disabled { cursor: default; opacity: 0.55; }
-
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: minmax(280px, 1fr) minmax(320px, 1fr);
-      gap: 100px;
-      align-items: start;
-    }
-
-    .contact-details { display: grid; gap: 12px; }
-
-    .contact-item {
-      display: flex;
-      flex-direction: column;
-      padding: 25px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.025);
-      transition:
-        border-color var(--transition),
-        background var(--transition),
-        transform var(--transition);
-    }
-
-    .contact-item:hover { transform: translateX(4px); }
-
-    .contact-label { color: var(--gold); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
-
-    .contact-item strong { margin-top: 8px; color: var(--white); font-size: 1.02rem; font-weight: 500; }
-
-    .contact-action { margin-top: 9px; color: var(--muted); font-size: 0.7rem; }
-
-    .contact-socials { display: flex; align-items: center; justify-content: center; gap: 25px; margin-top: 80px; padding-top: 0; }
-
-    .contact-socials > span { color: var(--muted); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; }
-
-    .social-links { display: flex; gap: 14px; }
-
-    .social-links a {
-      width: 56px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      font-size: 0.68rem;
-      font-weight: 700;
-      transition: color var(--transition), transform var(--transition);
-    }
-
-    .social-links a svg { width: 24px; height: 24px; }
-
-    .social-links a:hover { color: var(--gold-light); transform: translateY(-3px); }
-
-
-    .site-footer { padding: 65px 0 25px; background: #02070E; }
-
-    .footer-main { display: flex; justify-content: space-between; gap: 70px; padding-bottom: 55px; }
-
-    .footer-brand p { margin-top: 15px; color: var(--muted); font-size: 0.8rem; }
-
-    .footer-navigation { display: grid; grid-template-columns: repeat(4, minmax(110px, 1fr)); gap: 40px; }
-
-    .footer-navigation > div { display: flex; flex-direction: column; gap: 11px; }
-
-    .footer-heading { margin-bottom: 8px; color: var(--gold); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
-
-    .footer-navigation a,
-    .footer-navigation button {
-      width: fit-content;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      color: var(--muted);
-      font-size: 0.76rem;
-      text-align: left;
-      transition: color var(--transition);
-    }
-
-    .footer-navigation a:hover,
-    .footer-navigation button:hover { color: var(--white); }
-
-    .footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    .footer-bottom p { color: var(--muted); font-size: 0.66rem; }
-
-    .footer-legal { display: flex; gap: 20px; }
-
-    .footer-legal button { padding: 0; border: 0; background: transparent; color: var(--muted); font-size: 0.66rem; transition: color var(--transition); }
-
-    .footer-legal button:hover { color: var(--gold); }
-
-
-    .modal {
-      position: fixed;
-      z-index: 300;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 25px;
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 300ms ease, visibility 300ms ease;
-    }
-
-    .modal.open { opacity: 1; visibility: visible; pointer-events: auto; }
-
-    .modal-backdrop { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.78); backdrop-filter: blur(12px); }
-
-    .modal-panel {
-      position: relative;
-      z-index: 1;
-      width: min(680px, 100%);
-      max-height: min(850px, calc(100svh - 50px));
-      overflow-y: auto;
-      padding: 45px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: linear-gradient(145deg, #0A1422, #040B15);
-      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
-      transform: translateY(20px) scale(0.98);
-      transition: transform 350ms ease;
-    }
-
-    .modal.open .modal-panel { transform: translateY(0) scale(1); }
-
-    .modal-close {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      width: 42px;
-      height: 42px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      background: transparent;
-      color: var(--muted);
-      font-size: 1.55rem;
-      font-weight: 300;
-      line-height: 1;
-      transition: color var(--transition), border-color var(--transition), background var(--transition);
-    }
-
-    .modal-close:hover { border-color: var(--gold); background: rgba(214, 184, 120, 0.06); color: var(--gold); }
-
-    .modal-panel h2 { max-width: 560px; margin-top: 8px; font-size: clamp(2.3rem, 5vw, 4rem); }
-
-    .modal-intro { margin-top: 22px; color: var(--white); font-size: 0.98rem; line-height: 1.75; }
-
-    .modal-list { display: grid; margin: 35px 0; border-top: 1px solid var(--border); }
-
-    .modal-list > div { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 25px; padding: 19px 0; border-bottom: 1px solid var(--border); }
-
-    .modal-list strong { color: var(--white); font-size: 0.84rem; font-weight: 600; }
-
-    .modal-list span { color: var(--muted); font-size: 0.81rem; line-height: 1.6; }
-
-    .modal-price { margin-top: 30px; color: var(--gold); font-size: 4rem; font-weight: 500; letter-spacing: -0.06em; line-height: 1; }
-
-    .modal-price span { color: var(--muted); font-size: 0.9rem; letter-spacing: 0; }
-
-    .modal-feature-list {
-      display: grid;
-      gap: 11px;
-      margin: 25px 0;
-      padding: 25px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      list-style: none;
-    }
-
-    .modal-feature-list li { position: relative; padding-left: 23px; color: var(--muted); font-size: 0.84rem; }
-
-    .modal-feature-list li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); }
-
-    .modal-note { margin-bottom: 25px; color: var(--muted); font-size: 0.77rem; line-height: 1.6; }
-
-    .team-modal-image { width: 110px; height: 110px; margin-bottom: 30px; overflow: hidden; border: 1px solid var(--border); border-radius: 50%; }
-
-    .team-modal-image img { width: 100%; height: 100%; object-fit: cover; }
-
-    .modal-body-copy { margin-top: 18px; color: var(--muted); font-size: 0.88rem; line-height: 1.8; }
-
-    .modal-socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; padding-top: 25px; border-top: 1px solid var(--border); }
-
-    .modal-socials a { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; padding: 0; color: var(--gold); transition: color var(--transition); }
-
-    .modal-socials a:hover { color: var(--gold-light); }
-
-
-    .legal-modal h3 { margin-top: 35px; color: var(--white); font-size: 1.02rem; font-weight: 600; letter-spacing: -0.02em; }
-
-    .legal-modal h3 + p { margin-top: 10px; }
-
-    .legal-modal p { color: var(--muted); font-size: 0.84rem; line-height: 1.8; }
-
-    .legal-modal p + p { margin-top: 12px; }
-
-    .legal-modal .modal-intro { color: var(--white); }
-
-    .legal-modal a { color: var(--gold); }
-
-    .legal-warning {
-      margin-top: 35px;
-      padding: 18px;
-      border: 1px solid rgba(214, 184, 120, 0.28);
-      border-radius: 12px;
-      background: rgba(214, 184, 120, 0.05);
-      color: var(--muted);
-      font-size: 0.75rem;
-      line-height: 1.7;
-    }
-
-    .legal-warning strong { color: var(--gold); }
-
-
-    @media (max-width: 900px) {
-
-      .about-layout,
-      .contact-layout { grid-template-columns: 1fr; gap: 50px; }
-
-      .about-layout .section-heading { position: static; }
-
-      .team-grid { grid-template-columns: repeat(2, 1fr); }
-
-      .footer-main { flex-direction: column; }
-
-      .footer-navigation { width: 100%; }
-
-    }
-
-    @media (max-width: 650px) {
-
-      .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); justify-items: stretch; }
-
-      .team-grid .team-card:last-child:nth-child(odd) { justify-self: stretch; grid-column: 1; }
-
-      .contact-socials { margin-top: 55px; }
-
-      .social-links a { width: 48px; height: 48px; }
-
-      .footer-navigation { grid-template-columns: 1fr 1fr; gap: 35px 20px; }
-
-      .footer-navigation > div:last-child { grid-column: span 2; }
-
-      .footer-bottom { flex-direction: column; }
-
-      .modal { padding: 12px; }
-
-      .modal-panel { max-height: calc(100svh - 24px); padding: 32px 24px; border-radius: var(--radius); }
-
-      .modal-panel h2 { font-size: 2.3rem; }
-
-      .modal-list > div { grid-template-columns: 1fr; gap: 5px; }
-
-      .modal-price { font-size: 3rem; }
-
-    }
-
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: 240px;
-      background: linear-gradient(to bottom, rgba(4, 11, 21, 0), var(--navy));
-      pointer-events: none;
-    }
-
-    .login-modal { width: min(520px, 100%); }
-
-    .login-modal h2 { font-size: clamp(2.1rem, 5vw, 3.2rem); }
-
-    .login-form { display: grid; gap: 18px; margin-top: 32px; }
-
-    .login-field { display: grid; gap: 8px; }
-
-    .login-field span { color: var(--muted); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
-
-    .login-field input {
-      width: 100%;
-      min-height: 52px;
-      padding: 0 16px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--white);
-      transition: border-color var(--transition), background var(--transition);
-    }
-
-    .login-field input:focus { outline: none; border-color: var(--gold); background: rgba(214, 184, 120, 0.06); }
-
-    .login-error { color: #F2A0A0; font-size: 0.84rem; line-height: 1.6; }
-
-    .login-form .button { width: 100%; }
-
-
-    /* Frosted glass — minimal, modern */
-
-    .service-card,
-    .team-card,
-    .contact-item,
-    .modal-panel {
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(16, 29, 45, 0.55);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
-      -webkit-backdrop-filter: blur(18px) saturate(140%);
-      backdrop-filter: blur(18px) saturate(140%);
-      transition:
-        transform var(--transition),
-        border-color var(--transition),
-        background var(--transition);
-    }
-
-    .service-card:hover,
-    .team-card:hover,
-    .contact-item:hover {
-      border-color: rgba(255, 255, 255, 0.2);
-      background: rgba(16, 29, 45, 0.68);
-    }
-
-    .service-card:active,
-    .team-card:active { transform: translateY(-3px); }
-
-    .contact-item:active { transform: translateX(4px); }
-
-    .service-card.is-locked:active { transform: translateY(-5px); }
-
-    .modal-panel {
-      background: rgba(10, 20, 34, 0.88);
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
-      transition: transform 350ms ease;
-    }
-
-    .modal-backdrop {
-      background: rgba(2, 6, 12, 0.6);
-      -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px);
-    }
-
-    .modal-close:hover { border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.1); color: var(--white); }
-
-    .login-field input:focus { border-color: rgba(255, 255, 255, 0.45); background: rgba(255, 255, 255, 0.1); }
-
-    @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
-
-      .service-card,
-      .team-card,
-      .contact-item { background: #101D2D; }
-
-      .modal-panel { background: #0A1422; }
-
-    }
-
-    @media (prefers-reduced-transparency: reduce) {
-
-      .service-card,
-      .team-card,
-      .contact-item,
-      .modal-panel {
-        background: #101D2D;
-        -webkit-backdrop-filter: none;
-        backdrop-filter: none;
-      }
-
-    }
-
-
-    /* Compact staff cards on mobile — more padding from edges */
-
-    @media (max-width: 650px) {
-
-      .team-grid { gap: 12px; }
-
-      .team-card { container-type: inline-size; }
-
-      .team-image { aspect-ratio: 1 / 0.9; }
-
-      .team-image img { object-position: center 20%; }
-
-      .team-image.team-placeholder { padding: 12px; font-size: 0.6rem; letter-spacing: 0.08em; }
-
-      .team-body {
-        padding: 16px 14px 16px;
-        padding: 9cqw 8cqw 9cqw;
-      }
-
-      .team-role {
-        font-size: 0.45rem;
-        font-size: 4.2cqw;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-        line-height: 1.3;
-        white-space: nowrap;
-      }
-
-      .team-body h3 {
-        margin-top: 4px;
-        margin-bottom: 12px;
-        font-size: 0.95rem;
-        font-size: 9cqw;
-        white-space: nowrap;
-      }
-
-      .team-body .button.button-small {
-        min-height: 32px;
-        padding: 0 10px;
-        font-size: 0.55rem;
-        font-size: 5.8cqw;
-        letter-spacing: 0.04em;
-        white-space: nowrap;
-        border-radius: 12px;
-      }
-
-    }
-
-  </style>
-
+  <!-- Listing Rules -->
+  <div class="modal" id="modal-listing-rules" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="listingRulesTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel legal-modal">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
+      <div class="eyebrow">Marketplace</div>
+      <h2 id="listingRulesTitle">Listing Rules</h2>
+      <p>These rules help keep Dream Property fair, accurate, and safe for everyone.</p>
+      <h3>Who may list</h3>
+      <p>You may list a property only if you are the owner or have clear authority to list it. Agents and agencies must be appropriately verified before listing under an agency identity.</p>
+      <h3>Accuracy</h3>
+      <p>Listings must be truthful. Do not use misleading photos, incorrect prices, or false availability. Describe the property honestly.</p>
+      <h3>Photos</h3>
+      <p>Use clear, recent photos of the actual property. Do not use stock images as if they were the property, and avoid heavy editing that misrepresents the home.</p>
+      <h3>Prohibited content</h3>
+      <p>Do not post spam, scams, offensive material, or listings for properties you cannot lawfully offer.</p>
+      <h3>Moderation</h3>
+      <p>We may remove or limit listings that breach these rules. A report does not automatically mean a user is at fault. Reports are reviewed fairly.</p>
+    </div>
+  </div>
+
+  <!-- Safety -->
+  <div class="modal" id="modal-safety" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="safetyTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel legal-modal">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
+      <div class="eyebrow">Safety</div>
+      <h2 id="safetyTitle">Safety &amp; Reporting</h2>
+      <p>Stay cautious when dealing with property online. Dream Property will never ask for your password by email, phone, text, or social media.</p>
+      <h3>Viewings</h3>
+      <p>If a property is occupied, be respectful of the people living there and of the lister's time. Preferred viewing times may not always be available.</p>
+      <h3>Reporting</h3>
+      <p>You can report listings for spam, fraud, fake property, incorrect information, misleading photos, or other policy issues from the property detail page. Reports are reviewed by our team.</p>
+      <h3>Scams</h3>
+      <p>Do not send money or personal documents to anyone based only on a listing message. If something feels wrong, stop and report it.</p>
+    </div>
+  </div>
+
+  <!-- Accessibility -->
+  <div class="modal" id="modal-accessibility" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="a11yTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel legal-modal">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
+      <div class="eyebrow">Access</div>
+      <h2 id="a11yTitle">Accessibility</h2>
+      <p>We aim to make Dream Property usable for as many people as possible. The site is designed to work with keyboard navigation, readable contrast, and responsive layouts on common devices.</p>
+      <p>If you have trouble using any part of the website, tell us through DREAM·E on this site. We will do our best to help and to improve accessibility over time.</p>
+    </div>
+  </div>
+
+  <!-- DREAM·E launcher: cloud with smiley -->
+  <button class="dreame-launcher" id="dreameLauncher" type="button" aria-label="Open DREAM·E assistant" aria-expanded="false" aria-controls="chatPanel">
+    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <!-- Cloud silhouette -->
+      <path d="M14 32c-4.4 0-8-3.1-8-7s3.6-7 8-7c.5-4.5 4.3-8 9-8 3.6 0 6.7 2 8.3 5 1-.4 2.1-.6 3.2-.6 4.4 0 8 3.1 8 7s-3.6 7-8 7H14z" fill="currentColor" opacity="0.9"/>
+      <!-- Smiley eyes -->
+      <circle cx="20" cy="26" r="1.6" fill="#040B15"/>
+      <circle cx="28" cy="26" r="1.6" fill="#040B15"/>
+      <!-- Smile -->
+      <path d="M20 30c1.2 1.6 2.8 2.4 4.5 2.4S27.8 31.6 29 30" stroke="#040B15" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    </svg>
+  </button>
+
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-label="DREAM·E assistant" aria-hidden="true">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M14 32c-4.4 0-8-3.1-8-7s3.6-7 8-7c.5-4.5 4.3-8 9-8 3.6 0 6.7 2 8.3 5 1-.4 2.1-.6 3.2-.6 4.4 0 8 3.1 8 7s-3.6 7-8 7H14z" fill="currentColor" opacity="0.9"/>
+            <circle cx="20" cy="26" r="1.6" fill="#040B15"/>
+            <circle cx="28" cy="26" r="1.6" fill="#040B15"/>
+            <path d="M20 30c1.2 1.6 2.8 2.4 4.5 2.4S27.8 31.6 29 30" stroke="#040B15" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div>
+          <h3>DREAM·E</h3>
+          <span>Your Dream Property assistant</span>
+        </div>
+      </div>
+      <button class="chat-close" type="button" id="chatClose" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-bubble bot">
+        Hi, I am DREAM·E. Your Dream Property assistant. How can I help?
+      </div>
+    </div>
+    <form class="chat-input-row" id="chatForm">
+      <input type="text" id="chatInput" placeholder="Ask a question..." autocomplete="off" aria-label="Message to DREAM·E">
+      <button class="chat-send" type="submit" aria-label="Send message">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </form>
+  </div>
 
   <script>
+    (function () {
+      "use strict";
 
-    const menuToggle = document.getElementById("menuToggle");
-    const mainNavigation = document.getElementById("mainNavigation");
-
-    if (menuToggle && mainNavigation) {
-
-      menuToggle.addEventListener("click", () => {
-
-        const isOpen = mainNavigation.classList.toggle("open");
-
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-
-        menuToggle.setAttribute(
-          "aria-label",
-          isOpen ? "Close navigation menu" : "Open navigation menu"
-        );
-
+      /* Intro */
+      const siteIntro = document.getElementById("siteIntro");
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          if (siteIntro) siteIntro.classList.add("hidden");
+        }, 1450);
       });
 
-      mainNavigation.querySelectorAll("a").forEach(link => {
+      /* Header scroll */
+      const siteHeader = document.getElementById("siteHeader");
+      function updateHeader() {
+        if (!siteHeader) return;
+        if (window.scrollY > 30) siteHeader.classList.add("scrolled");
+        else siteHeader.classList.remove("scrolled");
+      }
+      window.addEventListener("scroll", updateHeader, { passive: true });
+      updateHeader();
 
-        link.addEventListener("click", () => {
+      /* Mobile menu */
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("mobileNav");
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", function () {
+          const open = mobileNav.classList.toggle("open");
+          menuToggle.setAttribute("aria-expanded", String(open));
+          menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        });
+        document.addEventListener("click", function (e) {
+          if (!mobileNav.contains(e.target) && !menuToggle.contains(e.target)) {
+            mobileNav.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open menu");
+          }
+        });
+      }
 
-          mainNavigation.classList.remove("open");
-          menuToggle.setAttribute("aria-expanded", "false");
-          menuToggle.setAttribute("aria-label", "Open navigation menu");
+      /* Year */
+      const yearEl = document.getElementById("currentYear");
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+      /* Search field configs by type */
+      const fieldConfigs = {
+        sale: {
+          main: [
+            { name: "location", label: "Location", type: "text", placeholder: "City, suburb or region", full: true },
+            { name: "price_min", label: "Min price", type: "select", options: ["Any", "200000", "400000", "600000", "800000", "1000000", "1500000", "2000000"] },
+            { name: "price_max", label: "Max price", type: "select", options: ["Any", "400000", "600000", "800000", "1000000", "1500000", "2000000", "3000000", "5000000"] },
+            { name: "bedrooms", label: "Bedrooms", type: "select", options: ["Any", "1+", "2+", "3+", "4+", "5+"] },
+            { name: "bathrooms", label: "Bathrooms", type: "select", options: ["Any", "1+", "2+", "3+", "4+"] },
+            { name: "parking", label: "Parking", type: "select", options: ["Any", "1+", "2+", "3+"] },
+            { name: "property_type", label: "Property type", type: "select", options: ["Any", "House", "Apartment", "Townhouse", "Unit", "Lifestyle", "Section", "Other"] }
+          ],
+          advanced: [
+            { name: "keywords", label: "Keywords", type: "text", placeholder: "e.g. waterfront, renovated", full: true },
+            { name: "land_min", label: "Min land (m²)", type: "text", placeholder: "Any" },
+            { name: "floor_min", label: "Min floor (m²)", type: "text", placeholder: "Any" },
+            { name: "exclude_attached", label: "Exclude attached / multi-unit developments", type: "checkbox" },
+            { name: "pool", label: "Pool", type: "checkbox" },
+            { name: "new_build", label: "New build", type: "checkbox" },
+            { name: "waterfront", label: "Waterfront", type: "checkbox" },
+            { name: "home_income", label: "Home and income", type: "checkbox" },
+            { name: "ensuite", label: "Ensuite", type: "checkbox" },
+            { name: "garage", label: "Garage", type: "checkbox" },
+            { name: "lifestyle", label: "Lifestyle property", type: "checkbox" },
+            { name: "development", label: "Development potential", type: "checkbox" }
+          ]
+        },
+        rent: {
+          main: [
+            { name: "location", label: "Location", type: "text", placeholder: "City, suburb or region", full: true },
+            { name: "price_min", label: "Min rent (pw)", type: "select", options: ["Any", "300", "400", "500", "600", "700", "800", "1000"] },
+            { name: "price_max", label: "Max rent (pw)", type: "select", options: ["Any", "400", "500", "600", "700", "800", "1000", "1500", "2000"] },
+            { name: "bedrooms", label: "Bedrooms", type: "select", options: ["Any", "1+", "2+", "3+", "4+", "5+"] },
+            { name: "bathrooms", label: "Bathrooms", type: "select", options: ["Any", "1+", "2+", "3+"] },
+            { name: "parking", label: "Parking", type: "select", options: ["Any", "1+", "2+", "3+"] },
+            { name: "property_type", label: "Property type", type: "select", options: ["Any", "House", "Apartment", "Townhouse", "Unit", "Room", "Other"] }
+          ],
+          advanced: [
+            { name: "keywords", label: "Keywords", type: "text", placeholder: "e.g. furnished, pet friendly", full: true },
+            { name: "exclude_attached", label: "Exclude attached / multi-unit developments", type: "checkbox" },
+            { name: "furnished", label: "Furnished", type: "checkbox" },
+            { name: "pets", label: "Pet friendly", type: "checkbox" },
+            { name: "ensuite", label: "Ensuite", type: "checkbox" },
+            { name: "garage", label: "Garage", type: "checkbox" }
+          ]
+        },
+        flatmates: {
+          main: [
+            { name: "location", label: "Location", type: "text", placeholder: "City, suburb or region", full: true },
+            { name: "price_min", label: "Min rent (pw)", type: "select", options: ["Any", "150", "200", "250", "300", "350", "400"] },
+            { name: "price_max", label: "Max rent (pw)", type: "select", options: ["Any", "200", "250", "300", "350", "400", "500", "600"] },
+            { name: "room_type", label: "Room type", type: "select", options: ["Any", "Single", "Double", "Twin"] },
+            { name: "available", label: "Available from", type: "text", placeholder: "Any date" }
+          ],
+          advanced: [
+            { name: "keywords", label: "Keywords", type: "text", placeholder: "e.g. quiet, professional", full: true },
+            { name: "furnished", label: "Furnished", type: "checkbox" },
+            { name: "pets", label: "Pets allowed", type: "checkbox" },
+            { name: "ensuite", label: "Ensuite", type: "checkbox" }
+          ]
+        },
+        agent: {
+          main: [
+            { name: "location", label: "Location", type: "text", placeholder: "City, suburb or region", full: true },
+            { name: "agent_name", label: "Agent or agency name", type: "text", placeholder: "Optional" },
+            { name: "speciality", label: "Speciality", type: "select", options: ["Any", "Residential sales", "Residential rental", "Commercial", "Rural", "Lifestyle"] }
+          ],
+          advanced: []
+        }
+      };
+
+      function formatSelectLabel(val) {
+        if (val === "Any") return "Any";
+        if (/^\d+$/.test(val)) {
+          const n = Number(val);
+          if (n >= 1000) return "$" + n.toLocaleString("en-NZ");
+          return "$" + n;
+        }
+        return val;
+      }
+
+      function renderFields(type) {
+        const config = fieldConfigs[type] || fieldConfigs.sale;
+        const mainEl = document.getElementById("searchFields");
+        const advEl = document.getElementById("advancedFields");
+        const advWrap = document.getElementById("advancedSearch");
+        const advToggle = document.getElementById("advancedToggle");
+        const typeInput = document.getElementById("searchTypeInput");
+
+        if (typeInput) typeInput.value = type;
+        if (!mainEl) return;
+
+        mainEl.innerHTML = "";
+        if (advEl) advEl.innerHTML = "";
+
+        config.main.forEach(function (f) {
+          mainEl.appendChild(createField(f));
         });
 
-      });
-
-    }
-
-
-    const siteHeader = document.getElementById("siteHeader");
-
-    function updateHeader() {
-
-      if (!siteHeader) {
-        return;
+        if (config.advanced && config.advanced.length) {
+          config.advanced.forEach(function (f) {
+            if (advEl) advEl.appendChild(createField(f));
+          });
+          if (advToggle) {
+            advToggle.hidden = false;
+            advToggle.textContent = "Advanced search";
+          }
+          if (advWrap) advWrap.classList.remove("open");
+        } else {
+          if (advToggle) advToggle.hidden = true;
+          if (advWrap) advWrap.classList.remove("open");
+        }
       }
 
-      if (window.scrollY > 30) {
-        siteHeader.classList.add("scrolled");
-      } else {
-        siteHeader.classList.remove("scrolled");
+      function createField(f) {
+        const wrap = document.createElement("div");
+        wrap.className = "search-field" + (f.full ? " full" : "");
+
+        if (f.type === "checkbox") {
+          const label = document.createElement("label");
+          label.className = "search-checkbox";
+          const input = document.createElement("input");
+          input.type = "checkbox";
+          input.name = f.name;
+          input.value = "1";
+          label.appendChild(input);
+          label.appendChild(document.createTextNode(f.label));
+          wrap.appendChild(label);
+          return wrap;
+        }
+
+        const label = document.createElement("label");
+        label.setAttribute("for", "sf-" + f.name);
+        label.textContent = f.label;
+        wrap.appendChild(label);
+
+        if (f.type === "select") {
+          const select = document.createElement("select");
+          select.id = "sf-" + f.name;
+          select.name = f.name;
+          (f.options || []).forEach(function (opt) {
+            const o = document.createElement("option");
+            o.value = opt === "Any" ? "" : opt;
+            o.textContent = formatSelectLabel(opt);
+            select.appendChild(o);
+          });
+          wrap.appendChild(select);
+        } else {
+          const input = document.createElement("input");
+          input.type = f.type || "text";
+          input.id = "sf-" + f.name;
+          input.name = f.name;
+          if (f.placeholder) input.placeholder = f.placeholder;
+          wrap.appendChild(input);
+        }
+        return wrap;
       }
 
-    }
-
-    window.addEventListener("scroll", updateHeader, { passive: true });
-
-    updateHeader();
-
-
-    const siteIntro = document.getElementById("siteIntro");
-
-    window.addEventListener("load", () => {
-
-      setTimeout(() => {
-
-        if (siteIntro) {
-          siteIntro.classList.add("hidden");
-        }
-
-      }, 1450);
-
-    });
-
-
-    document.querySelectorAll("[data-login-form]").forEach(form => {
-
-      const loginError = form.querySelector(".login-error");
-      const passwordInput = form.querySelector('input[type="password"]');
-
-      form.addEventListener("submit", event => {
-
-        event.preventDefault();
-
-        if (loginError) {
-          loginError.hidden = false;
-        }
-
-        if (passwordInput) {
-          passwordInput.value = "";
-          passwordInput.focus();
-        }
-
+      /* Tabs */
+      const tabs = document.querySelectorAll(".search-tab");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("active");
+            t.setAttribute("aria-selected", "false");
+          });
+          tab.classList.add("active");
+          tab.setAttribute("aria-selected", "true");
+          renderFields(tab.getAttribute("data-search-type") || "sale");
+        });
       });
 
-      form.querySelectorAll("input").forEach(input => {
+      renderFields("sale");
 
-        input.addEventListener("input", () => {
+      /* Advanced toggle */
+      const advancedToggle = document.getElementById("advancedToggle");
+      const advancedSearch = document.getElementById("advancedSearch");
+      if (advancedToggle && advancedSearch) {
+        advancedToggle.addEventListener("click", function () {
+          const open = advancedSearch.classList.toggle("open");
+          advancedToggle.textContent = open ? "Hide advanced" : "Advanced search";
+        });
+      }
 
-          if (loginError) {
-            loginError.hidden = true;
+      /* Search form always submits (even empty) */
+      const searchForm = document.getElementById("propertySearchForm");
+      if (searchForm) {
+        searchForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const formData = new FormData(searchForm);
+          const params = new URLSearchParams();
+          formData.forEach(function (value, key) {
+            if (value !== "" && value != null) params.append(key, value);
+          });
+          const qs = params.toString();
+          const url = "/listings" + (qs ? "?" + qs : "");
+          window.open(url, "_blank", "noopener");
+        });
+      }
+
+      /* Address search: live NZ Post autofill via backend proxy */
+      /*
+        NZ Post Address Checker / ParcelAddress APIs require OAuth client credentials.
+        Never put client_secret in this frontend file.
+
+        1. Create an NZ Post business account and API app:
+           https://www.nzpost.co.nz/business/ecommerce/developer-resource-centre/get-started
+        2. Run a small backend that:
+           - Gets a bearer token from https://oauth.nzpost.co.nz/as/token.oauth2
+           - Proxies suggest requests to:
+             https://api.nzpost.co.nz/addresschecker/1.0/suggest?q=...&max=8
+             or
+             https://api.nzpost.co.nz/parceladdress/2.0/domestic/addresses?q=...&count=8
+        3. Point the config below at your proxy.
+
+        Expected proxy response JSON:
+        {
+          "success": true,
+          "addresses": [
+            {
+              "full_address": "151 Victoria Road, Saint Clair, Dunedin 9012",
+              "address_id": "949793",
+              "dpid": "1376601"
+            }
+          ]
+        }
+      */
+
+      var DP_CONFIG = window.DREAM_PROPERTY_CONFIG || {};
+      var ADDRESS_SUGGEST_URL = DP_CONFIG.addressSuggestUrl || "/api/address/suggest";
+      var ADDRESS_DETAILS_URL = DP_CONFIG.addressDetailsUrl || "/api/address/details";
+
+      function showPropertyPreview(data) {
+        var empty = document.getElementById("previewEmpty");
+        var content = document.getElementById("previewContent");
+        var addr = document.getElementById("previewAddress");
+        var meta = document.getElementById("previewMeta");
+        var sale = document.getElementById("previewSale");
+        var estBlock = document.getElementById("previewEstimateBlock");
+        var est = document.getElementById("previewEstimate");
+        var more = document.getElementById("previewMoreLink");
+
+        if (!data || !content) return;
+
+        if (empty) empty.style.display = "none";
+        content.classList.add("visible");
+
+        if (addr) addr.textContent = data.full_address || data.address || "";
+
+        if (meta) {
+          var parts = [];
+          if (data.suburb) parts.push(data.suburb);
+          if (data.city) parts.push(data.city);
+          if (data.postcode) parts.push(data.postcode);
+          if (data.is_rural) parts.push("Rural delivery");
+          if (data.latitude != null && data.longitude != null) {
+            parts.push("Map location available");
+          }
+          if (!parts.length) {
+            parts.push("Address verified via New Zealand Post");
+          }
+          meta.innerHTML = parts.map(function (p) {
+            return "<span>" + p + "</span>";
+          }).join("");
+        }
+
+        if (sale) {
+          sale.textContent = data.note || "Further property attributes (bedrooms, floor area, sale history, estimates) appear when licensed property data sources are connected.";
+        }
+
+        if (estBlock) estBlock.hidden = true;
+        if (est) est.textContent = "";
+
+        if (more) {
+          var q = encodeURIComponent(data.full_address || data.address || "");
+          var extra = data.address_id ? "&address_id=" + encodeURIComponent(data.address_id) : "";
+          if (data.dpid) extra += "&dpid=" + encodeURIComponent(data.dpid);
+          more.href = "/property?address=" + q + extra;
+        }
+      }
+
+      function clearPropertyPreview() {
+        var empty = document.getElementById("previewEmpty");
+        var content = document.getElementById("previewContent");
+        if (empty) empty.style.display = "";
+        if (content) content.classList.remove("visible");
+      }
+
+      function closeSuggestions() {
+        if (!suggestionsEl) return;
+        suggestionsEl.classList.remove("open");
+        suggestionsEl.hidden = true;
+        suggestionsEl.innerHTML = "";
+        activeSuggestionIndex = -1;
+        if (addressInput) addressInput.setAttribute("aria-expanded", "false");
+      }
+
+      function openSuggestionMessage(message) {
+        if (!suggestionsEl) return;
+        suggestionsEl.innerHTML = "";
+        var div = document.createElement("div");
+        div.className = "address-suggestion-status";
+        div.textContent = message;
+        suggestionsEl.appendChild(div);
+        suggestionsEl.hidden = false;
+        suggestionsEl.classList.add("open");
+        if (addressInput) addressInput.setAttribute("aria-expanded", "true");
+        activeSuggestionIndex = -1;
+      }
+
+      function openSuggestions(list) {
+        if (!suggestionsEl) return;
+        if (!list.length) {
+          closeSuggestions();
+          return;
+        }
+        suggestionsEl.innerHTML = "";
+        list.forEach(function (item) {
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "address-suggestion";
+          btn.setAttribute("role", "option");
+          btn.setAttribute("data-address-id", item.address_id || "");
+          btn.setAttribute("data-dpid", item.dpid || "");
+          var label = item.full_address || item.address || "";
+          var sub = [];
+          if (item.suburb) sub.push(item.suburb);
+          if (item.city) sub.push(item.city);
+          if (item.postcode) sub.push(item.postcode);
+          btn.innerHTML = label + (sub.length ? "<span>" + sub.join(", ") + "</span>" : "");
+          btn.addEventListener("mousedown", function (e) {
+            e.preventDefault();
+            selectAddress(item);
+          });
+          suggestionsEl.appendChild(btn);
+        });
+        suggestionsEl.hidden = false;
+        suggestionsEl.classList.add("open");
+        if (addressInput) addressInput.setAttribute("aria-expanded", "true");
+        activeSuggestionIndex = -1;
+      }
+
+      function selectAddress(item) {
+        if (!item) return;
+        var label = item.full_address || item.address || "";
+        if (addressInput) addressInput.value = label;
+        closeSuggestions();
+        showPropertyPreview(item);
+        if (item.address_id || item.dpid) {
+          fetchAddressDetails(item);
+        }
+      }
+
+      function normaliseSuggestResponse(payload) {
+        if (!payload) return [];
+        var list = payload.addresses || payload.address || payload.results || [];
+        if (!Array.isArray(list)) return [];
+        return list.map(function (row) {
+          return {
+            full_address: row.full_address || row.FullAddress || row.address || row.a || "",
+            address_id: String(row.address_id || row.AddressId || row.id || ""),
+            dpid: String(row.dpid || row.DPID || ""),
+            suburb: row.suburb || row.Suburb || "",
+            city: row.city || row.town || row.City || row.MailTown || "",
+            postcode: row.postcode || row.Postcode || "",
+            is_rural: !!(row.is_rural || row.IsRuralDelivery || row.rural)
+          };
+        }).filter(function (r) { return r.full_address; });
+      }
+
+      var suggestAbort = null;
+      var suggestTimer = null;
+
+      function fetchSuggestions(query) {
+        var q = (query || "").trim();
+        if (q.length < 3) {
+          closeSuggestions();
+          return;
+        }
+
+        if (suggestAbort) {
+          try { suggestAbort.abort(); } catch (err) {}
+        }
+        suggestAbort = typeof AbortController !== "undefined" ? new AbortController() : null;
+
+        openSuggestionMessage("Searching addresses…");
+
+        var url = ADDRESS_SUGGEST_URL + (ADDRESS_SUGGEST_URL.indexOf("?") >= 0 ? "&" : "?") + "q=" + encodeURIComponent(q) + "&max=8";
+        var opts = { method: "GET", headers: { "Accept": "application/json" } };
+        if (suggestAbort) opts.signal = suggestAbort.signal;
+
+        fetch(url, opts)
+          .then(function (res) {
+            if (res.status === 404) {
+              throw new Error("not_configured");
+            }
+            if (!res.ok) {
+              throw new Error("http_" + res.status);
+            }
+            return res.json();
+          })
+          .then(function (data) {
+            var list = normaliseSuggestResponse(data);
+            if (!list.length) {
+              openSuggestionMessage("No matching addresses found.");
+              return;
+            }
+            openSuggestions(list);
+          })
+          .catch(function (err) {
+            if (err && err.name === "AbortError") return;
+            if (err && err.message === "not_configured") {
+              openSuggestionMessage("Address API not connected yet. Add your NZ Post proxy at /api/address/suggest.");
+              return;
+            }
+            openSuggestionMessage("Address lookup is temporarily unavailable. Please try again.");
+          });
+      }
+
+      function fetchAddressDetails(item) {
+        var id = item.address_id || item.dpid;
+        if (!id || !ADDRESS_DETAILS_URL) return;
+        var url = ADDRESS_DETAILS_URL + (ADDRESS_DETAILS_URL.indexOf("?") >= 0 ? "&" : "?");
+        if (item.address_id) url += "address_id=" + encodeURIComponent(item.address_id);
+        else url += "dpid=" + encodeURIComponent(item.dpid);
+
+        fetch(url, { method: "GET", headers: { "Accept": "application/json" } })
+          .then(function (res) {
+            if (!res.ok) return null;
+            return res.json();
+          })
+          .then(function (data) {
+            if (!data) return;
+            var detail = data.address || data.Address || data;
+            var merged = {
+              full_address: detail.full_address || item.full_address || "",
+              address_id: item.address_id,
+              dpid: item.dpid || detail.dpid || "",
+              suburb: detail.suburb || item.suburb || "",
+              city: detail.city || detail.town || item.city || "",
+              postcode: detail.postcode || item.postcode || "",
+              latitude: detail.latitude,
+              longitude: detail.longitude,
+              is_rural: detail.is_rural || item.is_rural
+            };
+            showPropertyPreview(merged);
+          })
+          .catch(function () {});
+      }
+
+      var addressForm = document.getElementById("addressSearchForm");
+      var addressInput = document.getElementById("addressInput");
+      var suggestionsEl = document.getElementById("addressSuggestions");
+      var activeSuggestionIndex = -1;
+
+      if (addressInput) {
+        addressInput.addEventListener("input", function () {
+          var q = addressInput.value;
+          if (!q.trim()) {
+            clearPropertyPreview();
+            closeSuggestions();
+            return;
+          }
+          if (suggestTimer) clearTimeout(suggestTimer);
+          suggestTimer = setTimeout(function () {
+            fetchSuggestions(q);
+          }, 280);
+        });
+
+        addressInput.addEventListener("keydown", function (e) {
+          if (!suggestionsEl || !suggestionsEl.classList.contains("open")) return;
+          var items = suggestionsEl.querySelectorAll(".address-suggestion");
+          if (!items.length) return;
+
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            activeSuggestionIndex = Math.min(activeSuggestionIndex + 1, items.length - 1);
+            items.forEach(function (el, i) { el.classList.toggle("active", i === activeSuggestionIndex); });
+          } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            activeSuggestionIndex = Math.max(activeSuggestionIndex - 1, 0);
+            items.forEach(function (el, i) { el.classList.toggle("active", i === activeSuggestionIndex); });
+          } else if (e.key === "Enter" && activeSuggestionIndex >= 0) {
+            e.preventDefault();
+            items[activeSuggestionIndex].dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
+          } else if (e.key === "Escape") {
+            closeSuggestions();
+          }
+        });
+
+        addressInput.addEventListener("blur", function () {
+          setTimeout(closeSuggestions, 150);
+        });
+      }
+
+      if (addressForm) {
+        addressForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var val = addressInput ? addressInput.value.trim() : "";
+          if (!val) return;
+          showPropertyPreview({ full_address: val });
+          window.open("/property?address=" + encodeURIComponent(val), "_blank", "noopener");
+        });
+      }
+
+
+      /* Modals: listing, login, signup, legal */
+      var activeModal = null;
+      var previousFocus = null;
+
+      function openModal(name) {
+        var modal = document.getElementById("modal-" + name);
+        if (!modal) return;
+        if (activeModal && activeModal !== modal) {
+          closeModal(true);
+        }
+        previousFocus = document.activeElement;
+        activeModal = modal;
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+        var closeBtn = modal.querySelector(".modal-close");
+        if (closeBtn) setTimeout(function () { closeBtn.focus(); }, 40);
+        var mobileNavEl = document.getElementById("mobileNav");
+        if (mobileNavEl) mobileNavEl.classList.remove("open");
+        var mt = document.getElementById("menuToggle");
+        if (mt) {
+          mt.setAttribute("aria-expanded", "false");
+          mt.setAttribute("aria-label", "Open menu");
+        }
+      }
+
+      function closeModal(skipFocus) {
+        if (!activeModal) return;
+        activeModal.classList.remove("open");
+        activeModal.setAttribute("aria-hidden", "true");
+        activeModal.querySelectorAll("form").forEach(function (form) {
+          form.reset();
+          form.querySelectorAll(".auth-error, .auth-success, .auth-hint[id]").forEach(function (el) {
+            el.hidden = true;
+          });
+        });
+        document.body.classList.remove("modal-open");
+        var toFocus = previousFocus;
+        activeModal = null;
+        previousFocus = null;
+        if (!skipFocus && toFocus && typeof toFocus.focus === "function") {
+          setTimeout(function () { toFocus.focus(); }, 20);
+        }
+      }
+
+      document.querySelectorAll("[data-open-modal]").forEach(function (el) {
+        el.addEventListener("click", function (e) {
+          e.preventDefault();
+          var name = el.getAttribute("data-open-modal");
+          if (el.hasAttribute("data-close-modal")) closeModal(true);
+          openModal(name);
+        });
+      });
+
+      document.querySelectorAll("[data-close-modal]").forEach(function (el) {
+        if (el.hasAttribute("data-open-modal")) return;
+        el.addEventListener("click", function () {
+          closeModal();
+        });
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && activeModal) closeModal();
+      });
+
+      /* Login: always incorrect */
+      var loginForm = document.getElementById("loginForm");
+      if (loginForm) {
+        loginForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var err = document.getElementById("loginError");
+          var pass = document.getElementById("loginPassword");
+          if (err) err.hidden = false;
+          if (pass) {
+            pass.value = "";
+            pass.focus();
+          }
+        });
+        loginForm.querySelectorAll("input").forEach(function (input) {
+          input.addEventListener("input", function () {
+            var err = document.getElementById("loginError");
+            if (err) err.hidden = true;
+          });
+        });
+      }
+
+      var forgotBtn = document.getElementById("forgotPasswordBtn");
+      if (forgotBtn) {
+        forgotBtn.addEventListener("click", function () {
+          var msg = document.getElementById("forgotPasswordMsg");
+          if (msg) msg.hidden = false;
+        });
+      }
+
+      /* Signup validation then blocked */
+      function passwordStrong(pw) {
+        if (!pw || pw.length < 8) return false;
+        if (!/[A-Z]/.test(pw)) return false;
+        if (!/[0-9]/.test(pw)) return false;
+        if (!/[^A-Za-z0-9]/.test(pw)) return false;
+        return true;
+      }
+
+      var signupForm = document.getElementById("signupForm");
+      if (signupForm) {
+        signupForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var err = document.getElementById("signupError");
+          var blocked = document.getElementById("signupBlocked");
+          var user = document.getElementById("signupUsername");
+          var email = document.getElementById("signupEmail");
+          var pw = document.getElementById("signupPassword");
+          var pw2 = document.getElementById("signupPassword2");
+          if (err) { err.hidden = true; err.textContent = ""; }
+          if (blocked) blocked.hidden = true;
+
+          var u = user ? user.value.trim() : "";
+          var em = email ? email.value.trim() : "";
+          var p1 = pw ? pw.value : "";
+          var p2 = pw2 ? pw2.value : "";
+
+          if (u.length < 3) {
+            if (err) { err.textContent = "Username must be at least 3 characters."; err.hidden = false; }
+            return;
+          }
+          if (!em || em.indexOf("@") < 1) {
+            if (err) { err.textContent = "Please enter a valid email address."; err.hidden = false; }
+            return;
+          }
+          if (!passwordStrong(p1)) {
+            if (err) {
+              err.textContent = "Password must be at least 8 characters and include an uppercase letter, a number, and a special character.";
+              err.hidden = false;
+            }
+            return;
+          }
+          if (p1 !== p2) {
+            if (err) { err.textContent = "Passwords do not match."; err.hidden = false; }
+            return;
           }
 
+          if (blocked) blocked.hidden = false;
         });
-
-      });
-
-    });
-
-
-    const modalTriggers = document.querySelectorAll("[data-modal]");
-
-    let activeModal = null;
-    let previousFocusedElement = null;
-    let skipRouteOnClose = false;
-
-    const PROFILE_PATHS = {
-      calix: "/calixmojica",
-      rae: "/raelillo",
-      monica: "/monicalillo"
-    };
-
-    const PATH_TO_PROFILE = {
-      "/calixmojica": "calix",
-      "/raelillo": "rae",
-      "/monicalillo": "monica"
-    };
-
-    const SECTION_PATHS = {
-      "/": "home",
-      "/login": "login",
-      "/about": "about",
-      "/team": "team",
-      "/contact": "contact"
-    };
-
-    function normalizePath(path) {
-      if (!path) {
-        return "/";
       }
 
-      const clean = path.replace(/\/+$/, "");
-
-      return clean === "" ? "/" : clean;
-    }
-
-    function setPath(path, replace) {
-      const next = normalizePath(path);
-
-      if (normalizePath(window.location.pathname) === next) {
-        return;
-      }
-
-      if (replace) {
-        history.replaceState({ path: next }, "", next);
-      } else {
-        history.pushState({ path: next }, "", next);
-      }
-    }
-
-    function scrollToSection(sectionId, behavior) {
-      if (sectionId === "home") {
-        window.scrollTo({ top: 0, behavior: behavior || "smooth" });
-        return;
-      }
-
-      const target = document.getElementById(sectionId);
-
-      if (target) {
-        target.scrollIntoView({ behavior: behavior || "smooth" });
-      }
-    }
-
-    function openModal(modalName, options) {
-
-      const modal = document.getElementById(`modal-${modalName}`);
-
-      if (!modal) {
-        return;
-      }
-
-      const opts = options || {};
-
-      previousFocusedElement = document.activeElement;
-
-      activeModal = modal;
-
-      modal.classList.add("open");
-      modal.setAttribute("aria-hidden", "false");
-      document.body.classList.add("modal-open");
-
-      if (PROFILE_PATHS[modalName] && !opts.skipPath) {
-        setPath(PROFILE_PATHS[modalName], opts.replacePath);
-      }
-
-      const closeButton = modal.querySelector(".modal-close");
-
-      if (closeButton) {
-        setTimeout(() => {
-          closeButton.focus();
-        }, 50);
-      }
-
-    }
-
-    function closeModal(options) {
-
-      if (!activeModal) {
-        return;
-      }
-
-      const opts = options || {};
-      const modalToClose = activeModal;
-      const closedId = modalToClose.id.replace(/^modal-/, "");
-
-      modalToClose.classList.remove("open");
-      modalToClose.setAttribute("aria-hidden", "true");
-
-      modalToClose.querySelectorAll("form").forEach(form => {
-
-        form.reset();
-
-        const formError = form.querySelector(".login-error");
-
-        if (formError) {
-          formError.hidden = true;
-        }
-
-      });
-
-      document.body.classList.remove("modal-open");
-
-      activeModal = null;
-
-      if (PROFILE_PATHS[closedId] && !opts.skipPath && !skipRouteOnClose) {
-        setPath("/team", opts.replacePath);
-      }
-
-      skipRouteOnClose = false;
-
-      const elementToFocus = previousFocusedElement;
-
-      previousFocusedElement = null;
-
-      if (elementToFocus && typeof elementToFocus.focus === "function") {
-        setTimeout(() => {
-          elementToFocus.focus();
-        }, 20);
-      }
-
-    }
-
-    function applyRoute(path, options) {
-      const opts = options || {};
-      const clean = normalizePath(path);
-      const profile = PATH_TO_PROFILE[clean];
-
-      if (profile) {
-        if (activeModal && activeModal.id !== `modal-${profile}`) {
-          skipRouteOnClose = true;
-          closeModal({ skipPath: true });
-        }
-
-        openModal(profile, { skipPath: true, replacePath: opts.replacePath });
-        scrollToSection("team", opts.instant ? "auto" : "smooth");
-        return;
-      }
-
-      if (activeModal) {
-        skipRouteOnClose = true;
-        closeModal({ skipPath: true });
-      }
-
-      const sectionId = SECTION_PATHS[clean];
-
-      if (sectionId) {
-        scrollToSection(sectionId, opts.instant ? "auto" : "smooth");
-        return;
-      }
-
-      scrollToSection("home", opts.instant ? "auto" : "smooth");
-      setPath("/", true);
-    }
-
-    modalTriggers.forEach(trigger => {
-
-      trigger.addEventListener("click", event => {
-
-        event.preventDefault();
-
-        openModal(trigger.dataset.modal);
-
-      });
-
-    });
-
-    document.querySelectorAll("[data-close-modal]").forEach(element => {
-
-      element.addEventListener("click", event => {
-
-        const destination = element.getAttribute("href");
-
-        closeModal();
-
-        if (destination && destination.startsWith("#")) {
-
-          event.preventDefault();
-
-          setTimeout(() => {
-
-            const target = document.querySelector(destination);
-
-            if (target) {
-              target.scrollIntoView({ behavior: "smooth" });
+      /* Listing form */
+      var listingForm = document.getElementById("listingForm");
+      if (listingForm) {
+        listingForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var err = document.getElementById("listingError");
+          var addr = document.getElementById("listingAddress");
+          var owner = document.getElementById("listingOwner");
+          if (err) { err.hidden = true; err.textContent = ""; }
+          var a = addr ? addr.value.trim() : "";
+          if (!a) {
+            if (err) { err.textContent = "Please enter the property address."; err.hidden = false; }
+            return;
+          }
+          if (!owner || !owner.checked) {
+            if (err) {
+              err.textContent = "Please confirm you are the owner or have authority to list, or log in to continue.";
+              err.hidden = false;
             }
+            return;
+          }
+          if (err) {
+            err.textContent = "Listing tools are not available yet. Please log in when accounts are open, or try again later.";
+            err.hidden = false;
+          }
+        });
+      }
 
-          }, 20);
 
-        }
+      /* DREAM·E chat */
+      const launcher = document.getElementById("dreameLauncher");
+      const chatPanel = document.getElementById("chatPanel");
+      const chatClose = document.getElementById("chatClose");
+      const chatForm = document.getElementById("chatForm");
+      const chatInput = document.getElementById("chatInput");
+      const chatMessages = document.getElementById("chatMessages");
 
+      function openChat() {
+        if (!chatPanel) return;
+        chatPanel.classList.add("open");
+        chatPanel.setAttribute("aria-hidden", "false");
+        if (launcher) launcher.setAttribute("aria-expanded", "true");
+        document.body.classList.add("chat-open");
+        if (chatInput) setTimeout(function () { chatInput.focus(); }, 100);
+      }
+
+      function closeChat() {
+        if (!chatPanel) return;
+        chatPanel.classList.remove("open");
+        chatPanel.setAttribute("aria-hidden", "true");
+        if (launcher) launcher.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("chat-open");
+      }
+
+      if (launcher) {
+        launcher.addEventListener("click", function () {
+          if (chatPanel && chatPanel.classList.contains("open")) closeChat();
+          else openChat();
+        });
+      }
+      if (chatClose) chatClose.addEventListener("click", closeChat);
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && chatPanel && chatPanel.classList.contains("open")) closeChat();
       });
 
-    });
-
-    document.addEventListener("keydown", event => {
-
-      if (event.key === "Escape" && activeModal) {
-        closeModal();
+      function appendBubble(text, who) {
+        if (!chatMessages) return;
+        const div = document.createElement("div");
+        div.className = "chat-bubble " + who;
+        div.innerHTML = text;
+        chatMessages.appendChild(div);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
       }
 
-    });
+      function botReply(userText) {
+        const lower = (userText || "").toLowerCase();
+        let reply;
 
-    document.querySelectorAll("[data-route]").forEach(link => {
-
-      link.addEventListener("click", event => {
-
-        const href = link.getAttribute("href");
-
-        if (!href || href.startsWith("http") || href.startsWith("mailto:")) {
-          return;
+        if (/hello|hi |hey|kia ora/.test(lower)) {
+          reply = "Kia ora. How can I help you with Dream Property today?";
+        } else if (/list|sell|rent my|start a listing/.test(lower)) {
+          reply = "You can start a listing from the Start a Listing button in the header. Private owners and verified agents can list once verification is complete.";
+        } else if (/login|sign up|account|password/.test(lower)) {
+          reply = "Use Log In or Sign Up in the header to access your account. If you need help with access, I can pass your question to the team.";
+        } else if (/agent|agency/.test(lower)) {
+          reply = "You can search for agents using the Find an Agent tab on the homepage search, or visit the agents section from the footer.";
+        } else if (/prop swap|swap/.test(lower)) {
+          reply = "Prop Swap helps identify potential property exchange matches between owners. Any transfer still follows normal legal and conveyancing processes.";
+        } else if (/estimate|valuation|worth/.test(lower)) {
+          reply = "The Dream Property Estimate is an automated market indication where enough data exists. It is not a registered valuation or a guaranteed price.";
+        } else if (/report|scam|fraud|spam/.test(lower)) {
+          reply = "You can report a listing from the property detail page. Reports are reviewed by our team. We do not automatically treat a reported user as at fault.";
+        } else if (/contact|email|human|person|support/.test(lower)) {
+          reply = "I do not want to give you the wrong information. I can pass your question on to our team at <a href=\"mailto:info@dreamproperty.co.nz\">info@dreamproperty.co.nz</a>. Dream Property is still a new business, so our response times may sometimes be a little longer than we would like. We appreciate your patience and will do our best to get back to you as soon as possible.";
+        } else if (/management|app|platform/.test(lower)) {
+          reply = "Dream Property is building a property management platform for owners. It is currently used exclusively by Dream Property and will be released more widely once it is ready.";
+        } else if (/privacy|terms|legal/.test(lower)) {
+          reply = "Privacy Policy and Terms are linked in the footer. For anything more specific, I can escalate your question to the team.";
+        } else {
+          reply = "I do not want to give you the wrong information. I can pass your question on to our team at <a href=\"mailto:info@dreamproperty.co.nz\">info@dreamproperty.co.nz</a>. Dream Property is still a new business, so our response times may sometimes be a little longer than we would like. We appreciate your patience and will do our best to get back to you as soon as possible.";
         }
 
-        event.preventDefault();
-
-        setPath(href);
-        applyRoute(href);
-
-        if (mainNavigation && menuToggle) {
-          mainNavigation.classList.remove("open");
-          menuToggle.setAttribute("aria-expanded", "false");
-          menuToggle.setAttribute("aria-label", "Open navigation menu");
-        }
-
-      });
-
-    });
-
-    window.addEventListener("popstate", () => {
-      applyRoute(window.location.pathname, { instant: false });
-    });
-
-    applyRoute(window.location.pathname, { instant: true, replacePath: true });
-
-
-    const currentYear = document.getElementById("currentYear");
-
-    if (currentYear) {
-      currentYear.textContent = new Date().getFullYear();
-    }
-
-
-    document.addEventListener("click", event => {
-
-      if (!mainNavigation || !menuToggle) {
-        return;
+        setTimeout(function () {
+          appendBubble(reply, "bot");
+        }, 450);
       }
 
-      const clickedNavigation = mainNavigation.contains(event.target);
-      const clickedToggle = menuToggle.contains(event.target);
-
-      if (!clickedNavigation && !clickedToggle) {
-
-        mainNavigation.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation menu");
-
+      if (chatForm) {
+        chatForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          if (!chatInput) return;
+          const text = chatInput.value.trim();
+          if (!text) return;
+          appendBubble(text.replace(/</g, "&lt;"), "user");
+          chatInput.value = "";
+          botReply(text);
+        });
       }
-
-    });
-
-
-    document.addEventListener("keydown", event => {
-
-      if (event.key !== "Tab" || !activeModal) {
-        return;
-      }
-
-      const focusableElements = activeModal.querySelectorAll(`
-        button:not([disabled]),
-        a[href],
-        input:not([disabled]),
-        textarea:not([disabled]),
-        select:not([disabled]),
-        [tabindex]:not([tabindex="-1"])
-      `);
-
-      if (!focusableElements.length) {
-        return;
-      }
-
-      const first = focusableElements[0];
-      const last = focusableElements[focusableElements.length - 1];
-
-      if (event.shiftKey && document.activeElement === first) {
-
-        event.preventDefault();
-        last.focus();
-
-      } else if (!event.shiftKey && document.activeElement === last) {
-
-        event.preventDefault();
-        first.focus();
-
-      }
-
-    });
-
-
-    const glassElements = document.querySelectorAll(".service-card, .team-card, .contact-item, .modal-panel");
-
-    glassElements.forEach(element => {
-
-      function moveHighlight(event) {
-
-        const box = element.getBoundingClientRect();
-
-        if (!box.width || !box.height) {
-          return;
-        }
-
-        element.style.setProperty("--mx", ((event.clientX - box.left) / box.width * 100).toFixed(1) + "%");
-        element.style.setProperty("--my", ((event.clientY - box.top) / box.height * 100).toFixed(1) + "%");
-
-      }
-
-      element.addEventListener("pointermove", moveHighlight, { passive: true });
-      element.addEventListener("pointerdown", moveHighlight, { passive: true });
-
-      element.addEventListener("pointerleave", () => {
-        element.style.removeProperty("--mx");
-        element.style.removeProperty("--my");
-      });
-
-    });
-
+    })();
   </script>
-
 </body>
 </html>
