@@ -206,7 +206,7 @@
       transition: transform var(--transition), border-color var(--transition);
     }
     .team-card:hover { transform: translateY(-5px); }
-    .team-card-button { display: block; width: 100%; padding: 0; border: 0; background: transparent; text-align: left; }
+    .team-card-button { display: block; width: 100%; padding: 0; border: 0; background: transparent; text-align: left; color: inherit; }
     .team-image { position: relative; aspect-ratio: 4 / 4.7; overflow: hidden; background: var(--navy); }
     .team-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms ease; }
     .team-card:hover .team-image img { transform: scale(1.035); }
@@ -244,6 +244,40 @@
     .social-links a:hover { color: var(--gold-light); transform: translateY(-3px); }
 
     /* Marketplace-style footer */
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .footer-socials a {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      transition: color var(--transition), transform var(--transition);
+    }
+    .footer-socials a:hover {
+      color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    .footer-socials a svg { width: 20px; height: 20px; }
+    .footer-bottom {
+      justify-content: center;
+      text-align: center;
+    }
+    .footer-bottom p {
+      width: 100%;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.72rem;
+    }
+    .header-inner { justify-content: flex-start; }
+    .team-card-button { display: block; width: 100%; }
+
     .site-footer { padding: 70px 0 28px; background: #02070E; }
     .footer-main { display: flex; justify-content: space-between; gap: 48px; padding-bottom: 50px; flex-wrap: wrap; }
     .footer-brand p { margin-top: 15px; color: var(--muted); font-size: 0.9rem; max-width: 260px; }
@@ -261,9 +295,10 @@
     }
     .footer-nav a:hover, .footer-nav button:hover { color: var(--white); }
     .footer-bottom {
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+      display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px;
       padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.07);
       color: var(--muted); font-size: 0.72rem;
+      text-align: center;
     }
 
     .modal {
@@ -398,15 +433,6 @@
         <img class="brand-logo" src="/dream-property-logo.svg" alt="Dream Property logo">
         <div class="brand-name">Dream <span>Property</span></div>
       </a>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNavigation">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="main-navigation" id="mainNavigation" aria-label="Main navigation">
-        <a href="#login">Login</a>
-        <a href="/about">About Us</a>
-        <a href="#contact">Contact</a>
-        <a href="/">Marketplace</a>
-      </nav>
     </div>
   </header>
 
@@ -472,16 +498,16 @@
         </div>
         <div class="team-grid">
           <article class="team-card">
-            <button class="team-card-button" type="button" data-modal="calix" aria-label="View Calix Mojica profile">
+            <a class="team-card-button" href="/team/calixmojica" aria-label="View Calix Mojica profile">
               <div class="team-image">
                 <img src="/images/calix-mojica.jpg" alt="Calix Mojica" loading="lazy">
               </div>
-            </button>
+            </a>
             <div class="team-body">
               <div class="team-role">Property Manager</div>
               <div class="team-subrole">Director · CEO · Co-Founder</div>
               <h3>Calix Mojica</h3>
-              <button class="button button-outline button-small" type="button" data-modal="calix">View Profile</button>
+              <a class="button button-outline button-small" href="/team/calixmojica">View Profile</a>
             </div>
           </article>
         </div>
@@ -534,7 +560,20 @@
             <img class="brand-logo" src="/dream-property-logo.svg" alt="Dream Property logo">
             <div class="brand-name">Dream <span>Property</span></div>
           </a>
-          <p>New Zealand property, elevated.</p>
+          <div class="footer-socials" aria-label="Social media">
+            <a href="https://facebook.com/DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Dream Property Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93v-1.9c0-.86.24-1.44 1.47-1.44h1.57V4.14C16.24 4.06 15.3 4 14.2 4c-2.3 0-3.87 1.4-3.87 4v2.44H7.77v2.96h2.56V21h3.17Z"/></svg>
+            </a>
+            <a href="https://instagram.com/DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Dream Property Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.15" cy="6.85" r="1"/></svg>
+            </a>
+            <a href="https://tiktok.com/@DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Dream Property TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"/></svg>
+            </a>
+            <a href="https://youtube.com/@DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Dream Property YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
+            </a>
+          </div>
         </div>
         <div class="footer-nav">
           <div>
@@ -561,8 +600,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© <span id="currentYear"></span> Dream Property Limited</span>
-        <span>Marketplace · Management · Technology</span>
+        <p>© <span id="currentYear"></span> Dream Property Limited</p>
       </div>
     </div>
   </footer>
@@ -604,37 +642,6 @@
         <p class="login-error" role="alert" hidden>Incorrect Username/Password. Please Try Again.</p>
         <button class="button button-primary" type="submit">Login</button>
       </form>
-    </div>
-  </div>
-
-  <!-- Calix -->
-  <div class="modal" id="modal-calix" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="calixTitle">
-    <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-panel team-modal">
-      <button class="modal-close" type="button" data-close-modal aria-label="Close Calix Mojica profile">×</button>
-      <div class="team-modal-image">
-        <img src="/images/calix-mojica.jpg" alt="Calix Mojica">
-      </div>
-      <div class="eyebrow">Property Manager · Director · CEO · Co-Founder</div>
-      <h2 id="calixTitle">Calix Mojica</h2>
-      <p class="modal-intro">
-        Calix brings residential property management experience and a Bachelor of Property from the University of Auckland to Dream Property. His degree gave him a strong understanding of property, investment, development, marketing, and the wider property industry. He has taken what he learned through his studies and combined it with his hands-on experience to look at real estate management from a different perspective.
-      </p>
-      <p class="modal-body-copy">
-        This approach led Calix to develop Dream Property’s own real estate management app, creating smarter ways to manage everyday tasks, improve efficiency, and make real estate management easier for everyone involved. His goal is to keep finding new ways to use technology and fresh ideas to raise the standard of real estate services.
-      </p>
-      <div class="modal-socials">
-        <a href="https://instagram.com/CalixMojicaRealEstate" target="_blank" rel="noopener noreferrer" aria-label="Instagram @CalixMojicaRealEstate">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.15" cy="6.85" r="1"/></svg>
-        </a>
-        <a href="https://tiktok.com/@CalixMojicaRealEstate" target="_blank" rel="noopener noreferrer" aria-label="TikTok @CalixMojicaRealEstate">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"/></svg>
-        </a>
-        <a href="https://youtube.com/@CalixMojicaRealEstate" target="_blank" rel="noopener noreferrer" aria-label="YouTube @CalixMojicaRealEstate">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
-        </a>
-      </div>
-      <p style="margin-top:20px"><a href="/team/calixmojica" style="color:var(--gold);font-size:0.85rem;font-weight:600">View full profile →</a></p>
     </div>
   </div>
 
