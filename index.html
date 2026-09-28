@@ -1344,7 +1344,7 @@
         <div class="details-card">
           <div class="details-search">
             <h3>Search an address</h3>
-            <p>Look up a New Zealand address. Autofill uses New Zealand Post address data. Further property attributes appear when licensed data sources are connected.</p>
+            <p>Look up a New Zealand address. Basic land information comes from official open data. Bedrooms and bathrooms appear when a listing provides them.</p>
             <form class="address-form" id="addressSearchForm" action="/property" method="get" autocomplete="off">
               <div class="address-input-wrap">
                 <input
@@ -1360,7 +1360,7 @@
                 <div class="address-suggestions" id="addressSuggestions" role="listbox" hidden></div>
               </div>
               <button class="button button-primary" type="submit">Search address</button>
-              <p class="address-attribution" id="addressAttribution">Address lookup powered by New Zealand Post</p>
+              <p class="address-attribution" id="addressAttribution">Address and parcel data can be sourced from Land Information New Zealand (LINZ). CC BY 4.0.</p>
             </form>
           </div>
           <div class="details-preview" id="detailsPreview">
@@ -1391,7 +1391,7 @@
       <div class="container">
         <div class="section-heading">
           <div class="eyebrow">For owners</div>
-          <h2>List, sell, or explore your options</h2>
+          <h2>List, sell or explore your options</h2>
           <p>Verified owners can list their property, connect with agents, or explore Prop Swap matching.</p>
         </div>
 
@@ -1414,8 +1414,8 @@
       <div class="container">
         <div class="section-heading mgmt-block">
           <div class="eyebrow">Property technology</div>
-          <h2>An exclusive platform, built to perfection.</h2>
-          <p>Dream Property has developed an exclusive software that makes property management more efficient by combining the best features from tools used in the industry. The application is currently exclusive to Dream Property. Once it is ready, it will be released for public use.</p>
+          <h2>An exclusive platform, built for what comes next</h2>
+          <p>Dream Property has developed proprietary property software that supports how we work today. The application is currently exclusive to Dream Property. Once it is ready, it will be released for public use.</p>
         </div>
       </div>
     </section>
@@ -1717,6 +1717,20 @@
     </form>
   </div>
 
+
+  <!-- 
+    LINZ address lookup config
+    1. Deploy api/linz-address-worker.js on Cloudflare Workers
+    2. Set secret LINZ_API_KEY
+    3. Put your Worker URL below (replace YOURNAME)
+  -->
+  <script>
+    window.DREAM_PROPERTY_CONFIG = {
+      addressSuggestUrl: "https://dreamproperty-address.dreampropertynz.workers.dev/suggest",
+      addressDetailsUrl: "https://dreamproperty-address.dreampropertynz.workers.dev/details"
+    };
+  </script>
+
   <script>
     (function () {
       "use strict";
@@ -1765,7 +1779,7 @@
       const fieldConfigs = {
         sale: {
           main: [
-            { name: "location", label: "Location", type: "text", placeholder: "City, suburb, or region", full: true },
+            { name: "location", label: "Location", type: "text", placeholder: "City, suburb or region", full: true },
             { name: "price_min", label: "Min price", type: "select", options: ["Any", "200000", "400000", "600000", "800000", "1000000", "1500000", "2000000"] },
             { name: "price_max", label: "Max price", type: "select", options: ["Any", "400000", "600000", "800000", "1000000", "1500000", "2000000", "3000000", "5000000"] },
             { name: "bedrooms", label: "Bedrooms", type: "select", options: ["Any", "1+", "2+", "3+", "4+", "5+"] },
@@ -1790,7 +1804,7 @@
         },
         rent: {
           main: [
-            { name: "location", label: "Location", type: "text", placeholder: "City, suburb, or region", full: true },
+            { name: "location", label: "Location", type: "text", placeholder: "City, suburb or region", full: true },
             { name: "price_min", label: "Min rent (pw)", type: "select", options: ["Any", "300", "400", "500", "600", "700", "800", "1000"] },
             { name: "price_max", label: "Max rent (pw)", type: "select", options: ["Any", "400", "500", "600", "700", "800", "1000", "1500", "2000"] },
             { name: "bedrooms", label: "Bedrooms", type: "select", options: ["Any", "1+", "2+", "3+", "4+", "5+"] },
@@ -1809,7 +1823,7 @@
         },
         flatmates: {
           main: [
-            { name: "location", label: "Location", type: "text", placeholder: "City, suburb, or region", full: true },
+            { name: "location", label: "Location", type: "text", placeholder: "City, suburb or region", full: true },
             { name: "price_min", label: "Min rent (pw)", type: "select", options: ["Any", "150", "200", "250", "300", "350", "400"] },
             { name: "price_max", label: "Max rent (pw)", type: "select", options: ["Any", "200", "250", "300", "350", "400", "500", "600"] },
             { name: "room_type", label: "Room type", type: "select", options: ["Any", "Single", "Double", "Twin"] },
@@ -1824,7 +1838,7 @@
         },
         agent: {
           main: [
-            { name: "location", label: "Location", type: "text", placeholder: "City, suburb, or region", full: true },
+            { name: "location", label: "Location", type: "text", placeholder: "City, suburb or region", full: true },
             { name: "agent_name", label: "Agent or agency name", type: "text", placeholder: "Optional" },
             { name: "speciality", label: "Speciality", type: "select", options: ["Any", "Residential sales", "Residential rental", "Commercial", "Rural", "Lifestyle"] }
           ],
@@ -1961,7 +1975,7 @@
         });
       }
 
-      /* Address search: live NZ Post autofill via backend proxy */
+      /* Address search: LINZ open data via backend proxy (see docs/FREE-PROPERTY-DATA.md) */
       /*
         NZ Post Address Checker / ParcelAddress APIs require OAuth client credentials.
         Never put client_secret in this frontend file.
@@ -1992,6 +2006,8 @@
       var DP_CONFIG = window.DREAM_PROPERTY_CONFIG || {};
       var ADDRESS_SUGGEST_URL = DP_CONFIG.addressSuggestUrl || "/api/address/suggest";
       var ADDRESS_DETAILS_URL = DP_CONFIG.addressDetailsUrl || "/api/address/details";
+      /* Set window.DREAM_PROPERTY_CONFIG.addressSuggestUrl to your free Cloudflare Worker URL
+         after deploying api/linz-address-worker.js (guide: docs/FREE-PROPERTY-DATA.md). */
 
       function showPropertyPreview(data) {
         var empty = document.getElementById("previewEmpty");
@@ -2012,23 +2028,27 @@
 
         if (meta) {
           var parts = [];
+          if (data.legal_description) parts.push("Legal: " + data.legal_description);
+          if (data.land_area) parts.push("Land: " + data.land_area);
           if (data.suburb) parts.push(data.suburb);
           if (data.city) parts.push(data.city);
           if (data.postcode) parts.push(data.postcode);
-          if (data.is_rural) parts.push("Rural delivery");
-          if (data.latitude != null && data.longitude != null) {
-            parts.push("Map location available");
-          }
-          if (!parts.length) {
-            parts.push("Address verified via New Zealand Post");
-          }
+          if (data.bedrooms != null && data.bedrooms !== "") parts.push(data.bedrooms + " bedrooms");
+          if (data.bathrooms != null && data.bathrooms !== "") parts.push(data.bathrooms + " bathrooms");
+          if (data.latitude != null && data.longitude != null) parts.push("Map location available");
+          if (!parts.length) parts.push("Official address match");
           meta.innerHTML = parts.map(function (p) {
             return "<span>" + p + "</span>";
           }).join("");
         }
 
         if (sale) {
-          sale.textContent = data.note || "Further property attributes (bedrooms, floor area, sale history, estimates) appear when licensed property data sources are connected.";
+          var hasRooms = data.bedrooms != null && data.bedrooms !== "";
+          if (hasRooms) {
+            sale.textContent = data.note || "Property attributes include listing information where available.";
+          } else {
+            sale.textContent = data.note || "Bedrooms and bathrooms are not available from free official open data for every home. They appear when someone lists this property on Dream Property.";
+          }
         }
 
         if (estBlock) estBlock.hidden = true;
@@ -2173,7 +2193,7 @@
           .catch(function (err) {
             if (err && err.name === "AbortError") return;
             if (err && err.message === "not_configured") {
-              openSuggestionMessage("Address API not connected yet. Add your NZ Post proxy at /api/address/suggest.");
+              openSuggestionMessage("Address lookup is not connected yet. Follow docs/FREE-PROPERTY-DATA.md to add the free LINZ Worker.");
               return;
             }
             openSuggestionMessage("Address lookup is temporarily unavailable. Please try again.");
