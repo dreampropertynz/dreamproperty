@@ -1437,6 +1437,9 @@
           <div class="eyebrow">Property Management Technology</div>
           <h2>An exclusive platform, built to perfection</h2>
           <p>Dream Property has developed the Dream Property management tool that will change how the industry works. The application is currently exclusive to Dream Property. Once it is perfected, it will be released for public use.</p>
+          <div style="margin-top:28px">
+            <a class="button button-primary" href="/management">Manage Your Property With Us</a>
+          </div>
         </div>
       </div>
     </section>
@@ -1467,6 +1470,7 @@
             <span class="footer-heading">Company</span>
             <a href="/about">About Us</a>
             <a href="/team">Dream Team</a>
+            <a href="/management">Property Management</a>
             <a href="/help" target="_blank" rel="noopener">Help &amp; Support</a>
             <a href="/contact" target="_blank" rel="noopener">Contact</a>
           </div>
@@ -2182,7 +2186,12 @@
             suburb: row.suburb || row.Suburb || "",
             city: row.city || row.town || row.City || row.MailTown || "",
             postcode: row.postcode || row.Postcode || "",
-            is_rural: !!(row.is_rural || row.IsRuralDelivery || row.rural)
+            is_rural: !!(row.is_rural || row.IsRuralDelivery || row.rural),
+            legal_description: row.legal_description || "",
+            land_area: row.land_area || "",
+            latitude: row.latitude != null ? row.latitude : null,
+            longitude: row.longitude != null ? row.longitude : null,
+            note: row.note || ""
           };
         }).filter(function (r) { return r.full_address; });
       }
@@ -2232,7 +2241,11 @@
               openSuggestionMessage("Address lookup is not connected yet. Follow docs/FREE-PROPERTY-DATA.md to add the free LINZ Worker.");
               return;
             }
-            openSuggestionMessage("Address lookup is temporarily unavailable. Please try again.");
+            if (String(ADDRESS_SUGGEST_URL).indexOf("YOURNAME") >= 0) {
+              openSuggestionMessage("Address lookup is not connected. Replace YOURNAME in DREAM_PROPERTY_CONFIG with your Cloudflare Worker URL.");
+              return;
+            }
+            openSuggestionMessage("Address lookup could not be completed. Check your connection and Worker URL.");
           });
       }
 
