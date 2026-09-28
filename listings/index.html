@@ -1,1 +1,565 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property listings | Dream Property</title>
+  <meta name="description" content="Browse New Zealand property listings on Dream Property. Search residential, commercial, and rural property for sale, rent, and more.">
+  <link rel="icon" href="/dream-property-logo.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --navy: #040B15;
+      --navy-light: #0A1422;
+      --navy-soft: #101D2D;
+      --gold: #D6B878;
+      --gold-light: #F0DDA7;
+      --white: #FFFFFF;
+      --muted: #AAB4C2;
+      --border: rgba(255, 255, 255, 0.14);
+      --radius: 28px;
+      --radius-sm: 16px;
+      --radius-xs: 12px;
+      --transition: 300ms ease;
+    }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: -apple-system, BlinkMacSystemFont, system-ui, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+    img { display: block; max-width: 100%; }
+
+    .container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: var(--transition);
+    }
+    .button-primary { background: var(--gold); color: var(--navy); }
+    .button-primary:hover { background: var(--gold-light); }
+    .button-outline {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--white);
+    }
+    .button-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(4, 11, 21, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; }
+    .brand-logo { width: 40px; height: 40px; object-fit: contain; }
+    .brand-name { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.03em; }
+    .brand-name span { color: var(--gold); }
+    .header-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .page {
+      padding: 48px 0 80px;
+    }
+    .page-heading h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: -0.04em;
+      font-weight: 650;
+      margin-bottom: 10px;
+    }
+    .page-heading p {
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .filters-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 28px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.03);
+    }
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(214, 184, 120, 0.08);
+      font-size: 0.8rem;
+      color: var(--gold-light);
+    }
+    .filter-chip strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+    .filters-empty {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .results-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+    .results-meta p { color: var(--muted); font-size: 0.92rem; }
+    .results-meta strong { color: var(--white); }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .listing-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      transition: var(--transition);
+    }
+    .listing-card:hover {
+      border-color: rgba(214, 184, 120, 0.4);
+      transform: translateY(-2px);
+    }
+    .listing-media {
+      height: 180px;
+      background: linear-gradient(135deg, var(--navy-soft), var(--navy-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .listing-body { padding: 18px; }
+    .listing-price {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+    .listing-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .listing-meta {
+      color: var(--muted);
+      font-size: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+    }
+
+    .empty-state {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 48px 28px;
+      text-align: center;
+      background: rgba(255,255,255,0.02);
+    }
+    .empty-state h2 {
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+    .empty-state p {
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 22px;
+    }
+    .empty-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0 48px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-footer a:hover { color: var(--gold); }
+
+    @media (max-width: 900px) {
+      .results-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 650px) {
+      .container { width: min(1180px, calc(100% - 48px)); }
+      .results-grid { grid-template-columns: 1fr; }
+      .header-actions .button { min-height: 42px; padding: 0 14px; font-size: 0.65rem; }
+      .page { padding: 36px 0 64px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Dream Property home">
+        <img class="brand-logo" src="/dream-property-logo.svg" alt="Dream Property logo">
+        <div class="brand-name">Dream <span>Property</span></div>
+      </a>
+      <div class="header-actions">
+        <a class="button button-outline" href="/">New search</a>
+        <a class="button button-primary" href="/#property-details">Search address</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <div class="page-heading">
+        <h1 id="pageTitle">Property listings</h1>
+        <p id="pageSubtitle">Results based on your search criteria across the Dream Property marketplace.</p>
+      </div>
+
+      <div class="filters-bar" id="filtersBar" aria-label="Active search filters"></div>
+
+      <div class="results-meta">
+        <p id="resultsCount"><strong>0</strong> listings match your search</p>
+        <a class="button button-outline" href="/">Refine search</a>
+      </div>
+
+      <div class="results-grid" id="resultsGrid" hidden></div>
+
+      <div class="empty-state" id="emptyState">
+        <h2>No listings match these details yet</h2>
+        <p>
+          Your search has been applied. As properties are listed on Dream Property,
+          matching results will appear here. You can refine your criteria or explore another search.
+        </p>
+        <div class="empty-actions">
+          <a class="button button-primary" href="/">Back to search</a>
+          <a class="button button-outline" href="/listings">View all listing types</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Dream Property · New Zealand property, elevated.</span>
+      <span>
+        <a href="/about">About</a>
+        ·
+        <a href="/team">Dream Team</a>
+        ·
+        <a href="/">Home</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      /**
+       * Listings inventory for the marketplace.
+       * Add real listing objects here as properties are listed.
+       * Each object is matched against URL query parameters from the homepage search.
+       *
+       * Example shape:
+       * {
+       *   id: "dp-1001",
+       *   type: "sale", // sale | rent | flatmates | agent
+       *   title: "Sunlit family home in Remuera",
+       *   address: "12 Example Street, Remuera, Auckland",
+       *   location: "Remuera, Auckland",
+       *   suburb: "Remuera",
+       *   city: "Auckland",
+       *   region: "Auckland",
+       *   price: 1850000, // sale price or weekly rent number
+       *   bedrooms: 4,
+       *   bathrooms: 2,
+       *   parking: 2,
+       *   property_type: "House",
+       *   land: 650,
+       *   floor: 210,
+       *   keywords: "renovated, north-facing",
+       *   href: "/property?id=dp-1001"
+       * }
+       */
+      var LISTINGS = window.DREAM_PROPERTY_LISTINGS || [];
+
+      var TYPE_LABELS = {
+        sale: "For sale",
+        rent: "For rent",
+        flatmates: "Flatmates",
+        agent: "Agents"
+      };
+
+      var PARAM_LABELS = {
+        type: "Type",
+        location: "Location",
+        price_min: "Price from",
+        price_max: "Price up to",
+        bedrooms: "Bedrooms",
+        bathrooms: "Bathrooms",
+        parking: "Parking",
+        property_type: "Property type",
+        keywords: "Keywords",
+        land_min: "Land area from",
+        land_max: "Land area up to",
+        floor_min: "Floor area from",
+        floor_max: "Floor area up to",
+        agent_name: "Agent or agency",
+        speciality: "Speciality",
+        room_type: "Room type",
+        available: "Available from"
+      };
+
+      function getParams() {
+        var params = new URLSearchParams(window.location.search);
+        var out = {};
+        params.forEach(function (value, key) {
+          if (value != null && String(value).trim() !== "") {
+            out[key] = String(value).trim();
+          }
+        });
+        if (!out.type) out.type = "sale";
+        return out;
+      }
+
+      function formatMoney(n, weekly) {
+        if (n == null || n === "") return "";
+        var num = Number(n);
+        if (!isFinite(num)) return String(n);
+        var s = "$" + num.toLocaleString("en-NZ");
+        return weekly ? s + " per week" : s;
+      }
+
+      function formatArea(n) {
+        if (n == null || n === "") return "";
+        var num = Number(n);
+        if (!isFinite(num)) return String(n);
+        return num.toLocaleString("en-NZ") + " m²";
+      }
+
+      function parsePlus(value) {
+        // "3+" -> 3
+        if (value == null) return null;
+        var m = String(value).match(/(\d+)/);
+        return m ? Number(m[1]) : null;
+      }
+
+      function matchesListing(item, filters) {
+        if (filters.type && item.type && filters.type !== item.type) return false;
+
+        if (filters.location) {
+          var loc = filters.location.toLowerCase();
+          var hay = [
+            item.location, item.address, item.suburb, item.city, item.region, item.title
+          ].filter(Boolean).join(" ").toLowerCase();
+          if (hay.indexOf(loc) === -1) return false;
+        }
+
+        if (filters.price_min) {
+          var minP = Number(filters.price_min);
+          if (isFinite(minP) && Number(item.price) < minP) return false;
+        }
+        if (filters.price_max) {
+          var maxP = Number(filters.price_max);
+          if (isFinite(maxP) && Number(item.price) > maxP) return false;
+        }
+
+        var bedNeed = parsePlus(filters.bedrooms);
+        if (bedNeed != null && Number(item.bedrooms) < bedNeed) return false;
+
+        var bathNeed = parsePlus(filters.bathrooms);
+        if (bathNeed != null && Number(item.bathrooms) < bathNeed) return false;
+
+        var parkNeed = parsePlus(filters.parking);
+        if (parkNeed != null && Number(item.parking) < parkNeed) return false;
+
+        if (filters.property_type && item.property_type) {
+          if (String(item.property_type).toLowerCase() !== String(filters.property_type).toLowerCase()) {
+            return false;
+          }
+        }
+
+        if (filters.land_min && Number(item.land) < Number(filters.land_min)) return false;
+        if (filters.land_max && Number(item.land) > Number(filters.land_max)) return false;
+        if (filters.floor_min && Number(item.floor) < Number(filters.floor_min)) return false;
+        if (filters.floor_max && Number(item.floor) > Number(filters.floor_max)) return false;
+
+        if (filters.keywords) {
+          var words = filters.keywords.toLowerCase().split(/[\s,]+/).filter(Boolean);
+          var blob = [item.keywords, item.title, item.address, item.location].filter(Boolean).join(" ").toLowerCase();
+          for (var i = 0; i < words.length; i++) {
+            if (blob.indexOf(words[i]) === -1) return false;
+          }
+        }
+
+        if (filters.agent_name) {
+          var an = filters.agent_name.toLowerCase();
+          var agentBlob = [item.title, item.agent_name, item.agency].filter(Boolean).join(" ").toLowerCase();
+          if (agentBlob.indexOf(an) === -1) return false;
+        }
+
+        if (filters.speciality && item.speciality) {
+          if (String(item.speciality).toLowerCase().indexOf(String(filters.speciality).toLowerCase()) === -1) {
+            return false;
+          }
+        }
+
+        if (filters.room_type && item.room_type) {
+          if (String(item.room_type).toLowerCase() !== String(filters.room_type).toLowerCase()) return false;
+        }
+
+        return true;
+      }
+
+      function chipLabel(key, value) {
+        var label = PARAM_LABELS[key] || key;
+        var display = value;
+        if (key === "type") display = TYPE_LABELS[value] || value;
+        if (key === "price_min" || key === "price_max") {
+          var n = Number(value);
+          display = (isFinite(n) && n < 5000) ? formatMoney(n, true) : formatMoney(n, false);
+        }
+        if (key === "land_min" || key === "land_max" || key === "floor_min" || key === "floor_max") {
+          display = formatArea(value);
+        }
+        return { label: label, value: display };
+      }
+
+      function renderFilters(filters) {
+        var bar = document.getElementById("filtersBar");
+        if (!bar) return;
+        bar.innerHTML = "";
+        var keys = Object.keys(filters);
+        if (!keys.length) {
+          bar.innerHTML = '<span class="filters-empty">No filters applied · showing all available listings</span>';
+          return;
+        }
+        keys.forEach(function (key) {
+          var chip = chipLabel(key, filters[key]);
+          var el = document.createElement("span");
+          el.className = "filter-chip";
+          el.innerHTML = "<strong>" + chip.label + ":</strong> " + chip.value;
+          bar.appendChild(el);
+        });
+      }
+
+      function renderResults(items, filters) {
+        var grid = document.getElementById("resultsGrid");
+        var empty = document.getElementById("emptyState");
+        var count = document.getElementById("resultsCount");
+        var title = document.getElementById("pageTitle");
+        var subtitle = document.getElementById("pageSubtitle");
+
+        var typeLabel = TYPE_LABELS[filters.type] || "Listings";
+        if (title) title.textContent = typeLabel === "Agents" ? "Find an agent" : typeLabel + " listings";
+        if (subtitle) {
+          subtitle.textContent = items.length
+            ? "Showing properties that match your selected criteria."
+            : "Your search criteria are ready. Matching listings will appear as they are published on Dream Property.";
+        }
+        if (count) {
+          count.innerHTML = "<strong>" + items.length + "</strong> " +
+            (items.length === 1 ? "listing matches" : "listings match") + " your search";
+        }
+
+        if (!items.length) {
+          if (grid) { grid.hidden = true; grid.innerHTML = ""; }
+          if (empty) empty.hidden = false;
+          return;
+        }
+
+        if (empty) empty.hidden = true;
+        if (!grid) return;
+        grid.hidden = false;
+        grid.innerHTML = "";
+
+        items.forEach(function (item) {
+          var card = document.createElement("article");
+          card.className = "listing-card";
+          var priceText = "";
+          if (item.type === "rent" || item.type === "flatmates") {
+            priceText = formatMoney(item.price, true);
+          } else if (item.type === "agent") {
+            priceText = item.speciality || "Licensed agent";
+          } else {
+            priceText = formatMoney(item.price, false);
+          }
+
+          var meta = [];
+          if (item.bedrooms != null) meta.push(item.bedrooms + " bedrooms");
+          if (item.bathrooms != null) meta.push(item.bathrooms + " bathrooms");
+          if (item.parking != null) meta.push(item.parking + " parking");
+          if (item.property_type) meta.push(item.property_type);
+          if (item.land != null) meta.push(formatArea(item.land) + " land");
+          if (item.floor != null) meta.push(formatArea(item.floor) + " floor");
+
+          var href = item.href || ("/property?id=" + encodeURIComponent(item.id || ""));
+          card.innerHTML =
+            '<a href="' + href + '">' +
+              '<div class="listing-media">Dream Property</div>' +
+              '<div class="listing-body">' +
+                '<div class="listing-price">' + (priceText || "Contact for details") + '</div>' +
+                '<div class="listing-title">' + (item.title || item.address || "Property listing") + '</div>' +
+                '<div class="listing-meta">' +
+                  '<span>' + (item.address || item.location || "") + '</span>' +
+                  (meta.length ? meta.map(function (m) { return "<span>" + m + "</span>"; }).join("") : "") +
+                '</div>' +
+              '</div>' +
+            '</a>';
+          grid.appendChild(card);
+        });
+      }
+
+      var filters = getParams();
+      renderFilters(filters);
+      var matched = LISTINGS.filter(function (item) {
+        return matchesListing(item, filters);
+      });
+      renderResults(matched, filters);
+    })();
+  </script>
+</body>
+</html>
