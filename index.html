@@ -10,7 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Dream Property">
   <meta property="og:title" content="Dream Property">
-  <meta property="og:description" content="Find your dream property across New Zealand. Residential, commercial, and rural. Buy, rent, sell and understand property in one place.">
+  <meta property="og:description" content="Find your dream property across New Zealand. Residential, commercial, and rural. Buy, rent, sell, and understand property in one place.">
   <meta property="og:url" content="https://www.dreamproperty.co.nz/">
   <meta property="og:image" content="https://www.dreamproperty.co.nz/images/link-preview.jpg">
   <meta property="og:image:width" content="1200">
@@ -18,7 +18,7 @@
   <meta property="og:image:alt" content="Dream Property">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dream Property">
-  <meta name="twitter:description" content="Find your dream property across New Zealand. Residential, commercial, and rural. Buy, rent, sell and understand property in one place.">
+  <meta name="twitter:description" content="Find your dream property across New Zealand. Residential, commercial, and rural. Buy, rent, sell, and understand property in one place.">
   <meta name="twitter:image" content="https://www.dreamproperty.co.nz/images/link-preview.jpg">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon.png">
@@ -33,7 +33,7 @@
         "url": "https://www.dreamproperty.co.nz/",
         "name": "Dream Property",
         "alternateName": ["DreamProperty", "dreamproperty.co.nz"],
-        "description": "Dream Property is a New Zealand property marketplace and technology platform.",
+        "description": "Dream Property is New Zealand’s premium property platform.",
         "publisher": { "@id": "https://www.dreamproperty.co.nz/#organization" }
       },
       {
@@ -96,7 +96,7 @@
     button { cursor: pointer; }
     img { display: block; max-width: 100%; }
 
-    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
 
     .section { padding: 100px 0; position: relative; }
 
@@ -717,6 +717,24 @@
       border-color: rgba(255, 255, 255, 0.2);
     }
 
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 18px;
+      padding: 8px 14px;
+      border: 1px solid rgba(214, 184, 120, 0.35);
+      border-radius: 999px;
+      color: var(--gold);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .tool-card-coming {
+      opacity: 0.92;
+    }
+
     .tool-card h3 { margin-bottom: 10px; }
     .tool-card p { font-size: 0.92rem; line-height: 1.7; margin-bottom: 20px; }
 
@@ -1212,14 +1230,17 @@
     }
 
     @media (max-width: 650px) {
-      .container { width: min(1180px, calc(100% - 32px)); }
+      .container { width: min(1180px, calc(100% - 48px)); }
+      .search-panel { margin-left: 0; margin-right: 0; }
+      .search-body { padding: 20px 18px; }
+      .hero-title { font-size: clamp(2rem, 8vw, 2.8rem); }
       .section { padding: 72px 0; }
-      .header-inner { min-height: 76px; }
+      .header-inner { min-height: 76px; width: min(1180px, calc(100% - 48px)); }
       .brand-name { font-size: 1.05rem; }
       .brand-logo { width: 36px; height: 36px; }
 
-      .hero { padding: 110px 0 60px; }
-      .hero-content { width: min(920px, calc(100% - 32px)); }
+      .hero { padding: 110px 0 64px; }
+      .hero-content { width: min(920px, calc(100% - 48px)); }
 
       .search-tabs { padding: 0 4px; }
       .search-tab { min-height: 48px; font-size: 0.68rem; padding: 0 8px; letter-spacing: 0.02em; }
@@ -1338,13 +1359,13 @@
         <div class="section-heading">
           <div class="eyebrow">Property details</div>
           <h2>Know the property before you make your move</h2>
-          <p>Search an address to explore available property information from appropriate sources. Information is provided for general guidance and may not always be current or complete.</p>
+          <p>Search an address to explore property information held on Dream Property. Profiles are refined as verified details become available.</p>
         </div>
 
         <div class="details-card">
           <div class="details-search">
             <h3>Search an address</h3>
-            <p>Look up a New Zealand address. Basic land information comes from official open data. Bedrooms and bathrooms appear when a listing provides them.</p>
+            <p>Look up a New Zealand address to view available property information.</p>
             <form class="address-form" id="addressSearchForm" action="/property" method="get" autocomplete="off">
               <div class="address-input-wrap">
                 <input
@@ -1360,7 +1381,7 @@
                 <div class="address-suggestions" id="addressSuggestions" role="listbox" hidden></div>
               </div>
               <button class="button button-primary" type="submit">Search address</button>
-              <p class="address-attribution" id="addressAttribution">Address and parcel data can be sourced from Land Information New Zealand (LINZ). CC BY 4.0.</p>
+              <p class="address-attribution" id="addressAttribution">Address data sourced from Land Information New Zealand. CC BY 4.0.</p>
             </form>
           </div>
           <div class="details-preview" id="detailsPreview">
@@ -1392,7 +1413,7 @@
         <div class="section-heading">
           <div class="eyebrow">For owners</div>
           <h2>List, sell or explore your options</h2>
-          <p>Verified owners can list their property, connect with agents, or explore Prop Swap matching.</p>
+          <p>Verified owners can list their property, and connect with agents. Prop Swap is in development.</p>
         </div>
 
         <div class="tools-grid">
@@ -1401,10 +1422,10 @@
             <p>List your property for sale or rent. Private owners and verified agents are both welcome. A listing guide is available to help you present your property clearly.</p>
             <button class="button button-outline button-small" type="button" data-open-modal="listing">Start a Listing</button>
           </div>
-          <div class="tool-card">
+          <div class="tool-card tool-card-coming">
             <h3>Prop Swap</h3>
-            <p>Explore potential property exchange matches. Prop Swap helps identify owners who may be interested in each other’s properties. Any transfer still follows normal legal and conveyancing processes.</p>
-            <a class="button button-outline button-small" href="/prop-swap" target="_blank" rel="noopener">Explore Prop Swap</a>
+            <p>A forthcoming feature for exploring potential property exchange matches between owners. Prop Swap is in development and is not yet available.</p>
+            <span class="coming-soon-badge">Coming soon</span>
           </div>
         </div>
       </div>
@@ -1413,9 +1434,9 @@
     <section class="section section-dark" id="management">
       <div class="container">
         <div class="section-heading mgmt-block">
-          <div class="eyebrow">Property technology</div>
-          <h2>An exclusive platform, built for what comes next</h2>
-          <p>Dream Property has developed proprietary property software that supports how we work today. The application is currently exclusive to Dream Property. Once it is ready, it will be released for public use.</p>
+          <div class="eyebrow">Property Management Technology</div>
+          <h2>An exclusive platform, built to perfection</h2>
+          <p>Dream Property has developed the Dream Property management tool that will change how the industry works. The application is currently exclusive to Dream Property. Once it is perfected, it will be released for public use.</p>
         </div>
       </div>
     </section>
@@ -1430,7 +1451,7 @@
             <img class="brand-logo" src="dream-property-logo.svg" alt="Dream Property logo">
             <div class="brand-name">Dream <span>Property</span></div>
           </a>
-          <p>A New Zealand property marketplace and technology platform.</p>
+          <p>New Zealand property, elevated.</p>
         </div>
 
         <div class="footer-nav">
@@ -1726,8 +1747,8 @@
   -->
   <script>
     window.DREAM_PROPERTY_CONFIG = {
-      addressSuggestUrl: "https://dreamproperty-address.dreampropertynz.workers.dev/suggest",
-      addressDetailsUrl: "https://dreamproperty-address.dreampropertynz.workers.dev/details"
+      addressSuggestUrl: "https://dreamproperty-address.YOURNAME.workers.dev/suggest",
+      addressDetailsUrl: "https://dreamproperty-address.YOURNAME.workers.dev/details"
     };
   </script>
 
@@ -1779,18 +1800,20 @@
       const fieldConfigs = {
         sale: {
           main: [
-            { name: "location", label: "Location", type: "text", placeholder: "City, suburb or region", full: true },
-            { name: "price_min", label: "Min price", type: "select", options: ["Any", "200000", "400000", "600000", "800000", "1000000", "1500000", "2000000"] },
-            { name: "price_max", label: "Max price", type: "select", options: ["Any", "400000", "600000", "800000", "1000000", "1500000", "2000000", "3000000", "5000000"] },
+            { name: "location", label: "Location", type: "text", placeholder: "City, suburb, or region", full: true },
+            { name: "price_min", label: "Price from", type: "select", options: ["Any", "200000", "400000", "600000", "800000", "1000000", "1500000", "2000000"] },
+            { name: "price_max", label: "Price up to", type: "select", options: ["Any", "400000", "600000", "800000", "1000000", "1500000", "2000000", "3000000", "5000000"] },
             { name: "bedrooms", label: "Bedrooms", type: "select", options: ["Any", "1+", "2+", "3+", "4+", "5+"] },
             { name: "bathrooms", label: "Bathrooms", type: "select", options: ["Any", "1+", "2+", "3+", "4+"] },
             { name: "parking", label: "Parking", type: "select", options: ["Any", "1+", "2+", "3+"] },
             { name: "property_type", label: "Property type", type: "select", options: ["Any", "House", "Apartment", "Townhouse", "Unit", "Lifestyle", "Section", "Other"] }
           ],
           advanced: [
-            { name: "keywords", label: "Keywords", type: "text", placeholder: "e.g. waterfront, renovated", full: true },
-            { name: "land_min", label: "Min land (m²)", type: "text", placeholder: "Any" },
-            { name: "floor_min", label: "Min floor (m²)", type: "text", placeholder: "Any" },
+            { name: "keywords", label: "Keywords", type: "text", placeholder: "For example: waterfront, renovated", full: true },
+            { name: "land_min", label: "Land area from", type: "select", options: ["Any", "300", "500", "700", "1000", "2000", "4000", "10000"] },
+            { name: "floor_min", label: "Floor area from", type: "select", options: ["Any", "80", "100", "120", "150", "200", "250", "300"] },
+            { name: "land_max", label: "Land area up to", type: "select", options: ["Any", "500", "700", "1000", "2000", "4000", "10000"] },
+            { name: "floor_max", label: "Floor area up to", type: "select", options: ["Any", "100", "120", "150", "200", "250", "300", "400"] },
             { name: "exclude_attached", label: "Exclude attached / multi-unit developments", type: "checkbox" },
             { name: "pool", label: "Pool", type: "checkbox" },
             { name: "new_build", label: "New build", type: "checkbox" },
@@ -1804,16 +1827,16 @@
         },
         rent: {
           main: [
-            { name: "location", label: "Location", type: "text", placeholder: "City, suburb or region", full: true },
-            { name: "price_min", label: "Min rent (pw)", type: "select", options: ["Any", "300", "400", "500", "600", "700", "800", "1000"] },
-            { name: "price_max", label: "Max rent (pw)", type: "select", options: ["Any", "400", "500", "600", "700", "800", "1000", "1500", "2000"] },
+            { name: "location", label: "Location", type: "text", placeholder: "City, suburb, or region", full: true },
+            { name: "price_min", label: "Rent from (per week)", type: "select", options: ["Any", "300", "400", "500", "600", "700", "800", "1000"] },
+            { name: "price_max", label: "Rent up to (per week)", type: "select", options: ["Any", "400", "500", "600", "700", "800", "1000", "1500", "2000"] },
             { name: "bedrooms", label: "Bedrooms", type: "select", options: ["Any", "1+", "2+", "3+", "4+", "5+"] },
             { name: "bathrooms", label: "Bathrooms", type: "select", options: ["Any", "1+", "2+", "3+"] },
             { name: "parking", label: "Parking", type: "select", options: ["Any", "1+", "2+", "3+"] },
             { name: "property_type", label: "Property type", type: "select", options: ["Any", "House", "Apartment", "Townhouse", "Unit", "Room", "Other"] }
           ],
           advanced: [
-            { name: "keywords", label: "Keywords", type: "text", placeholder: "e.g. furnished, pet friendly", full: true },
+            { name: "keywords", label: "Keywords", type: "text", placeholder: "For example: furnished, pet friendly", full: true },
             { name: "exclude_attached", label: "Exclude attached / multi-unit developments", type: "checkbox" },
             { name: "furnished", label: "Furnished", type: "checkbox" },
             { name: "pets", label: "Pet friendly", type: "checkbox" },
@@ -1823,14 +1846,14 @@
         },
         flatmates: {
           main: [
-            { name: "location", label: "Location", type: "text", placeholder: "City, suburb or region", full: true },
-            { name: "price_min", label: "Min rent (pw)", type: "select", options: ["Any", "150", "200", "250", "300", "350", "400"] },
-            { name: "price_max", label: "Max rent (pw)", type: "select", options: ["Any", "200", "250", "300", "350", "400", "500", "600"] },
+            { name: "location", label: "Location", type: "text", placeholder: "City, suburb, or region", full: true },
+            { name: "price_min", label: "Rent from (per week)", type: "select", options: ["Any", "150", "200", "250", "300", "350", "400"] },
+            { name: "price_max", label: "Rent up to (per week)", type: "select", options: ["Any", "200", "250", "300", "350", "400", "500", "600"] },
             { name: "room_type", label: "Room type", type: "select", options: ["Any", "Single", "Double", "Twin"] },
             { name: "available", label: "Available from", type: "text", placeholder: "Any date" }
           ],
           advanced: [
-            { name: "keywords", label: "Keywords", type: "text", placeholder: "e.g. quiet, professional", full: true },
+            { name: "keywords", label: "Keywords", type: "text", placeholder: "For example: quiet, professional", full: true },
             { name: "furnished", label: "Furnished", type: "checkbox" },
             { name: "pets", label: "Pets allowed", type: "checkbox" },
             { name: "ensuite", label: "Ensuite", type: "checkbox" }
@@ -1838,7 +1861,7 @@
         },
         agent: {
           main: [
-            { name: "location", label: "Location", type: "text", placeholder: "City, suburb or region", full: true },
+            { name: "location", label: "Location", type: "text", placeholder: "City, suburb, or region", full: true },
             { name: "agent_name", label: "Agent or agency name", type: "text", placeholder: "Optional" },
             { name: "speciality", label: "Speciality", type: "select", options: ["Any", "Residential sales", "Residential rental", "Commercial", "Rural", "Lifestyle"] }
           ],
@@ -1846,12 +1869,18 @@
         }
       };
 
-      function formatSelectLabel(val) {
+      function formatSelectLabel(val, fieldName) {
         if (val === "Any") return "Any";
-        if (/^\d+$/.test(val)) {
-          const n = Number(val);
-          if (n >= 1000) return "$" + n.toLocaleString("en-NZ");
-          return "$" + n;
+        if (!/^\d+$/.test(val)) return val;
+        const n = Number(val);
+        const name = fieldName || "";
+        if (name === "land_min" || name === "land_max" || name === "floor_min" || name === "floor_max") {
+          return n.toLocaleString("en-NZ") + " m²";
+        }
+        if (name === "price_min" || name === "price_max") {
+          // Weekly rent values are smaller; sale prices are larger
+          if (n < 5000) return "$" + n.toLocaleString("en-NZ") + " per week";
+          return "$" + n.toLocaleString("en-NZ");
         }
         return val;
       }
@@ -1865,6 +1894,8 @@
         const typeInput = document.getElementById("searchTypeInput");
 
         if (typeInput) typeInput.value = type;
+        const submitBtn = document.querySelector(".search-submit");
+        if (submitBtn) submitBtn.textContent = type === "agent" ? "Search agents" : "Search properties";
         if (!mainEl) return;
 
         mainEl.innerHTML = "";
@@ -1918,7 +1949,7 @@
           (f.options || []).forEach(function (opt) {
             const o = document.createElement("option");
             o.value = opt === "Any" ? "" : opt;
-            o.textContent = formatSelectLabel(opt);
+            o.textContent = formatSelectLabel(opt, f.name);
             select.appendChild(o);
           });
           wrap.appendChild(select);
@@ -1967,11 +1998,16 @@
           const formData = new FormData(searchForm);
           const params = new URLSearchParams();
           formData.forEach(function (value, key) {
-            if (value !== "" && value != null) params.append(key, value);
+            if (value !== "" && value != null) params.append(key, String(value).trim());
           });
+          // Always send search type so listings can filter correctly
+          const typeInput = document.getElementById("searchTypeInput");
+          if (typeInput && typeInput.value && !params.has("type")) {
+            params.set("type", typeInput.value);
+          }
           const qs = params.toString();
-          const url = "/listings" + (qs ? "?" + qs : "");
-          window.open(url, "_blank", "noopener");
+          const url = "/listings" + (qs ? "?" + qs : "?type=sale");
+          window.location.href = url;
         });
       }
 
@@ -2045,9 +2081,9 @@
         if (sale) {
           var hasRooms = data.bedrooms != null && data.bedrooms !== "";
           if (hasRooms) {
-            sale.textContent = data.note || "Property attributes include listing information where available.";
+            sale.textContent = data.note || "Property attributes are shown where a full profile is available.";
           } else {
-            sale.textContent = data.note || "Bedrooms and bathrooms are not available from free official open data for every home. They appear when someone lists this property on Dream Property.";
+            sale.textContent = data.note || "Detailed property attributes are confirmed when this home is listed on Dream Property.";
           }
         }
 
@@ -2520,7 +2556,7 @@
         } else if (/agent|agency/.test(lower)) {
           reply = "You can search for agents using the Find an Agent tab on the homepage search, or visit the agents section from the footer.";
         } else if (/prop swap|swap/.test(lower)) {
-          reply = "Prop Swap helps identify potential property exchange matches between owners. Any transfer still follows normal legal and conveyancing processes.";
+          reply = "Prop Swap is a forthcoming feature for potential property exchange matches. It is in development and is not yet available.";
         } else if (/estimate|valuation|worth/.test(lower)) {
           reply = "The Dream Property Estimate is an automated market indication where enough data exists. It is not a registered valuation or a guaranteed price.";
         } else if (/report|scam|fraud|spam/.test(lower)) {
@@ -2528,7 +2564,7 @@
         } else if (/contact|email|human|person|support/.test(lower)) {
           reply = "I do not want to give you the wrong information. I can pass your question on to our team at <a href=\"mailto:info@dreamproperty.co.nz\">info@dreamproperty.co.nz</a>. Dream Property is still a new business, so our response times may sometimes be a little longer than we would like. We appreciate your patience and will do our best to get back to you as soon as possible.";
         } else if (/management|app|platform/.test(lower)) {
-          reply = "Dream Property has developed proprietary property software used exclusively by the company today. It will be released for public use once it is ready.";
+          reply = "Dream Property has developed its own property management platform. It is exclusive to Dream Property today and will be released publicly once it is perfected.";
         } else if (/privacy|terms|legal/.test(lower)) {
           reply = "Privacy Policy and Terms are linked in the footer. For anything more specific, I can escalate your question to the team.";
         } else {
