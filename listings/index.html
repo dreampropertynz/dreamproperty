@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Property listings | Dream Property</title>
+  <title>Property Listings | Dream Property</title>
   <meta name="description" content="Browse New Zealand property listings on Dream Property. Search residential, commercial, and rural property for sale, rent, and more.">
-  <link rel="icon" href="/dream-property-logo.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#040B15">
+  <link rel="canonical" href="https://www.dreamproperty.co.nz/listings">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
   <style>
     :root {
       --navy: #040B15;
@@ -24,6 +26,7 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+
     body {
       background: var(--navy);
       color: var(--white);
@@ -31,7 +34,11 @@
       -webkit-font-smoothing: antialiased;
       line-height: 1.6;
       overflow-x: hidden;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
     }
+
     a { color: inherit; text-decoration: none; }
     button, input, select { font: inherit; }
     button { cursor: pointer; }
@@ -44,21 +51,22 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      min-height: 48px;
-      padding: 0 22px;
-      border-radius: 999px;
+      min-height: 44px;
+      padding: 0 20px;
+      border-radius: var(--radius-sm);
       border: 1px solid transparent;
       font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      transition: var(--transition);
+      transition: background var(--transition), color var(--transition), border-color var(--transition);
     }
+
     .button-primary { background: var(--gold); color: var(--navy); }
     .button-primary:hover { background: var(--gold-light); }
     .button-outline {
       background: transparent;
-      border-color: var(--border);
+      border-color: rgba(255, 255, 255, 0.35);
       color: var(--white);
     }
     .button-outline:hover { border-color: var(--gold); color: var(--gold); }
@@ -71,6 +79,7 @@
       backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border);
     }
+
     .header-inner {
       min-height: 80px;
       display: flex;
@@ -78,25 +87,30 @@
       justify-content: space-between;
       gap: 20px;
     }
+
     .brand { display: inline-flex; align-items: center; gap: 12px; }
     .brand-logo { width: 40px; height: 40px; object-fit: contain; }
-    .brand-name { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.03em; }
+    .brand-name { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.03em; white-space: nowrap; }
     .brand-name span { color: var(--gold); }
+
     .header-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
-    .page {
-      padding: 48px 0 80px;
-    }
+    main { flex: 1; }
+    .page { padding: 48px 0 80px; }
+
     .page-heading h1 {
       font-size: clamp(1.8rem, 4vw, 2.6rem);
       letter-spacing: -0.04em;
-      font-weight: 650;
+      font-weight: 500;
       margin-bottom: 10px;
     }
+
     .page-heading p {
       color: var(--muted);
       max-width: 640px;
       margin-bottom: 28px;
+      font-size: 1.02rem;
+      line-height: 1.7;
     }
 
     .filters-bar {
@@ -108,8 +122,9 @@
       padding: 18px;
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      background: rgba(255,255,255,0.03);
+      background: rgba(255, 255, 255, 0.03);
     }
+
     .filter-chip {
       display: inline-flex;
       align-items: center;
@@ -121,14 +136,11 @@
       font-size: 0.8rem;
       color: var(--gold-light);
     }
-    .filter-chip strong {
-      color: var(--white);
-      font-weight: 600;
-    }
-    .filters-empty {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+
+    .filter-chip strong { color: var(--white); font-weight: 600; }
+
+    .filters-empty { color: var(--muted); font-size: 0.9rem; }
+
     .results-meta {
       display: flex;
       flex-wrap: wrap;
@@ -137,6 +149,7 @@
       align-items: center;
       margin-bottom: 22px;
     }
+
     .results-meta p { color: var(--muted); font-size: 0.92rem; }
     .results-meta strong { color: var(--white); }
 
@@ -150,13 +163,15 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       overflow: hidden;
-      background: rgba(255,255,255,0.03);
-      transition: var(--transition);
+      background: rgba(255, 255, 255, 0.03);
+      transition: border-color var(--transition), transform var(--transition);
     }
+
     .listing-card:hover {
       border-color: rgba(214, 184, 120, 0.4);
       transform: translateY(-2px);
     }
+
     .listing-media {
       height: 180px;
       background: linear-gradient(135deg, var(--navy-soft), var(--navy-light));
@@ -168,19 +183,23 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
+
     .listing-body { padding: 18px; }
+
     .listing-price {
       color: var(--gold);
-      font-weight: 700;
+      font-weight: 600;
       font-size: 1.05rem;
       margin-bottom: 6px;
     }
+
     .listing-title {
       font-size: 1rem;
       font-weight: 600;
       margin-bottom: 8px;
       letter-spacing: -0.02em;
     }
+
     .listing-meta {
       color: var(--muted);
       font-size: 0.85rem;
@@ -194,18 +213,23 @@
       border-radius: var(--radius);
       padding: 48px 28px;
       text-align: center;
-      background: rgba(255,255,255,0.02);
+      background: rgba(255, 255, 255, 0.02);
     }
+
     .empty-state h2 {
       font-size: 1.35rem;
       letter-spacing: -0.03em;
+      font-weight: 500;
       margin-bottom: 10px;
     }
+
     .empty-state p {
       color: var(--muted);
       max-width: 520px;
       margin: 0 auto 22px;
+      line-height: 1.7;
     }
+
     .empty-actions {
       display: flex;
       flex-wrap: wrap;
@@ -213,28 +237,105 @@
       justify-content: center;
     }
 
+    /* Shared site footer */
     .site-footer {
-      border-top: 1px solid var(--border);
-      padding: 36px 0 48px;
-      color: var(--muted);
-      font-size: 0.85rem;
+      padding: 70px 0 28px;
+      background: #02070E;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: auto;
     }
-    .footer-inner {
+
+    .footer-main {
       display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
       justify-content: space-between;
-      align-items: center;
+      gap: 60px;
+      padding-bottom: 50px;
+      flex-wrap: wrap;
     }
-    .site-footer a:hover { color: var(--gold); }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 200px;
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 200px;
+      margin-top: 20px;
+    }
+
+    .footer-socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      background: transparent;
+      color: #D6B878;
+      padding: 2px;
+      transition: color var(--transition);
+    }
+
+    .footer-socials a:hover { color: #F0DDA7; }
+    .footer-socials a svg { display: block; width: 22px; height: 22px; }
+
+    .footer-nav {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      gap: 36px;
+    }
+
+    .footer-nav > div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-heading {
+      margin-bottom: 6px;
+      color: var(--gold);
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .footer-nav a {
+      width: fit-content;
+      color: var(--muted);
+      font-size: 0.8rem;
+      transition: color var(--transition);
+    }
+
+    .footer-nav a:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .footer-bottom p {
+      color: var(--muted);
+      font-size: 0.7rem;
+    }
 
     @media (max-width: 900px) {
       .results-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-main { flex-direction: column; gap: 40px; }
+      .footer-nav { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
     }
+
     @media (max-width: 650px) {
       .container { width: min(1180px, calc(100% - 48px)); }
       .results-grid { grid-template-columns: 1fr; }
-      .header-actions .button { min-height: 42px; padding: 0 14px; font-size: 0.65rem; }
+      .header-actions .button { min-height: 40px; padding: 0 14px; font-size: 0.68rem; }
       .page { padding: 36px 0 64px; }
     }
   </style>
@@ -248,7 +349,7 @@
       </a>
       <div class="header-actions">
         <a class="button button-outline" href="/">New search</a>
-        <a class="button button-primary" href="/#property-details">Search address</a>
+        <a class="button button-primary" href="/">Marketplace</a>
       </div>
     </div>
   </header>
@@ -284,55 +385,75 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>Dream Property · New Zealand property, elevated.</span>
-      <span>
-        <a href="/about">About</a>
-        ·
-        <a href="/team">Dream Team</a>
-        ·
-        <a href="/">Home</a>
-      </span>
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="/" aria-label="Dream Property home">
+            <img class="brand-logo" src="/dream-property-logo.svg" alt="Dream Property logo">
+            <div class="brand-name">Dream <span>Property</span></div>
+          </a>
+          <div class="footer-socials" aria-label="Social media">
+            <a href="https://facebook.com/DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93v-1.9c0-.86.24-1.44 1.47-1.44h1.57V4.14C16.24 4.06 15.3 4 14.2 4c-2.3 0-3.87 1.4-3.87 4v2.44H7.77v2.96h2.56V21h3.17Z"/></svg>
+            </a>
+            <a href="https://instagram.com/DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="22" height="22" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.15" cy="6.85" r="1"/></svg>
+            </a>
+            <a href="https://tiktok.com/@DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"/></svg>
+            </a>
+            <a href="https://youtube.com/@DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-nav">
+          <div>
+            <span class="footer-heading">Company</span>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact</a>
+            <a href="/team">Dream Team</a>
+            <a href="/">Property Details</a>
+            <a href="/management">Property Management</a>
+          </div>
+          <div>
+            <span class="footer-heading">Legal</span>
+            <a href="/">Privacy Policy</a>
+            <a href="/">Terms &amp; Conditions</a>
+          </div>
+          <div>
+            <span class="footer-heading">Marketplace</span>
+            <a href="/agents">Find an Agent</a>
+            <a href="/listings?type=rent">For Rent</a>
+            <a href="/listings?type=sale">For Sale</a>
+            <a href="/">Search properties</a>
+            <a href="/">Start a Listing</a>
+          </div>
+          <div>
+            <span class="footer-heading">Safety</span>
+            <a href="/">Accessibility</a>
+            <a href="/">Listing Rules</a>
+            <a href="/">Safety &amp; Reporting</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="currentYear"></span> Dream Property</p>
+      </div>
     </div>
   </footer>
 
   <script>
     (function () {
-      /**
-       * Listings inventory for the marketplace.
-       * Add real listing objects here as properties are listed.
-       * Each object is matched against URL query parameters from the homepage search.
-       *
-       * Example shape:
-       * {
-       *   id: "dp-1001",
-       *   type: "sale", // sale | rent | flatmates | agent
-       *   title: "Sunlit family home in Remuera",
-       *   address: "12 Example Street, Remuera, Auckland",
-       *   location: "Remuera, Auckland",
-       *   suburb: "Remuera",
-       *   city: "Auckland",
-       *   region: "Auckland",
-       *   price: 1850000, // sale price or weekly rent number
-       *   bedrooms: 4,
-       *   bathrooms: 2,
-       *   parking: 2,
-       *   property_type: "House",
-       *   land: 650,
-       *   floor: 210,
-       *   keywords: "renovated, north-facing",
-       *   href: "/property?id=dp-1001"
-       * }
-       */
-      var LISTINGS = window.DREAM_PROPERTY_LISTINGS || [];
+      document.getElementById("currentYear").textContent = String(new Date().getFullYear());
 
+      var LISTINGS = window.DREAM_PROPERTY_LISTINGS || [];
       var TYPE_LABELS = {
         sale: "For sale",
         rent: "For rent",
-        flatmates: "Flatmates",
         agent: "Agents"
       };
-
       var PARAM_LABELS = {
         type: "Type",
         location: "Location",
@@ -348,9 +469,7 @@
         floor_min: "Floor area from",
         floor_max: "Floor area up to",
         agent_name: "Agent or agency",
-        speciality: "Speciality",
-        room_type: "Room type",
-        available: "Available from"
+        speciality: "Speciality"
       };
 
       function getParams() {
@@ -381,7 +500,6 @@
       }
 
       function parsePlus(value) {
-        // "3+" -> 3
         if (value == null) return null;
         var m = String(value).match(/(\d+)/);
         return m ? Number(m[1]) : null;
@@ -389,15 +507,13 @@
 
       function matchesListing(item, filters) {
         if (filters.type && item.type && filters.type !== item.type) return false;
-
         if (filters.location) {
-          var loc = filters.location.toLowerCase();
+          var loc = filters.location.toLowerCase().replace(/\s*\(all\)\s*$/i, "");
           var hay = [
             item.location, item.address, item.suburb, item.city, item.region, item.title
           ].filter(Boolean).join(" ").toLowerCase();
           if (hay.indexOf(loc) === -1) return false;
         }
-
         if (filters.price_min) {
           var minP = Number(filters.price_min);
           if (isFinite(minP) && Number(item.price) < minP) return false;
@@ -406,27 +522,21 @@
           var maxP = Number(filters.price_max);
           if (isFinite(maxP) && Number(item.price) > maxP) return false;
         }
-
         var bedNeed = parsePlus(filters.bedrooms);
         if (bedNeed != null && Number(item.bedrooms) < bedNeed) return false;
-
         var bathNeed = parsePlus(filters.bathrooms);
         if (bathNeed != null && Number(item.bathrooms) < bathNeed) return false;
-
         var parkNeed = parsePlus(filters.parking);
         if (parkNeed != null && Number(item.parking) < parkNeed) return false;
-
         if (filters.property_type && item.property_type) {
           if (String(item.property_type).toLowerCase() !== String(filters.property_type).toLowerCase()) {
             return false;
           }
         }
-
         if (filters.land_min && Number(item.land) < Number(filters.land_min)) return false;
         if (filters.land_max && Number(item.land) > Number(filters.land_max)) return false;
         if (filters.floor_min && Number(item.floor) < Number(filters.floor_min)) return false;
         if (filters.floor_max && Number(item.floor) > Number(filters.floor_max)) return false;
-
         if (filters.keywords) {
           var words = filters.keywords.toLowerCase().split(/[\s,]+/).filter(Boolean);
           var blob = [item.keywords, item.title, item.address, item.location].filter(Boolean).join(" ").toLowerCase();
@@ -434,23 +544,16 @@
             if (blob.indexOf(words[i]) === -1) return false;
           }
         }
-
         if (filters.agent_name) {
           var an = filters.agent_name.toLowerCase();
           var agentBlob = [item.title, item.agent_name, item.agency].filter(Boolean).join(" ").toLowerCase();
           if (agentBlob.indexOf(an) === -1) return false;
         }
-
         if (filters.speciality && item.speciality) {
           if (String(item.speciality).toLowerCase().indexOf(String(filters.speciality).toLowerCase()) === -1) {
             return false;
           }
         }
-
-        if (filters.room_type && item.room_type) {
-          if (String(item.room_type).toLowerCase() !== String(filters.room_type).toLowerCase()) return false;
-        }
-
         return true;
       }
 
@@ -492,7 +595,6 @@
         var count = document.getElementById("resultsCount");
         var title = document.getElementById("pageTitle");
         var subtitle = document.getElementById("pageSubtitle");
-
         var typeLabel = TYPE_LABELS[filters.type] || "Listings";
         if (title) title.textContent = typeLabel === "Agents" ? "Find an agent" : typeLabel + " listings";
         if (subtitle) {
@@ -504,30 +606,26 @@
           count.innerHTML = "<strong>" + items.length + "</strong> " +
             (items.length === 1 ? "listing matches" : "listings match") + " your search";
         }
-
         if (!items.length) {
           if (grid) { grid.hidden = true; grid.innerHTML = ""; }
           if (empty) empty.hidden = false;
           return;
         }
-
         if (empty) empty.hidden = true;
         if (!grid) return;
         grid.hidden = false;
         grid.innerHTML = "";
-
         items.forEach(function (item) {
           var card = document.createElement("article");
           card.className = "listing-card";
           var priceText = "";
-          if (item.type === "rent" || item.type === "flatmates") {
+          if (item.type === "rent") {
             priceText = formatMoney(item.price, true);
           } else if (item.type === "agent") {
             priceText = item.speciality || "Licensed agent";
           } else {
             priceText = formatMoney(item.price, false);
           }
-
           var meta = [];
           if (item.bedrooms != null) meta.push(item.bedrooms + " bedrooms");
           if (item.bathrooms != null) meta.push(item.bathrooms + " bathrooms");
@@ -535,7 +633,6 @@
           if (item.property_type) meta.push(item.property_type);
           if (item.land != null) meta.push(formatArea(item.land) + " land");
           if (item.floor != null) meta.push(formatArea(item.floor) + " floor");
-
           var href = item.href || ("/property?id=" + encodeURIComponent(item.id || ""));
           card.innerHTML =
             '<a href="' + href + '">' +
