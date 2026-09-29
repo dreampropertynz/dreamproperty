@@ -763,12 +763,48 @@
       padding-bottom: 50px;
     }
 
-    .footer-brand p {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 0.84rem;
-      max-width: 260px;
-      line-height: 1.6;
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 200px;
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 200px;
+      margin-top: 20px;
+      gap: 0;
+    }
+
+    .footer-socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      height: auto;
+      padding: 2px;
+      border: 0;
+      background: transparent;
+      color: #D6B878;
+      opacity: 1;
+      visibility: visible;
+      transition: color var(--transition), opacity var(--transition);
+    }
+
+    .footer-socials a:hover {
+      color: #F0DDA7;
+      opacity: 1;
+    }
+
+    .footer-socials a svg {
+      display: block;
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
     }
 
     .footer-nav {
@@ -1325,7 +1361,6 @@
             <div class="search-tabs" role="tablist" aria-label="Search type">
               <button class="search-tab active" type="button" role="tab" aria-selected="true" data-search-type="sale">For Sale</button>
               <button class="search-tab" type="button" role="tab" aria-selected="false" data-search-type="rent">For Rent</button>
-              <button class="search-tab" type="button" role="tab" aria-selected="false" data-search-type="flatmates">Flatmates</button>
               <button class="search-tab" type="button" role="tab" aria-selected="false" data-search-type="agent">Find an Agent</button>
             </div>
 
@@ -1354,89 +1389,14 @@
       </div>
     </section>
 
-    <section class="section section-dark" id="property-details">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">Property details</div>
-          <h2>Know the property before you make your move</h2>
-          <p>Search an address to explore property information held on Dream Property. Profiles are refined as verified details become available.</p>
-        </div>
-
-        <div class="details-card">
-          <div class="details-search">
-            <h3>Search an address</h3>
-            <p>Look up a New Zealand address to view available property information.</p>
-            <form class="address-form" id="addressSearchForm" action="/property" method="get" autocomplete="off">
-              <div class="address-input-wrap">
-                <input
-                  type="text"
-                  name="address"
-                  id="addressInput"
-                  placeholder="Start typing a street address"
-                  autocomplete="off"
-                  aria-autocomplete="list"
-                  aria-controls="addressSuggestions"
-                  aria-expanded="false"
-                >
-                <div class="address-suggestions" id="addressSuggestions" role="listbox" hidden></div>
-              </div>
-              <button class="button button-primary" type="submit">Search address</button>
-              <p class="address-attribution" id="addressAttribution">Address data sourced from Land Information New Zealand. CC BY 4.0.</p>
-            </form>
-          </div>
-          <div class="details-preview" id="detailsPreview">
-            <div class="preview-empty" id="previewEmpty">
-              <p>Enter or select an address to view property details.</p>
-            </div>
-            <div class="preview-content" id="previewContent">
-              <div class="preview-label">Property profile</div>
-              <div class="preview-address" id="previewAddress"></div>
-              <div class="preview-meta" id="previewMeta"></div>
-              <div class="preview-sale" id="previewSale"></div>
-              <div class="preview-estimate" id="previewEstimateBlock" hidden>
-                <span class="preview-label">Dream Property Estimate</span>
-                <strong id="previewEstimate"></strong>
-                <p class="preview-note">Automated market indication based on available data. Not a registered valuation or guaranteed sale price.</p>
-              </div>
-              <div class="preview-actions">
-                <a class="button button-outline button-small" id="previewMoreLink" href="/property" target="_blank" rel="noopener">View more details</a>
-                <a class="button button-outline button-small" href="/verify-owner" target="_blank" rel="noopener">I am the owner</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="owner-tools">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">For owners</div>
-          <h2>List, sell, or explore your options</h2>
-          <p>Verified owners can list their property, and connect with agents. Prop Swap is in development.</p>
-        </div>
-
-        <div class="tools-grid">
-          <div class="tool-card">
-            <h3>Start a listing</h3>
-            <p>List your property for sale or rent. Private owners and verified agents are both welcome. A listing guide is available to help you present your property clearly.</p>
-            <button class="button button-outline button-small" type="button" data-open-modal="listing">Start a Listing</button>
-          </div>
-          <div class="tool-card tool-card-coming">
-            <h3>Prop Swap</h3>
-            <p>An exciting upcoming feature. Details not yet available.</p>
-            <span class="coming-soon-badge">Coming soon</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <section class="section section-dark" id="management">
       <div class="container">
         <div class="section-heading mgmt-block">
           <div class="eyebrow">Property Management</div>
           <h2>An exclusive platform, built to perfection</h2>
-          <p>Dream Property has developed the most efficient property management app that will change how the industry works. The application is currently exclusive to Dream Property. Once it is perfected, it will be released for public use.</p>
+          <p>Dream Property has developed the Dream Property management tool that will change how the industry works. The application is currently at its testing stage and exclusive to Dream Property. Once it is perfected, it will be released for public use.</p>
           <div style="margin-top:28px">
             <a class="button button-primary" href="/management">Manage Your Property With Us</a>
           </div>
@@ -1455,52 +1415,51 @@
             <div class="brand-name">Dream <span>Property</span></div>
           </a>
           <div class="footer-socials" aria-label="Social media">
-            <a href="https://facebook.com/DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Dream Property Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93v-1.9c0-.86.24-1.44 1.47-1.44h1.57V4.14C16.24 4.06 15.3 4 14.2 4c-2.3 0-3.87 1.4-3.87 4v2.44H7.77v2.96h2.56V21h3.17Z"/></svg>
+            <a href="https://facebook.com/DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93v-1.9c0-.86.24-1.44 1.47-1.44h1.57V4.14C16.24 4.06 15.3 4 14.2 4c-2.3 0-3.87 1.4-3.87 4v2.44H7.77v2.96h2.56V21h3.17Z"/></svg>
             </a>
-            <a href="https://instagram.com/DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Dream Property Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.15" cy="6.85" r="1"/></svg>
+            <a href="https://instagram.com/DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="22" height="22" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.15" cy="6.85" r="1"/></svg>
             </a>
-            <a href="https://tiktok.com/@DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Dream Property TikTok">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"/></svg>
+            <a href="https://tiktok.com/@DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"/></svg>
             </a>
-            <a href="https://youtube.com/@DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Dream Property YouTube">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
+            <a href="https://youtube.com/@DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
             </a>
           </div>
         </div>
 
         <div class="footer-nav">
           <div>
-            <span class="footer-heading">Marketplace</span>
-            <a href="/listings?type=sale" target="_blank" rel="noopener">For Sale</a>
-            <a href="/listings?type=rent" target="_blank" rel="noopener">For Rent</a>
-            <a href="/listings?type=flatmates" target="_blank" rel="noopener">Flatmates</a>
-            <a href="/agents" target="_blank" rel="noopener">Find an Agent</a>
-            <button type="button" data-open-modal="listing" style="width:fit-content;padding:0;border:0;background:transparent;color:var(--muted);font-size:0.8rem;text-align:left;cursor:pointer;">Start a Listing</button>
-          </div>
-          <div>
             <span class="footer-heading">Company</span>
             <a href="/about">About Us</a>
+            <a href="/contact">Contact</a>
             <a href="/team">Dream Team</a>
+            <button type="button" data-open-modal="property-details" class="footer-link-btn">Property Details</button>
             <a href="/management">Property Management</a>
-            <a href="/help" target="_blank" rel="noopener">Help &amp; Support</a>
-            <a href="/contact" target="_blank" rel="noopener">Contact</a>
-          </div>
-          <div>
-            <span class="footer-heading">Safety</span>
-            <button type="button" data-open-modal="listing-rules" class="footer-link-btn">Listing Rules</button>
-            <button type="button" data-open-modal="safety" class="footer-link-btn">Safety &amp; Reporting</button>
-            <button type="button" data-open-modal="accessibility" class="footer-link-btn">Accessibility</button>
           </div>
           <div>
             <span class="footer-heading">Legal</span>
             <button type="button" data-open-modal="privacy" class="footer-link-btn">Privacy Policy</button>
             <button type="button" data-open-modal="terms" class="footer-link-btn">Terms &amp; Conditions</button>
           </div>
+          <div>
+            <span class="footer-heading">Marketplace</span>
+            <a href="/agents" target="_blank" rel="noopener">Find an Agent</a>
+            <a href="/listings?type=rent" target="_blank" rel="noopener">For Rent</a>
+            <a href="/listings?type=sale" target="_blank" rel="noopener">For Sale</a>
+            <a href="/">Search properties</a>
+            <button type="button" data-open-modal="listing" class="footer-link-btn">Start a Listing</button>
+          </div>
+          <div>
+            <span class="footer-heading">Safety</span>
+            <button type="button" data-open-modal="accessibility" class="footer-link-btn">Accessibility</button>
+            <button type="button" data-open-modal="listing-rules" class="footer-link-btn">Listing Rules</button>
+            <button type="button" data-open-modal="safety" class="footer-link-btn">Safety &amp; Reporting</button>
+          </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p>© <span id="currentYear"></span> Dream Property</p>
       </div>
@@ -1711,6 +1670,54 @@
     </div>
   </div>
 
+
+  <!-- Property Details modal -->
+  <div class="modal" id="modal-property-details" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="propertyDetailsTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel legal-modal">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
+      <div class="eyebrow">Property intelligence</div>
+      <h2 id="propertyDetailsTitle">Property Details</h2>
+      <p class="modal-lead">Search a New Zealand address to explore property information held on Dream Property. Profiles are refined as verified details become available.</p>
+      <form class="address-form" id="addressSearchForm" action="/property" method="get" autocomplete="off">
+        <div class="address-input-wrap">
+          <input
+            type="text"
+            name="address"
+            id="addressInput"
+            placeholder="Start typing a street address"
+            autocomplete="off"
+            aria-autocomplete="list"
+            aria-controls="addressSuggestions"
+            aria-expanded="false"
+          >
+          <div class="address-suggestions" id="addressSuggestions" role="listbox" hidden></div>
+        </div>
+        <button class="button button-primary" type="submit" style="margin-top:12px">Search address</button>
+        <p class="address-attribution" id="addressAttribution" style="margin-top:10px">Address data sourced from Land Information New Zealand. CC BY 4.0.</p>
+      </form>
+      <div class="details-preview" id="detailsPreview" style="margin-top:20px;min-height:120px;border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px">
+        <div class="preview-empty" id="previewEmpty">
+          <p>Enter or select an address to view property details.</p>
+        </div>
+        <div class="preview-content" id="previewContent">
+          <div class="preview-label">Property profile</div>
+          <div class="preview-address" id="previewAddress"></div>
+          <div class="preview-meta" id="previewMeta"></div>
+          <div class="preview-sale" id="previewSale"></div>
+          <div class="preview-estimate" id="previewEstimateBlock" hidden>
+            <span class="preview-label">Dream Property Estimate</span>
+            <strong id="previewEstimate"></strong>
+            <p class="preview-note">Automated market indication based on available data. Not a registered valuation or guaranteed sale price.</p>
+          </div>
+          <div class="preview-actions">
+            <a class="button button-outline button-small" id="previewMoreLink" href="/property" target="_blank" rel="noopener">View more details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- DREAM·E launcher: cloud with smiley -->
   <button class="dreame-launcher" id="dreameLauncher" type="button" aria-label="Open DREAM·E assistant" aria-expanded="false" aria-controls="chatPanel">
     <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -1730,9 +1737,9 @@
         <div class="chat-avatar" aria-hidden="true">
           <svg viewBox="0 0 48 48" fill="none">
             <path d="M14 32c-4.4 0-8-3.1-8-7s3.6-7 8-7c.5-4.5 4.3-8 9-8 3.6 0 6.7 2 8.3 5 1-.4 2.1-.6 3.2-.6 4.4 0 8 3.1 8 7s-3.6 7-8 7H14z" fill="currentColor" opacity="0.9"/>
-            <circle cx="20" cy="26" r="1.6" fill="#040B15"/>
-            <circle cx="28" cy="26" r="1.6" fill="#040B15"/>
-            <path d="M20 30c1.2 1.6 2.8 2.4 4.5 2.4S27.8 31.6 29 30" stroke="#040B15" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <circle cx="20" cy="20" r="1.6" fill="#040B15"/>
+            <circle cx="28" cy="20" r="1.6" fill="#040B15"/>
+            <path d="M20 24c1.2 1.6 2.8 2.4 4.5 2.4S27.8 25.6 29 24" stroke="#040B15" stroke-width="1.8" stroke-linecap="round" fill="none"/>
           </svg>
         </div>
         <div>
@@ -1813,20 +1820,31 @@
       const yearEl = document.getElementById("currentYear");
       if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+
+      const LOCATION_OPTIONS = [
+        { group: "Auckland", items: ["Auckland (all)", "Albany", "Avondale", "Balmoral", "Birkenhead", "Botany", "Devonport", "Ellerslie", "Epsom", "Glenfield", "Grey Lynn", "Henderson", "Howick", "Mangere", "Manukau", "Massey", "Mission Bay", "Mount Albert", "Mount Eden", "Mount Roskill", "Newmarket", "Northcote", "Onehunga", "Orewa", "Otahuhu", "Pakuranga", "Papakura", "Parnell", "Ponsonby", "Remuera", "St Heliers", "Takapuna", "Te Atatu", "Titirangi", "West Harbour"] },
+        { group: "Wellington", items: ["Wellington (all)", "Brooklyn", "Island Bay", "Johnsonville", "Karori", "Kelburn", "Kilbirnie", "Lower Hutt", "Miramar", "Newtown", "Petone", "Porirua", "Seatoun", "Thorndon", "Upper Hutt"] },
+        { group: "Christchurch", items: ["Christchurch (all)", "Addington", "Avonhead", "Cashmere", "Fendalton", "Halswell", "Hornby", "Ilam", "Linwood", "Merivale", "Papanui", "Riccarton", "Rolleston", "Sumner", "Sydenham"] },
+        { group: "Hamilton", items: ["Hamilton (all)", "Chartwell", "Claudelands", "Dinsdale", "Flagstaff", "Frankton", "Hillcrest", "Melville", "Rototuna"] },
+        { group: "Tauranga", items: ["Tauranga (all)", "Bethlehem", "Mount Maunganui", "Otumoetai", "Papamoa", "Pyes Pa"] },
+        { group: "Dunedin", items: ["Dunedin (all)", "Mosgiel", "North East Valley", "Saint Clair", "Saint Kilda"] },
+        { group: "Other regions", items: ["Bay of Plenty", "Canterbury", "Gisborne", "Hawke's Bay", "Manawatu", "Marlborough", "Nelson", "Northland", "Otago", "Southland", "Taranaki", "Waikato", "West Coast"] }
+      ];
+
       /* Search field configs by type */
       const fieldConfigs = {
         sale: {
           main: [
-            { name: "location", label: "Location", type: "text", placeholder: "City, suburb, or region", full: true },
+            { name: "location", label: "Location", type: "location", full: true },
             { name: "price_min", label: "Price from", type: "select", options: ["Any", "200000", "400000", "600000", "800000", "1000000", "1500000", "2000000"] },
             { name: "price_max", label: "Price up to", type: "select", options: ["Any", "400000", "600000", "800000", "1000000", "1500000", "2000000", "3000000", "5000000"] },
             { name: "bedrooms", label: "Bedrooms", type: "select", options: ["Any", "1+", "2+", "3+", "4+", "5+"] },
             { name: "bathrooms", label: "Bathrooms", type: "select", options: ["Any", "1+", "2+", "3+", "4+"] },
             { name: "parking", label: "Parking", type: "select", options: ["Any", "1+", "2+", "3+"] },
-            { name: "property_type", label: "Property type", type: "select", options: ["Any", "House", "Apartment", "Townhouse", "Unit", "Lifestyle", "Section", "Other"] }
+            { name: "property_type", label: "Property type", type: "select", options: ["Any", "House", "Apartment", "Townhouse", "Unit", "Lifestyle", "Section", "Other"] },
+            { name: "keywords", label: "Keywords", type: "text", placeholder: "Type in keywords", full: true }
           ],
           advanced: [
-            { name: "keywords", label: "Keywords", type: "text", placeholder: "For example: waterfront, renovated", full: true },
             { name: "land_min", label: "Land area from", type: "select", options: ["Any", "300", "500", "700", "1000", "2000", "4000", "10000"] },
             { name: "floor_min", label: "Floor area from", type: "select", options: ["Any", "80", "100", "120", "150", "200", "250", "300"] },
             { name: "land_max", label: "Land area up to", type: "select", options: ["Any", "500", "700", "1000", "2000", "4000", "10000"] },
@@ -1844,16 +1862,16 @@
         },
         rent: {
           main: [
-            { name: "location", label: "Location", type: "text", placeholder: "City, suburb, or region", full: true },
+            { name: "location", label: "Location", type: "location", full: true },
             { name: "price_min", label: "Rent from (per week)", type: "select", options: ["Any", "300", "400", "500", "600", "700", "800", "1000"] },
             { name: "price_max", label: "Rent up to (per week)", type: "select", options: ["Any", "400", "500", "600", "700", "800", "1000", "1500", "2000"] },
             { name: "bedrooms", label: "Bedrooms", type: "select", options: ["Any", "1+", "2+", "3+", "4+", "5+"] },
             { name: "bathrooms", label: "Bathrooms", type: "select", options: ["Any", "1+", "2+", "3+"] },
             { name: "parking", label: "Parking", type: "select", options: ["Any", "1+", "2+", "3+"] },
-            { name: "property_type", label: "Property type", type: "select", options: ["Any", "House", "Apartment", "Townhouse", "Unit", "Room", "Other"] }
+            { name: "property_type", label: "Property type", type: "select", options: ["Any", "House", "Apartment", "Townhouse", "Unit", "Room", "Other"] },
+            { name: "keywords", label: "Keywords", type: "text", placeholder: "Type in keywords", full: true }
           ],
           advanced: [
-            { name: "keywords", label: "Keywords", type: "text", placeholder: "For example: furnished, pet friendly", full: true },
             { name: "exclude_attached", label: "Exclude attached / multi-unit developments", type: "checkbox" },
             { name: "furnished", label: "Furnished", type: "checkbox" },
             { name: "pets", label: "Pet friendly", type: "checkbox" },
@@ -1861,24 +1879,9 @@
             { name: "garage", label: "Garage", type: "checkbox" }
           ]
         },
-        flatmates: {
-          main: [
-            { name: "location", label: "Location", type: "text", placeholder: "City, suburb, or region", full: true },
-            { name: "price_min", label: "Rent from (per week)", type: "select", options: ["Any", "150", "200", "250", "300", "350", "400"] },
-            { name: "price_max", label: "Rent up to (per week)", type: "select", options: ["Any", "200", "250", "300", "350", "400", "500", "600"] },
-            { name: "room_type", label: "Room type", type: "select", options: ["Any", "Single", "Double", "Twin"] },
-            { name: "available", label: "Available from", type: "text", placeholder: "Any date" }
-          ],
-          advanced: [
-            { name: "keywords", label: "Keywords", type: "text", placeholder: "For example: quiet, professional", full: true },
-            { name: "furnished", label: "Furnished", type: "checkbox" },
-            { name: "pets", label: "Pets allowed", type: "checkbox" },
-            { name: "ensuite", label: "Ensuite", type: "checkbox" }
-          ]
-        },
         agent: {
           main: [
-            { name: "location", label: "Location", type: "text", placeholder: "City, suburb, or region", full: true },
+            { name: "location", label: "Location", type: "location", full: true },
             { name: "agent_name", label: "Agent or agency name", type: "text", placeholder: "Optional" },
             { name: "speciality", label: "Speciality", type: "select", options: ["Any", "Residential sales", "Residential rental", "Commercial", "Rural", "Lifestyle"] }
           ],
@@ -1959,7 +1962,27 @@
         label.textContent = f.label;
         wrap.appendChild(label);
 
-        if (f.type === "select") {
+        if (f.type === "location") {
+          const select = document.createElement("select");
+          select.id = "sf-" + f.name;
+          select.name = f.name;
+          const anyOpt = document.createElement("option");
+          anyOpt.value = "";
+          anyOpt.textContent = "Any location";
+          select.appendChild(anyOpt);
+          LOCATION_OPTIONS.forEach(function (group) {
+            const og = document.createElement("optgroup");
+            og.label = group.group;
+            group.items.forEach(function (item) {
+              const o = document.createElement("option");
+              o.value = item;
+              o.textContent = item;
+              og.appendChild(o);
+            });
+            select.appendChild(og);
+          });
+          wrap.appendChild(select);
+        } else if (f.type === "select") {
           const select = document.createElement("select");
           select.id = "sf-" + f.name;
           select.name = f.name;
@@ -2569,37 +2592,91 @@
         chatMessages.scrollTop = chatMessages.scrollHeight;
       }
 
-      function botReply(userText) {
+            function localDreamReply(userText) {
         const lower = (userText || "").toLowerCase();
-        let reply;
+        if (/hello|hi\b|hey|kia ora|morena/.test(lower)) {
+          return "Kia ora. I am DREAM·E, the Dream Property assistant. Ask me about searching property, listings, management, or anything else on your mind.";
+        }
+        if (/who are you|what are you|your name/.test(lower)) {
+          return "I am DREAM·E — Dream Property’s digital assistant. I help with the marketplace, property questions, and general topics.";
+        }
+        if (/list|sell|rent my|start a listing/.test(lower)) {
+          return "Use <strong>Start a Listing</strong> in the header. Private owners and verified agents can list once verification is complete.";
+        }
+        if (/login|sign up|account|password/.test(lower)) {
+          return "Use <strong>Log In</strong> or <strong>Sign Up</strong> in the header. Account tools are still opening gradually — if something fails, try again later or email the team.";
+        }
+        if (/agent|agency/.test(lower)) {
+          return "Use the <strong>Find an Agent</strong> tab in the homepage search, or browse agents from the footer Marketplace links.";
+        }
+        if (/prop swap|swap/.test(lower)) {
+          return "Prop Swap is a forthcoming feature for potential property exchange matches. It is in development and is not yet available.";
+        }
+        if (/estimate|valuation|worth/.test(lower)) {
+          return "The Dream Property Estimate is an automated market indication where enough data exists. It is not a registered valuation or a guaranteed price.";
+        }
+        if (/report|scam|fraud|spam/.test(lower)) {
+          return "You can report a listing from the property detail page. Reports are reviewed by our team.";
+        }
+        if (/management|property manager|landlord service/.test(lower)) {
+          return "Dream Property offers professional property management and is building an exclusive management platform. Visit <a href=\"/management\">Property Management</a> or email <a href=\"mailto:info@dreamproperty.co.nz\">info@dreamproperty.co.nz</a>.";
+        }
+        if (/privacy|terms|legal/.test(lower)) {
+          return "Privacy Policy and Terms are linked in the footer.";
+        }
+        if (/contact|email|human|support|team/.test(lower) && /dream|property|you|help/.test(lower)) {
+          return "You can reach the team at <a href=\"mailto:info@dreamproperty.co.nz\">info@dreamproperty.co.nz</a>, or keep chatting with me here. I am happy to help with most questions.";
+        }
+        if (/flatmate/.test(lower)) {
+          return "Flatmate search is not part of the marketplace right now. You can still search properties for sale or rent, or find an agent.";
+        }
+        return null;
+      }
 
-        if (/hello|hi |hey|kia ora/.test(lower)) {
-          reply = "Kia ora. How can I help you with Dream Property today?";
-        } else if (/list|sell|rent my|start a listing/.test(lower)) {
-          reply = "You can start a listing from the Start a Listing button in the header. Private owners and verified agents can list once verification is complete.";
-        } else if (/login|sign up|account|password/.test(lower)) {
-          reply = "Use Log In or Sign Up in the header to access your account. If you need help with access, I can pass your question to the team.";
-        } else if (/agent|agency/.test(lower)) {
-          reply = "You can search for agents using the Find an Agent tab on the homepage search, or visit the agents section from the footer.";
-        } else if (/prop swap|swap/.test(lower)) {
-          reply = "Prop Swap is a forthcoming feature for potential property exchange matches. It is in development and is not yet available.";
-        } else if (/estimate|valuation|worth/.test(lower)) {
-          reply = "The Dream Property Estimate is an automated market indication where enough data exists. It is not a registered valuation or a guaranteed price.";
-        } else if (/report|scam|fraud|spam/.test(lower)) {
-          reply = "You can report a listing from the property detail page. Reports are reviewed by our team. We do not automatically treat a reported user as at fault.";
-        } else if (/contact|email|human|person|support/.test(lower)) {
-          reply = "I do not want to give you the wrong information. I can pass your question on to our team at <a href=\"mailto:info@dreamproperty.co.nz\">info@dreamproperty.co.nz</a>. Dream Property is still a new business, so our response times may sometimes be a little longer than we would like. We appreciate your patience and will do our best to get back to you as soon as possible.";
-        } else if (/management|app|platform/.test(lower)) {
-          reply = "Dream Property has developed its own property management platform. It is exclusive to Dream Property today and will be released publicly once it is perfected.";
-        } else if (/privacy|terms|legal/.test(lower)) {
-          reply = "Privacy Policy and Terms are linked in the footer. For anything more specific, I can escalate your question to the team.";
-        } else {
-          reply = "I do not want to give you the wrong information. I can pass your question on to our team at <a href=\"mailto:info@dreamproperty.co.nz\">info@dreamproperty.co.nz</a>. Dream Property is still a new business, so our response times may sometimes be a little longer than we would like. We appreciate your patience and will do our best to get back to you as soon as possible.";
+      function botReply(userText) {
+        const local = localDreamReply(userText);
+        if (local) {
+          setTimeout(function () { appendBubble(local, "bot"); }, 350);
+          return;
         }
 
-        setTimeout(function () {
-          appendBubble(reply, "bot");
-        }, 450);
+        appendBubble("Thinking…", "bot");
+        var thinking = chatMessages ? chatMessages.lastElementChild : null;
+
+        // Free public text endpoint (no API key, no signup). Used only for general questions.
+        var system = "You are DREAM·E, the helpful assistant for Dream Property (New Zealand property marketplace). Answer clearly and concisely. If the topic is unrelated to property, still answer helpfully. Do not invent Dream Property features that do not exist. Keep answers under 120 words.";
+        var prompt = system + "\n\nUser: " + userText + "\n\nDREAM·E:";
+        var url = "https://text.pollinations.ai/" + encodeURIComponent(prompt) + "?model=openai";
+
+        var controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+        var timeout = setTimeout(function () {
+          if (controller) try { controller.abort(); } catch (e) {}
+        }, 12000);
+
+        var opts = { method: "GET" };
+        if (controller) opts.signal = controller.signal;
+
+        fetch(url, opts)
+          .then(function (res) {
+            clearTimeout(timeout);
+            if (!res.ok) throw new Error("bad");
+            return res.text();
+          })
+          .then(function (body) {
+            var answer = (body || "").trim();
+            if (!answer) throw new Error("empty");
+            answer = answer.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            if (thinking && thinking.parentNode) thinking.remove();
+            appendBubble(answer, "bot");
+          })
+          .catch(function () {
+            clearTimeout(timeout);
+            if (thinking && thinking.parentNode) thinking.remove();
+            appendBubble(
+              "I could not reach the open answer service just now. For Dream Property questions, try rephrasing, or email <a href=\"mailto:info@dreamproperty.co.nz\">info@dreamproperty.co.nz</a>.",
+              "bot"
+            );
+          });
       }
 
       if (chatForm) {
