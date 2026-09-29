@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chat with DREAM·E, the Dream Property assistant. Get help with the marketplace, management, and more.">
+  <meta name="theme-color" content="#040B15">
+  <title>Contact · DREAM·E | Dream Property</title>
+  <link rel="canonical" href="https://www.dreamproperty.co.nz/contact">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <style>
+    :root {
+      --navy: #040B15; --navy-light: #0A1422; --gold: #D6B878; --gold-light: #F0DDA7;
+      --white: #FFFFFF; --muted: #AAB4C2; --border: rgba(255,255,255,0.14);
+      --radius: 28px; --radius-sm: 16px; --transition: 300ms ease;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--navy); color: var(--white);
+      font-family: -apple-system, BlinkMacSystemFont, system-ui, "SF Pro Text", "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100svh;
+      display: flex; flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(4, 11, 21, 0.92); backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner { min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; }
+    .brand-logo { width: 40px; height: 40px; object-fit: contain; }
+    .brand-name { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.03em; }
+    .brand-name span { color: var(--gold); }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
+      padding: 0 20px; border-radius: 999px; border: 1px solid var(--border);
+      background: transparent; color: var(--white); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .button:hover { border-color: var(--gold); color: var(--gold); }
+    .button-primary { background: var(--gold); color: var(--navy); border-color: transparent; }
+    .button-primary:hover { background: var(--gold-light); color: var(--navy); }
 
+    main { flex: 1; padding: 48px 0 64px; }
+    .hero-chat {
+      display: grid; grid-template-columns: 1fr 1.15fr; gap: 36px; align-items: stretch;
+    }
+    .intro .eyebrow {
+      color: var(--gold); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px;
+    }
+    .intro h1 {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; letter-spacing: -0.04em; margin-bottom: 14px;
+    }
+    .intro p { color: var(--muted); max-width: 420px; margin-bottom: 18px; }
+    .intro ul { color: var(--muted); padding-left: 18px; margin-bottom: 22px; }
+    .intro li { margin-bottom: 8px; }
+    .email-note { color: var(--muted); font-size: 0.9rem; }
+    .email-note a { color: var(--gold); }
+
+    .chat-shell {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      background: rgba(10, 20, 34, 0.9); overflow: hidden;
+      display: flex; flex-direction: column; min-height: 520px; max-height: min(70vh, 640px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+    .chat-header {
+      display: flex; align-items: center; gap: 12px; padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    .chat-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid rgba(214,184,120,0.35); background: rgba(214,184,120,0.08);
+      color: var(--gold); display: flex; align-items: center; justify-content: center;
+    }
+    .chat-avatar svg { width: 28px; height: 28px; }
+    .chat-header h2 { font-size: 1.05rem; font-weight: 600; }
+    .chat-header span { display: block; color: var(--muted); font-size: 0.75rem; margin-top: 2px; }
+    .chat-messages {
+      flex: 1; overflow-y: auto; padding: 18px; display: flex; flex-direction: column; gap: 12px;
+    }
+    .chat-bubble {
+      max-width: 88%; padding: 12px 14px; border-radius: 16px; font-size: 0.9rem; line-height: 1.55;
+    }
+    .chat-bubble.bot {
+      align-self: flex-start; background: rgba(255,255,255,0.06); border-bottom-left-radius: 4px;
+    }
+    .chat-bubble.user {
+      align-self: flex-end; background: rgba(214,184,120,0.18); border-bottom-right-radius: 4px;
+    }
+    .chat-bubble a { color: var(--gold); text-decoration: underline; }
+    .chat-input-row {
+      display: flex; gap: 8px; padding: 14px; border-top: 1px solid var(--border);
+    }
+    .chat-input-row input {
+      flex: 1; min-height: 46px; padding: 0 14px; border-radius: 12px;
+      border: 1px solid var(--border); background: rgba(255,255,255,0.04); color: var(--white);
+    }
+    .chat-input-row input:focus { outline: none; border-color: rgba(214,184,120,0.5); }
+    .chat-send {
+      width: 46px; height: 46px; border: 0; border-radius: 12px; background: var(--gold); color: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .site-footer { padding: 56px 0 28px; background: #02070E; border-top: 1px solid rgba(255,255,255,0.06); margin-top: auto; }
+    .footer-main { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; padding-bottom: 40px; }
+    .footer-socials { display: flex; gap: 14px; margin-top: 18px; }
+    .footer-socials a { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; color: var(--gold); }
+    .footer-socials a:hover { color: var(--gold-light); }
+    .footer-nav { display: grid; grid-template-columns: repeat(3, minmax(120px, 1fr)); gap: 28px 32px; }
+    .footer-heading { display: block; color: var(--gold); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; }
+    .footer-nav a { display: block; color: var(--muted); font-size: 0.8rem; margin-bottom: 10px; }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07); color: var(--muted); font-size: 0.72rem; }
+
+    @media (max-width: 900px) {
+      .hero-chat { grid-template-columns: 1fr; }
+      .footer-nav { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/dream-property-logo.svg" alt="Dream Property logo">
+        <div class="brand-name">Dream <span>Property</span></div>
+      </a>
+      <a class="button" href="/">Marketplace</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container hero-chat">
+      <div class="intro">
+        <div class="eyebrow">Contact</div>
+        <h1>Talk to <span style="color:var(--gold)">DREAM·E</span></h1>
+        <p>
+          DREAM·E is Dream Property’s digital assistant. Ask about searching property, listings,
+          management, the team — or general questions. For formal or urgent matters, email the team directly.
+        </p>
+        <ul>
+          <li>Marketplace and search help</li>
+          <li>Property management enquiries</li>
+          <li>General knowledge questions</li>
+        </ul>
+        <p class="email-note">
+          Email: <a href="mailto:info@dreamproperty.co.nz">info@dreamproperty.co.nz</a>
+        </p>
+      </div>
+
+      <div class="chat-shell" id="chatPanel">
+        <div class="chat-header">
+          <div class="chat-avatar" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M14 32c-4.4 0-8-3.1-8-7s3.6-7 8-7c.5-4.5 4.3-8 9-8 3.6 0 6.7 2 8.3 5 1-.4 2.1-.6 3.2-.6 4.4 0 8 3.1 8 7s-3.6 7-8 7H14z" fill="currentColor" opacity="0.9"/>
+              <circle cx="20" cy="20" r="1.6" fill="#040B15"/>
+              <circle cx="28" cy="20" r="1.6" fill="#040B15"/>
+              <path d="M20 24c1.2 1.6 2.8 2.4 4.5 2.4S27.8 25.6 29 24" stroke="#040B15" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <h2>DREAM·E</h2>
+            <span>Online · Happy to help</span>
+          </div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+          <div class="chat-bubble bot">Kia ora. I am DREAM·E. Ask me anything about Dream Property or a general question.</div>
+        </div>
+        <form class="chat-input-row" id="chatForm">
+          <input id="chatInput" type="text" placeholder="Type your message…" autocomplete="off" aria-label="Message">
+          <button class="chat-send" type="submit" aria-label="Send">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="/">
+            <img class="brand-logo" src="/dream-property-logo.svg" alt="">
+            <div class="brand-name">Dream <span>Property</span></div>
+          </a>
+          <div class="footer-socials">
+            <a href="https://facebook.com/DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93v-1.9c0-.86.24-1.44 1.47-1.44h1.57V4.14C16.24 4.06 15.3 4 14.2 4c-2.3 0-3.87 1.4-3.87 4v2.44H7.77v2.96h2.56V21h3.17Z"/></svg></a>
+            <a href="https://instagram.com/DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.15" cy="6.85" r="1"/></svg></a>
+            <a href="https://tiktok.com/@DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"/></svg></a>
+            <a href="https://youtube.com/@DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <div>
+            <span class="footer-heading">Marketplace</span>
+            <a href="/listings?type=sale">For Sale</a>
+            <a href="/listings?type=rent">For Rent</a>
+            <a href="/">Search properties</a>
+          </div>
+          <div>
+            <span class="footer-heading">Company</span>
+            <a href="/about">About Us</a>
+            <a href="/team">Dream Team</a>
+            <a href="/management">Property Management</a>
+            <a href="/contact">Contact</a>
+          </div>
+          <div>
+            <span class="footer-heading">Explore</span>
+            <a href="/">Home</a>
+            <a href="/management">Manage with us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© <span id="year"></span> Dream Property</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = String(new Date().getFullYear());
+    var chatMessages = document.getElementById("chatMessages");
+    var chatForm = document.getElementById("chatForm");
+    var chatInput = document.getElementById("chatInput");
+
+    function appendBubble(text, who) {
+      var div = document.createElement("div");
+      div.className = "chat-bubble " + who;
+      div.innerHTML = text;
+      chatMessages.appendChild(div);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function localDreamReply(userText) {
+      var lower = (userText || "").toLowerCase();
+      if (/hello|hi\b|hey|kia ora/.test(lower)) return "Kia ora. I am DREAM·E. How can I help?";
+      if (/management/.test(lower)) return "Visit <a href=\"/management\">Property Management</a> or email <a href=\"mailto:info@dreamproperty.co.nz\">info@dreamproperty.co.nz</a>.";
+      if (/list|sell/.test(lower)) return "Use Start a Listing on the homepage header when you are ready to list.";
+      return null;
+    }
+
+    function botReply(userText) {
+      var local = localDreamReply(userText);
+      if (local) { setTimeout(function () { appendBubble(local, "bot"); }, 300); return; }
+      appendBubble("Thinking…", "bot");
+      var thinking = chatMessages.lastElementChild;
+      var system = "You are DREAM·E for Dream Property NZ. Answer helpfully and briefly.";
+      var prompt = system + "\n\nUser: " + userText + "\n\nDREAM·E:";
+      var url = "https://text.pollinations.ai/" + encodeURIComponent(prompt) + "?model=openai";
+      fetch(url).then(function (r) { if (!r.ok) throw new Error("x"); return r.text(); })
+        .then(function (body) {
+          if (thinking) thinking.remove();
+          appendBubble((body || "").trim().replace(/</g, "&lt;") || "I am not sure. Try emailing info@dreamproperty.co.nz.", "bot");
+        })
+        .catch(function () {
+          if (thinking) thinking.remove();
+          appendBubble("I could not answer that just now. Email <a href=\"mailto:info@dreamproperty.co.nz\">info@dreamproperty.co.nz</a>.", "bot");
+        });
+    }
+
+    chatForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var text = chatInput.value.trim();
+      if (!text) return;
+      appendBubble(text.replace(/</g, "&lt;"), "user");
+      chatInput.value = "";
+      botReply(text);
+    });
+  </script>
+</body>
+</html>
