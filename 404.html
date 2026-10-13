@@ -1,4 +1,6 @@
-<html lang="en-NZ"><head>
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="Dream Property provides professional real estate services across Auckland and builds a real estate management app for property companies. Experience stress-free property management." name="description"/>
@@ -32,10 +34,8 @@
       --radius-sm: 16px;
       --transition: 300ms ease;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-
     body {
       background: var(--navy);
       color: var(--white);
@@ -45,18 +45,15 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-
     body.modal-open { overflow: hidden; }
     a { color: inherit; text-decoration: none; }
     button, a { -webkit-tap-highlight-color: transparent; }
     button, input, textarea, select { font: inherit; }
     button { cursor: pointer; }
     img { display: block; max-width: 100%; }
-
     .container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
     .section { padding: 110px 0; position: relative; }
     .section-heading { max-width: 700px; margin-bottom: 50px; }
-
     .eyebrow {
       color: var(--gold);
       font-size: 0.76rem;
@@ -65,7 +62,6 @@
       text-transform: uppercase;
       margin-bottom: 15px;
     }
-
     h1, h2, h3, h4 { font-weight: 500; letter-spacing: -0.035em; line-height: 1.12; }
     h1 { font-size: clamp(3rem, 8vw, 7.5rem); }
     h2 { font-size: clamp(2.3rem, 5vw, 4.5rem); }
@@ -73,9 +69,7 @@
     p { color: var(--muted); }
     .section-heading p { margin-top: 20px; max-width: 600px; font-size: 1.05rem; }
     .gold-text { color: var(--gold); }
-
     .button-row { display: flex; flex-wrap: wrap; gap: 14px; }
-
     .button {
       min-height: 54px;
       display: inline-flex;
@@ -97,7 +91,6 @@
     .button-outline { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.4); }
     .button-outline:hover { border-color: var(--gold); color: var(--gold); }
     .button-small { min-height: 42px; padding: 0 18px; font-size: 0.7rem; }
-
     .site-header {
       position: fixed;
       z-index: 100;
@@ -123,7 +116,6 @@
       flex-direction: column; gap: 5px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: transparent;
     }
     .menu-toggle span { width: 20px; height: 1px; background: var(--gold); }
-
     .site-intro {
       position: fixed; z-index: 200; inset: 0; display: flex; align-items: center; justify-content: center;
       background: var(--navy); transition: opacity 900ms ease, visibility 900ms ease;
@@ -140,7 +132,6 @@
       from { opacity: 0; transform: translateY(20px) scale(0.96); }
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
-
     .hero {
       min-height: 100svh; position: relative; display: flex; align-items: center; justify-content: center;
       isolation: isolate; overflow: hidden;
@@ -173,10 +164,8 @@
       content: ""; position: absolute; z-index: -1; right: 0; bottom: 0; left: 0; height: 240px;
       background: linear-gradient(to bottom, rgba(4, 11, 21, 0), var(--navy)); pointer-events: none;
     }
-
     .section-dark { background: var(--navy); }
     .section-soft { background: var(--navy-light); }
-
     .login-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .service-card.is-locked { opacity: 0.48; }
     .service-card.is-locked .service-action { cursor: not-allowed; opacity: 0.85; }
@@ -194,28 +183,6 @@
       margin-top: auto; padding-top: 25px; color: var(--gold); border: 0; background: transparent;
       font-size: 0.7rem; font-weight: 700; text-align: left; letter-spacing: 0.1em; text-transform: uppercase;
     }
-
-    .team-grid { display: grid; grid-template-columns: minmax(0, 360px); gap: 20px; }
-    .team-card {
-      display: flex; flex-direction: column; overflow: hidden;
-      border: 1px solid var(--border); border-radius: var(--radius);
-      background: rgba(4, 11, 21, 0.55);
-      transition: transform var(--transition), border-color var(--transition);
-    }
-    .team-card:hover { transform: translateY(-5px); }
-    .team-card-button { display: block; width: 100%; padding: 0; border: 0; background: transparent; text-align: left; color: inherit; }
-    .team-image { position: relative; aspect-ratio: 4 / 4.7; overflow: hidden; background: var(--navy); }
-    .team-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms ease; }
-    .team-card:hover .team-image img { transform: scale(1.035); }
-    .team-body { display: flex; flex: 1; flex-direction: column; padding: 28px 24px 24px; }
-    .team-role {
-      color: var(--gold); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.1em;
-      line-height: 1.5; text-transform: uppercase;
-    }
-    .team-subrole { color: var(--muted); font-size: 0.72rem; margin-top: 6px; }
-    .team-body h3 { margin-top: 8px; margin-bottom: 24px; font-size: 1.65rem; }
-    .team-body .button { width: 100%; margin-top: auto; padding: 0 18px; border-radius: var(--radius-sm); }
-
     .contact-layout {
       display: grid; grid-template-columns: minmax(280px, 1fr) minmax(320px, 1fr);
       gap: 100px; align-items: start;
@@ -231,17 +198,6 @@
     .contact-label { color: var(--gold); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
     .contact-item strong { margin-top: 8px; color: var(--white); font-size: 1.02rem; font-weight: 500; }
     .contact-action { margin-top: 9px; color: var(--muted); font-size: 0.7rem; }
-    .contact-socials { display: flex; align-items: center; justify-content: center; gap: 25px; margin-top: 80px; }
-    .social-links { display: flex; gap: 14px; }
-    .social-links a {
-      width: 56px; height: 56px; display: flex; align-items: center; justify-content: center;
-      color: var(--gold); transition: color var(--transition), transform var(--transition);
-    }
-    .social-links a svg { width: 24px; height: 24px; }
-    .social-links a:hover { color: var(--gold-light); transform: translateY(-3px); }
-
-    /* Marketplace-style footer */
-
     .footer-socials {
       display: flex;
       align-items: center;
@@ -262,22 +218,9 @@
       transform: translateY(-2px);
     }
     .footer-socials a svg { width: 20px; height: 20px; }
-    .footer-bottom {
-      justify-content: center;
-      text-align: center;
-    }
-    .footer-bottom p {
-      width: 100%;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.72rem;
-    }
-    .header-inner { justify-content: flex-start; }
-    .team-card-button { display: block; width: 100%; }
-
+    .header-inner { justify-content: space-between; }
     .site-footer { padding: 70px 0 28px; background: #02070E; }
     .footer-main { display: flex; justify-content: space-between; gap: 48px; padding-bottom: 50px; flex-wrap: wrap; }
-    .footer-brand p { margin-top: 15px; color: var(--muted); font-size: 0.9rem; max-width: 260px; }
     .footer-nav {
       display: grid; grid-template-columns: repeat(3, minmax(120px, 1fr)); gap: 32px 40px;
     }
@@ -297,7 +240,12 @@
       color: var(--muted); font-size: 0.72rem;
       text-align: center;
     }
-
+    .footer-bottom p {
+      width: 100%;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.72rem;
+    }
     .modal {
       position: fixed; z-index: 300; inset: 0; display: flex; align-items: center; justify-content: center;
       padding: 25px; opacity: 0; visibility: hidden; pointer-events: none;
@@ -329,19 +277,12 @@
     .modal-close:hover { border-color: var(--gold); background: rgba(214, 184, 120, 0.06); color: var(--gold); }
     .modal-panel h2 { max-width: 560px; margin-top: 8px; font-size: clamp(2.3rem, 5vw, 4rem); }
     .modal-intro { margin-top: 22px; color: var(--white); font-size: 0.98rem; line-height: 1.75; }
-    .modal-body-copy { margin-top: 18px; color: var(--muted); font-size: 0.88rem; line-height: 1.8; }
-    .team-modal-image { width: 110px; height: 110px; margin-bottom: 30px; overflow: hidden; border: 1px solid var(--border); border-radius: 50%; }
-    .team-modal-image img { width: 100%; height: 100%; object-fit: cover; }
-    .modal-socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; padding-top: 25px; border-top: 1px solid var(--border); }
-    .modal-socials a { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; color: var(--gold); }
-    .modal-socials a:hover { color: var(--gold-light); }
     .legal-modal h3 { margin-top: 35px; color: var(--white); font-size: 1.02rem; font-weight: 600; }
     .legal-modal h3 + p { margin-top: 10px; }
     .legal-modal p { color: var(--muted); font-size: 0.84rem; line-height: 1.8; }
     .legal-modal p + p { margin-top: 12px; }
     .legal-modal .modal-intro { color: var(--white); }
     .legal-modal a { color: var(--gold); }
-
     .login-modal { width: min(520px, 100%); }
     .login-modal h2 { font-size: clamp(2.1rem, 5vw, 3.2rem); }
     .login-form { display: grid; gap: 18px; margin-top: 32px; }
@@ -355,19 +296,17 @@
     .login-field input:focus { outline: none; border-color: var(--gold); background: rgba(214, 184, 120, 0.06); }
     .login-error { color: #F2A0A0; font-size: 0.84rem; line-height: 1.6; }
     .login-form .button { width: 100%; }
-
-    .service-card, .team-card, .contact-item {
+    .service-card, .contact-item {
       border: 1px solid rgba(255, 255, 255, 0.12);
       background: rgba(16, 29, 45, 0.55);
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
       -webkit-backdrop-filter: blur(18px) saturate(140%);
       backdrop-filter: blur(18px) saturate(140%);
     }
-    .service-card:hover, .team-card:hover, .contact-item:hover {
+    .service-card:hover, .contact-item:hover {
       border-color: rgba(255, 255, 255, 0.2);
       background: rgba(16, 29, 45, 0.68);
     }
-
     @media (max-width: 900px) {
       .main-navigation {
         position: absolute; top: 92px; right: 20px; left: 20px; display: none;
@@ -382,7 +321,6 @@
       .footer-main { flex-direction: column; }
       .footer-nav { width: 100%; }
     }
-
     @media (max-width: 650px) {
       .container { width: min(1180px, calc(100% - 48px)); }
       .section { padding: 80px 0; }
@@ -403,7 +341,6 @@
       .modal-panel { max-height: calc(100svh - 24px); padding: 32px 24px; }
       .modal-panel h2 { font-size: 2.3rem; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         scroll-behavior: auto !important;
@@ -412,6 +349,46 @@
         transition-duration: 1ms !important;
       }
       .hero-video video { display: none; }
+    }
+
+    /* Language toggle */
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 0 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      transition: color var(--transition), border-color var(--transition), background var(--transition);
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .lang-toggle:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      background: rgba(214, 184, 120, 0.06);
+    }
+    .lang-toggle .lang-glyph {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1;
+      font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    }
+    .lang-toggle .lang-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    @media (max-width: 650px) {
+      .lang-toggle .lang-label { display: none; }
+      .lang-toggle { min-width: 42px; padding: 0 10px; }
     }
   </style>
 </head>
@@ -428,6 +405,10 @@
 <img alt="Dream Property logo" class="brand-logo" src="/dream-property-logo.svg"/>
 <div class="brand-name">Dream <span>Property</span></div>
 </a>
+<button type="button" class="lang-toggle" id="langToggle" aria-label="Switch to Chinese" title="中文 / Chinese">
+  <span class="lang-glyph" id="langGlyph">中</span>
+  <span class="lang-label" id="langLabel">中文</span>
+</button>
 </div>
 </header>
 <main>
@@ -439,44 +420,43 @@
 </div>
 <div aria-hidden="true" class="hero-overlay"></div>
 <div class="container hero-content">
-<div class="eyebrow">Real Estate Services</div>
+<div class="eyebrow" data-i18n="hero.eyebrow">Real Estate Services</div>
 <h1 class="hero-title">
           Dream <span class="gold-text">Property</span>
 </h1>
 <div class="button-row hero-buttons">
-<a class="button button-primary" href="mailto:info@dreamproperty.co.nz">Get In Touch</a>
-<a class="button button-outline" href="#login">Login</a>
+<a class="button button-primary" href="mailto:info@dreamproperty.co.nz" data-i18n="hero.getInTouch">Get In Touch</a>
+<a class="button button-outline" href="#login" data-i18n="hero.login">Login</a>
 </div>
 </div>
 </section>
 <section class="section section-dark" id="login">
 <div class="container">
 <div class="section-heading">
-<div class="eyebrow">Login</div>
-<h2>Welcome <span class="gold-text">back</span></h2>
+<div class="eyebrow" data-i18n="login.eyebrow">Login</div>
+<h2><span data-i18n="login.welcome">Welcome</span> <span class="gold-text" data-i18n="login.back">back</span></h2>
 <p>
-            Choose the portal that suits you. Tenants and owners can sign in today.
-            Partner access for other property management companies is coming soon.
+            <span data-i18n="login.desc">Choose the portal that suits you. Tenants and owners can sign in today. Partner access for other property management companies is coming soon.</span>
           </p>
 </div>
 <div class="login-grid">
 <article class="service-card">
 <div class="service-number"> </div>
-<h3>Tenant Login</h3>
-<p>Sign in to your account as a residential, commercial, or industrial tenant.</p>
-<button class="service-action" data-modal="tenant-login" type="button">Tenant Login →</button>
+<h3 data-i18n="login.tenantTitle">Tenant Login</h3>
+<p><span data-i18n="login.tenantDesc">Sign in to your account as a residential, commercial, or industrial tenant.</span></p>
+<button class="service-action" data-modal="tenant-login" type="button"><span data-i18n="login.tenantBtn">Tenant Login →</span></button>
 </article>
 <article class="service-card">
 <div class="service-number"> </div>
-<h3>Owner Login</h3>
-<p>Sign in to your account as a residential, commercial, or industrial property owner.</p>
-<button class="service-action" data-modal="landlord-login" type="button">Owner Login →</button>
+<h3 data-i18n="login.ownerTitle">Owner Login</h3>
+<p><span data-i18n="login.ownerDesc">Sign in to your account as a residential, commercial, or industrial property owner.</span></p>
+<button class="service-action" data-modal="landlord-login" type="button"><span data-i18n="login.ownerBtn">Owner Login →</span></button>
 </article>
 <article aria-disabled="true" class="service-card is-locked">
 <div class="service-number"> </div>
-<h3>Partner Login</h3>
-<p>For property management and real estate companies that will use the Dream Property app. Coming soon.</p>
-<button aria-disabled="true" class="service-action" disabled="" type="button">Coming Soon</button>
+<h3 data-i18n="login.partnerTitle">Partner Login</h3>
+<p><span data-i18n="login.partnerDesc">For property management and real estate companies that will use the Dream Property app. Coming soon.</span></p>
+<button aria-disabled="true" class="service-action" disabled="" type="button"><span data-i18n="login.comingSoon">Coming Soon</span></button>
 </article>
 </div>
 </div>
@@ -485,17 +465,17 @@
 <div class="container">
 <div class="contact-layout">
 <div class="section-heading">
-<div class="eyebrow">Get In Touch</div>
-<h2>Ready to <span class="gold-text">leave your property nightmare behind</span>?</h2>
+<div class="eyebrow" data-i18n="contact.eyebrow">Get In Touch</div>
+<h2><span data-i18n="contact.ready">Ready to</span> <span class="gold-text" data-i18n="contact.nightmare">leave your property nightmare behind</span><span data-i18n="contact.q">?</span></h2>
 <p>
-              Experience property management the way it should be. Dream Property is here to make your real estate experience more efficient, stress-free, and more professional. Let us start the conversation today.
+              <span data-i18n="contact.desc">Experience property management the way it should be. Dream Property is here to make your real estate experience more efficient, stress-free, and more professional. Let us start the conversation today.</span>
             </p>
 </div>
 <div class="contact-details">
 <a class="contact-item" href="mailto:info@dreamproperty.co.nz">
-<span class="contact-label">Email Us</span>
+<span class="contact-label"><span data-i18n="contact.emailLabel">Email Us</span></span>
 <strong>info@dreamproperty.co.nz</strong>
-<span class="contact-action">Send an email →</span>
+<span class="contact-action"><span data-i18n="contact.sendEmail">Send an email →</span></span>
 </a>
 </div>
 </div>
@@ -527,24 +507,24 @@
 </div>
 <div class="footer-nav">
 <div>
-<span class="footer-heading">Listings</span>
-<a href="/listings/sale">For Sale</a>
-<a href="/listings/rent">For Rent</a>
-<a href="/listings">Search properties</a>
+<span class="footer-heading" data-i18n="footer.listings">Listings</span>
+<a href="/listings/sale" data-i18n="footer.forSale">For Sale</a>
+<a href="/listings/rent" data-i18n="footer.forRent">For Rent</a>
+<a href="/listings" data-i18n="footer.search">Search properties</a>
 </div>
 <div>
-<span class="footer-heading">Company</span>
-<a href="/about">About Us</a>
-<a href="/team">Dream Team</a>
-<a href="/">Property Management</a>
-<a href="#contact">Contact</a>
+<span class="footer-heading" data-i18n="footer.company">Company</span>
+<a href="/about" data-i18n="footer.about">About Us</a>
+<a href="/team" data-i18n="footer.team">Dream Team</a>
+<a href="/" data-i18n="footer.pm">Property Management</a>
+<a href="#contact" data-i18n="footer.contact">Contact</a>
 </div>
 <div>
-<span class="footer-heading">Access</span>
-<button data-modal="tenant-login" type="button">Tenant Login</button>
-<button data-modal="landlord-login" type="button">Owner Login</button>
-<button data-modal="privacy" type="button">Privacy Policy</button>
-<button data-modal="terms" type="button">Terms &amp; Conditions</button>
+<span class="footer-heading" data-i18n="footer.access">Access</span>
+<button data-modal="tenant-login" type="button" data-i18n="footer.tenantLogin">Tenant Login</button>
+<button data-modal="landlord-login" type="button" data-i18n="footer.ownerLogin">Owner Login</button>
+<button data-modal="privacy" type="button" data-i18n="footer.privacy">Privacy Policy</button>
+<button data-modal="terms" type="button" data-i18n="footer.terms">Terms &amp; Conditions</button>
 </div>
 </div>
 </div>
@@ -559,16 +539,16 @@
 <div class="modal-panel login-modal">
 <button aria-label="Close modal" class="modal-close" data-close-modal="" type="button">×</button>
 <div class="eyebrow">Tenants</div>
-<h2 id="tenantLoginTitle">Tenant Login</h2>
+<h2 id="tenantLoginTitle" data-i18n="modal.tenantTitle">Tenant Login</h2>
 <form class="login-form" data-login-form="" novalidate="">
-<label class="login-field"><span>Username</span>
+<label class="login-field"><span data-i18n="modal.username">Username</span>
 <input autocapitalize="none" autocomplete="username" name="username" spellcheck="false" type="text"/>
 </label>
-<label class="login-field"><span>Password</span>
+<label class="login-field"><span data-i18n="modal.password">Password</span>
 <input autocomplete="current-password" name="password" type="password"/>
 </label>
 <p class="login-error" hidden="" role="alert">Incorrect Username / Password. Please Try Again.</p>
-<button class="button button-primary" type="submit">Login</button>
+<button class="button button-primary" type="submit" data-i18n="modal.loginBtn">Login</button>
 </form>
 </div>
 </div>
@@ -578,7 +558,7 @@
 <div class="modal-panel login-modal">
 <button aria-label="Close modal" class="modal-close" data-close-modal="" type="button">×</button>
 <div class="eyebrow">Owners</div>
-<h2 id="landlordLoginTitle">Owner Login</h2>
+<h2 id="landlordLoginTitle" data-i18n="modal.ownerTitle">Owner Login</h2>
 <form class="login-form" data-login-form="" novalidate="">
 <label class="login-field"><span>Username</span>
 <input autocapitalize="none" autocomplete="username" name="username" spellcheck="false" type="text"/>
@@ -597,7 +577,7 @@
 <div class="modal-panel legal-modal">
 <button aria-label="Close Privacy Policy" class="modal-close" data-close-modal="" type="button">×</button>
 <div class="eyebrow">Legal</div>
-<h2 id="privacyTitle">Privacy Policy</h2>
+<h2 id="privacyTitle" data-i18n="modal.privacyTitle">Privacy Policy</h2>
 <p class="modal-intro">
         Your privacy matters to us. This policy explains how Dream Property collects, uses, protects, and shares personal information through this website, our property management services, and our real estate management software and app. We handle personal information in line with the Privacy Act 2020. The version shown on this website is the current version.
       </p>
@@ -615,7 +595,7 @@
 <div class="modal-panel legal-modal">
 <button aria-label="Close Terms and Conditions" class="modal-close" data-close-modal="" type="button">×</button>
 <div class="eyebrow">Legal</div>
-<h2 id="termsTitle">Terms &amp; Conditions</h2>
+<h2 id="termsTitle" data-i18n="modal.termsTitle">Terms &amp; Conditions</h2>
 <p class="modal-intro">
         These terms apply to your use of the Dream Property website and, where relevant, our property management services. By using this website, you agree to them. The version shown on this website is the current version.
       </p>
@@ -627,6 +607,169 @@
 </div>
 <script>
     (function () {
+
+      /* ---------- Language toggle (EN ↔ ZH) ---------- */
+      var I18N = {
+        en: {
+          "hero.eyebrow": "Real Estate Services",
+          "hero.getInTouch": "Get In Touch",
+          "hero.login": "Login",
+          "login.eyebrow": "Login",
+          "login.welcome": "Welcome",
+          "login.back": "back",
+          "login.desc": "Choose the portal that suits you. Tenants and owners can sign in today. Partner access for other property management companies is coming soon.",
+          "login.tenantTitle": "Tenant Login",
+          "login.tenantDesc": "Sign in to your account as a residential, commercial, or industrial tenant.",
+          "login.tenantBtn": "Tenant Login →",
+          "login.ownerTitle": "Owner Login",
+          "login.ownerDesc": "Sign in to your account as a residential, commercial, or industrial property owner.",
+          "login.ownerBtn": "Owner Login →",
+          "login.partnerTitle": "Partner Login",
+          "login.partnerDesc": "For property management and real estate companies that will use the Dream Property app. Coming soon.",
+          "login.comingSoon": "Coming Soon",
+          "contact.eyebrow": "Get In Touch",
+          "contact.ready": "Ready to",
+          "contact.nightmare": "leave your property nightmare behind",
+          "contact.q": "?",
+          "contact.desc": "Experience property management the way it should be. Dream Property is here to make your real estate experience more efficient, stress-free, and more professional. Let us start the conversation today.",
+          "contact.emailLabel": "Email Us",
+          "contact.sendEmail": "Send an email →",
+          "footer.listings": "Listings",
+          "footer.forSale": "For Sale",
+          "footer.forRent": "For Rent",
+          "footer.search": "Search properties",
+          "footer.company": "Company",
+          "footer.about": "About Us",
+          "footer.team": "Dream Team",
+          "footer.pm": "Property Management",
+          "footer.contact": "Contact",
+          "footer.access": "Access",
+          "footer.tenantLogin": "Tenant Login",
+          "footer.ownerLogin": "Owner Login",
+          "footer.privacy": "Privacy Policy",
+          "footer.terms": "Terms & Conditions",
+          "modal.tenantTitle": "Tenant Login",
+          "modal.ownerTitle": "Owner Login",
+          "modal.username": "Username",
+          "modal.password": "Password",
+          "modal.loginBtn": "Login",
+          "modal.loginError": "Incorrect Username / Password. Please Try Again.",
+          "modal.privacyTitle": "Privacy Policy",
+          "modal.termsTitle": "Terms & Conditions",
+          "modal.legal": "Legal",
+          "modal.tenants": "Tenants",
+          "modal.owners": "Owners"
+        },
+        zh: {
+          "hero.eyebrow": "房地产服务",
+          "hero.getInTouch": "联系我们",
+          "hero.login": "登录",
+          "login.eyebrow": "登录",
+          "login.welcome": "欢迎",
+          "login.back": "回来",
+          "login.desc": "选择适合您的入口。租户和业主现已可以登录。其他物业管理公司的合作伙伴访问即将推出。",
+          "login.tenantTitle": "租户登录",
+          "login.tenantDesc": "以住宅、商业或工业租户身份登录您的账户。",
+          "login.tenantBtn": "租户登录 →",
+          "login.ownerTitle": "业主登录",
+          "login.ownerDesc": "以住宅、商业或工业物业业主身份登录您的账户。",
+          "login.ownerBtn": "业主登录 →",
+          "login.partnerTitle": "合作伙伴登录",
+          "login.partnerDesc": "供将使用 Dream Property 应用的物业管理与房地产公司使用。即将推出。",
+          "login.comingSoon": "即将推出",
+          "contact.eyebrow": "联系我们",
+          "contact.ready": "准备好",
+          "contact.nightmare": "告别您的物业烦恼",
+          "contact.q": "了吗？",
+          "contact.desc": "体验应有的物业管理方式。Dream Property 致力于让您的房地产体验更高效、更省心、更专业。今天就开始对话吧。",
+          "contact.emailLabel": "发邮件给我们",
+          "contact.sendEmail": "发送邮件 →",
+          "footer.listings": "房源",
+          "footer.forSale": "出售",
+          "footer.forRent": "出租",
+          "footer.search": "搜索房源",
+          "footer.company": "公司",
+          "footer.about": "关于我们",
+          "footer.team": "团队",
+          "footer.pm": "物业管理",
+          "footer.contact": "联系",
+          "footer.access": "访问",
+          "footer.tenantLogin": "租户登录",
+          "footer.ownerLogin": "业主登录",
+          "footer.privacy": "隐私政策",
+          "footer.terms": "条款与条件",
+          "modal.tenantTitle": "租户登录",
+          "modal.ownerTitle": "业主登录",
+          "modal.username": "用户名",
+          "modal.password": "密码",
+          "modal.loginBtn": "登录",
+          "modal.loginError": "用户名或密码不正确，请重试。",
+          "modal.privacyTitle": "隐私政策",
+          "modal.termsTitle": "条款与条件",
+          "modal.legal": "法律",
+          "modal.tenants": "租户",
+          "modal.owners": "业主"
+        }
+      };
+
+      var currentLang = localStorage.getItem("dp_lang") || "en";
+
+      function applyLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem("dp_lang", lang);
+        document.documentElement.lang = lang === "zh" ? "zh-Hans" : "en-NZ";
+
+        var dict = I18N[lang] || I18N.en;
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (dict[key] != null) el.textContent = dict[key];
+        });
+
+        // Login error messages
+        document.querySelectorAll(".login-error").forEach(function (el) {
+          el.textContent = dict["modal.loginError"];
+        });
+
+        // Modal eyebrows that are static text
+        var tenantEyebrow = document.querySelector("#modal-tenant-login .eyebrow");
+        if (tenantEyebrow) tenantEyebrow.textContent = dict["modal.tenants"];
+        var ownerEyebrow = document.querySelector("#modal-landlord-login .eyebrow");
+        if (ownerEyebrow) ownerEyebrow.textContent = dict["modal.owners"];
+        document.querySelectorAll("#modal-privacy .eyebrow, #modal-terms .eyebrow").forEach(function (el) {
+          el.textContent = dict["modal.legal"];
+        });
+
+        // Toggle button: when in English show 中文; when in Chinese show EN
+        var glyph = document.getElementById("langGlyph");
+        var label = document.getElementById("langLabel");
+        var btn = document.getElementById("langToggle");
+        if (lang === "zh") {
+          if (glyph) glyph.textContent = "EN";
+          if (label) label.textContent = "English";
+          if (btn) {
+            btn.setAttribute("aria-label", "Switch to English");
+            btn.setAttribute("title", "English");
+          }
+        } else {
+          if (glyph) glyph.textContent = "中";
+          if (label) label.textContent = "中文";
+          if (btn) {
+            btn.setAttribute("aria-label", "Switch to Chinese");
+            btn.setAttribute("title", "中文 / Chinese");
+          }
+        }
+      }
+
+      var langToggle = document.getElementById("langToggle");
+      if (langToggle) {
+        langToggle.addEventListener("click", function () {
+          applyLanguage(currentLang === "en" ? "zh" : "en");
+        });
+      }
+      // Apply saved language on load
+      applyLanguage(currentLang);
+
+
       var menuToggle = document.getElementById("menuToggle");
       var mainNavigation = document.getElementById("mainNavigation");
       if (menuToggle && mainNavigation) {
@@ -643,7 +786,6 @@
           });
         });
       }
-
       var siteHeader = document.getElementById("siteHeader");
       function updateHeader() {
         if (!siteHeader) return;
@@ -652,17 +794,24 @@
       }
       window.addEventListener("scroll", updateHeader, { passive: true });
       updateHeader();
-
       var siteIntro = document.getElementById("siteIntro");
-      window.addEventListener("load", function () {
-        setTimeout(function () {
-          if (siteIntro) {
-            siteIntro.classList.add("hidden");
-            siteIntro.setAttribute("aria-hidden", "true");
-          }
-        }, 1450);
-      });
-
+      function hideSiteIntro() {
+        if (!siteIntro || siteIntro.classList.contains("hidden")) return;
+        siteIntro.classList.add("hidden");
+        siteIntro.setAttribute("aria-hidden", "true");
+      }
+      // Do not wait for window.load (hero video can delay or block it).
+      // Start the hide timer as soon as the DOM is ready.
+      function startIntroTimer() {
+        setTimeout(hideSiteIntro, 1450);
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", startIntroTimer);
+      } else {
+        startIntroTimer();
+      }
+      // Absolute fallback so the splash never gets stuck
+      setTimeout(hideSiteIntro, 3200);
       document.querySelectorAll("[data-login-form]").forEach(function (form) {
         var loginError = form.querySelector(".login-error");
         var passwordInput = form.querySelector('input[type="password"]');
@@ -680,10 +829,8 @@
           });
         });
       });
-
       var activeModal = null;
       var previousFocusedElement = null;
-
       function openModal(modalName) {
         var modal = document.getElementById("modal-" + modalName);
         if (!modal) return;
@@ -695,7 +842,6 @@
         var closeButton = modal.querySelector(".modal-close");
         if (closeButton) setTimeout(function () { closeButton.focus(); }, 50);
       }
-
       function closeModal() {
         if (!activeModal) return;
         activeModal.classList.remove("open");
@@ -712,7 +858,6 @@
         }
         previousFocusedElement = null;
       }
-
       document.querySelectorAll("[data-modal]").forEach(function (trigger) {
         trigger.addEventListener("click", function (event) {
           event.preventDefault();
@@ -725,10 +870,10 @@
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape" && activeModal) closeModal();
       });
-
       var yearEl = document.getElementById("currentYear");
       if (yearEl) yearEl.textContent = String(new Date().getFullYear());
     })();
   </script>
 <script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"52dcb4519d8d4457a4f931d7fad889d2","r":1,"spa":2}' integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" type="module"></script>
-</body></html>
+</body>
+</html>
