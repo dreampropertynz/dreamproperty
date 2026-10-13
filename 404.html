@@ -416,11 +416,11 @@
   </style>
 </head>
 <body>
-<div aria-hidden="true" class="site-intro hidden" id="siteIntro">
-<div class="intro-brand">
-<img alt="" class="intro-logo" src="/dream-property-logo.svg"/>
-<div class="intro-name">Dream <span>Property</span></div>
-</div>
+<div class="site-intro" id="siteIntro" aria-hidden="false">
+  <div class="intro-brand">
+    <img class="intro-logo" src="/dream-property-logo.svg" alt="">
+    <div class="intro-name">Dream <span>Property</span></div>
+  </div>
 </div>
 <header class="site-header" id="siteHeader">
 <div class="container header-inner">
@@ -439,7 +439,7 @@
 </div>
 <div aria-hidden="true" class="hero-overlay"></div>
 <div class="container hero-content">
-<div class="eyebrow">Property Management</div>
+<div class="eyebrow">Real Estate Services</div>
 <h1 class="hero-title">
           Dream <span class="gold-text">Property</span>
 </h1>
@@ -488,7 +488,7 @@
 <div class="eyebrow">Get In Touch</div>
 <h2>Ready to <span class="gold-text">leave your property nightmare behind</span>?</h2>
 <p>
-              Experience real estate services the way it should be. Dream Property is here to make your real estate experience more efficient, stress-free, and more professional. Let us start the conversation today.
+              Experience property management the way it should be. Dream Property is here to make your real estate experience more efficient, stress-free, and more professional. Let us start the conversation today.
             </p>
 </div>
 <div class="contact-details">
@@ -656,7 +656,10 @@
       var siteIntro = document.getElementById("siteIntro");
       window.addEventListener("load", function () {
         setTimeout(function () {
-          if (siteIntro) siteIntro.classList.add("hidden");
+          if (siteIntro) {
+            siteIntro.classList.add("hidden");
+            siteIntro.setAttribute("aria-hidden", "true");
+          }
         }, 1450);
       });
 
@@ -728,5 +731,4 @@
     })();
   </script>
 <script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"52dcb4519d8d4457a4f931d7fad889d2","r":1,"spa":2}' integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" type="module"></script>
-</body>
-</html>
+</body></html>
