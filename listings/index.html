@@ -1,14 +1,60 @@
-<!DOCTYPE html>
-<html lang="en-NZ">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Property Listings | Dream Property</title>
-  <meta name="description" content="Browse New Zealand property listings on Dream Property. Search residential, commercial, and rural property for sale, rent, and more.">
-  <meta name="theme-color" content="#040B15">
-  <link rel="canonical" href="https://www.dreamproperty.co.nz/listings">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-  <style>
+<html lang="en-NZ"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Dream Property is a New Zealand property marketplace. Search, discover, buy, rent, and sell residential, commercial, and rural property across New Zealand." name="description"/>
+<meta content="#040B15" name="theme-color"/>
+<title>Find your dream property | Dream Property</title>
+<link href="https://www.dreamproperty.co.nz/listings" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Dream Property" property="og:site_name"/>
+<meta content="Find your dream property | Dream Property" property="og:title"/>
+<meta content="Find your dream property across New Zealand. Residential, commercial, and rural. Buy, rent, sell, and understand property in one place." property="og:description"/>
+<meta content="https://www.dreamproperty.co.nz/listings" property="og:url"/>
+<meta content="https://www.dreamproperty.co.nz/images/link-preview.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Dream Property" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Find your dream property | Dream Property" name="twitter:title"/>
+<meta content="Find your dream property across New Zealand. Residential, commercial, and rural. Buy, rent, sell, and understand property in one place." name="twitter:description"/>
+<meta content="https://www.dreamproperty.co.nz/images/link-preview.jpg" name="twitter:image"/>
+<link href="/images/favicon.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/images/favicon.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/images/favicon.png" rel="apple-touch-icon" sizes="180x180"/>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.dreamproperty.co.nz/#website",
+        "url": "https://www.dreamproperty.co.nz/",
+        "name": "Dream Property",
+        "alternateName": ["DreamProperty", "dreamproperty.co.nz"],
+        "description": "Dream Property is New Zealand’s premium property platform.",
+        "publisher": { "@id": "https://www.dreamproperty.co.nz/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.dreamproperty.co.nz/#organization",
+        "name": "Dream Property",
+        "url": "https://www.dreamproperty.co.nz/",
+        "logo": "https://www.dreamproperty.co.nz/dream-property-logo.svg",
+        "founder": { "@id": "https://www.dreamproperty.co.nz/#calix-mojica" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.dreamproperty.co.nz/#calix-mojica",
+        "name": "Calix Mojica",
+        "jobTitle": "Founder",
+        "url": "https://www.dreamproperty.co.nz/about",
+        "image": "https://www.dreamproperty.co.nz/images/calix-mojica.jpg",
+        "worksFor": { "@id": "https://www.dreamproperty.co.nz/#organization" }
+      }
+    ]
+  }
+  </script>
+<style>
     :root {
       --navy: #040B15;
       --navy-light: #0A1422;
@@ -18,6 +64,7 @@
       --white: #FFFFFF;
       --muted: #AAB4C2;
       --border: rgba(255, 255, 255, 0.14);
+      --glass: rgba(4, 11, 21, 0.72);
       --radius: 28px;
       --radius-sm: 16px;
       --radius-xs: 12px;
@@ -25,224 +72,686 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
     body {
       background: var(--navy);
       color: var(--white);
       font-family: -apple-system, BlinkMacSystemFont, system-ui, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       line-height: 1.6;
       overflow-x: hidden;
-      min-height: 100svh;
-      display: flex;
-      flex-direction: column;
     }
 
+    body.chat-open { overflow: hidden; }
+    body.modal-open { overflow: hidden; }
+
     a { color: inherit; text-decoration: none; }
-    button, input, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button, input, textarea, select { font: inherit; }
     button { cursor: pointer; }
     img { display: block; max-width: 100%; }
 
     .container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
 
+    .section { padding: 100px 0; position: relative; }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1, h2, h3, h4 { font-weight: 500; letter-spacing: -0.035em; line-height: 1.12; }
+    h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); }
+    h2 { font-size: clamp(2rem, 4.5vw, 3.4rem); }
+    h3 { font-size: 1.35rem; }
+    p { color: var(--muted); }
+
+    .gold-text { color: var(--gold); }
+
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
     .button {
+      min-height: 52px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      min-height: 44px;
-      padding: 0 20px;
-      border-radius: var(--radius-sm);
+      gap: 10px;
+      padding: 0 26px;
       border: 1px solid transparent;
-      font-size: 0.72rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      transition: background var(--transition), color var(--transition), border-color var(--transition);
+      transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
     }
 
+    .button:hover { transform: translateY(-2px); }
     .button-primary { background: var(--gold); color: var(--navy); }
     .button-primary:hover { background: var(--gold-light); }
-    .button-outline {
-      background: transparent;
-      border-color: rgba(255, 255, 255, 0.35);
-      color: var(--white);
-    }
+    .button-outline { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.35); }
     .button-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .button-small { min-height: 42px; padding: 0 18px; font-size: 0.7rem; }
 
+    /* Intro */
+    .site-intro {
+      position: fixed;
+      z-index: 200;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy);
+      transition: opacity 900ms ease, visibility 900ms ease;
+    }
+
+    .site-intro.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+    .intro-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 24px;
+      text-align: center;
+      animation: introReveal 1200ms ease both;
+    }
+
+    .intro-logo { width: 120px; height: 120px; object-fit: contain; }
+    .intro-name { color: var(--white); font-size: clamp(2rem, 5vw, 4rem); font-weight: 500; letter-spacing: -0.05em; }
+    .intro-name span { color: var(--gold); }
+
+    @keyframes introReveal {
+      from { opacity: 0; transform: translateY(20px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Header */
     .site-header {
-      position: sticky;
+      position: fixed;
+      z-index: 100;
       top: 0;
-      z-index: 50;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid transparent;
+      background: transparent;
+      transition: background var(--transition), border-color var(--transition), backdrop-filter var(--transition);
+    }
+
+    .site-header.scrolled {
       background: rgba(4, 11, 21, 0.92);
       backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border);
+      border-bottom-color: var(--border);
     }
 
     .header-inner {
-      min-height: 80px;
+      min-height: 88px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 24px;
     }
 
-    .brand { display: inline-flex; align-items: center; gap: 12px; }
-    .brand-logo { width: 40px; height: 40px; object-fit: contain; }
-    .brand-name { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.03em; white-space: nowrap; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-logo { width: 42px; height: 42px; object-fit: contain; }
+    .brand-name { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.035em; white-space: nowrap; }
     .brand-name span { color: var(--gold); }
 
-    .header-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-
-    main { flex: 1; }
-    .page { padding: 48px 0 80px; }
-
-    .page-heading h1 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      letter-spacing: -0.04em;
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-
-    .page-heading p {
-      color: var(--muted);
-      max-width: 640px;
-      margin-bottom: 28px;
-      font-size: 1.02rem;
-      line-height: 1.7;
-    }
-
-    .filters-bar {
+    .header-actions {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       gap: 10px;
-      align-items: center;
-      margin-bottom: 28px;
-      padding: 18px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: rgba(255, 255, 255, 0.03);
     }
 
-    .filter-chip {
-      display: inline-flex;
+    .header-actions .button { min-height: 44px; padding: 0 20px; font-size: 0.72rem; }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
       align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: transparent;
+    }
+
+    .menu-toggle span { width: 18px; height: 1.5px; background: var(--gold); }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 88px;
+      right: 20px;
+      left: 20px;
+      flex-direction: column;
       gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
+      padding: 16px;
       border: 1px solid var(--border);
-      background: rgba(214, 184, 120, 0.08);
-      font-size: 0.8rem;
-      color: var(--gold-light);
+      border-radius: var(--radius);
+      background: rgba(4, 11, 21, 0.98);
     }
 
-    .filter-chip strong { color: var(--white); font-weight: 600; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav .button { width: 100%; }
 
-    .filters-empty { color: var(--muted); font-size: 0.9rem; }
-
-    .results-meta {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 22px;
-    }
-
-    .results-meta p { color: var(--muted); font-size: 0.92rem; }
-    .results-meta strong { color: var(--white); }
-
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .listing-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.03);
-      transition: border-color var(--transition), transform var(--transition);
-    }
-
-    .listing-card:hover {
-      border-color: rgba(214, 184, 120, 0.4);
-      transform: translateY(-2px);
-    }
-
-    .listing-media {
-      height: 180px;
-      background: linear-gradient(135deg, var(--navy-soft), var(--navy-light));
+    /* Hero */
+    .hero {
+      min-height: 100svh;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+
+    .hero-video {
+      position: absolute;
+      z-index: -3;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(4, 11, 21, 0.96), rgba(4, 11, 21, 0.62)),
+        url("images/hero-fallback.jpg") center / cover;
+    }
+
+    .hero-video video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%) scale(1.12);
+      border: 0;
+      opacity: 0.6;
+      object-fit: cover;
+      filter: blur(1.5px);
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(4, 11, 21, 0.88) 0%, rgba(4, 11, 21, 0.55) 50%, rgba(4, 11, 21, 0.78) 100%),
+        linear-gradient(0deg, rgba(4, 11, 21, 0.92), transparent 45%, rgba(4, 11, 21, 0.35));
+    }
+
+    .hero-content {
+      width: min(920px, calc(100% - 48px));
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-title {
+      margin: 0 auto 12px;
+      opacity: 0;
+      animation: heroFade 900ms 1800ms ease forwards;
+    }
+
+    .hero-search-wrap {
+      margin-top: 36px;
+      opacity: 0;
+      animation: heroFade 900ms 2000ms ease forwards;
+    }
+
+    @keyframes heroFade {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Search panel */
+    .search-panel {
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      background: rgba(10, 20, 34, 0.78);
+      backdrop-filter: blur(20px) saturate(140%);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .search-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      padding: 0 8px;
+    }
+
+    .search-tab {
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 52px;
+      padding: 0 16px;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      background: transparent;
       color: var(--muted);
-      font-size: 0.8rem;
-      letter-spacing: 0.06em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color var(--transition), border-color var(--transition);
+    }
+
+    .search-tab:hover { color: var(--white); }
+    .search-tab.active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    .search-body { padding: 24px; }
+
+    .search-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .search-field { display: flex; flex-direction: column; gap: 6px; }
+    .search-field.full { grid-column: 1 / -1; }
+
+    .search-field label {
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .listing-body { padding: 18px; }
-
-    .listing-price {
-      color: var(--gold);
-      font-weight: 600;
-      font-size: 1.05rem;
-      margin-bottom: 6px;
+    .search-field input,
+    .search-field select {
+      width: 100%;
+      min-height: 48px;
+      padding: 0 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xs);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--white);
+      transition: border-color var(--transition), background var(--transition);
     }
 
-    .listing-title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
+    .search-field input::placeholder { color: rgba(170, 180, 194, 0.55); }
+    .search-field input:focus,
+    .search-field select:focus {
+      outline: none;
+      border-color: rgba(214, 184, 120, 0.55);
+      background: rgba(214, 184, 120, 0.06);
     }
 
-    .listing-meta {
-      color: var(--muted);
-      font-size: 0.85rem;
+    .search-field select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23AAB4C2' d='M1.4 0.6L6 5.2 10.6 0.6 12 2 6 8 0 2z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+
+    .search-field select option { background: #0A1422; color: var(--white); }
+
+    .search-advanced {
+      display: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .search-advanced.open { display: block; }
+
+    .search-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px 12px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 20px;
     }
 
-    .empty-state {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 48px 28px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.02);
+    .advanced-toggle {
+      border: 0;
+      background: transparent;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 8px 0;
     }
 
-    .empty-state h2 {
-      font-size: 1.35rem;
-      letter-spacing: -0.03em;
-      font-weight: 500;
-      margin-bottom: 10px;
+    .advanced-toggle:hover { color: var(--gold-light); }
+
+    .search-submit {
+      min-width: 180px;
     }
 
-    .empty-state p {
+    .search-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 4px;
       color: var(--muted);
-      max-width: 520px;
-      margin: 0 auto 22px;
+      font-size: 0.86rem;
+    }
+
+    .search-checkbox input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--gold);
+    }
+
+    /* Below-hero sections */
+    .section-soft { background: var(--navy-light); }
+    .section-dark { background: var(--navy); }
+
+    .section-heading {
+      max-width: 640px;
+      margin-bottom: 40px;
+    }
+
+    .section-heading p {
+      margin-top: 16px;
+      font-size: 1.05rem;
       line-height: 1.7;
     }
 
-    .empty-actions {
+    /* Property Details */
+    .details-card {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(16, 29, 45, 0.55);
+      backdrop-filter: blur(16px);
+    }
+
+    .details-search {
+      padding: 40px 36px;
+      border-right: 1px solid var(--border);
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      flex-direction: column;
       justify-content: center;
     }
 
-    /* Shared site footer */
+    .details-search h3 { margin-bottom: 10px; }
+    .details-search p { margin-bottom: 24px; font-size: 0.95rem; line-height: 1.7; }
+
+    .address-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+    }
+
+    .address-input-wrap {
+      position: relative;
+    }
+
+    .address-form input {
+      width: 100%;
+      min-height: 52px;
+      padding: 0 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--white);
+    }
+
+    .address-form input:focus {
+      outline: none;
+      border-color: rgba(214, 184, 120, 0.5);
+    }
+
+    .address-attribution {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+    }
+
+    .address-suggestion-status {
+      padding: 12px 16px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .address-suggestions {
+      display: none;
+      position: absolute;
+      z-index: 20;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      max-height: 260px;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: #0A1422;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .address-suggestions.open { display: block; }
+
+    .address-suggestion {
+      width: 100%;
+      display: block;
+      padding: 12px 16px;
+      border: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: transparent;
+      color: var(--white);
+      font-size: 0.9rem;
+      text-align: left;
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    .address-suggestion:last-child { border-bottom: 0; }
+    .address-suggestion:hover,
+    .address-suggestion.active {
+      background: rgba(214, 184, 120, 0.1);
+      color: var(--gold-light);
+    }
+
+    .address-suggestion span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-top: 2px;
+    }
+
+    .details-preview {
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      background: rgba(4, 11, 21, 0.35);
+      min-height: 280px;
+    }
+
+    .preview-empty {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 10px;
+      color: var(--muted);
+      padding: 24px 12px;
+    }
+
+    .preview-empty p {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      max-width: 260px;
+    }
+
+    .preview-content { display: none; flex-direction: column; gap: 18px; }
+    .preview-content.visible { display: flex; }
+
+    .preview-label {
+      color: var(--gold);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .preview-address {
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+
+    .preview-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .preview-estimate {
+      margin-top: 8px;
+      padding: 18px;
+      border: 1px solid rgba(214, 184, 120, 0.25);
+      border-radius: var(--radius-sm);
+      background: rgba(214, 184, 120, 0.06);
+    }
+
+    .preview-estimate strong {
+      display: block;
+      color: var(--gold);
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-top: 4px;
+    }
+
+    .preview-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-top: 8px;
+    }
+
+    .preview-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .preview-sale {
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+
+    /* Categories */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .category-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 28px 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(16, 29, 45, 0.45);
+      transition: border-color var(--transition), transform var(--transition), background var(--transition);
+    }
+
+    .category-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.22);
+      background: rgba(16, 29, 45, 0.65);
+    }
+
+    .category-card h3 { color: var(--white); }
+    .category-card p { font-size: 0.9rem; line-height: 1.65; }
+
+    /* Owner tools */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .tool-card {
+      padding: 32px 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(16, 29, 45, 0.45);
+      transition: border-color var(--transition), transform var(--transition);
+    }
+
+    .tool-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 18px;
+      padding: 8px 14px;
+      border: 1px solid rgba(214, 184, 120, 0.35);
+      border-radius: 999px;
+      color: var(--gold);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .tool-card-coming {
+      opacity: 0.92;
+    }
+
+    .tool-card h3 { margin-bottom: 10px; }
+    .tool-card p { font-size: 0.92rem; line-height: 1.7; margin-bottom: 20px; }
+
+    /* Management brief */
+    .mgmt-block {
+      max-width: 720px;
+    }
+
+    .mgmt-block p {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      margin-top: 16px;
+    }
+
+    /* Footer */
     .site-footer {
       padding: 70px 0 28px;
       background: #02070E;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
-      margin-top: auto;
     }
 
     .footer-main {
@@ -250,7 +759,6 @@
       justify-content: space-between;
       gap: 60px;
       padding-bottom: 50px;
-      flex-wrap: wrap;
     }
 
     .footer-brand {
@@ -267,21 +775,35 @@
       width: 100%;
       max-width: 200px;
       margin-top: 20px;
+      gap: 0;
     }
 
     .footer-socials a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      width: auto;
+      height: auto;
+      padding: 2px;
       border: 0;
       background: transparent;
       color: #D6B878;
-      padding: 2px;
-      transition: color var(--transition);
+      opacity: 1;
+      visibility: visible;
+      transition: color var(--transition), opacity var(--transition);
     }
 
-    .footer-socials a:hover { color: #F0DDA7; }
-    .footer-socials a svg { display: block; width: 22px; height: 22px; }
+    .footer-socials a:hover {
+      color: #F0DDA7;
+      opacity: 1;
+    }
+
+    .footer-socials a svg {
+      display: block;
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
 
     .footer-nav {
       display: grid;
@@ -305,13 +827,27 @@
     }
 
     .footer-nav a {
-      width: fit-content;
       color: var(--muted);
       font-size: 0.8rem;
       transition: color var(--transition);
+      width: fit-content;
     }
 
     .footer-nav a:hover { color: var(--white); }
+
+    .footer-link-btn {
+      width: fit-content;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-align: left;
+      cursor: pointer;
+      transition: color var(--transition);
+    }
+
+    .footer-link-btn:hover { color: var(--white); }
 
     .footer-bottom {
       display: flex;
@@ -326,337 +862,1792 @@
       font-size: 0.7rem;
     }
 
+
+    /* Auth and legal modals */
+    .modal {
+      position: fixed;
+      z-index: 300;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 280ms ease, visibility 280ms ease;
+    }
+
+    .modal.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(2, 6, 12, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .modal-panel {
+      position: relative;
+      z-index: 1;
+      width: min(480px, 100%);
+      max-height: min(860px, calc(100svh - 48px));
+      overflow-y: auto;
+      padding: 36px 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(10, 20, 34, 0.96);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+      transform: translateY(16px) scale(0.98);
+      transition: transform 300ms ease;
+    }
+
+    .modal.open .modal-panel { transform: translateY(0) scale(1); }
+
+    .modal-panel.legal-modal { width: min(720px, 100%); }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--muted);
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: color var(--transition), border-color var(--transition);
+    }
+
+    .modal-close:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .modal-panel .eyebrow { margin-bottom: 10px; }
+
+    .modal-panel h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .modal-lead {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .auth-form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .auth-field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .auth-field label,
+    .auth-field > span {
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .auth-field input,
+    .auth-field select {
+      width: 100%;
+      min-height: 50px;
+      padding: 0 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xs);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--white);
+    }
+
+    .auth-field input:focus,
+    .auth-field select:focus {
+      outline: none;
+      border-color: rgba(214, 184, 120, 0.55);
+      background: rgba(214, 184, 120, 0.06);
+    }
+
+    .auth-error {
+      color: #F2A0A0;
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .auth-success {
+      color: var(--gold-light);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .auth-hint {
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    .auth-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-top: 4px;
+    }
+
+    .auth-links button {
+      border: 0;
+      background: transparent;
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0;
+    }
+
+    .auth-links button:hover { color: var(--gold-light); }
+
+    .auth-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .auth-check input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .legal-modal h3 {
+      margin-top: 28px;
+      color: var(--white);
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    .legal-modal h3:first-of-type { margin-top: 18px; }
+
+    .legal-modal p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.75;
+    }
+
+    .legal-modal a { color: var(--gold); }
+
+    @media (max-width: 650px) {
+      .modal { padding: 12px; }
+      .modal-panel { padding: 28px 20px; max-height: calc(100svh - 24px); }
+    }
+
+    /* DREAM·E launcher */
+    .dreame-launcher {
+      position: fixed;
+      z-index: 150;
+      right: 22px;
+      bottom: 22px;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(214, 184, 120, 0.35);
+      border-radius: 50%;
+      background: rgba(10, 20, 34, 0.92);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+      color: var(--gold);
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+
+    .dreame-launcher:hover {
+      transform: translateY(-3px) scale(1.04);
+      border-color: var(--gold);
+      background: rgba(16, 29, 45, 0.98);
+    }
+
+    .dreame-launcher svg { width: 32px; height: 32px; }
+
+    /* Chat panel (slide-in, not modal) */
+    .chat-panel {
+      position: fixed;
+      z-index: 160;
+      right: 22px;
+      bottom: 94px;
+      width: min(380px, calc(100vw - 32px));
+      height: min(520px, calc(100svh - 140px));
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(10, 20, 34, 0.96);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(16px) scale(0.98);
+      transition: opacity 280ms ease, visibility 280ms ease, transform 280ms ease;
+      overflow: hidden;
+    }
+
+    .chat-panel.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chat-header-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .chat-avatar {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid rgba(214, 184, 120, 0.3);
+      background: rgba(214, 184, 120, 0.08);
+      color: var(--gold);
+    }
+
+    .chat-avatar svg { width: 22px; height: 22px; }
+
+    .chat-header h3 {
+      font-size: 1rem;
+      color: var(--white);
+    }
+
+    .chat-header span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      margin-top: 2px;
+    }
+
+    .chat-close {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--muted);
+      font-size: 1.3rem;
+      line-height: 1;
+      transition: color var(--transition), border-color var(--transition);
+    }
+
+    .chat-close:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chat-bubble {
+      max-width: 88%;
+      padding: 12px 14px;
+      border-radius: 16px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .chat-bubble.bot {
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--white);
+      border-bottom-left-radius: 4px;
+    }
+
+    .chat-bubble.user {
+      align-self: flex-end;
+      background: rgba(214, 184, 120, 0.18);
+      color: var(--white);
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-bubble a { color: var(--gold); text-decoration: underline; }
+
+    .chat-input-row {
+      display: flex;
+      gap: 8px;
+      padding: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .chat-input-row input {
+      flex: 1;
+      min-height: 44px;
+      padding: 0 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--white);
+    }
+
+    .chat-input-row input:focus {
+      outline: none;
+      border-color: rgba(214, 184, 120, 0.5);
+    }
+
+    .chat-send {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: var(--radius-sm);
+      background: var(--gold);
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    .chat-send:hover { background: var(--gold-light); }
+
+    /* Responsive */
     @media (max-width: 900px) {
-      .results-grid { grid-template-columns: repeat(2, 1fr); }
+      .header-actions .button-outline { display: none; }
+      .menu-toggle { display: flex; }
+
+      .details-card { grid-template-columns: 1fr; }
+      .details-search { border-right: 0; border-bottom: 1px solid var(--border); }
+
+      .category-grid { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: 1fr; }
+
       .footer-main { flex-direction: column; gap: 40px; }
       .footer-nav { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
     }
 
     @media (max-width: 650px) {
       .container { width: min(1180px, calc(100% - 48px)); }
-      .results-grid { grid-template-columns: 1fr; }
-      .header-actions .button { min-height: 40px; padding: 0 14px; font-size: 0.68rem; }
-      .page { padding: 36px 0 64px; }
+      .search-panel { margin-left: 0; margin-right: 0; }
+      .search-body { padding: 20px 18px; }
+      .hero-title { font-size: clamp(2rem, 8vw, 2.8rem); }
+      .section { padding: 72px 0; }
+      .header-inner { min-height: 76px; width: min(1180px, calc(100% - 48px)); }
+      .brand-name { font-size: 1.05rem; }
+      .brand-logo { width: 36px; height: 36px; }
+
+      .hero { padding: 110px 0 64px; }
+      .hero-content { width: min(920px, calc(100% - 48px)); }
+
+      .search-tabs { padding: 0 4px; }
+      .search-tab { min-height: 48px; font-size: 0.68rem; padding: 0 8px; letter-spacing: 0.02em; }
+      .search-body { padding: 18px; }
+      .search-grid { grid-template-columns: 1fr; }
+
+      .search-actions { flex-direction: column; align-items: stretch; }
+      .search-submit { width: 100%; min-width: 0; }
+
+      .details-search, .details-preview { padding: 28px 22px; }
+
+      .footer-nav { grid-template-columns: 1fr 1fr; }
+
+      .dreame-launcher { right: 16px; bottom: 16px; width: 54px; height: 54px; }
+      .chat-panel { right: 12px; bottom: 80px; width: calc(100vw - 24px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 1ms !important;
+      }
+      .hero-video video { display: none; }
+    }
+
+    @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+      .search-panel { background: #0A1422; }
+      .details-card, .category-card, .tool-card { background: #101D2D; }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/" aria-label="Dream Property home">
-        <img class="brand-logo" src="/dream-property-logo.svg" alt="Dream Property logo">
-        <div class="brand-name">Dream <span>Property</span></div>
-      </a>
-      <div class="header-actions">
-        <a class="button button-outline" href="/">New search</a>
-        <a class="button button-primary" href="/">Marketplace</a>
+<div aria-hidden="true" class="site-intro hidden" id="siteIntro">
+<div class="intro-brand">
+<img alt="" class="intro-logo" src="dream-property-logo.svg"/>
+<div class="intro-name">Dream <span>Property</span></div>
+</div>
+</div>
+<header class="site-header" id="siteHeader">
+<div class="container header-inner">
+<a aria-label="Dream Property home" class="brand" href="/">
+<img alt="Dream Property logo" class="brand-logo" src="dream-property-logo.svg"/>
+<div class="brand-name">Dream <span>Property</span></div>
+</a>
+<div class="header-actions">
+<button class="button button-outline" data-open-modal="listing" type="button">Start a Listing</button>
+<button class="button button-outline" data-open-modal="login" type="button">Log In</button>
+<button class="button button-primary" data-open-modal="signup" type="button">Sign Up</button>
+<button aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu" class="menu-toggle" id="menuToggle" type="button">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+<nav aria-label="Mobile navigation" class="mobile-nav" id="mobileNav">
+<button class="button button-outline" data-open-modal="listing" type="button">Start a Listing</button>
+<button class="button button-outline" data-open-modal="login" type="button">Log In</button>
+<button class="button button-primary" data-open-modal="signup" type="button">Sign Up</button>
+</nav>
+</header>
+<main>
+<section class="hero" id="home">
+<div aria-hidden="true" class="hero-video">
+<video autoplay="" id="heroVideo" loop="" muted="" playsinline="" poster="images/hero-fallback.jpg" preload="auto">
+<source src="videos/dream-property-hero.mp4" type="video/mp4"/>
+</video>
+</div>
+<div aria-hidden="true" class="hero-overlay"></div>
+<div class="hero-content">
+<h1 class="hero-title">Find your dream <span class="gold-text">property</span></h1>
+<div class="hero-search-wrap">
+<div class="search-panel">
+<div aria-label="Search type" class="search-tabs" role="tablist">
+<button aria-selected="true" class="search-tab active" data-search-type="sale" role="tab" type="button">For Sale</button>
+<button aria-selected="false" class="search-tab" data-search-type="rent" role="tab" type="button">For Rent</button>
+<button aria-selected="false" class="search-tab" data-search-type="agent" role="tab" type="button">Find an Agent</button>
+</div>
+<form action="/listings/sale" class="search-body" id="propertySearchForm" method="get">
+<input id="searchTypeInput" name="type" type="hidden" value="sale"/>
+<div class="search-grid" id="searchFields"><div class="search-field full"><label for="sf-location">Location</label><select id="sf-location" name="location"><option value="">Any location</option><optgroup label="Auckland"><option value="Auckland (all)">Auckland (all)</option><option value="Albany">Albany</option><option value="Avondale">Avondale</option><option value="Balmoral">Balmoral</option><option value="Birkenhead">Birkenhead</option><option value="Botany">Botany</option><option value="Devonport">Devonport</option><option value="Ellerslie">Ellerslie</option><option value="Epsom">Epsom</option><option value="Glenfield">Glenfield</option><option value="Grey Lynn">Grey Lynn</option><option value="Henderson">Henderson</option><option value="Howick">Howick</option><option value="Mangere">Mangere</option><option value="Manukau">Manukau</option><option value="Massey">Massey</option><option value="Mission Bay">Mission Bay</option><option value="Mount Albert">Mount Albert</option><option value="Mount Eden">Mount Eden</option><option value="Mount Roskill">Mount Roskill</option><option value="Newmarket">Newmarket</option><option value="Northcote">Northcote</option><option value="Onehunga">Onehunga</option><option value="Orewa">Orewa</option><option value="Otahuhu">Otahuhu</option><option value="Pakuranga">Pakuranga</option><option value="Papakura">Papakura</option><option value="Parnell">Parnell</option><option value="Ponsonby">Ponsonby</option><option value="Remuera">Remuera</option><option value="St Heliers">St Heliers</option><option value="Takapuna">Takapuna</option><option value="Te Atatu">Te Atatu</option><option value="Titirangi">Titirangi</option><option value="West Harbour">West Harbour</option></optgroup><optgroup label="Wellington"><option value="Wellington (all)">Wellington (all)</option><option value="Brooklyn">Brooklyn</option><option value="Island Bay">Island Bay</option><option value="Johnsonville">Johnsonville</option><option value="Karori">Karori</option><option value="Kelburn">Kelburn</option><option value="Kilbirnie">Kilbirnie</option><option value="Lower Hutt">Lower Hutt</option><option value="Miramar">Miramar</option><option value="Newtown">Newtown</option><option value="Petone">Petone</option><option value="Porirua">Porirua</option><option value="Seatoun">Seatoun</option><option value="Thorndon">Thorndon</option><option value="Upper Hutt">Upper Hutt</option></optgroup><optgroup label="Christchurch"><option value="Christchurch (all)">Christchurch (all)</option><option value="Addington">Addington</option><option value="Avonhead">Avonhead</option><option value="Cashmere">Cashmere</option><option value="Fendalton">Fendalton</option><option value="Halswell">Halswell</option><option value="Hornby">Hornby</option><option value="Ilam">Ilam</option><option value="Linwood">Linwood</option><option value="Merivale">Merivale</option><option value="Papanui">Papanui</option><option value="Riccarton">Riccarton</option><option value="Rolleston">Rolleston</option><option value="Sumner">Sumner</option><option value="Sydenham">Sydenham</option></optgroup><optgroup label="Hamilton"><option value="Hamilton (all)">Hamilton (all)</option><option value="Chartwell">Chartwell</option><option value="Claudelands">Claudelands</option><option value="Dinsdale">Dinsdale</option><option value="Flagstaff">Flagstaff</option><option value="Frankton">Frankton</option><option value="Hillcrest">Hillcrest</option><option value="Melville">Melville</option><option value="Rototuna">Rototuna</option></optgroup><optgroup label="Tauranga"><option value="Tauranga (all)">Tauranga (all)</option><option value="Bethlehem">Bethlehem</option><option value="Mount Maunganui">Mount Maunganui</option><option value="Otumoetai">Otumoetai</option><option value="Papamoa">Papamoa</option><option value="Pyes Pa">Pyes Pa</option></optgroup><optgroup label="Dunedin"><option value="Dunedin (all)">Dunedin (all)</option><option value="Mosgiel">Mosgiel</option><option value="North East Valley">North East Valley</option><option value="Saint Clair">Saint Clair</option><option value="Saint Kilda">Saint Kilda</option></optgroup><optgroup label="Other regions"><option value="Bay of Plenty">Bay of Plenty</option><option value="Canterbury">Canterbury</option><option value="Gisborne">Gisborne</option><option value="Hawke's Bay">Hawke's Bay</option><option value="Manawatu">Manawatu</option><option value="Marlborough">Marlborough</option><option value="Nelson">Nelson</option><option value="Northland">Northland</option><option value="Otago">Otago</option><option value="Southland">Southland</option><option value="Taranaki">Taranaki</option><option value="Waikato">Waikato</option><option value="West Coast">West Coast</option></optgroup></select></div><div class="search-field"><label for="sf-price_min">Price from</label><select id="sf-price_min" name="price_min"><option value="">Any</option><option value="200000">$200,000</option><option value="400000">$400,000</option><option value="600000">$600,000</option><option value="800000">$800,000</option><option value="1000000">$1,000,000</option><option value="1500000">$1,500,000</option><option value="2000000">$2,000,000</option></select></div><div class="search-field"><label for="sf-price_max">Price up to</label><select id="sf-price_max" name="price_max"><option value="">Any</option><option value="400000">$400,000</option><option value="600000">$600,000</option><option value="800000">$800,000</option><option value="1000000">$1,000,000</option><option value="1500000">$1,500,000</option><option value="2000000">$2,000,000</option><option value="3000000">$3,000,000</option><option value="5000000">$5,000,000</option></select></div><div class="search-field"><label for="sf-bedrooms">Bedrooms</label><select id="sf-bedrooms" name="bedrooms"><option value="">Any</option><option value="1+">1+</option><option value="2+">2+</option><option value="3+">3+</option><option value="4+">4+</option><option value="5+">5+</option></select></div><div class="search-field"><label for="sf-bathrooms">Bathrooms</label><select id="sf-bathrooms" name="bathrooms"><option value="">Any</option><option value="1+">1+</option><option value="2+">2+</option><option value="3+">3+</option><option value="4+">4+</option></select></div><div class="search-field"><label for="sf-parking">Parking</label><select id="sf-parking" name="parking"><option value="">Any</option><option value="1+">1+</option><option value="2+">2+</option><option value="3+">3+</option></select></div><div class="search-field"><label for="sf-property_type">Property type</label><select id="sf-property_type" name="property_type"><option value="">Any</option><option value="House">House</option><option value="Apartment">Apartment</option><option value="Townhouse">Townhouse</option><option value="Unit">Unit</option><option value="Lifestyle">Lifestyle</option><option value="Section">Section</option><option value="Other">Other</option></select></div><div class="search-field full"><label for="sf-keywords">Keywords</label><input id="sf-keywords" name="keywords" placeholder="Type in keywords" type="text"/></div></div>
+<div class="search-advanced" id="advancedSearch">
+<div class="search-grid" id="advancedFields"><div class="search-field"><label for="sf-land_min">Land area from</label><select id="sf-land_min" name="land_min"><option value="">Any</option><option value="300">300 m²</option><option value="500">500 m²</option><option value="700">700 m²</option><option value="1000">1,000 m²</option><option value="2000">2,000 m²</option><option value="4000">4,000 m²</option><option value="10000">10,000 m²</option></select></div><div class="search-field"><label for="sf-floor_min">Floor area from</label><select id="sf-floor_min" name="floor_min"><option value="">Any</option><option value="80">80 m²</option><option value="100">100 m²</option><option value="120">120 m²</option><option value="150">150 m²</option><option value="200">200 m²</option><option value="250">250 m²</option><option value="300">300 m²</option></select></div><div class="search-field"><label for="sf-land_max">Land area up to</label><select id="sf-land_max" name="land_max"><option value="">Any</option><option value="500">500 m²</option><option value="700">700 m²</option><option value="1000">1,000 m²</option><option value="2000">2,000 m²</option><option value="4000">4,000 m²</option><option value="10000">10,000 m²</option></select></div><div class="search-field"><label for="sf-floor_max">Floor area up to</label><select id="sf-floor_max" name="floor_max"><option value="">Any</option><option value="100">100 m²</option><option value="120">120 m²</option><option value="150">150 m²</option><option value="200">200 m²</option><option value="250">250 m²</option><option value="300">300 m²</option><option value="400">400 m²</option></select></div><div class="search-field"><label class="search-checkbox"><input name="exclude_attached" type="checkbox" value="1"/>Exclude attached / multi-unit developments</label></div><div class="search-field"><label class="search-checkbox"><input name="pool" type="checkbox" value="1"/>Pool</label></div><div class="search-field"><label class="search-checkbox"><input name="new_build" type="checkbox" value="1"/>New build</label></div><div class="search-field"><label class="search-checkbox"><input name="waterfront" type="checkbox" value="1"/>Waterfront</label></div><div class="search-field"><label class="search-checkbox"><input name="home_income" type="checkbox" value="1"/>Home and income</label></div><div class="search-field"><label class="search-checkbox"><input name="ensuite" type="checkbox" value="1"/>Ensuite</label></div><div class="search-field"><label class="search-checkbox"><input name="garage" type="checkbox" value="1"/>Garage</label></div><div class="search-field"><label class="search-checkbox"><input name="lifestyle" type="checkbox" value="1"/>Lifestyle property</label></div><div class="search-field"><label class="search-checkbox"><input name="development" type="checkbox" value="1"/>Development potential</label></div></div>
+</div>
+<div class="search-actions">
+<button class="advanced-toggle" id="advancedToggle" type="button">Advanced search</button>
+<button class="button button-primary search-submit" type="submit">Search properties</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<section class="section section-dark" id="management">
+<div class="container">
+<div class="section-heading mgmt-block">
+<div class="eyebrow">Property Management</div>
+<h2>An exclusive platform, built to perfection</h2>
+<p>Dream Property has developed the Dream Property management tool that will change how the industry works. The application is currently at it's testing stage and exclusive to Dream Property. Once it is perfected, it will be released for public use.</p>
+<div style="margin-top:28px">
+<a class="button button-primary" href="/management">Manage Your Property With Us</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-main">
+<div class="footer-brand">
+<a aria-label="Dream Property home" class="brand" href="/">
+<img alt="Dream Property logo" class="brand-logo" src="dream-property-logo.svg"/>
+<div class="brand-name">Dream <span>Property</span></div>
+</a>
+<div aria-label="Social media" class="footer-socials">
+<a aria-label="Facebook" href="https://facebook.com/DreamPropertyNZ" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="22" viewbox="0 0 24 24" width="22"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93v-1.9c0-.86.24-1.44 1.47-1.44h1.57V4.14C16.24 4.06 15.3 4 14.2 4c-2.3 0-3.87 1.4-3.87 4v2.44H7.77v2.96h2.56V21h3.17Z"></path></svg>
+</a>
+<a aria-label="Instagram" href="https://instagram.com/DreamPropertyNZ" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="22"><rect height="17" rx="5" width="17" x="3.5" y="3.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.15" cy="6.85" r="1"></circle></svg>
+</a>
+<a aria-label="TikTok" href="https://tiktok.com/@DreamPropertyNZ" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="22" viewbox="0 0 24 24" width="22"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"></path></svg>
+</a>
+<a aria-label="YouTube" href="https://youtube.com/@DreamPropertyNZ" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="22" viewbox="0 0 24 24" width="22"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"></path></svg>
+</a>
+</div>
+</div>
+<div class="footer-nav">
+<div>
+<span class="footer-heading">Company</span>
+<a href="/about">About Us</a>
+<a href="/contact">Contact</a>
+<a href="/team">Dream Team</a>
+<button class="footer-link-btn" data-open-modal="property-details" type="button">Property Details</button>
+<a href="/">Property Management</a>
+</div>
+<div>
+<span class="footer-heading">Legal</span>
+<button class="footer-link-btn" data-open-modal="privacy" type="button">Privacy Policy</button>
+<button class="footer-link-btn" data-open-modal="terms" type="button">Terms &amp; Conditions</button>
+</div>
+<div>
+<span class="footer-heading">Marketplace</span>
+<a href="/agents" rel="noopener" target="_blank">Find an Agent</a>
+<a href="/listings/rent" rel="noopener" target="_blank">For Rent</a>
+<a href="/listings/sale" rel="noopener" target="_blank">For Sale</a>
+<a href="/">Search properties</a>
+<button class="footer-link-btn" data-open-modal="listing" type="button">Start a Listing</button>
+</div>
+<div>
+<span class="footer-heading">Safety</span>
+<button class="footer-link-btn" data-open-modal="accessibility" type="button">Accessibility</button>
+<button class="footer-link-btn" data-open-modal="listing-rules" type="button">Listing Rules</button>
+<button class="footer-link-btn" data-open-modal="safety" type="button">Safety &amp; Reporting</button>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© <span id="currentYear">2026</span> Dream Property</p>
+</div>
+</div>
+</footer>
+<!-- Start a Listing -->
+<div aria-hidden="true" aria-labelledby="listingTitle" aria-modal="true" class="modal" id="modal-listing" role="dialog">
+<div class="modal-backdrop" data-close-modal=""></div>
+<div class="modal-panel">
+<button aria-label="Close" class="modal-close" data-close-modal="" type="button">×</button>
+<div class="eyebrow">List a property</div>
+<h2 id="listingTitle">Start a Listing</h2>
+<p class="modal-lead">Enter the property address and confirm you are the owner, or log in to continue.</p>
+<form class="auth-form" id="listingForm" novalidate="">
+<div class="auth-field">
+<label for="listingAddress">Property address</label>
+<input autocomplete="street-address" id="listingAddress" name="address" placeholder="Street address, suburb, city" required="" type="text"/>
+</div>
+<label class="auth-check">
+<input id="listingOwner" name="owner" type="checkbox" value="1"/>
+<span>I confirm I am the owner of this property, or I have authority to list it.</span>
+</label>
+<p class="auth-error" hidden="" id="listingError"></p>
+<button class="button button-primary" style="width:100%" type="submit">Continue</button>
+<div class="auth-links">
+<button data-close-modal="" data-open-modal="login" type="button">Log in to continue</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Log In -->
+<div aria-hidden="true" aria-labelledby="loginTitle" aria-modal="true" class="modal" id="modal-login" role="dialog">
+<div class="modal-backdrop" data-close-modal=""></div>
+<div class="modal-panel">
+<button aria-label="Close" class="modal-close" data-close-modal="" type="button">×</button>
+<div class="eyebrow">Account</div>
+<h2 id="loginTitle">Log In</h2>
+<p class="modal-lead">Sign in to your Dream Property account.</p>
+<form class="auth-form" id="loginForm" novalidate="">
+<div class="auth-field">
+<label for="loginUsername">Username</label>
+<input autocapitalize="none" autocomplete="username" id="loginUsername" name="username" required="" spellcheck="false" type="text"/>
+</div>
+<div class="auth-field">
+<label for="loginPassword">Password</label>
+<input autocomplete="current-password" id="loginPassword" name="password" required="" type="password"/>
+</div>
+<p class="auth-error" hidden="" id="loginError">Incorrect username / password.</p>
+<button class="button button-primary" style="width:100%" type="submit">Log In</button>
+<div class="auth-links">
+<button id="forgotPasswordBtn" type="button">Forgot password?</button>
+<button data-close-modal="" data-open-modal="signup" type="button">Create an account</button>
+</div>
+<p class="auth-hint" hidden="" id="forgotPasswordMsg">If an account exists for that username, password reset instructions will be sent when accounts are available. Please try again later.</p>
+</form>
+</div>
+</div>
+<!-- Sign Up -->
+<div aria-hidden="true" aria-labelledby="signupTitle" aria-modal="true" class="modal" id="modal-signup" role="dialog">
+<div class="modal-backdrop" data-close-modal=""></div>
+<div class="modal-panel">
+<button aria-label="Close" class="modal-close" data-close-modal="" type="button">×</button>
+<div class="eyebrow">Account</div>
+<h2 id="signupTitle">Sign Up</h2>
+<p class="modal-lead">Create a Dream Property account. Account creation is not available yet.</p>
+<form class="auth-form" id="signupForm" novalidate="">
+<div class="auth-field">
+<label for="signupUsername">Username</label>
+<input autocapitalize="none" autocomplete="username" id="signupUsername" minlength="3" name="username" required="" spellcheck="false" type="text"/>
+</div>
+<div class="auth-field">
+<label for="signupEmail">Email</label>
+<input autocomplete="email" id="signupEmail" name="email" required="" type="email"/>
+</div>
+<div class="auth-field">
+<label for="signupPassword">Password</label>
+<input autocomplete="new-password" id="signupPassword" minlength="8" name="password" required="" type="password"/>
+<p class="auth-hint">At least 8 characters, including one uppercase letter, one number, and one special character.</p>
+</div>
+<div class="auth-field">
+<label for="signupPassword2">Confirm password</label>
+<input autocomplete="new-password" id="signupPassword2" name="password2" required="" type="password"/>
+</div>
+<p class="auth-error" hidden="" id="signupError"></p>
+<p class="auth-success" hidden="" id="signupBlocked">You cannot make an account right now. Please try again later.</p>
+<button class="button button-primary" style="width:100%" type="submit">Create account</button>
+<div class="auth-links">
+<button data-close-modal="" data-open-modal="login" type="button">Already have an account? Log in</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Privacy -->
+<div aria-hidden="true" aria-labelledby="privacyTitle" aria-modal="true" class="modal" id="modal-privacy" role="dialog">
+<div class="modal-backdrop" data-close-modal=""></div>
+<div class="modal-panel legal-modal">
+<button aria-label="Close" class="modal-close" data-close-modal="" type="button">×</button>
+<div class="eyebrow">Legal</div>
+<h2 id="privacyTitle">Privacy Policy</h2>
+<p>Your privacy matters to us. This policy explains how Dream Property Limited collects, uses, protects, and shares personal information through this website, our marketplace, and related services. We handle personal information in line with the Privacy Act 2020. The version shown on this website is the current version.</p>
+<h3>Who we are</h3>
+<p>Dream Property Limited operates a New Zealand property marketplace and technology platform. In this policy, "we", "us", and "our" mean Dream Property Limited.</p>
+<h3>Your password is never stored in plain text</h3>
+<p>We do not store your password in a readable form. Dream Property will never ask you for your password by email, phone, text message, or social media. If someone claims to be from Dream Property and asks for your password, do not share it.</p>
+<h3>Information we may collect</h3>
+<p>We may collect information you provide when you contact us, create or attempt to create an account, start a listing, search addresses, use marketplace features, or otherwise communicate with us. This may include your name, contact details, property address details, and the content of your messages.</p>
+<p>We only collect personal information that is necessary for a lawful purpose connected with our services, and we collect it directly from you wherever we reasonably can.</p>
+<h3>How information may be used</h3>
+<p>Information may be used to respond to enquiries, operate and improve the website and marketplace, support listings and accounts, meet legal obligations, and carry out business administration. We will not use your information for an unrelated purpose without your consent, unless the law allows or requires it.</p>
+<h3>Sharing information</h3>
+<p>We do not sell your personal information. Information may be shared with service providers where necessary to operate the platform, and where the law requires disclosure. We only share what is needed.</p>
+<h3>Information held or processed overseas</h3>
+<p>Some tools we use, including website hosting, may store or process information outside New Zealand. Where personal information is sent overseas, we take reasonable steps to ensure comparable safeguards.</p>
+<h3>Website, cookies, and third party services</h3>
+<p>This website may use hosting providers and similar technologies that collect technical information such as IP address, device type, and browser details. You can control cookies through your browser settings.</p>
+<h3>Address and property information</h3>
+<p>Address lookup may use New Zealand Post address data under applicable terms. Property attribute data, where shown, is drawn from authorised or licensed sources and may be incomplete or not current.</p>
+<h3>Information security</h3>
+<p>We take reasonable steps to protect personal information from loss, misuse, unauthorised access, disclosure, alteration, or destruction. If a privacy breach is likely to cause serious harm, we will notify the Office of the Privacy Commissioner and affected people as required by the Privacy Act 2020.</p>
+<h3>Access and correction</h3>
+<p>You may ask for access to personal information we hold about you and ask us to correct it. Contact us using the details below. We will respond within the timeframes required by the Privacy Act 2020.</p>
+<h3>Privacy complaints</h3>
+<p>If you have a concern about how we have handled your personal information, contact us first. If you are not satisfied, you may complain to the Office of the Privacy Commissioner at <a href="https://www.privacy.org.nz" rel="noopener noreferrer" target="_blank">privacy.org.nz</a>.</p>
+<h3>Contact</h3>
+<p>For privacy related enquiries, contact our privacy officer via DREAM·E on this website, or by email when account services are available.</p>
+</div>
+</div>
+<!-- Terms -->
+<div aria-hidden="true" aria-labelledby="termsTitle" aria-modal="true" class="modal" id="modal-terms" role="dialog">
+<div class="modal-backdrop" data-close-modal=""></div>
+<div class="modal-panel legal-modal">
+<button aria-label="Close" class="modal-close" data-close-modal="" type="button">×</button>
+<div class="eyebrow">Legal</div>
+<h2 id="termsTitle">Terms &amp; Conditions</h2>
+<p>These terms apply to your use of the Dream Property website and marketplace. By using this website, you agree to them. If you do not agree, please do not use the website. The version shown here is the current version.</p>
+<h3>About Dream Property</h3>
+<p>Dream Property Limited operates a property marketplace and technology platform. Dream Property is not presenting itself as a licensed real estate agency on this website. Marketplace and platform functions are distinct from licensed real estate agency work, which is carried out only where appropriately authorised.</p>
+<h3>Website information</h3>
+<p>Information on this website is for general information. Property availability, pricing, services, and features may change without notice. Automated estimates are not registered valuations or guaranteed prices.</p>
+<h3>Accounts and login</h3>
+<p>If you are given login access, you are responsible for keeping your details confidential and for activity under your account. Account registration may not always be available. We may suspend or close an account if we reasonably believe it is being misused.</p>
+<h3>Listings</h3>
+<p>Users who list property must have the right to do so. Listings must be accurate and not misleading. We may remove listings that breach these terms or our listing rules.</p>
+<h3>Acceptable use</h3>
+<p>You agree not to use this website to break the law, attempt unauthorised access, interfere with security, send harmful code, or misrepresent your identity.</p>
+<h3>Intellectual property</h3>
+<p>The Dream Property name, logo, website content, and design belong to Dream Property Limited or its licensors. You may view the website for your own use, but you may not copy or reuse our content for commercial purposes without written permission.</p>
+<h3>Limitation of liability</h3>
+<p>To the fullest extent permitted by law, Dream Property is not liable for loss arising from your use of, or reliance on, this website. Nothing in these terms limits rights you have under the Consumer Guarantees Act 1993, the Fair Trading Act 1986, or other law that cannot be excluded.</p>
+<h3>New Zealand law</h3>
+<p>These terms are governed by the laws of New Zealand, and the New Zealand courts have jurisdiction over disputes about them.</p>
+</div>
+</div>
+<!-- Listing Rules -->
+<div aria-hidden="true" aria-labelledby="listingRulesTitle" aria-modal="true" class="modal" id="modal-listing-rules" role="dialog">
+<div class="modal-backdrop" data-close-modal=""></div>
+<div class="modal-panel legal-modal">
+<button aria-label="Close" class="modal-close" data-close-modal="" type="button">×</button>
+<div class="eyebrow">Marketplace</div>
+<h2 id="listingRulesTitle">Listing Rules</h2>
+<p>These rules help keep Dream Property fair, accurate, and safe for everyone.</p>
+<h3>Who may list</h3>
+<p>You may list a property only if you are the owner or have clear authority to list it. Agents and agencies must be appropriately verified before listing under an agency identity.</p>
+<h3>Accuracy</h3>
+<p>Listings must be truthful. Do not use misleading photos, incorrect prices, or false availability. Describe the property honestly.</p>
+<h3>Photos</h3>
+<p>Use clear, recent photos of the actual property. Do not use stock images as if they were the property, and avoid heavy editing that misrepresents the home.</p>
+<h3>Prohibited content</h3>
+<p>Do not post spam, scams, offensive material, or listings for properties you cannot lawfully offer.</p>
+<h3>Moderation</h3>
+<p>We may remove or limit listings that breach these rules. A report does not automatically mean a user is at fault. Reports are reviewed fairly.</p>
+</div>
+</div>
+<!-- Safety -->
+<div aria-hidden="true" aria-labelledby="safetyTitle" aria-modal="true" class="modal" id="modal-safety" role="dialog">
+<div class="modal-backdrop" data-close-modal=""></div>
+<div class="modal-panel legal-modal">
+<button aria-label="Close" class="modal-close" data-close-modal="" type="button">×</button>
+<div class="eyebrow">Safety</div>
+<h2 id="safetyTitle">Safety &amp; Reporting</h2>
+<p>Stay cautious when dealing with property online. Dream Property will never ask for your password by email, phone, text, or social media.</p>
+<h3>Viewings</h3>
+<p>If a property is occupied, be respectful of the people living there and of the lister's time. Preferred viewing times may not always be available.</p>
+<h3>Reporting</h3>
+<p>You can report listings for spam, fraud, fake property, incorrect information, misleading photos, or other policy issues from the property detail page. Reports are reviewed by our team.</p>
+<h3>Scams</h3>
+<p>Do not send money or personal documents to anyone based only on a listing message. If something feels wrong, stop and report it.</p>
+</div>
+</div>
+<!-- Accessibility -->
+<div aria-hidden="true" aria-labelledby="a11yTitle" aria-modal="true" class="modal" id="modal-accessibility" role="dialog">
+<div class="modal-backdrop" data-close-modal=""></div>
+<div class="modal-panel legal-modal">
+<button aria-label="Close" class="modal-close" data-close-modal="" type="button">×</button>
+<div class="eyebrow">Access</div>
+<h2 id="a11yTitle">Accessibility</h2>
+<p>We aim to make Dream Property usable for as many people as possible. The site is designed to work with keyboard navigation, readable contrast, and responsive layouts on common devices.</p>
+<p>If you have trouble using any part of the website, tell us through DREAM·E on this site. We will do our best to help and to improve accessibility over time.</p>
+</div>
+</div>
+<!-- Property Details modal -->
+<div aria-hidden="true" aria-labelledby="propertyDetailsTitle" aria-modal="true" class="modal" id="modal-property-details" role="dialog">
+<div class="modal-backdrop" data-close-modal=""></div>
+<div class="modal-panel legal-modal">
+<button aria-label="Close" class="modal-close" data-close-modal="" type="button">×</button>
+<div class="eyebrow">Property intelligence</div>
+<h2 id="propertyDetailsTitle">Property Details</h2>
+<p class="modal-lead">Search a New Zealand address to explore property information held on Dream Property. Profiles are refined as verified details become available.</p>
+<form action="/property" autocomplete="off" class="address-form" id="addressSearchForm" method="get">
+<div class="address-input-wrap">
+<input aria-autocomplete="list" aria-controls="addressSuggestions" aria-expanded="false" autocomplete="off" id="addressInput" name="address" placeholder="Start typing a street address" type="text"/>
+<div class="address-suggestions" hidden="" id="addressSuggestions" role="listbox"></div>
+</div>
+<button class="button button-primary" style="margin-top:12px" type="submit">Search address</button>
+<p class="address-attribution" id="addressAttribution" style="margin-top:10px">Address data sourced from Land Information New Zealand. CC BY 4.0.</p>
+</form>
+<div class="details-preview" id="detailsPreview" style="margin-top:20px;min-height:120px;border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px">
+<div class="preview-empty" id="previewEmpty">
+<p>Enter or select an address to view property details.</p>
+</div>
+<div class="preview-content" id="previewContent">
+<div class="preview-label">Property profile</div>
+<div class="preview-address" id="previewAddress"></div>
+<div class="preview-meta" id="previewMeta"></div>
+<div class="preview-sale" id="previewSale"></div>
+<div class="preview-estimate" hidden="" id="previewEstimateBlock">
+<span class="preview-label">Dream Property Estimate</span>
+<strong id="previewEstimate"></strong>
+<p class="preview-note">Automated market indication based on available data. Not a registered valuation or guaranteed sale price.</p>
+</div>
+<div class="preview-actions">
+<a class="button button-outline button-small" href="/property" id="previewMoreLink" rel="noopener" target="_blank">View more details</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- DREAM·E launcher: cloud with smiley -->
+<button aria-controls="chatPanel" aria-expanded="false" aria-label="Open DREAM·E assistant" class="dreame-launcher" id="dreameLauncher" type="button">
+<svg aria-hidden="true" fill="none" viewbox="0 0 48 48">
+<!-- Cloud silhouette -->
+<path d="M14 32c-4.4 0-8-3.1-8-7s3.6-7 8-7c.5-4.5 4.3-8 9-8 3.6 0 6.7 2 8.3 5 1-.4 2.1-.6 3.2-.6 4.4 0 8 3.1 8 7s-3.6 7-8 7H14z" fill="currentColor" opacity="0.9"></path>
+<!-- Smiley eyes -->
+<circle cx="20" cy="26" fill="#040B15" r="1.6"></circle>
+<circle cx="28" cy="26" fill="#040B15" r="1.6"></circle>
+<!-- Smile -->
+<path d="M20 30c1.2 1.6 2.8 2.4 4.5 2.4S27.8 31.6 29 30" fill="none" stroke="#040B15" stroke-linecap="round" stroke-width="1.8"></path>
+</svg>
+</button>
+<div aria-hidden="true" aria-label="DREAM·E assistant" class="chat-panel" id="chatPanel" role="dialog">
+<div class="chat-header">
+<div class="chat-header-info">
+<div aria-hidden="true" class="chat-avatar">
+<svg fill="none" viewbox="0 0 48 48">
+<path d="M14 32c-4.4 0-8-3.1-8-7s3.6-7 8-7c.5-4.5 4.3-8 9-8 3.6 0 6.7 2 8.3 5 1-.4 2.1-.6 3.2-.6 4.4 0 8 3.1 8 7s-3.6 7-8 7H14z" fill="currentColor" opacity="0.9"></path>
+<circle cx="20" cy="20" fill="#040B15" r="1.6"></circle>
+<circle cx="28" cy="20" fill="#040B15" r="1.6"></circle>
+<path d="M20 24c1.2 1.6 2.8 2.4 4.5 2.4S27.8 25.6 29 24" fill="none" stroke="#040B15" stroke-linecap="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div>
+<h3>DREAM·E</h3>
+<span>Your Dream Property assistant</span>
+</div>
+</div>
+<button aria-label="Close chat" class="chat-close" id="chatClose" type="button">×</button>
+</div>
+<div class="chat-messages" id="chatMessages">
+<div class="chat-bubble bot">
+        Hi, I am DREAM·E. Your Dream Property assistant. How can I help?
       </div>
-    </div>
-  </header>
-
-  <main class="page">
-    <div class="container">
-      <div class="page-heading">
-        <h1 id="pageTitle">Property listings</h1>
-        <p id="pageSubtitle">Results based on your search criteria across the Dream Property marketplace.</p>
-      </div>
-
-      <div class="filters-bar" id="filtersBar" aria-label="Active search filters"></div>
-
-      <div class="results-meta">
-        <p id="resultsCount"><strong>0</strong> listings match your search</p>
-        <a class="button button-outline" href="/">Refine search</a>
-      </div>
-
-      <div class="results-grid" id="resultsGrid" hidden></div>
-
-      <div class="empty-state" id="emptyState">
-        <h2>No listings match these details yet</h2>
-        <p>
-          Your search has been applied. As properties are listed on Dream Property,
-          matching results will appear here. You can refine your criteria or explore another search.
-        </p>
-        <div class="empty-actions">
-          <a class="button button-primary" href="/">Back to search</a>
-          <a class="button button-outline" href="/listings">View all listing types</a>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-main">
-        <div class="footer-brand">
-          <a class="brand" href="/" aria-label="Dream Property home">
-            <img class="brand-logo" src="/dream-property-logo.svg" alt="Dream Property logo">
-            <div class="brand-name">Dream <span>Property</span></div>
-          </a>
-          <div class="footer-socials" aria-label="Social media">
-            <a href="https://facebook.com/DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93v-1.9c0-.86.24-1.44 1.47-1.44h1.57V4.14C16.24 4.06 15.3 4 14.2 4c-2.3 0-3.87 1.4-3.87 4v2.44H7.77v2.96h2.56V21h3.17Z"/></svg>
-            </a>
-            <a href="https://instagram.com/DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="22" height="22" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.15" cy="6.85" r="1"/></svg>
-            </a>
-            <a href="https://tiktok.com/@DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"/></svg>
-            </a>
-            <a href="https://youtube.com/@DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="footer-nav">
-          <div>
-            <span class="footer-heading">Company</span>
-            <a href="/about">About Us</a>
-            <a href="/contact">Contact</a>
-            <a href="/team">Dream Team</a>
-            <a href="/">Property Details</a>
-            <a href="/management">Property Management</a>
-          </div>
-          <div>
-            <span class="footer-heading">Legal</span>
-            <a href="/">Privacy Policy</a>
-            <a href="/">Terms &amp; Conditions</a>
-          </div>
-          <div>
-            <span class="footer-heading">Marketplace</span>
-            <a href="/agents">Find an Agent</a>
-            <a href="/listings?type=rent">For Rent</a>
-            <a href="/listings?type=sale">For Sale</a>
-            <a href="/">Search properties</a>
-            <a href="/">Start a Listing</a>
-          </div>
-          <div>
-            <span class="footer-heading">Safety</span>
-            <a href="/">Accessibility</a>
-            <a href="/">Listing Rules</a>
-            <a href="/">Safety &amp; Reporting</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© <span id="currentYear"></span> Dream Property</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
+</div>
+<form class="chat-input-row" id="chatForm">
+<input aria-label="Message to DREAM·E" autocomplete="off" id="chatInput" placeholder="Ask a question..." type="text"/>
+<button aria-label="Send message" class="chat-send" type="submit">
+<svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
+</button>
+</form>
+</div>
+<!-- 
+    LINZ address lookup config
+    1. Deploy api/linz-address-worker.js on Cloudflare Workers
+    2. Set secret LINZ_API_KEY
+    3. Put your Worker URL below (replace YOURNAME)
+  -->
+<script>
+    window.DREAM_PROPERTY_CONFIG = {
+      addressSuggestUrl: "https://dreamproperty-address.dreampropertynz.workers.dev/suggest",
+      addressDetailsUrl: "https://dreamproperty-address.dreampropertynz.workers.dev/details"
+    };
+  </script>
+<script>
     (function () {
-      document.getElementById("currentYear").textContent = String(new Date().getFullYear());
+      "use strict";
 
-      var LISTINGS = window.DREAM_PROPERTY_LISTINGS || [];
-      var TYPE_LABELS = {
-        sale: "For sale",
-        rent: "For rent",
-        agent: "Agents"
-      };
-      var PARAM_LABELS = {
-        type: "Type",
-        location: "Location",
-        price_min: "Price from",
-        price_max: "Price up to",
-        bedrooms: "Bedrooms",
-        bathrooms: "Bathrooms",
-        parking: "Parking",
-        property_type: "Property type",
-        keywords: "Keywords",
-        land_min: "Land area from",
-        land_max: "Land area up to",
-        floor_min: "Floor area from",
-        floor_max: "Floor area up to",
-        agent_name: "Agent or agency",
-        speciality: "Speciality"
-      };
+      /* Intro */
+      const siteIntro = document.getElementById("siteIntro");
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          if (siteIntro) siteIntro.classList.add("hidden");
+        }, 1450);
+      });
 
-      function getParams() {
-        var params = new URLSearchParams(window.location.search);
-        var out = {};
-        params.forEach(function (value, key) {
-          if (value != null && String(value).trim() !== "") {
-            out[key] = String(value).trim();
+      /* Header scroll */
+      const siteHeader = document.getElementById("siteHeader");
+      function updateHeader() {
+        if (!siteHeader) return;
+        if (window.scrollY > 30) siteHeader.classList.add("scrolled");
+        else siteHeader.classList.remove("scrolled");
+      }
+      window.addEventListener("scroll", updateHeader, { passive: true });
+      updateHeader();
+
+      /* Mobile menu */
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("mobileNav");
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", function () {
+          const open = mobileNav.classList.toggle("open");
+          menuToggle.setAttribute("aria-expanded", String(open));
+          menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        });
+        document.addEventListener("click", function (e) {
+          if (!mobileNav.contains(e.target) && !menuToggle.contains(e.target)) {
+            mobileNav.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open menu");
           }
         });
-        if (!out.type) out.type = "sale";
-        return out;
       }
 
-      function formatMoney(n, weekly) {
-        if (n == null || n === "") return "";
-        var num = Number(n);
-        if (!isFinite(num)) return String(n);
-        var s = "$" + num.toLocaleString("en-NZ");
-        return weekly ? s + " per week" : s;
-      }
+      /* Year */
+      const yearEl = document.getElementById("currentYear");
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-      function formatArea(n) {
-        if (n == null || n === "") return "";
-        var num = Number(n);
-        if (!isFinite(num)) return String(n);
-        return num.toLocaleString("en-NZ") + " m²";
-      }
 
-      function parsePlus(value) {
-        if (value == null) return null;
-        var m = String(value).match(/(\d+)/);
-        return m ? Number(m[1]) : null;
-      }
+      const LOCATION_OPTIONS = [
+        { group: "Auckland", items: ["Auckland (all)", "Albany", "Avondale", "Balmoral", "Birkenhead", "Botany", "Devonport", "Ellerslie", "Epsom", "Glenfield", "Grey Lynn", "Henderson", "Howick", "Mangere", "Manukau", "Massey", "Mission Bay", "Mount Albert", "Mount Eden", "Mount Roskill", "Newmarket", "Northcote", "Onehunga", "Orewa", "Otahuhu", "Pakuranga", "Papakura", "Parnell", "Ponsonby", "Remuera", "St Heliers", "Takapuna", "Te Atatu", "Titirangi", "West Harbour"] },
+        { group: "Wellington", items: ["Wellington (all)", "Brooklyn", "Island Bay", "Johnsonville", "Karori", "Kelburn", "Kilbirnie", "Lower Hutt", "Miramar", "Newtown", "Petone", "Porirua", "Seatoun", "Thorndon", "Upper Hutt"] },
+        { group: "Christchurch", items: ["Christchurch (all)", "Addington", "Avonhead", "Cashmere", "Fendalton", "Halswell", "Hornby", "Ilam", "Linwood", "Merivale", "Papanui", "Riccarton", "Rolleston", "Sumner", "Sydenham"] },
+        { group: "Hamilton", items: ["Hamilton (all)", "Chartwell", "Claudelands", "Dinsdale", "Flagstaff", "Frankton", "Hillcrest", "Melville", "Rototuna"] },
+        { group: "Tauranga", items: ["Tauranga (all)", "Bethlehem", "Mount Maunganui", "Otumoetai", "Papamoa", "Pyes Pa"] },
+        { group: "Dunedin", items: ["Dunedin (all)", "Mosgiel", "North East Valley", "Saint Clair", "Saint Kilda"] },
+        { group: "Other regions", items: ["Bay of Plenty", "Canterbury", "Gisborne", "Hawke's Bay", "Manawatu", "Marlborough", "Nelson", "Northland", "Otago", "Southland", "Taranaki", "Waikato", "West Coast"] }
+      ];
 
-      function matchesListing(item, filters) {
-        if (filters.type && item.type && filters.type !== item.type) return false;
-        if (filters.location) {
-          var loc = filters.location.toLowerCase().replace(/\s*\(all\)\s*$/i, "");
-          var hay = [
-            item.location, item.address, item.suburb, item.city, item.region, item.title
-          ].filter(Boolean).join(" ").toLowerCase();
-          if (hay.indexOf(loc) === -1) return false;
+      /* Search field configs by type */
+      const fieldConfigs = {
+        sale: {
+          main: [
+            { name: "location", label: "Location", type: "location", full: true },
+            { name: "price_min", label: "Price from", type: "select", options: ["Any", "200000", "400000", "600000", "800000", "1000000", "1500000", "2000000"] },
+            { name: "price_max", label: "Price up to", type: "select", options: ["Any", "400000", "600000", "800000", "1000000", "1500000", "2000000", "3000000", "5000000"] },
+            { name: "bedrooms", label: "Bedrooms", type: "select", options: ["Any", "1+", "2+", "3+", "4+", "5+"] },
+            { name: "bathrooms", label: "Bathrooms", type: "select", options: ["Any", "1+", "2+", "3+", "4+"] },
+            { name: "parking", label: "Parking", type: "select", options: ["Any", "1+", "2+", "3+"] },
+            { name: "property_type", label: "Property type", type: "select", options: ["Any", "House", "Apartment", "Townhouse", "Unit", "Lifestyle", "Section", "Other"] },
+            { name: "keywords", label: "Keywords", type: "text", placeholder: "Type in keywords", full: true }
+          ],
+          advanced: [
+            { name: "land_min", label: "Land area from", type: "select", options: ["Any", "300", "500", "700", "1000", "2000", "4000", "10000"] },
+            { name: "floor_min", label: "Floor area from", type: "select", options: ["Any", "80", "100", "120", "150", "200", "250", "300"] },
+            { name: "land_max", label: "Land area up to", type: "select", options: ["Any", "500", "700", "1000", "2000", "4000", "10000"] },
+            { name: "floor_max", label: "Floor area up to", type: "select", options: ["Any", "100", "120", "150", "200", "250", "300", "400"] },
+            { name: "exclude_attached", label: "Exclude attached / multi-unit developments", type: "checkbox" },
+            { name: "pool", label: "Pool", type: "checkbox" },
+            { name: "new_build", label: "New build", type: "checkbox" },
+            { name: "waterfront", label: "Waterfront", type: "checkbox" },
+            { name: "home_income", label: "Home and income", type: "checkbox" },
+            { name: "ensuite", label: "Ensuite", type: "checkbox" },
+            { name: "garage", label: "Garage", type: "checkbox" },
+            { name: "lifestyle", label: "Lifestyle property", type: "checkbox" },
+            { name: "development", label: "Development potential", type: "checkbox" }
+          ]
+        },
+        rent: {
+          main: [
+            { name: "location", label: "Location", type: "location", full: true },
+            { name: "price_min", label: "Rent from (per week)", type: "select", options: ["Any", "300", "400", "500", "600", "700", "800", "1000"] },
+            { name: "price_max", label: "Rent up to (per week)", type: "select", options: ["Any", "400", "500", "600", "700", "800", "1000", "1500", "2000"] },
+            { name: "bedrooms", label: "Bedrooms", type: "select", options: ["Any", "1+", "2+", "3+", "4+", "5+"] },
+            { name: "bathrooms", label: "Bathrooms", type: "select", options: ["Any", "1+", "2+", "3+"] },
+            { name: "parking", label: "Parking", type: "select", options: ["Any", "1+", "2+", "3+"] },
+            { name: "property_type", label: "Property type", type: "select", options: ["Any", "House", "Apartment", "Townhouse", "Unit", "Room", "Other"] },
+            { name: "keywords", label: "Keywords", type: "text", placeholder: "Type in keywords", full: true }
+          ],
+          advanced: [
+            { name: "exclude_attached", label: "Exclude attached / multi-unit developments", type: "checkbox" },
+            { name: "furnished", label: "Furnished", type: "checkbox" },
+            { name: "pets", label: "Pet friendly", type: "checkbox" },
+            { name: "ensuite", label: "Ensuite", type: "checkbox" },
+            { name: "garage", label: "Garage", type: "checkbox" }
+          ]
+        },
+        agent: {
+          main: [
+            { name: "location", label: "Location", type: "location", full: true },
+            { name: "agent_name", label: "Agent or agency name", type: "text", placeholder: "Optional" },
+            { name: "speciality", label: "Speciality", type: "select", options: ["Any", "Residential sales", "Residential rental", "Commercial", "Rural", "Lifestyle"] }
+          ],
+          advanced: []
         }
-        if (filters.price_min) {
-          var minP = Number(filters.price_min);
-          if (isFinite(minP) && Number(item.price) < minP) return false;
+      };
+
+      function formatSelectLabel(val, fieldName) {
+        if (val === "Any") return "Any";
+        if (!/^\d+$/.test(val)) return val;
+        const n = Number(val);
+        const name = fieldName || "";
+        if (name === "land_min" || name === "land_max" || name === "floor_min" || name === "floor_max") {
+          return n.toLocaleString("en-NZ") + " m²";
         }
-        if (filters.price_max) {
-          var maxP = Number(filters.price_max);
-          if (isFinite(maxP) && Number(item.price) > maxP) return false;
+        if (name === "price_min" || name === "price_max") {
+          // Weekly rent values are smaller; sale prices are larger
+          if (n < 5000) return "$" + n.toLocaleString("en-NZ") + " per week";
+          return "$" + n.toLocaleString("en-NZ");
         }
-        var bedNeed = parsePlus(filters.bedrooms);
-        if (bedNeed != null && Number(item.bedrooms) < bedNeed) return false;
-        var bathNeed = parsePlus(filters.bathrooms);
-        if (bathNeed != null && Number(item.bathrooms) < bathNeed) return false;
-        var parkNeed = parsePlus(filters.parking);
-        if (parkNeed != null && Number(item.parking) < parkNeed) return false;
-        if (filters.property_type && item.property_type) {
-          if (String(item.property_type).toLowerCase() !== String(filters.property_type).toLowerCase()) {
-            return false;
+        return val;
+      }
+
+      function renderFields(type) {
+        const config = fieldConfigs[type] || fieldConfigs.sale;
+        const mainEl = document.getElementById("searchFields");
+        const advEl = document.getElementById("advancedFields");
+        const advWrap = document.getElementById("advancedSearch");
+        const advToggle = document.getElementById("advancedToggle");
+        const typeInput = document.getElementById("searchTypeInput");
+
+        if (typeInput) typeInput.value = type;
+        const submitBtn = document.querySelector(".search-submit");
+        if (submitBtn) submitBtn.textContent = type === "agent" ? "Search agents" : "Search properties";
+        if (!mainEl) return;
+
+        mainEl.innerHTML = "";
+        if (advEl) advEl.innerHTML = "";
+
+        config.main.forEach(function (f) {
+          mainEl.appendChild(createField(f));
+        });
+
+        if (config.advanced && config.advanced.length) {
+          config.advanced.forEach(function (f) {
+            if (advEl) advEl.appendChild(createField(f));
+          });
+          if (advToggle) {
+            advToggle.hidden = false;
+            advToggle.textContent = "Advanced search";
+          }
+          if (advWrap) advWrap.classList.remove("open");
+        } else {
+          if (advToggle) advToggle.hidden = true;
+          if (advWrap) advWrap.classList.remove("open");
+        }
+      }
+
+      function createField(f) {
+        const wrap = document.createElement("div");
+        wrap.className = "search-field" + (f.full ? " full" : "");
+
+        if (f.type === "checkbox") {
+          const label = document.createElement("label");
+          label.className = "search-checkbox";
+          const input = document.createElement("input");
+          input.type = "checkbox";
+          input.name = f.name;
+          input.value = "1";
+          label.appendChild(input);
+          label.appendChild(document.createTextNode(f.label));
+          wrap.appendChild(label);
+          return wrap;
+        }
+
+        const label = document.createElement("label");
+        label.setAttribute("for", "sf-" + f.name);
+        label.textContent = f.label;
+        wrap.appendChild(label);
+
+        if (f.type === "location") {
+          const select = document.createElement("select");
+          select.id = "sf-" + f.name;
+          select.name = f.name;
+          const anyOpt = document.createElement("option");
+          anyOpt.value = "";
+          anyOpt.textContent = "Any location";
+          select.appendChild(anyOpt);
+          LOCATION_OPTIONS.forEach(function (group) {
+            const og = document.createElement("optgroup");
+            og.label = group.group;
+            group.items.forEach(function (item) {
+              const o = document.createElement("option");
+              o.value = item;
+              o.textContent = item;
+              og.appendChild(o);
+            });
+            select.appendChild(og);
+          });
+          wrap.appendChild(select);
+        } else if (f.type === "select") {
+          const select = document.createElement("select");
+          select.id = "sf-" + f.name;
+          select.name = f.name;
+          (f.options || []).forEach(function (opt) {
+            const o = document.createElement("option");
+            o.value = opt === "Any" ? "" : opt;
+            o.textContent = formatSelectLabel(opt, f.name);
+            select.appendChild(o);
+          });
+          wrap.appendChild(select);
+        } else {
+          const input = document.createElement("input");
+          input.type = f.type || "text";
+          input.id = "sf-" + f.name;
+          input.name = f.name;
+          if (f.placeholder) input.placeholder = f.placeholder;
+          wrap.appendChild(input);
+        }
+        return wrap;
+      }
+
+      /* Tabs */
+      const tabs = document.querySelectorAll(".search-tab");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("active");
+            t.setAttribute("aria-selected", "false");
+          });
+          tab.classList.add("active");
+          tab.setAttribute("aria-selected", "true");
+          renderFields(tab.getAttribute("data-search-type") || "sale");
+        });
+      });
+
+      renderFields("sale");
+
+      /* Advanced toggle */
+      const advancedToggle = document.getElementById("advancedToggle");
+      const advancedSearch = document.getElementById("advancedSearch");
+      if (advancedToggle && advancedSearch) {
+        advancedToggle.addEventListener("click", function () {
+          const open = advancedSearch.classList.toggle("open");
+          advancedToggle.textContent = open ? "Hide advanced" : "Advanced search";
+        });
+      }
+
+      /* Search form always submits (even empty) */
+      const searchForm = document.getElementById("propertySearchForm");
+      if (searchForm) {
+        searchForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const formData = new FormData(searchForm);
+          const params = new URLSearchParams();
+          formData.forEach(function (value, key) {
+            if (value !== "" && value != null) params.append(key, String(value).trim());
+          });
+          // Always send search type so listings can filter correctly
+          const typeInput = document.getElementById("searchTypeInput");
+          if (typeInput && typeInput.value && !params.has("type")) {
+            params.set("type", typeInput.value);
+          }
+          const qs = params.toString();
+          const typeVal = (typeInput && typeInput.value) ? typeInput.value : "sale";
+          // Prefer path-based: /listings/sale, /listings/rent, /listings/agent
+          let cleanQs = qs;
+          if (cleanQs) {
+            const p = new URLSearchParams(cleanQs);
+            p.delete("type");
+            cleanQs = p.toString();
+          }
+          const url = "/listings/" + typeVal + (cleanQs ? "?" + cleanQs : "");
+          window.location.href = url;
+        });
+      }
+
+      /* Address search: LINZ open data via backend proxy (see docs/FREE-PROPERTY-DATA.md) */
+      /*
+        NZ Post Address Checker / ParcelAddress APIs require OAuth client credentials.
+        Never put client_secret in this frontend file.
+
+        1. Create an NZ Post business account and API app:
+           https://www.nzpost.co.nz/business/ecommerce/developer-resource-centre/get-started
+        2. Run a small backend that:
+           - Gets a bearer token from https://oauth.nzpost.co.nz/as/token.oauth2
+           - Proxies suggest requests to:
+             https://api.nzpost.co.nz/addresschecker/1.0/suggest?q=...&max=8
+             or
+             https://api.nzpost.co.nz/parceladdress/2.0/domestic/addresses?q=...&count=8
+        3. Point the config below at your proxy.
+
+        Expected proxy response JSON:
+        {
+          "success": true,
+          "addresses": [
+            {
+              "full_address": "151 Victoria Road, Saint Clair, Dunedin 9012",
+              "address_id": "949793",
+              "dpid": "1376601"
+            }
+          ]
+        }
+      */
+
+      var DP_CONFIG = window.DREAM_PROPERTY_CONFIG || {};
+      var ADDRESS_SUGGEST_URL = DP_CONFIG.addressSuggestUrl || "/api/address/suggest";
+      var ADDRESS_DETAILS_URL = DP_CONFIG.addressDetailsUrl || "/api/address/details";
+      /* Set window.DREAM_PROPERTY_CONFIG.addressSuggestUrl to your free Cloudflare Worker URL
+         after deploying api/linz-address-worker.js (guide: docs/FREE-PROPERTY-DATA.md). */
+
+      function showPropertyPreview(data) {
+        var empty = document.getElementById("previewEmpty");
+        var content = document.getElementById("previewContent");
+        var addr = document.getElementById("previewAddress");
+        var meta = document.getElementById("previewMeta");
+        var sale = document.getElementById("previewSale");
+        var estBlock = document.getElementById("previewEstimateBlock");
+        var est = document.getElementById("previewEstimate");
+        var more = document.getElementById("previewMoreLink");
+
+        if (!data || !content) return;
+
+        if (empty) empty.style.display = "none";
+        content.classList.add("visible");
+
+        if (addr) addr.textContent = data.full_address || data.address || "";
+
+        if (meta) {
+          var parts = [];
+          if (data.legal_description) parts.push("Legal: " + data.legal_description);
+          if (data.land_area) parts.push("Land: " + data.land_area);
+          if (data.suburb) parts.push(data.suburb);
+          if (data.city) parts.push(data.city);
+          if (data.postcode) parts.push(data.postcode);
+          if (data.bedrooms != null && data.bedrooms !== "") parts.push(data.bedrooms + " bedrooms");
+          if (data.bathrooms != null && data.bathrooms !== "") parts.push(data.bathrooms + " bathrooms");
+          if (data.latitude != null && data.longitude != null) parts.push("Map location available");
+          if (!parts.length) parts.push("Official address match");
+          meta.innerHTML = parts.map(function (p) {
+            return "<span>" + p + "</span>";
+          }).join("");
+        }
+
+        if (sale) {
+          var hasRooms = data.bedrooms != null && data.bedrooms !== "";
+          if (hasRooms) {
+            sale.textContent = data.note || "Property attributes are shown where a full profile is available.";
+          } else {
+            sale.textContent = data.note || "Detailed property attributes are confirmed when this home is listed on Dream Property.";
           }
         }
-        if (filters.land_min && Number(item.land) < Number(filters.land_min)) return false;
-        if (filters.land_max && Number(item.land) > Number(filters.land_max)) return false;
-        if (filters.floor_min && Number(item.floor) < Number(filters.floor_min)) return false;
-        if (filters.floor_max && Number(item.floor) > Number(filters.floor_max)) return false;
-        if (filters.keywords) {
-          var words = filters.keywords.toLowerCase().split(/[\s,]+/).filter(Boolean);
-          var blob = [item.keywords, item.title, item.address, item.location].filter(Boolean).join(" ").toLowerCase();
-          for (var i = 0; i < words.length; i++) {
-            if (blob.indexOf(words[i]) === -1) return false;
+
+        if (estBlock) estBlock.hidden = true;
+        if (est) est.textContent = "";
+
+        if (more) {
+          var q = encodeURIComponent(data.full_address || data.address || "");
+          var extra = data.address_id ? "&address_id=" + encodeURIComponent(data.address_id) : "";
+          if (data.dpid) extra += "&dpid=" + encodeURIComponent(data.dpid);
+          more.href = "/property?address=" + q + extra;
+        }
+      }
+
+      function clearPropertyPreview() {
+        var empty = document.getElementById("previewEmpty");
+        var content = document.getElementById("previewContent");
+        if (empty) empty.style.display = "";
+        if (content) content.classList.remove("visible");
+      }
+
+      function closeSuggestions() {
+        if (!suggestionsEl) return;
+        suggestionsEl.classList.remove("open");
+        suggestionsEl.hidden = true;
+        suggestionsEl.innerHTML = "";
+        activeSuggestionIndex = -1;
+        if (addressInput) addressInput.setAttribute("aria-expanded", "false");
+      }
+
+      function openSuggestionMessage(message) {
+        if (!suggestionsEl) return;
+        suggestionsEl.innerHTML = "";
+        var div = document.createElement("div");
+        div.className = "address-suggestion-status";
+        div.textContent = message;
+        suggestionsEl.appendChild(div);
+        suggestionsEl.hidden = false;
+        suggestionsEl.classList.add("open");
+        if (addressInput) addressInput.setAttribute("aria-expanded", "true");
+        activeSuggestionIndex = -1;
+      }
+
+      function openSuggestions(list) {
+        if (!suggestionsEl) return;
+        if (!list.length) {
+          closeSuggestions();
+          return;
+        }
+        suggestionsEl.innerHTML = "";
+        list.forEach(function (item) {
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "address-suggestion";
+          btn.setAttribute("role", "option");
+          btn.setAttribute("data-address-id", item.address_id || "");
+          btn.setAttribute("data-dpid", item.dpid || "");
+          var label = item.full_address || item.address || "";
+          var sub = [];
+          if (item.suburb) sub.push(item.suburb);
+          if (item.city) sub.push(item.city);
+          if (item.postcode) sub.push(item.postcode);
+          btn.innerHTML = label + (sub.length ? "<span>" + sub.join(", ") + "</span>" : "");
+          btn.addEventListener("mousedown", function (e) {
+            e.preventDefault();
+            selectAddress(item);
+          });
+          suggestionsEl.appendChild(btn);
+        });
+        suggestionsEl.hidden = false;
+        suggestionsEl.classList.add("open");
+        if (addressInput) addressInput.setAttribute("aria-expanded", "true");
+        activeSuggestionIndex = -1;
+      }
+
+      function selectAddress(item) {
+        if (!item) return;
+        var label = item.full_address || item.address || "";
+        if (addressInput) addressInput.value = label;
+        closeSuggestions();
+        showPropertyPreview(item);
+        if (item.address_id || item.dpid) {
+          fetchAddressDetails(item);
+        }
+      }
+
+      function normaliseSuggestResponse(payload) {
+        if (!payload) return [];
+        var list = payload.addresses || payload.address || payload.results || [];
+        if (!Array.isArray(list)) return [];
+        return list.map(function (row) {
+          return {
+            full_address: row.full_address || row.FullAddress || row.address || row.a || "",
+            address_id: String(row.address_id || row.AddressId || row.id || ""),
+            dpid: String(row.dpid || row.DPID || ""),
+            suburb: row.suburb || row.Suburb || "",
+            city: row.city || row.town || row.City || row.MailTown || "",
+            postcode: row.postcode || row.Postcode || "",
+            is_rural: !!(row.is_rural || row.IsRuralDelivery || row.rural),
+            legal_description: row.legal_description || "",
+            land_area: row.land_area || "",
+            latitude: row.latitude != null ? row.latitude : null,
+            longitude: row.longitude != null ? row.longitude : null,
+            note: row.note || ""
+          };
+        }).filter(function (r) { return r.full_address; });
+      }
+
+      var suggestAbort = null;
+      var suggestTimer = null;
+
+      function fetchSuggestions(query) {
+        var q = (query || "").trim();
+        if (q.length < 3) {
+          closeSuggestions();
+          return;
+        }
+
+        if (suggestAbort) {
+          try { suggestAbort.abort(); } catch (err) {}
+        }
+        suggestAbort = typeof AbortController !== "undefined" ? new AbortController() : null;
+
+        openSuggestionMessage("Searching addresses…");
+
+        var url = ADDRESS_SUGGEST_URL + (ADDRESS_SUGGEST_URL.indexOf("?") >= 0 ? "&" : "?") + "q=" + encodeURIComponent(q) + "&max=8";
+        var opts = { method: "GET", headers: { "Accept": "application/json" } };
+        if (suggestAbort) opts.signal = suggestAbort.signal;
+
+        fetch(url, opts)
+          .then(function (res) {
+            if (res.status === 404) {
+              throw new Error("not_configured");
+            }
+            if (!res.ok) {
+              throw new Error("http_" + res.status);
+            }
+            return res.json();
+          })
+          .then(function (data) {
+            var list = normaliseSuggestResponse(data);
+            if (!list.length) {
+              openSuggestionMessage("No matching addresses found.");
+              return;
+            }
+            openSuggestions(list);
+          })
+          .catch(function (err) {
+            if (err && err.name === "AbortError") return;
+            if (err && err.message === "not_configured") {
+              openSuggestionMessage("Address lookup is not connected yet. Follow docs/FREE-PROPERTY-DATA.md to add the free LINZ Worker.");
+              return;
+            }
+            if (String(ADDRESS_SUGGEST_URL).indexOf("YOURNAME") >= 0) {
+              openSuggestionMessage("Address lookup is not connected. Replace YOURNAME in DREAM_PROPERTY_CONFIG with your Cloudflare Worker URL.");
+              return;
+            }
+            openSuggestionMessage("Address lookup could not be completed. Check your connection and Worker URL.");
+          });
+      }
+
+      function fetchAddressDetails(item) {
+        var id = item.address_id || item.dpid;
+        if (!id || !ADDRESS_DETAILS_URL) return;
+        var url = ADDRESS_DETAILS_URL + (ADDRESS_DETAILS_URL.indexOf("?") >= 0 ? "&" : "?");
+        if (item.address_id) url += "address_id=" + encodeURIComponent(item.address_id);
+        else url += "dpid=" + encodeURIComponent(item.dpid);
+
+        fetch(url, { method: "GET", headers: { "Accept": "application/json" } })
+          .then(function (res) {
+            if (!res.ok) return null;
+            return res.json();
+          })
+          .then(function (data) {
+            if (!data) return;
+            var detail = data.address || data.Address || data;
+            var merged = {
+              full_address: detail.full_address || item.full_address || "",
+              address_id: item.address_id,
+              dpid: item.dpid || detail.dpid || "",
+              suburb: detail.suburb || item.suburb || "",
+              city: detail.city || detail.town || item.city || "",
+              postcode: detail.postcode || item.postcode || "",
+              latitude: detail.latitude,
+              longitude: detail.longitude,
+              is_rural: detail.is_rural || item.is_rural
+            };
+            showPropertyPreview(merged);
+          })
+          .catch(function () {});
+      }
+
+      var addressForm = document.getElementById("addressSearchForm");
+      var addressInput = document.getElementById("addressInput");
+      var suggestionsEl = document.getElementById("addressSuggestions");
+      var activeSuggestionIndex = -1;
+
+      if (addressInput) {
+        addressInput.addEventListener("input", function () {
+          var q = addressInput.value;
+          if (!q.trim()) {
+            clearPropertyPreview();
+            closeSuggestions();
+            return;
           }
-        }
-        if (filters.agent_name) {
-          var an = filters.agent_name.toLowerCase();
-          var agentBlob = [item.title, item.agent_name, item.agency].filter(Boolean).join(" ").toLowerCase();
-          if (agentBlob.indexOf(an) === -1) return false;
-        }
-        if (filters.speciality && item.speciality) {
-          if (String(item.speciality).toLowerCase().indexOf(String(filters.speciality).toLowerCase()) === -1) {
-            return false;
+          if (suggestTimer) clearTimeout(suggestTimer);
+          suggestTimer = setTimeout(function () {
+            fetchSuggestions(q);
+          }, 280);
+        });
+
+        addressInput.addEventListener("keydown", function (e) {
+          if (!suggestionsEl || !suggestionsEl.classList.contains("open")) return;
+          var items = suggestionsEl.querySelectorAll(".address-suggestion");
+          if (!items.length) return;
+
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            activeSuggestionIndex = Math.min(activeSuggestionIndex + 1, items.length - 1);
+            items.forEach(function (el, i) { el.classList.toggle("active", i === activeSuggestionIndex); });
+          } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            activeSuggestionIndex = Math.max(activeSuggestionIndex - 1, 0);
+            items.forEach(function (el, i) { el.classList.toggle("active", i === activeSuggestionIndex); });
+          } else if (e.key === "Enter" && activeSuggestionIndex >= 0) {
+            e.preventDefault();
+            items[activeSuggestionIndex].dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
+          } else if (e.key === "Escape") {
+            closeSuggestions();
           }
+        });
+
+        addressInput.addEventListener("blur", function () {
+          setTimeout(closeSuggestions, 150);
+        });
+      }
+
+      if (addressForm) {
+        addressForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var val = addressInput ? addressInput.value.trim() : "";
+          if (!val) return;
+          showPropertyPreview({ full_address: val });
+          window.open("/property?address=" + encodeURIComponent(val), "_blank", "noopener");
+        });
+      }
+
+
+      /* Modals: listing, login, signup, legal */
+      var activeModal = null;
+      var previousFocus = null;
+
+      function openModal(name) {
+        var modal = document.getElementById("modal-" + name);
+        if (!modal) return;
+        if (activeModal && activeModal !== modal) {
+          closeModal(true);
         }
+        previousFocus = document.activeElement;
+        activeModal = modal;
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+        var closeBtn = modal.querySelector(".modal-close");
+        if (closeBtn) setTimeout(function () { closeBtn.focus(); }, 40);
+        var mobileNavEl = document.getElementById("mobileNav");
+        if (mobileNavEl) mobileNavEl.classList.remove("open");
+        var mt = document.getElementById("menuToggle");
+        if (mt) {
+          mt.setAttribute("aria-expanded", "false");
+          mt.setAttribute("aria-label", "Open menu");
+        }
+      }
+
+      function closeModal(skipFocus) {
+        if (!activeModal) return;
+        activeModal.classList.remove("open");
+        activeModal.setAttribute("aria-hidden", "true");
+        activeModal.querySelectorAll("form").forEach(function (form) {
+          form.reset();
+          form.querySelectorAll(".auth-error, .auth-success, .auth-hint[id]").forEach(function (el) {
+            el.hidden = true;
+          });
+        });
+        document.body.classList.remove("modal-open");
+        var toFocus = previousFocus;
+        activeModal = null;
+        previousFocus = null;
+        if (!skipFocus && toFocus && typeof toFocus.focus === "function") {
+          setTimeout(function () { toFocus.focus(); }, 20);
+        }
+      }
+
+      document.querySelectorAll("[data-open-modal]").forEach(function (el) {
+        el.addEventListener("click", function (e) {
+          e.preventDefault();
+          var name = el.getAttribute("data-open-modal");
+          if (el.hasAttribute("data-close-modal")) closeModal(true);
+          openModal(name);
+        });
+      });
+
+      document.querySelectorAll("[data-close-modal]").forEach(function (el) {
+        if (el.hasAttribute("data-open-modal")) return;
+        el.addEventListener("click", function () {
+          closeModal();
+        });
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && activeModal) closeModal();
+      });
+
+      /* Login: always incorrect */
+      var loginForm = document.getElementById("loginForm");
+      if (loginForm) {
+        loginForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var err = document.getElementById("loginError");
+          var pass = document.getElementById("loginPassword");
+          if (err) err.hidden = false;
+          if (pass) {
+            pass.value = "";
+            pass.focus();
+          }
+        });
+        loginForm.querySelectorAll("input").forEach(function (input) {
+          input.addEventListener("input", function () {
+            var err = document.getElementById("loginError");
+            if (err) err.hidden = true;
+          });
+        });
+      }
+
+      var forgotBtn = document.getElementById("forgotPasswordBtn");
+      if (forgotBtn) {
+        forgotBtn.addEventListener("click", function () {
+          var msg = document.getElementById("forgotPasswordMsg");
+          if (msg) msg.hidden = false;
+        });
+      }
+
+      /* Signup validation then blocked */
+      function passwordStrong(pw) {
+        if (!pw || pw.length < 8) return false;
+        if (!/[A-Z]/.test(pw)) return false;
+        if (!/[0-9]/.test(pw)) return false;
+        if (!/[^A-Za-z0-9]/.test(pw)) return false;
         return true;
       }
 
-      function chipLabel(key, value) {
-        var label = PARAM_LABELS[key] || key;
-        var display = value;
-        if (key === "type") display = TYPE_LABELS[value] || value;
-        if (key === "price_min" || key === "price_max") {
-          var n = Number(value);
-          display = (isFinite(n) && n < 5000) ? formatMoney(n, true) : formatMoney(n, false);
-        }
-        if (key === "land_min" || key === "land_max" || key === "floor_min" || key === "floor_max") {
-          display = formatArea(value);
-        }
-        return { label: label, value: display };
-      }
+      var signupForm = document.getElementById("signupForm");
+      if (signupForm) {
+        signupForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var err = document.getElementById("signupError");
+          var blocked = document.getElementById("signupBlocked");
+          var user = document.getElementById("signupUsername");
+          var email = document.getElementById("signupEmail");
+          var pw = document.getElementById("signupPassword");
+          var pw2 = document.getElementById("signupPassword2");
+          if (err) { err.hidden = true; err.textContent = ""; }
+          if (blocked) blocked.hidden = true;
 
-      function renderFilters(filters) {
-        var bar = document.getElementById("filtersBar");
-        if (!bar) return;
-        bar.innerHTML = "";
-        var keys = Object.keys(filters);
-        if (!keys.length) {
-          bar.innerHTML = '<span class="filters-empty">No filters applied · showing all available listings</span>';
-          return;
-        }
-        keys.forEach(function (key) {
-          var chip = chipLabel(key, filters[key]);
-          var el = document.createElement("span");
-          el.className = "filter-chip";
-          el.innerHTML = "<strong>" + chip.label + ":</strong> " + chip.value;
-          bar.appendChild(el);
-        });
-      }
+          var u = user ? user.value.trim() : "";
+          var em = email ? email.value.trim() : "";
+          var p1 = pw ? pw.value : "";
+          var p2 = pw2 ? pw2.value : "";
 
-      function renderResults(items, filters) {
-        var grid = document.getElementById("resultsGrid");
-        var empty = document.getElementById("emptyState");
-        var count = document.getElementById("resultsCount");
-        var title = document.getElementById("pageTitle");
-        var subtitle = document.getElementById("pageSubtitle");
-        var typeLabel = TYPE_LABELS[filters.type] || "Listings";
-        if (title) title.textContent = typeLabel === "Agents" ? "Find an agent" : typeLabel + " listings";
-        if (subtitle) {
-          subtitle.textContent = items.length
-            ? "Showing properties that match your selected criteria."
-            : "Your search criteria are ready. Matching listings will appear as they are published on Dream Property.";
-        }
-        if (count) {
-          count.innerHTML = "<strong>" + items.length + "</strong> " +
-            (items.length === 1 ? "listing matches" : "listings match") + " your search";
-        }
-        if (!items.length) {
-          if (grid) { grid.hidden = true; grid.innerHTML = ""; }
-          if (empty) empty.hidden = false;
-          return;
-        }
-        if (empty) empty.hidden = true;
-        if (!grid) return;
-        grid.hidden = false;
-        grid.innerHTML = "";
-        items.forEach(function (item) {
-          var card = document.createElement("article");
-          card.className = "listing-card";
-          var priceText = "";
-          if (item.type === "rent") {
-            priceText = formatMoney(item.price, true);
-          } else if (item.type === "agent") {
-            priceText = item.speciality || "Licensed agent";
-          } else {
-            priceText = formatMoney(item.price, false);
+          if (u.length < 3) {
+            if (err) { err.textContent = "Username must be at least 3 characters."; err.hidden = false; }
+            return;
           }
-          var meta = [];
-          if (item.bedrooms != null) meta.push(item.bedrooms + " bedrooms");
-          if (item.bathrooms != null) meta.push(item.bathrooms + " bathrooms");
-          if (item.parking != null) meta.push(item.parking + " parking");
-          if (item.property_type) meta.push(item.property_type);
-          if (item.land != null) meta.push(formatArea(item.land) + " land");
-          if (item.floor != null) meta.push(formatArea(item.floor) + " floor");
-          var href = item.href || ("/property?id=" + encodeURIComponent(item.id || ""));
-          card.innerHTML =
-            '<a href="' + href + '">' +
-              '<div class="listing-media">Dream Property</div>' +
-              '<div class="listing-body">' +
-                '<div class="listing-price">' + (priceText || "Contact for details") + '</div>' +
-                '<div class="listing-title">' + (item.title || item.address || "Property listing") + '</div>' +
-                '<div class="listing-meta">' +
-                  '<span>' + (item.address || item.location || "") + '</span>' +
-                  (meta.length ? meta.map(function (m) { return "<span>" + m + "</span>"; }).join("") : "") +
-                '</div>' +
-              '</div>' +
-            '</a>';
-          grid.appendChild(card);
+          if (!em || em.indexOf("@") < 1) {
+            if (err) { err.textContent = "Please enter a valid email address."; err.hidden = false; }
+            return;
+          }
+          if (!passwordStrong(p1)) {
+            if (err) {
+              err.textContent = "Password must be at least 8 characters and include an uppercase letter, a number, and a special character.";
+              err.hidden = false;
+            }
+            return;
+          }
+          if (p1 !== p2) {
+            if (err) { err.textContent = "Passwords do not match."; err.hidden = false; }
+            return;
+          }
+
+          if (blocked) blocked.hidden = false;
         });
       }
 
-      var filters = getParams();
-      renderFilters(filters);
-      var matched = LISTINGS.filter(function (item) {
-        return matchesListing(item, filters);
+      /* Listing form */
+      var listingForm = document.getElementById("listingForm");
+      if (listingForm) {
+        listingForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var err = document.getElementById("listingError");
+          var addr = document.getElementById("listingAddress");
+          var owner = document.getElementById("listingOwner");
+          if (err) { err.hidden = true; err.textContent = ""; }
+          var a = addr ? addr.value.trim() : "";
+          if (!a) {
+            if (err) { err.textContent = "Please enter the property address."; err.hidden = false; }
+            return;
+          }
+          if (!owner || !owner.checked) {
+            if (err) {
+              err.textContent = "Please confirm you are the owner or have authority to list, or log in to continue.";
+              err.hidden = false;
+            }
+            return;
+          }
+          if (err) {
+            err.textContent = "Listing tools are not available yet. Please log in when accounts are open, or try again later.";
+            err.hidden = false;
+          }
+        });
+      }
+
+
+      /* DREAM·E chat */
+      const launcher = document.getElementById("dreameLauncher");
+      const chatPanel = document.getElementById("chatPanel");
+      const chatClose = document.getElementById("chatClose");
+      const chatForm = document.getElementById("chatForm");
+      const chatInput = document.getElementById("chatInput");
+      const chatMessages = document.getElementById("chatMessages");
+
+      function openChat() {
+        if (!chatPanel) return;
+        chatPanel.classList.add("open");
+        chatPanel.setAttribute("aria-hidden", "false");
+        if (launcher) launcher.setAttribute("aria-expanded", "true");
+        document.body.classList.add("chat-open");
+        if (chatInput) setTimeout(function () { chatInput.focus(); }, 100);
+      }
+
+      function closeChat() {
+        if (!chatPanel) return;
+        chatPanel.classList.remove("open");
+        chatPanel.setAttribute("aria-hidden", "true");
+        if (launcher) launcher.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("chat-open");
+      }
+
+      if (launcher) {
+        launcher.addEventListener("click", function () {
+          if (chatPanel && chatPanel.classList.contains("open")) closeChat();
+          else openChat();
+        });
+      }
+      if (chatClose) chatClose.addEventListener("click", closeChat);
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && chatPanel && chatPanel.classList.contains("open")) closeChat();
       });
-      renderResults(matched, filters);
+
+      function appendBubble(text, who) {
+        if (!chatMessages) return;
+        const div = document.createElement("div");
+        div.className = "chat-bubble " + who;
+        div.innerHTML = text;
+        chatMessages.appendChild(div);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+            function localDreamReply(userText) {
+        const lower = (userText || "").toLowerCase();
+        if (/hello|hi\b|hey|kia ora|morena/.test(lower)) {
+          return "Kia ora. I am DREAM·E, the Dream Property assistant. Ask me about searching property, listings, management, or anything else on your mind.";
+        }
+        if (/who are you|what are you|your name/.test(lower)) {
+          return "I am DREAM·E — Dream Property’s digital assistant. I help with the marketplace, property questions, and general topics.";
+        }
+        if (/list|sell|rent my|start a listing/.test(lower)) {
+          return "Use <strong>Start a Listing</strong> in the header. Private owners and verified agents can list once verification is complete.";
+        }
+        if (/login|sign up|account|password/.test(lower)) {
+          return "Use <strong>Log In</strong> or <strong>Sign Up</strong> in the header. Account tools are still opening gradually — if something fails, try again later or email the team.";
+        }
+        if (/agent|agency/.test(lower)) {
+          return "Use the <strong>Find an Agent</strong> tab in the homepage search, or browse agents from the footer Marketplace links.";
+        }
+        if (/prop swap|swap/.test(lower)) {
+          return "Prop Swap is a forthcoming feature for potential property exchange matches. It is in development and is not yet available.";
+        }
+        if (/estimate|valuation|worth/.test(lower)) {
+          return "The Dream Property Estimate is an automated market indication where enough data exists. It is not a registered valuation or a guaranteed price.";
+        }
+        if (/report|scam|fraud|spam/.test(lower)) {
+          return "You can report a listing from the property detail page. Reports are reviewed by our team.";
+        }
+        if (/management|property manager|landlord service/.test(lower)) {
+          return "Dream Property offers professional property management and is building an exclusive management platform. Visit <a href=\"/management\">Property Management</a> or email <a href=\"mailto:info@dreamproperty.co.nz\">info@dreamproperty.co.nz</a>.";
+        }
+        if (/privacy|terms|legal/.test(lower)) {
+          return "Privacy Policy and Terms are linked in the footer.";
+        }
+        if (/contact|email|human|support|team/.test(lower) && /dream|property|you|help/.test(lower)) {
+          return "You can reach the team at <a href=\"mailto:info@dreamproperty.co.nz\">info@dreamproperty.co.nz</a>, or keep chatting with me here. I am happy to help with most questions.";
+        }
+        if (/flatmate/.test(lower)) {
+          return "Flatmate search is not part of the marketplace right now. You can still search properties for sale or rent, or find an agent.";
+        }
+        return null;
+      }
+
+      function botReply(userText) {
+        const local = localDreamReply(userText);
+        if (local) {
+          setTimeout(function () { appendBubble(local, "bot"); }, 350);
+          return;
+        }
+
+        appendBubble("Thinking…", "bot");
+        var thinking = chatMessages ? chatMessages.lastElementChild : null;
+
+        // Free public text endpoint (no API key, no signup). Used only for general questions.
+        var system = "You are DREAM·E, the helpful assistant for Dream Property (New Zealand property marketplace). Answer clearly and concisely. If the topic is unrelated to property, still answer helpfully. Do not invent Dream Property features that do not exist. Keep answers under 120 words.";
+        var prompt = system + "\n\nUser: " + userText + "\n\nDREAM·E:";
+        var url = "https://text.pollinations.ai/" + encodeURIComponent(prompt) + "?model=openai";
+
+        var controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+        var timeout = setTimeout(function () {
+          if (controller) try { controller.abort(); } catch (e) {}
+        }, 12000);
+
+        var opts = { method: "GET" };
+        if (controller) opts.signal = controller.signal;
+
+        fetch(url, opts)
+          .then(function (res) {
+            clearTimeout(timeout);
+            if (!res.ok) throw new Error("bad");
+            return res.text();
+          })
+          .then(function (body) {
+            var answer = (body || "").trim();
+            if (!answer) throw new Error("empty");
+            answer = answer.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            if (thinking && thinking.parentNode) thinking.remove();
+            appendBubble(answer, "bot");
+          })
+          .catch(function () {
+            clearTimeout(timeout);
+            if (thinking && thinking.parentNode) thinking.remove();
+            appendBubble(
+              "I could not reach the open answer service just now. For Dream Property questions, try rephrasing, or email <a href=\"mailto:info@dreamproperty.co.nz\">info@dreamproperty.co.nz</a>.",
+              "bot"
+            );
+          });
+      }
+
+      if (chatForm) {
+        chatForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          if (!chatInput) return;
+          const text = chatInput.value.trim();
+          if (!text) return;
+          appendBubble(text.replace(/</g, "&lt;"), "user");
+          chatInput.value = "";
+          botReply(text);
+        });
+      }
     })();
   </script>
-</body>
-</html>
+<script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"52dcb4519d8d4457a4f931d7fad889d2","r":1,"spa":2}' integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" type="module"></script>
+</body></html>
