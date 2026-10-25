@@ -1,331 +1,1003 @@
 <!DOCTYPE html>
 <html lang="en-NZ">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About Dream Property. A New Zealand property marketplace and technology platform.">
-  <meta name="theme-color" content="#040B15">
-  <title>About Us | Dream Property</title>
-  <link rel="canonical" href="https://www.dreamproperty.co.nz/about">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Dream Property is a New Zealand property management company and property marketplace, built on its own exclusive software, with a public app on the way." name="description"/>
+<meta content="#040B15" name="theme-color"/>
+<title>About | Dream Property</title>
+<link href="https://www.dreamproperty.co.nz/about" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Dream Property" property="og:site_name"/>
+<meta content="About Dream Property" property="og:title"/>
+<meta content="A New Zealand property management company and property marketplace, built on our own exclusive software." property="og:description"/>
+<meta content="https://www.dreamproperty.co.nz/about" property="og:url"/>
+<meta content="https://www.dreamproperty.co.nz/images/link-preview.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="About Dream Property" name="twitter:title"/>
+<meta content="A New Zealand property management company and property marketplace, built on our own exclusive software." name="twitter:description"/>
+<meta content="https://www.dreamproperty.co.nz/images/link-preview.jpg" name="twitter:image"/>
+<link href="/images/favicon.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/images/favicon.png" rel="apple-touch-icon" sizes="180x180"/>
+<style>
     :root {
       --navy: #040B15;
       --navy-light: #0A1422;
+      --navy-soft: #101D2D;
       --gold: #D6B878;
       --gold-light: #F0DDA7;
       --white: #FFFFFF;
       --muted: #AAB4C2;
       --border: rgba(255, 255, 255, 0.14);
+      --glass: rgba(4, 11, 21, 0.72);
       --radius: 28px;
       --radius-sm: 16px;
       --transition: 300ms ease;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
     body {
       background: var(--navy);
       color: var(--white);
       font-family: -apple-system, BlinkMacSystemFont, system-ui, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      min-height: 100svh;
-      display: flex;
-      flex-direction: column;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-
+    body.modal-open { overflow: hidden; }
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; cursor: pointer; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; }
     img { display: block; max-width: 100%; }
-
     .container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
-    .content-wrap { width: min(720px, 100%); }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(4, 11, 21, 0.92);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .header-inner {
-      min-height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand { display: inline-flex; align-items: center; gap: 12px; }
-    .brand-logo { width: 40px; height: 40px; object-fit: contain; }
-    .brand-name { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.03em; white-space: nowrap; }
-    .brand-name span { color: var(--gold); }
-
-    .header-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-
-    .button {
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 20px;
-      border-radius: var(--radius-sm);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      border: 1px solid transparent;
-      transition: background var(--transition), color var(--transition), border-color var(--transition);
-    }
-
-    .button-primary { background: var(--gold); color: var(--navy); }
-    .button-primary:hover { background: var(--gold-light); }
-    .button-outline {
-      background: transparent;
-      color: var(--white);
-      border-color: rgba(255, 255, 255, 0.35);
-    }
-    .button-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-    main { flex: 1; padding: 72px 0 96px; }
-
+    .section { padding: 110px 0; position: relative; }
+    .section-heading { max-width: 700px; margin-bottom: 50px; }
     .eyebrow {
       color: var(--gold);
       font-size: 0.76rem;
       font-weight: 700;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      margin-bottom: 15px;
     }
-
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 3.6rem);
-      font-weight: 500;
-      letter-spacing: -0.035em;
-      line-height: 1.12;
-      margin-bottom: 28px;
-    }
-
-    h1 span { color: var(--gold); }
-
-    .prose { display: grid; gap: 18px; }
-    .prose p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; }
-    .prose strong { color: var(--white); font-weight: 600; }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 36px;
-    }
-
-    /* Footer — matches homepage */
-    .site-footer {
-      padding: 70px 0 28px;
-      background: #02070E;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      margin-top: auto;
-    }
-
-    .footer-main {
-      display: flex;
-      justify-content: space-between;
-      gap: 60px;
-      padding-bottom: 50px;
-      flex-wrap: wrap;
-    }
-
-    .footer-brand {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      min-width: 200px;
-    }
-
-    .footer-socials {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 200px;
-      margin-top: 20px;
-    }
-
-    .footer-socials a {
+    h1, h2, h3, h4 { font-weight: 500; letter-spacing: -0.035em; line-height: 1.12; }
+    h1 { font-size: clamp(3rem, 8vw, 7.5rem); }
+    h2 { font-size: clamp(2.3rem, 5vw, 4.5rem); }
+    h3 { font-size: 1.5rem; }
+    p { color: var(--muted); }
+    .section-heading p { margin-top: 20px; max-width: 600px; font-size: 1.05rem; }
+    .gold-text { color: var(--gold); }
+    .button-row { display: flex; flex-wrap: wrap; gap: 14px; }
+    .button {
+      min-height: 54px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border: 0;
-      background: transparent;
-      color: #D6B878;
-      padding: 2px;
-      transition: color var(--transition);
-    }
-
-    .footer-socials a:hover { color: #F0DDA7; }
-    .footer-socials a svg { display: block; width: 22px; height: 22px; }
-
-    .footer-nav {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(120px, 1fr));
-      gap: 36px;
-    }
-
-    .footer-nav > div {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-heading {
-      margin-bottom: 6px;
-      color: var(--gold);
-      font-size: 0.64rem;
+      gap: 12px;
+      padding: 0 28px;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
     }
-
-    .footer-nav a,
-    .footer-link-btn {
-      width: fit-content;
-      padding: 0;
-      border: 0;
+    .button:hover { transform: translateY(-3px); }
+    .button-primary { background: var(--gold); color: var(--navy); }
+    .button-primary:hover { background: var(--gold-light); }
+    .button-outline { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.4); }
+    .button-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .button-small { min-height: 42px; padding: 0 18px; font-size: 0.7rem; }
+    .site-header {
+      position: fixed;
+      z-index: 100;
+      top: 0; left: 0; width: 100%;
+      border-bottom: 1px solid transparent;
       background: transparent;
-      color: var(--muted);
-      font-size: 0.8rem;
-      text-align: left;
+      transition: background var(--transition), border-color var(--transition), backdrop-filter var(--transition);
+    }
+    .site-header.scrolled { background: rgba(4, 11, 21, 0.9); backdrop-filter: blur(18px); }
+    .header-inner { min-height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-logo { width: 46px; height: 46px; object-fit: contain; }
+    .brand-name { font-size: 1.3rem; font-weight: 600; letter-spacing: -0.035em; white-space: nowrap; }
+    .brand-name span { color: var(--gold); }
+    .main-navigation { display: flex; align-items: center; gap: 28px; }
+    .main-navigation a {
+      color: var(--muted); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
       transition: color var(--transition);
     }
-
-    .footer-nav a:hover,
-    .footer-link-btn:hover { color: var(--white); }
-
-    .footer-bottom {
+    .main-navigation a:hover { color: var(--gold); }
+    .menu-toggle {
+      display: none; width: 45px; height: 45px; align-items: center; justify-content: center;
+      flex-direction: column; gap: 5px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: transparent;
+    }
+    .menu-toggle span { width: 20px; height: 1px; background: var(--gold); }
+    .site-intro {
+      position: fixed; z-index: 200; inset: 0; display: flex; align-items: center; justify-content: center;
+      background: var(--navy); transition: opacity 900ms ease, visibility 900ms ease;
+    }
+    .site-intro.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .intro-brand {
+      display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 24px;
+      text-align: center; animation: introReveal 1200ms ease both;
+    }
+    .intro-logo { width: 120px; height: 120px; object-fit: contain; }
+    .intro-name { color: var(--white); font-size: clamp(2rem, 5vw, 4rem); font-weight: 500; letter-spacing: -0.05em; }
+    .intro-name span { color: var(--gold); }
+    @keyframes introReveal {
+      from { opacity: 0; transform: translateY(20px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .hero {
+      min-height: 100svh; position: relative; display: flex; align-items: center; justify-content: center;
+      isolation: isolate; overflow: hidden;
+    }
+    .hero-video {
+      position: absolute; z-index: -3; inset: 0; width: 100%; height: 100%; overflow: hidden;
+      background: linear-gradient(135deg, rgba(4, 11, 21, 0.96), rgba(4, 11, 21, 0.62)),
+        url("/images/hero-fallback.jpg") center / cover;
+    }
+    .hero-video video {
+      position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; min-width: 100%; min-height: 100%;
+      transform: translate(-50%, -50%) scale(1.12); border: 0; opacity: 0.65; object-fit: cover;
+      filter: blur(2px); pointer-events: none;
+    }
+    .hero-overlay {
+      position: absolute; z-index: -2; inset: 0;
+      background:
+        linear-gradient(90deg, rgba(4, 11, 21, 0.96) 0%, rgba(4, 11, 21, 0.64) 50%, rgba(4, 11, 21, 0.82) 100%),
+        linear-gradient(0deg, rgba(4, 11, 21, 0.9), transparent 50%, rgba(4, 11, 21, 0.4));
+    }
+    .hero-content { width: min(900px, 100%); padding: 150px 0 100px; text-align: center; }
+    .hero-content .eyebrow { opacity: 0; animation: heroFade 900ms 1800ms ease forwards; }
+    .hero-title { max-width: 900px; margin: 0 auto; opacity: 0; animation: heroFade 900ms 1950ms ease forwards; }
+    .hero-buttons { justify-content: center; margin-top: 38px; opacity: 0; animation: heroFade 900ms 2250ms ease forwards; }
+    @keyframes heroFade {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero::after {
+      content: ""; position: absolute; z-index: -1; right: 0; bottom: 0; left: 0; height: 240px;
+      background: linear-gradient(to bottom, rgba(4, 11, 21, 0), var(--navy)); pointer-events: none;
+    }
+    .section-dark { background: var(--navy); }
+    .section-soft { background: var(--navy-light); }
+    .login-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .service-card.is-locked { opacity: 0.48; }
+    .service-card.is-locked .service-action { cursor: not-allowed; opacity: 0.85; }
+    .service-card {
+      display: flex; flex-direction: column; min-height: 290px; padding: 32px;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.025);
+      transition: border-color var(--transition), transform var(--transition), background var(--transition);
+    }
+    .service-card:hover { transform: translateY(-5px); }
+    .service-number { color: var(--gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; }
+    .service-card h3 { margin-top: 55px; }
+    .service-card p { margin-top: 15px; font-size: 0.92rem; }
+    .service-action {
+      margin-top: auto; padding-top: 25px; color: var(--gold); border: 0; background: transparent;
+      font-size: 0.7rem; font-weight: 700; text-align: left; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .contact-layout {
+      display: grid; grid-template-columns: minmax(280px, 1fr) minmax(320px, 1fr);
+      gap: 100px; align-items: start;
+    }
+    .contact-details { display: grid; gap: 12px; }
+    .contact-item {
+      display: flex; flex-direction: column; padding: 25px;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.025);
+      transition: border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+    .contact-item:hover { transform: translateX(4px); }
+    .contact-label { color: var(--gold); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+    .contact-item strong { margin-top: 8px; color: var(--white); font-size: 1.02rem; font-weight: 500; }
+    .contact-action { margin-top: 9px; color: var(--muted); font-size: 0.7rem; }
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .footer-socials a {
+      width: 42px;
+      height: 42px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-top: 22px;
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      color: var(--gold);
+      transition: color var(--transition), transform var(--transition);
     }
-
+    .footer-socials a:hover {
+      color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    .footer-socials a svg { width: 20px; height: 20px; }
+    .header-inner { justify-content: space-between; }
+    .site-footer { padding: 70px 0 28px; background: #02070E; }
+    .footer-main { display: flex; justify-content: space-between; gap: 48px; padding-bottom: 50px; flex-wrap: wrap; }
+    .footer-nav {
+      display: grid; grid-template-columns: repeat(3, minmax(120px, 1fr)); gap: 32px 40px;
+    }
+    .footer-heading {
+      display: block; margin-bottom: 14px; color: var(--gold); font-size: 0.64rem;
+      font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .footer-nav a, .footer-nav button {
+      display: block; width: fit-content; margin-bottom: 11px; padding: 0; border: 0;
+      background: transparent; color: var(--muted); font-size: 0.8rem; text-align: left;
+      transition: color var(--transition);
+    }
+    .footer-nav a:hover, .footer-nav button:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px;
+      padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.07);
+      color: var(--muted); font-size: 0.72rem;
+      text-align: center;
+    }
     .footer-bottom p {
+      width: 100%;
+      text-align: center;
       color: var(--muted);
-      font-size: 0.7rem;
+      font-size: 0.72rem;
     }
-
+    .modal {
+      position: fixed; z-index: 300; inset: 0; display: flex; align-items: center; justify-content: center;
+      padding: 25px; opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity 300ms ease, visibility 300ms ease;
+    }
+    .modal.open { opacity: 1; visibility: visible; pointer-events: auto; }
+    .modal-backdrop {
+      position: absolute; inset: 0; background: rgba(2, 6, 12, 0.6);
+      -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    }
+    .modal-panel {
+      position: relative; z-index: 1; width: min(680px, 100%);
+      max-height: min(850px, calc(100svh - 50px)); overflow-y: auto; padding: 45px;
+      border: 1px solid rgba(255, 255, 255, 0.12); border-radius: var(--radius);
+      background: rgba(10, 20, 34, 0.88);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      backdrop-filter: blur(18px) saturate(140%);
+      transform: translateY(20px) scale(0.98); transition: transform 350ms ease;
+    }
+    .modal.open .modal-panel { transform: translateY(0) scale(1); }
+    .modal-close {
+      position: absolute; top: 18px; right: 18px; width: 42px; height: 42px;
+      display: flex; align-items: center; justify-content: center; padding: 0;
+      border: 1px solid var(--border); border-radius: 50%; background: transparent;
+      color: var(--muted); font-size: 1.55rem; font-weight: 300; line-height: 1;
+      transition: color var(--transition), border-color var(--transition), background var(--transition);
+    }
+    .modal-close:hover { border-color: var(--gold); background: rgba(214, 184, 120, 0.06); color: var(--gold); }
+    .modal-panel h2 { max-width: 560px; margin-top: 8px; font-size: clamp(2.3rem, 5vw, 4rem); }
+    .modal-intro { margin-top: 22px; color: var(--white); font-size: 0.98rem; line-height: 1.75; }
+    .legal-modal h3 { margin-top: 35px; color: var(--white); font-size: 1.02rem; font-weight: 600; }
+    .legal-modal h3 + p { margin-top: 10px; }
+    .legal-modal p { color: var(--muted); font-size: 0.84rem; line-height: 1.8; }
+    .legal-modal p + p { margin-top: 12px; }
+    .legal-modal .modal-intro { color: var(--white); }
+    .legal-modal a { color: var(--gold); }
+    .legal-modal ul { margin: 10px 0 0 20px; }
+    .legal-modal li { color: var(--muted); font-size: 0.84rem; line-height: 1.8; }
+    .legal-modal .legal-updated { margin-top: 10px; font-size: 0.72rem; letter-spacing: 0.04em; }
+    .login-modal { width: min(520px, 100%); }
+    .login-modal h2 { font-size: clamp(2.1rem, 5vw, 3.2rem); }
+    .login-form { display: grid; gap: 18px; margin-top: 32px; }
+    .login-field { display: grid; gap: 8px; }
+    .login-field span { color: var(--muted); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+    .login-field input {
+      width: 100%; min-height: 52px; padding: 0 16px; border: 1px solid var(--border);
+      border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.04); color: var(--white);
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .login-field input:focus { outline: none; border-color: var(--gold); background: rgba(214, 184, 120, 0.06); }
+    .login-error { color: #F2A0A0; font-size: 0.84rem; line-height: 1.6; }
+    .login-form .button { width: 100%; }
+    .service-card, .contact-item {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(16, 29, 45, 0.55);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      backdrop-filter: blur(18px) saturate(140%);
+    }
+    .service-card:hover, .contact-item:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(16, 29, 45, 0.68);
+    }
     @media (max-width: 900px) {
-      .footer-main { flex-direction: column; gap: 40px; }
-      .footer-nav { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
+      .main-navigation {
+        position: absolute; top: 92px; right: 20px; left: 20px; display: none;
+        flex-direction: column; align-items: stretch; gap: 0; padding: 10px;
+        border: 1px solid var(--border); border-radius: var(--radius); background: rgba(4, 11, 21, 0.98);
+      }
+      .main-navigation.open { display: flex; }
+      .main-navigation a { padding: 14px; }
+      .menu-toggle { display: flex; }
+      .login-grid { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; gap: 50px; }
+      .footer-main { flex-direction: column; }
+      .footer-nav { width: 100%; }
     }
-
     @media (max-width: 650px) {
       .container { width: min(1180px, calc(100% - 48px)); }
-      main { padding: 56px 0 72px; }
-      .header-actions .button { min-height: 40px; padding: 0 14px; font-size: 0.68rem; }
+      .section { padding: 80px 0; }
+      .header-inner { min-height: 78px; }
+      .main-navigation { top: 78px; }
+      .brand-name { font-size: 1.05rem; }
+      .brand-logo { width: 40px; height: 40px; }
+      .hero-content { padding: 130px 0 90px; }
+      .button-row.hero-buttons { flex-direction: row; flex-wrap: nowrap; gap: 10px; }
+      .hero-buttons .button {
+        width: auto; flex: 1 1 0; min-width: 0; min-height: 46px; padding: 0 12px;
+        font-size: 0.7rem; letter-spacing: 0.06em; white-space: nowrap;
+      }
+      .service-card { min-height: 250px; padding: 28px; }
+      .service-card h3 { margin-top: 35px; }
+      .footer-nav { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+      .modal { padding: 12px; }
+      .modal-panel { max-height: calc(100svh - 24px); padding: 32px 24px; }
+      .modal-panel h2 { font-size: 2.3rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 1ms !important;
+      }
+      .hero-video video { display: none; }
+    }
+
+    /* Language toggle */
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 0 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      transition: color var(--transition), border-color var(--transition), background var(--transition);
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .lang-toggle:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      background: rgba(214, 184, 120, 0.06);
+    }
+    .lang-toggle .lang-glyph {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1;
+      font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    }
+    .lang-toggle .lang-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    @media (max-width: 650px) {
+      .lang-toggle .lang-label { display: none; }
+      .lang-toggle { min-width: 42px; padding: 0 10px; }
+    }
+
+    /* About page */
+    .about-page {
+      padding: 160px 0 110px;
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(214, 184, 120, 0.08), transparent 70%), var(--navy);
+    }
+    .about-page .container > * { animation: heroFade 900ms ease both; }
+    .about-page .container > *:nth-child(n+2) { animation-delay: 120ms; }
+    .about-intro { max-width: 820px; }
+    .about-title { margin-bottom: 28px; font-size: clamp(2.8rem, 7vw, 5.6rem); }
+    .about-lead { max-width: 720px; font-size: 1.12rem; line-height: 1.75; }
+    .about-section { max-width: 720px; margin-top: 56px; }
+    .about-section h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); }
+    .about-section p { margin-top: 14px; font-size: 1rem; line-height: 1.8; }
+    .about-section p + p { margin-top: 12px; }
+    .about-section a { color: var(--gold); }
+    .about-closing { margin-top: 90px; text-align: center; }
+    .about-tagline { color: var(--gold); font-size: clamp(1.7rem, 4.2vw, 3rem); font-weight: 500; letter-spacing: -0.035em; line-height: 1.2; }
+    .about-note { max-width: 620px; margin: 22px auto 36px; font-size: 0.78rem; line-height: 1.7; }
+    .about-closing .button-row { justify-content: center; }
+    @media (max-width: 650px) {
+      .about-page { padding: 126px 0 80px; }
+      .about-closing { margin-top: 64px; }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/" aria-label="Dream Property home">
-        <img class="brand-logo" src="/dream-property-logo.svg" alt="Dream Property logo">
-        <div class="brand-name">Dream <span>Property</span></div>
-      </a>
-    </div>
-  </header>
+<header class="site-header" id="siteHeader">
+<div class="container header-inner">
+<a aria-label="Dream Property home" class="brand" href="/">
+<img alt="Dream Property logo" class="brand-logo" src="/dream-property-logo.svg"/>
+<div class="brand-name">Dream <span>Property</span></div>
+</a>
+<button type="button" class="lang-toggle" id="langToggle" aria-label="Switch to Chinese" title="中文 / Chinese">
+  <span class="lang-glyph" id="langGlyph">中</span>
+  <span class="lang-label" id="langLabel">中文</span>
+</button>
+</div>
+</header>
+<main>
+<section class="about-page" id="about">
+<div class="container">
+<div class="about-intro">
+<div class="eyebrow" data-i18n="about.eyebrow">Our Story</div>
+<h1 class="about-title"><span data-i18n="about.titleA">About</span> <span class="gold-text" data-i18n="about.titleB">Dream Property</span></h1>
+<p class="about-lead" data-i18n="about.lead">Dream Property is a New Zealand property management company and property marketplace, built on our own software. We bring the two together so that managing property and finding property feel simple, clear, and modern.</p>
+</div>
+<div class="about-section">
+<h2 data-i18n="about.s1.t">How we started</h2>
+<p data-i18n="about.s1.p1">Dream Property began with a simple observation. Property management often depends on slow, disconnected tools and repeated manual work, and that costs owners, tenants, and managers valuable time.</p>
+<p data-i18n="about.s1.p2">After working in the property industry and seeing these problems up close, our founder set out to create a better way. Months of work went into building our own property management software, and Dream Property grew from that effort.</p>
+</div>
+<div class="about-section">
+<h2 data-i18n="about.s2.t">Property management</h2>
+<p data-i18n="about.s2.p1">We provide residential and commercial property management for owners in Auckland. We look after the day-to-day work of a tenancy, including rent, inspections, maintenance, tenancy law requirements, and communication with everyone involved.</p>
+<p data-i18n="about.s2.p2">Our aim is simple. Owners get peace of mind knowing their investment is in good hands, and tenants get a home or workplace that is properly looked after.</p>
+</div>
+<div class="about-section">
+<h2 data-i18n="about.s3.t">The marketplace</h2>
+<p data-i18n="about.s3.p1">The Dream Property marketplace is a place to search for property across New Zealand, including residential, commercial, and rural property. Owners advertise their own properties directly on the platform at a low cost, and people looking for a property can browse everything in one clear place.</p>
+</div>
+<div class="about-section">
+<h2 data-i18n="about.s4.t">Our technology</h2>
+<p data-i18n="about.s4.p1">Everything we do is supported by software built by our own team. Our property management software brings tenancies, inspections, maintenance, communication, and records together in one place, so nothing gets lost between different tools.</p>
+<p data-i18n="about.s4.p2">The software is used exclusively by Dream Property today. That means every feature is tested on our own portfolio and improved using real, day-to-day experience.</p>
+</div>
+<div class="about-section">
+<h2 data-i18n="about.s5.t">What we believe</h2>
+<p data-i18n="about.s5.p1">Property should be simple and stress-free. For us, that means clear communication, honest dealing, and technology that saves time instead of adding extra steps.</p>
+<p data-i18n="about.s5.p2">We want every owner, tenant, and visitor to feel looked after, and we want to earn their trust over the long term.</p>
+</div>
+<div class="about-section">
+<h2 data-i18n="about.s6.t">Based in Auckland</h2>
+<p data-i18n="about.s6.p1">Dream Property Limited is based in Auckland, New Zealand. Our property management services focus on Auckland, and our marketplace is open to the whole country.</p>
+<p><span data-i18n="about.contactLead">Have a question? Email us at</span> <a href="mailto:info@dreamproperty.co.nz">info@dreamproperty.co.nz</a>.</p>
+</div>
+<div class="about-closing">
+<p class="about-tagline" data-i18n="about.tagline">Your dream. Your property. Your future.</p>
+<p class="about-note" data-i18n="about.note">Dream Property is a property management company and property marketplace. It is not a real estate agency and does not sell property on behalf of others.</p>
+<div class="button-row">
+<a class="button button-outline" href="/" data-i18n="about.back">Back to Home</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-main">
+<div class="footer-brand">
+<a aria-label="Dream Property home" class="brand" href="/">
+<img alt="Dream Property logo" class="brand-logo" src="/dream-property-logo.svg"/>
+<div class="brand-name">Dream <span>Property</span></div>
+</a>
+<div aria-label="Social media" class="footer-socials">
+<a aria-label="Dream Property Facebook" href="https://facebook.com/DreamPropertyNZ" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93v-1.9c0-.86.24-1.44 1.47-1.44h1.57V4.14C16.24 4.06 15.3 4 14.2 4c-2.3 0-3.87 1.4-3.87 4v2.44H7.77v2.96h2.56V21h3.17Z"></path></svg>
+</a>
+<a aria-label="Dream Property Instagram" href="https://instagram.com/DreamPropertyNZ" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="18"><rect height="17" rx="5" width="17" x="3.5" y="3.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.15" cy="6.85" r="1"></circle></svg>
+</a>
+<a aria-label="Dream Property TikTok" href="https://tiktok.com/@DreamPropertyNZ" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"></path></svg>
+</a>
+<a aria-label="Dream Property YouTube" href="https://youtube.com/@DreamPropertyNZ" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"></path></svg>
+</a>
+</div>
+</div>
+<div class="footer-nav">
+<div>
+<span class="footer-heading" data-i18n="footer.listings">Listings</span>
+<a href="/listings/sale" data-i18n="footer.forSale">For Sale</a>
+<a href="/listings/rent" data-i18n="footer.forRent">For Rent</a>
+<a href="/listings" data-i18n="footer.search">Search Listings</a>
+</div>
+<div>
+<span class="footer-heading" data-i18n="footer.company">Company</span>
+<a href="/about" data-i18n="footer.about">About Us</a>
+<a href="/#contact" data-i18n="footer.contact">Contact</a>
+</div>
+<div>
+<span class="footer-heading" data-i18n="footer.access">Access</span>
+<button data-modal="tenant-login" type="button" data-i18n="footer.tenantLogin">Tenant Login</button>
+<button data-modal="landlord-login" type="button" data-i18n="footer.ownerLogin">Owner Login</button>
+<button data-modal="privacy" type="button" data-i18n="footer.privacy">Privacy Policy</button>
+<button data-modal="terms" type="button" data-i18n="footer.terms">Terms &amp; Conditions</button>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© <span id="currentYear">2026</span> Dream Property</p>
+</div>
+</div>
+</footer>
+<!-- Tenant login -->
+<div aria-hidden="true" aria-labelledby="tenantLoginTitle" aria-modal="true" class="modal" id="modal-tenant-login" role="dialog">
+<div class="modal-backdrop" data-close-modal=""></div>
+<div class="modal-panel login-modal">
+<button aria-label="Close modal" class="modal-close" data-close-modal="" type="button">×</button>
+<div class="eyebrow">Tenants</div>
+<h2 id="tenantLoginTitle" data-i18n="modal.tenantTitle">Tenant Login</h2>
+<form class="login-form" data-login-form="" novalidate="">
+<label class="login-field"><span data-i18n="modal.username">Username</span>
+<input autocapitalize="none" autocomplete="username" name="username" spellcheck="false" type="text"/>
+</label>
+<label class="login-field"><span data-i18n="modal.password">Password</span>
+<input autocomplete="current-password" name="password" type="password"/>
+</label>
+<p class="login-error" hidden="" role="alert">Incorrect Username / Password. Please Try Again.</p>
+<button class="button button-primary" type="submit" data-i18n="modal.loginBtn">Login</button>
+</form>
+</div>
+</div>
+<!-- Owner login -->
+<div aria-hidden="true" aria-labelledby="landlordLoginTitle" aria-modal="true" class="modal" id="modal-landlord-login" role="dialog">
+<div class="modal-backdrop" data-close-modal=""></div>
+<div class="modal-panel login-modal">
+<button aria-label="Close modal" class="modal-close" data-close-modal="" type="button">×</button>
+<div class="eyebrow">Owners</div>
+<h2 id="landlordLoginTitle" data-i18n="modal.ownerTitle">Owner Login</h2>
+<form class="login-form" data-login-form="" novalidate="">
+<label class="login-field"><span>Username</span>
+<input autocapitalize="none" autocomplete="username" name="username" spellcheck="false" type="text"/>
+</label>
+<label class="login-field"><span>Password</span>
+<input autocomplete="current-password" name="password" type="password"/>
+</label>
+<p class="login-error" hidden="" role="alert">Incorrect Username / Password. Please Try Again.</p>
+<button class="button button-primary" type="submit">Login</button>
+</form>
+</div>
+</div>
+<!-- Privacy -->
+<div aria-hidden="true" aria-labelledby="privacyTitle" aria-modal="true" class="modal" id="modal-privacy" role="dialog">
+<div class="modal-backdrop" data-close-modal=""></div>
+<div class="modal-panel legal-modal">
+<button aria-label="Close Privacy Policy" class="modal-close" data-close-modal="" type="button">×</button>
+<div class="eyebrow">Legal</div>
+<h2 id="privacyTitle" data-i18n="modal.privacyTitle">Privacy Policy</h2>
+<p class="legal-updated">Last updated: 25 October 2026</p>
+<p class="modal-intro">
+        Your privacy matters to us. This policy explains how Dream Property collects, uses, stores, discloses, and protects personal information when you use this website, our property marketplace, our property management services, and our software and app. We handle personal information in line with the Privacy Act 2020 and its Information Privacy Principles. The version shown on this website is the current version.
+      </p>
+<h3>Who we are</h3>
+<p>Dream Property Limited (“Dream Property”, “we”, “us”, and “our”) is a New Zealand company based in Auckland. We operate an online property marketplace where users advertise their own properties, and we provide residential and commercial property management services. We are not a real estate agency. Dream Property is the agency responsible for the personal information described in this policy.</p>
+<h3>What we collect</h3>
+<p>Depending on how you use our website and services, we may collect:</p>
+<ul>
+<li>Account details, such as your name, email address, phone number, username, and password (see “Your password is never stored” below).</li>
+<li>Listing information, such as the property address, photos, description, price, availability, and the contact details you choose to publish.</li>
+<li>Property management information, such as owner, tenant, and applicant contact details, tenancy or lease details, rent and bond records, inspection reports, maintenance requests, and related communications. Tenant applications may include employment, income, and reference details that you choose to give us.</li>
+<li>Messages and enquiries you send through the website or to info@dreamproperty.co.nz, and messages between users that pass through our platform.</li>
+<li>Billing and transaction records. Payment card details are handled by our payment providers and are not stored by us.</li>
+<li>Technical information, such as your IP address, device and browser type, pages visited, and the date and time of your visit.</li>
+</ul>
+<h3>How we collect it</h3>
+<p>We collect personal information directly from you, from your use of the website, and from other users where they provide it as part of a listing, enquiry, or tenancy. With your authorisation, we may also collect it from referees, previous landlords, and identity or reference checking providers. We collect information only by lawful and fair means and only where it is reasonably necessary for our functions.</p>
+<h3>Why we use it</h3>
+<p>We use personal information to run the marketplace and your account, publish and manage listings, pass on enquiries, deliver property management services (such as leasing, rent collection, inspections, and maintenance), verify identities, prevent fraud and misuse, process payments, send service messages, improve our website and software, comply with our legal obligations, resolve disputes, and enforce our terms. Where practical, we use de-identified or aggregated information to improve our software. We do not sell your personal information.</p>
+<h3>Who we share it with</h3>
+<p>We share personal information only where needed for the purposes above. This includes other users (for example, an owner receiving a tenant application, or a contractor receiving access details for a repair), service providers who host our systems or provide email, analytics, payment, verification, and software services, our accountants, insurers, and professional advisers, and public bodies such as Tenancy Services, the Tenancy Tribunal, Inland Revenue, the courts, and the Police where required or permitted by law. We may also share information in connection with a sale or restructure of our business, or with your consent. Our service providers must protect your information and may use it only for our purposes. Information you publish in a listing is public.</p>
+<h3>Overseas storage and disclosure</h3>
+<p>Some of our service providers store or process information outside New Zealand, including in Australia, the United States, and Europe. Before sending personal information overseas, we take reasonable steps to ensure it will be protected by safeguards comparable to those in the Privacy Act 2020, unless you have authorised the disclosure after being told that such protection may not apply.</p>
+<h3>Cookies, analytics, and browser storage</h3>
+<p>We use website analytics to understand how our website performs, and we use your browser’s local storage to remember your language choice. We do not use this information to show third-party advertising. If we add other cookies, analytics, or advertising tools, we will update this policy. You can clear your browser storage or block cookies in your browser settings, although some features may not work as intended.</p>
+<h3>Marketing messages</h3>
+<p>We send marketing messages only with your consent or where the Unsolicited Electronic Messages Act 2007 otherwise permits. Every marketing message includes a way to unsubscribe. Service messages, such as account notices and tenancy communications, are not marketing and may still be sent.</p>
+<h3>Your password is never stored</h3>
+<p>We do not store your password in a readable form. Dream Property will never ask you for your password by email, phone, text message, or social media. We use reasonable security safeguards to protect personal information from loss, misuse, and unauthorised access, but no system is completely secure. If you think your account has been compromised, contact us immediately.</p>
+<h3>How long we keep information</h3>
+<p>We keep personal information only for as long as we need it for the purposes above or as the law requires, for example seven years for tax and financial records. When it is no longer needed, we delete it or de-identify it.</p>
+<h3>Access and correction</h3>
+<p>You may ask us for a copy of the personal information we hold about you and ask us to correct it. Email us and we will respond within 20 working days. We may need to confirm your identity first, and where the Privacy Act 2020 allows us to refuse or withhold information, we will explain why. You may withdraw your consent to marketing at any time. Copies of published listings may remain in search engine caches or with other users outside our control.</p>
+<h3>Privacy breaches</h3>
+<p>If a privacy breach is likely to cause serious harm, we will notify the affected people and the Office of the Privacy Commissioner as the Privacy Act 2020 requires.</p>
+<h3>Children</h3>
+<p>Our website and services are for people aged 18 or over. We do not knowingly collect personal information from children. If you believe a child has given us information, contact us and we will remove it.</p>
+<h3>Third-party websites</h3>
+<p>Our website may link to other websites and services. We are not responsible for their privacy practices, so please read their policies.</p>
+<h3>Changes to this policy</h3>
+<p>We may update this policy from time to time. The current version, with its last updated date, is always the one shown on this website. If we make a significant change, we will take reasonable steps to let you know.</p>
+<h3>Contact and complaints</h3>
+<p>For privacy enquiries, access or correction requests, or complaints, contact our privacy officer at <a href="mailto:info@dreamproperty.co.nz">info@dreamproperty.co.nz</a>. If we have not resolved your concern, you may complain to the Office of the Privacy Commissioner at privacy.org.nz or on 0800 803 909.</p>
+</div>
+</div>
+<!-- Terms -->
+<div aria-hidden="true" aria-labelledby="termsTitle" aria-modal="true" class="modal" id="modal-terms" role="dialog">
+<div class="modal-backdrop" data-close-modal=""></div>
+<div class="modal-panel legal-modal">
+<button aria-label="Close Terms and Conditions" class="modal-close" data-close-modal="" type="button">×</button>
+<div class="eyebrow">Legal</div>
+<h2 id="termsTitle" data-i18n="modal.termsTitle">Terms &amp; Conditions</h2>
+<p class="legal-updated">Last updated: 25 October 2026</p>
+<p class="modal-intro">
+        These terms apply to your use of the Dream Property website, marketplace, software, and app, and, where relevant, our property management services. By using this website, creating an account, or placing a listing, you agree to them. If you do not agree, please do not use the website. The version shown on this website is the current version.
+      </p>
+<h3>Who we are and what we do</h3>
+<p>Dream Property Limited (“Dream Property”, “we”, “us”, and “our”) is a New Zealand company based in Auckland. We provide two things: an online property marketplace where users advertise properties for sale, rent, lease, or flatshare, and residential and commercial property management services provided under separate written agreements.</p>
+<h3>We are not a real estate agency</h3>
+<p>Dream Property is not a real estate agency and does not carry out real estate agency work under the Real Estate Agents Act 2008. We do not list, market, negotiate, or sell properties on behalf of others. We do not act as agent for any buyer, seller, landlord, or tenant in a sale, we do not hold deposits or purchase money, and we are not a party to any sale and purchase agreement. The marketplace is a platform for users to advertise their own properties. If you want someone to sell a property for you, you must engage a licensed real estate agent separately. Nothing on this website is real estate, legal, financial, tax, building, or investment advice.</p>
+<h3>Using the marketplace</h3>
+<p>We provide the venue only. Any sale, lease, tenancy, or other agreement is made directly between users. We do not verify users, listings, or documents, and we do not guarantee that any listing is accurate, available, or lawful. You are responsible for your own due diligence. Before buying, this includes inspecting the property, obtaining a LIM report, building inspection, and title search, and getting independent legal advice. Before renting, it includes inspecting the property and signing a written tenancy agreement. Never send money before inspecting a property, and report suspicious listings or users to us.</p>
+<h3>Rules for advertisers</h3>
+<p>If you place a listing, you confirm and agree that:</p>
+<ul>
+<li>You own the property or have the owner’s authority to advertise it.</li>
+<li>The information, photos, and price you provide are accurate and not misleading or deceptive, as the Fair Trading Act 1986 requires, and you will keep them up to date and remove the listing when it is no longer available.</li>
+<li>Your listing and dealings comply with all applicable laws, including the Residential Tenancies Act 1986, the Healthy Homes Standards, the Human Rights Act 1993 (including its rules against unlawful discrimination), and the Building Act 2004.</li>
+<li>You own, or have permission to use, all photos and content you upload.</li>
+<li>If you are a licensed real estate agent, you remain responsible for meeting your own obligations under the Real Estate Agents Act 2008 when you advertise through the marketplace.</li>
+</ul>
+<h3>Your content</h3>
+<p>You keep ownership of the content you upload. You give us a non-exclusive, worldwide, royalty-free licence to host, display, resize, reproduce, and distribute that content to operate and promote the marketplace. We may remove any content or listing at our discretion, including content that breaches these terms or that may harm others. You are responsible for your content, including any claim that it infringes someone else’s rights.</p>
+<h3>Accounts</h3>
+<p>You must be 18 or over and give accurate information. Keep your login details confidential and tell us immediately if you suspect unauthorised use. You are responsible for all activity under your account.</p>
+<h3>Property management services</h3>
+<p>Our property management services are governed by a separate written management agreement. These terms apply alongside it, and if they conflict, the management agreement prevails for those services. We manage properties on behalf of owners. For residential tenancies we act in line with the Residential Tenancies Act 1986, including lodging bonds with Tenancy Services, and for commercial properties we act in line with the lease and the Property Law Act 2007. Unless the management agreement says otherwise, the owner remains the landlord and is responsible for the property, its insurance, and legal compliance. We do not guarantee that a property will be tenanted, any level of rental income, or the conduct of any tenant. Tenancy disputes may be taken to the Tenancy Tribunal.</p>
+<h3>Fees and payments</h3>
+<p>Where fees apply to marketplace services, we will show them before you confirm your purchase. Prices are in New Zealand dollars, and we will state whether GST is included or added. Payments are processed by third-party providers. Unless the law requires otherwise or we agree in writing, fees are non-refundable once a listing is published, and no refund is given if we remove a listing for breach of these terms. We may change our fees for future purchases. Property management fees are set out in your management agreement.</p>
+<h3>Acceptable use</h3>
+<p>You must not:</p>
+<ul>
+<li>Use the website for anything unlawful, false, misleading, fraudulent, or abusive, or post duplicate or fake listings.</li>
+<li>Harass, threaten, or discriminate against others, or impersonate any person or business.</li>
+<li>Scrape, harvest, or bulk collect data or contact details, or use them for any purpose other than responding to a listing.</li>
+<li>Send spam or unsolicited marketing to other users.</li>
+<li>Introduce malware, interfere with the website’s security or operation, or reverse engineer our software.</li>
+</ul>
+<h3>Intellectual property</h3>
+<p>The website, the Dream Property name and logo, our software and app, and all designs and text, other than user content, are owned by or licensed to us and protected by the Copyright Act 1994 and other laws. You may view and use the website for your own lawful purposes. You may not copy, modify, or commercially use any of it without our written permission.</p>
+<h3>Third-party links and services</h3>
+<p>The website may link to third-party websites and services. We do not control or endorse them and are not responsible for them.</p>
+<h3>Disclaimers</h3>
+<p>The website and its content are provided “as is” and “as available”. Information is general in nature, and any estimate or automated figure is not a valuation. To the extent the law allows, we do not promise that the website will be uninterrupted, error-free, or secure, and we exclude all warranties not expressly stated in these terms.</p>
+<h3>Limit of liability</h3>
+<p>Nothing in these terms limits any right you have as a consumer under the Consumer Guarantees Act 1993 or the Fair Trading Act 1986 that cannot lawfully be excluded. Subject to that, and to the maximum extent the law allows, we are not liable for indirect or consequential loss, or for loss of profit, revenue, opportunity, or data. We are also not liable for loss arising from listings, dealings between users, reliance on content, the acts of third parties, or interruptions to the website. Our total liability to you in connection with the marketplace is limited to the fees you paid us for the relevant service in the 12 months before the claim arose. Liability for property management services is governed by your management agreement. If you use the website for business purposes, you agree that, to the extent the law allows, the Consumer Guarantees Act 1993 and the Fair Trading Act 1986 do not apply to the services we provide.</p>
+<h3>Indemnity</h3>
+<p>To the extent the law allows, you agree to compensate us for loss and reasonable legal costs we incur because of your breach of these terms, your content, or your listing, except to the extent we caused the loss.</p>
+<h3>Suspension and termination</h3>
+<p>We may suspend or remove any listing or account, with or without notice, if you breach these terms, if we believe there is a risk of harm, fraud, or illegality, or if the law requires. You may close your account at any time. Clauses that by their nature should continue to apply after termination will continue to apply.</p>
+<h3>Privacy</h3>
+<p>Our Privacy Policy forms part of these terms and explains how we handle personal information.</p>
+<h3>Complaints and disputes</h3>
+<p>If you have a complaint, email <a href="mailto:info@dreamproperty.co.nz">info@dreamproperty.co.nz</a> and we will acknowledge it and try to resolve it in good faith. This does not limit your right to go to the Tenancy Tribunal, the Disputes Tribunal, the courts, or any other body.</p>
+<h3>General</h3>
+<p>These terms are governed by the laws of New Zealand, and the New Zealand courts have non-exclusive jurisdiction. We may update these terms from time to time, and your continued use of the website after an update means you accept the updated terms. If any provision is unenforceable, the rest continues to apply. A failure to enforce a right is not a waiver of it. These terms are the entire agreement between you and us about the website, other than any separate written agreement. We may transfer our rights to a related company or a buyer of our business, but you may not transfer yours without our consent. We are not liable for events beyond our reasonable control. You agree that we may communicate with you electronically, and that nothing in these terms makes us your agent, partner, or employer.</p>
+<h3>Contact</h3>
+<p>Questions about these terms can be sent to <a href="mailto:info@dreamproperty.co.nz">info@dreamproperty.co.nz</a>.</p>
+</div>
+</div>
 
-  <main>
-    <div class="container">
-      <div class="content-wrap">
-        <div class="eyebrow">Our Story</div>
-        <h1>About <span>Dream Property</span></h1>
-        <div class="prose">
-          <p>
-            Dream Property is a New Zealand property marketplace and technology platform.
-            We help people search, discover, buy, rent, and sell property across the country,
-            including residential, commercial, and rural property.
-          </p>
-          <p>
-            The platform is designed for everyone in the property journey: buyers, sellers, renters,
-            landlords, homeowners, tenants, agents, agencies, developers, and other legitimate participants.
-          </p>
-          <p>
-            Alongside the marketplace, Dream Property also provides property management services with innovation and custom technology.
-            That software is used exclusively by Dream Property today and will be made available more widely
-            once it is perfected.
-          </p>
-          <p><strong>Your dream. Your property. Your future.</strong></p>
-        </div>
-        <div class="actions">
-          <a class="button button-outline" href="/">Back to home</a>
-        </div>
-      </div>
-    </div>
-  </main>
+<script>
+    (function () {
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-main">
-        <div class="footer-brand">
-          <a class="brand" href="/" aria-label="Dream Property home">
-            <img class="brand-logo" src="/dream-property-logo.svg" alt="Dream Property logo">
-            <div class="brand-name">Dream <span>Property</span></div>
-          </a>
-          <div class="footer-socials" aria-label="Social media">
-            <a href="https://facebook.com/DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93v-1.9c0-.86.24-1.44 1.47-1.44h1.57V4.14C16.24 4.06 15.3 4 14.2 4c-2.3 0-3.87 1.4-3.87 4v2.44H7.77v2.96h2.56V21h3.17Z"/></svg>
-            </a>
-            <a href="https://instagram.com/DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="22" height="22" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.15" cy="6.85" r="1"/></svg>
-            </a>
-            <a href="https://tiktok.com/@DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"/></svg>
-            </a>
-            <a href="https://youtube.com/@DreamPropertyNZ" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
-            </a>
-          </div>
-        </div>
+      /* ---------- Language toggle (EN ↔ ZH) ---------- */
+      var I18N = {
+        en: {
+          "hero.eyebrow": "Real Estate Services",
+          "hero.getInTouch": "Get In Touch",
+          "hero.login": "Login",
+          "login.eyebrow": "Login",
+          "login.welcome": "Welcome",
+          "login.back": "back",
+          "login.desc": "Choose the portal that suits you. Tenants and owners can sign in today. Partner access for other property management companies is coming soon.",
+          "login.tenantTitle": "Tenant Login",
+          "login.tenantDesc": "Sign in to your account as a residential, commercial, or industrial tenant.",
+          "login.tenantBtn": "Tenant Login →",
+          "login.ownerTitle": "Owner Login",
+          "login.ownerDesc": "Sign in to your account as a residential, commercial, or industrial property owner.",
+          "login.ownerBtn": "Owner Login →",
+          "login.partnerTitle": "Partner Login",
+          "login.partnerDesc": "For property management and real estate companies that will use the Dream Property app. Coming soon.",
+          "login.comingSoon": "Coming Soon",
+          "contact.eyebrow": "Get In Touch",
+          "contact.ready": "Ready to",
+          "contact.nightmare": "leave your property nightmare behind",
+          "contact.q": "?",
+          "contact.desc": "Experience property management the way it should be. Dream Property is here to make your real estate experience more efficient, stress-free, and more professional. Let us start the conversation today.",
+          "contact.emailLabel": "Email Us",
+          "contact.sendEmail": "Send an email →",
+          "footer.listings": "Listings",
+          "footer.forSale": "For Sale",
+          "footer.forRent": "For Rent",
+          "footer.search": "Search Listings",
+          "footer.company": "Company",
+          "footer.about": "About Us",
+          "footer.contact": "Contact",
+          "footer.access": "Access",
+          "footer.tenantLogin": "Tenant Login",
+          "footer.ownerLogin": "Owner Login",
+          "footer.privacy": "Privacy Policy",
+          "footer.terms": "Terms & Conditions",
+          "modal.tenantTitle": "Tenant Login",
+          "modal.ownerTitle": "Owner Login",
+          "modal.username": "Username",
+          "modal.password": "Password",
+          "modal.loginBtn": "Login",
+          "modal.loginError": "Incorrect Username / Password. Please Try Again.",
+          "modal.privacyTitle": "Privacy Policy",
+          "modal.termsTitle": "Terms & Conditions",
+          "modal.legal": "Legal",
+          "modal.tenants": "Tenants",
+          "modal.owners": "Owners",
+          "about.eyebrow": "Our Story",
+          "about.titleA": "About",
+          "about.titleB": "Dream Property",
+          "about.lead": "Dream Property is a New Zealand property management company and property marketplace, built on our own software. We bring the two together so that managing property and finding property feel simple, clear, and modern.",
+          "about.s1.t": "How we started",
+          "about.s1.p1": "Dream Property began with a simple observation. Property management often depends on slow, disconnected tools and repeated manual work, and that costs owners, tenants, and managers valuable time.",
+          "about.s1.p2": "After working in the property industry and seeing these problems up close, our founder set out to create a better way. Months of work went into building our own property management software, and Dream Property grew from that effort.",
+          "about.s2.t": "Property management",
+          "about.s2.p1": "We provide residential and commercial property management for owners in Auckland. We look after the day-to-day work of a tenancy, including rent, inspections, maintenance, tenancy law requirements, and communication with everyone involved.",
+          "about.s2.p2": "Our aim is simple. Owners get peace of mind knowing their investment is in good hands, and tenants get a home or workplace that is properly looked after.",
+          "about.s3.t": "The marketplace",
+          "about.s3.p1": "The Dream Property marketplace is a place to search for property across New Zealand, including residential, commercial, and rural property. Owners advertise their own properties directly on the platform at a low cost, and people looking for a property can browse everything in one clear place.",
+          "about.s4.t": "Our technology",
+          "about.s4.p1": "Everything we do is supported by software built by our own team. Our property management software brings tenancies, inspections, maintenance, communication, and records together in one place, so nothing gets lost between different tools.",
+          "about.s4.p2": "The software is used exclusively by Dream Property today. That means every feature is tested on our own portfolio and improved using real, day-to-day experience.",
+          "about.s5.t": "What we believe",
+          "about.s5.p1": "Property should be simple and stress-free. For us, that means clear communication, honest dealing, and technology that saves time instead of adding extra steps.",
+          "about.s5.p2": "We want every owner, tenant, and visitor to feel looked after, and we want to earn their trust over the long term.",
+          "about.s6.t": "Based in Auckland",
+          "about.s6.p1": "Dream Property Limited is based in Auckland, New Zealand. Our property management services focus on Auckland, and our marketplace is open to the whole country.",
+          "about.contactLead": "Have a question? Email us at",
+          "about.tagline": "Your dream. Your property. Your future.",
+          "about.note": "Dream Property is a property management company and property marketplace. It is not a real estate agency and does not sell property on behalf of others.",
+          "about.back": "Back to Home"
+        },
+        zh: {
+          "hero.eyebrow": "房地产服务",
+          "hero.getInTouch": "联系我们",
+          "hero.login": "登录",
+          "login.eyebrow": "登录",
+          "login.welcome": "欢迎",
+          "login.back": "回来",
+          "login.desc": "选择适合您的入口。租户和业主现已可以登录。其他物业管理公司的合作伙伴访问即将推出。",
+          "login.tenantTitle": "租户登录",
+          "login.tenantDesc": "以住宅、商业或工业租户身份登录您的账户。",
+          "login.tenantBtn": "租户登录 →",
+          "login.ownerTitle": "业主登录",
+          "login.ownerDesc": "以住宅、商业或工业物业业主身份登录您的账户。",
+          "login.ownerBtn": "业主登录 →",
+          "login.partnerTitle": "合作伙伴登录",
+          "login.partnerDesc": "供将使用 Dream Property 应用的物业管理与房地产公司使用。即将推出。",
+          "login.comingSoon": "即将推出",
+          "contact.eyebrow": "联系我们",
+          "contact.ready": "准备好",
+          "contact.nightmare": "告别您的物业烦恼",
+          "contact.q": "了吗？",
+          "contact.desc": "体验应有的物业管理方式。Dream Property 致力于让您的房地产体验更高效、更省心、更专业。今天就开始对话吧。",
+          "contact.emailLabel": "发邮件给我们",
+          "contact.sendEmail": "发送邮件 →",
+          "footer.listings": "房源",
+          "footer.forSale": "出售",
+          "footer.forRent": "出租",
+          "footer.search": "搜索房源",
+          "footer.company": "公司",
+          "footer.about": "关于我们",
+          "footer.contact": "联系",
+          "footer.access": "访问",
+          "footer.tenantLogin": "租户登录",
+          "footer.ownerLogin": "业主登录",
+          "footer.privacy": "隐私政策",
+          "footer.terms": "条款与条件",
+          "modal.tenantTitle": "租户登录",
+          "modal.ownerTitle": "业主登录",
+          "modal.username": "用户名",
+          "modal.password": "密码",
+          "modal.loginBtn": "登录",
+          "modal.loginError": "用户名或密码不正确，请重试。",
+          "modal.privacyTitle": "隐私政策",
+          "modal.termsTitle": "条款与条件",
+          "modal.legal": "法律",
+          "modal.tenants": "租户",
+          "modal.owners": "业主",
+          "about.eyebrow": "我们的故事",
+          "about.titleA": "关于",
+          "about.titleB": "Dream Property",
+          "about.lead": "Dream Property 是一家新西兰物业管理公司和房产交易平台，由我们自主研发的软件提供支持。我们将两者结合，让管理房产与寻找房产变得简单、清晰、现代。",
+          "about.s1.t": "我们的起点",
+          "about.s1.p1": "Dream Property 始于一个简单的观察：物业管理往往依赖缓慢、彼此脱节的工具和重复的手工操作，这浪费了业主、租户和管理人员大量宝贵的时间。",
+          "about.s1.p2": "在物业行业工作并亲眼看到这些问题之后，我们的创始人决心创造一种更好的方式。我们花了数月时间打造自己的物业管理软件，Dream Property 正是由此而生。",
+          "about.s2.t": "物业管理",
+          "about.s2.p1": "我们为奥克兰的业主提供住宅和商业物业管理服务。我们负责租赁的日常工作，包括租金、检查、维修、租赁法规要求，以及与各方的沟通。",
+          "about.s2.p2": "我们的目标很简单：让业主安心，相信自己的投资得到妥善照顾；让租户拥有一个得到妥善维护的住所或工作场所。",
+          "about.s3.t": "房产交易平台",
+          "about.s3.p1": "Dream Property 交易平台让您在新西兰各地搜索房产，涵盖住宅、商业和乡村物业。业主可以直接在平台上以低成本发布自己的房源，找房的人也可以在一个清晰的地方浏览所有房源。",
+          "about.s4.t": "我们的技术",
+          "about.s4.p1": "我们所做的一切都由自己团队研发的软件提供支持。我们的物业管理软件将租赁、检查、维修、沟通和记录集中在一个平台上，让信息不会在不同工具之间丢失。",
+          "about.s4.p2": "该软件目前仅供 Dream Property 使用。这意味着每项功能都在我们自己的物业组合上测试，并根据真实的日常经验不断改进。",
+          "about.s5.t": "我们的理念",
+          "about.s5.p1": "房产应该简单、省心。对我们来说，这意味着清晰的沟通、诚实的做事方式，以及节省时间而非增加步骤的技术。",
+          "about.s5.p2": "我们希望每一位业主、租户和访客都感到被用心照顾，并希望长期赢得他们的信任。",
+          "about.s6.t": "扎根奥克兰",
+          "about.s6.p1": "Dream Property Limited 总部位于新西兰奥克兰。我们的物业管理服务以奥克兰为主，交易平台则面向全国开放。",
+          "about.contactLead": "有问题？欢迎发送邮件至",
+          "about.tagline": "您的梦想。您的房产。您的未来。",
+          "about.note": "Dream Property 是一家物业管理公司和房产交易平台，并非房地产中介机构，也不代他人出售房产。",
+          "about.back": "返回首页"
+        }
+      };
 
-        <div class="footer-nav">
-          <div>
-            <span class="footer-heading">Company</span>
-            <a href="/about">About Us</a>
-            <a href="/contact">Contact</a>
-            <a href="/management">Property Management</a>
-          </div>
-          <div>
-            <span class="footer-heading">Legal</span>
-            <a href="/#">Privacy Policy</a>
-            <a href="/#">Terms &amp; Conditions</a>
-          </div>
-          <div>
-            <span class="footer-heading">Marketplace</span>
-            <a href="/agents">Find an Agent</a>
-            <a href="/listings?type=rent">For Rent</a>
-            <a href="/listings?type=sale">For Sale</a>
-          </div>
-          <div>
-            <span class="footer-heading">Safety</span>
-            <a href="/">Accessibility</a>
-            <a href="/">Listing Rules</a>
-            <a href="/">Safety &amp; Reporting</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© <span id="currentYear"></span> Dream Property</p>
-      </div>
-    </div>
-  </footer>
+      var currentLang = localStorage.getItem("dp_lang") || "en";
 
-  <script>
-    document.getElementById("currentYear").textContent = String(new Date().getFullYear());
+      function applyLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem("dp_lang", lang);
+        document.documentElement.lang = lang === "zh" ? "zh-Hans" : "en-NZ";
+
+        var dict = I18N[lang] || I18N.en;
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          if (dict[key] != null) el.textContent = dict[key];
+        });
+
+        // Login error messages
+        document.querySelectorAll(".login-error").forEach(function (el) {
+          el.textContent = dict["modal.loginError"];
+        });
+
+        // Modal eyebrows that are static text
+        var tenantEyebrow = document.querySelector("#modal-tenant-login .eyebrow");
+        if (tenantEyebrow) tenantEyebrow.textContent = dict["modal.tenants"];
+        var ownerEyebrow = document.querySelector("#modal-landlord-login .eyebrow");
+        if (ownerEyebrow) ownerEyebrow.textContent = dict["modal.owners"];
+        document.querySelectorAll("#modal-privacy .eyebrow, #modal-terms .eyebrow").forEach(function (el) {
+          el.textContent = dict["modal.legal"];
+        });
+
+        // Toggle button: when in English show 中文; when in Chinese show EN
+        var glyph = document.getElementById("langGlyph");
+        var label = document.getElementById("langLabel");
+        var btn = document.getElementById("langToggle");
+        if (lang === "zh") {
+          if (glyph) glyph.textContent = "EN";
+          if (label) label.textContent = "English";
+          if (btn) {
+            btn.setAttribute("aria-label", "Switch to English");
+            btn.setAttribute("title", "English");
+          }
+        } else {
+          if (glyph) glyph.textContent = "中";
+          if (label) label.textContent = "中文";
+          if (btn) {
+            btn.setAttribute("aria-label", "Switch to Chinese");
+            btn.setAttribute("title", "中文 / Chinese");
+          }
+        }
+      }
+
+      var langToggle = document.getElementById("langToggle");
+      if (langToggle) {
+        langToggle.addEventListener("click", function () {
+          applyLanguage(currentLang === "en" ? "zh" : "en");
+        });
+      }
+      // Apply saved language on load
+      applyLanguage(currentLang);
+
+
+      var menuToggle = document.getElementById("menuToggle");
+      var mainNavigation = document.getElementById("mainNavigation");
+      if (menuToggle && mainNavigation) {
+        menuToggle.addEventListener("click", function () {
+          var isOpen = mainNavigation.classList.toggle("open");
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+          menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+        });
+        mainNavigation.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            mainNavigation.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+          });
+        });
+      }
+      var siteHeader = document.getElementById("siteHeader");
+      function updateHeader() {
+        if (!siteHeader) return;
+        if (window.scrollY > 30) siteHeader.classList.add("scrolled");
+        else siteHeader.classList.remove("scrolled");
+      }
+      window.addEventListener("scroll", updateHeader, { passive: true });
+      updateHeader();
+      var siteIntro = document.getElementById("siteIntro");
+      function hideSiteIntro() {
+        if (!siteIntro || siteIntro.classList.contains("hidden")) return;
+        siteIntro.classList.add("hidden");
+        siteIntro.setAttribute("aria-hidden", "true");
+      }
+      // Do not wait for window.load (hero video can delay or block it).
+      // Start the hide timer as soon as the DOM is ready.
+      function startIntroTimer() {
+        setTimeout(hideSiteIntro, 1450);
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", startIntroTimer);
+      } else {
+        startIntroTimer();
+      }
+      // Absolute fallback so the splash never gets stuck
+      setTimeout(hideSiteIntro, 3200);
+      document.querySelectorAll("[data-login-form]").forEach(function (form) {
+        var loginError = form.querySelector(".login-error");
+        var passwordInput = form.querySelector('input[type="password"]');
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          if (loginError) loginError.hidden = false;
+          if (passwordInput) {
+            passwordInput.value = "";
+            passwordInput.focus();
+          }
+        });
+        form.querySelectorAll("input").forEach(function (input) {
+          input.addEventListener("input", function () {
+            if (loginError) loginError.hidden = true;
+          });
+        });
+      });
+      var activeModal = null;
+      var previousFocusedElement = null;
+      function openModal(modalName) {
+        var modal = document.getElementById("modal-" + modalName);
+        if (!modal) return;
+        previousFocusedElement = document.activeElement;
+        activeModal = modal;
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+        var closeButton = modal.querySelector(".modal-close");
+        if (closeButton) setTimeout(function () { closeButton.focus(); }, 50);
+      }
+      function closeModal() {
+        if (!activeModal) return;
+        activeModal.classList.remove("open");
+        activeModal.setAttribute("aria-hidden", "true");
+        activeModal.querySelectorAll("form").forEach(function (form) {
+          form.reset();
+          var formError = form.querySelector(".login-error");
+          if (formError) formError.hidden = true;
+        });
+        document.body.classList.remove("modal-open");
+        activeModal = null;
+        if (previousFocusedElement && previousFocusedElement.focus) {
+          setTimeout(function () { previousFocusedElement.focus(); }, 20);
+        }
+        previousFocusedElement = null;
+      }
+      document.querySelectorAll("[data-modal]").forEach(function (trigger) {
+        trigger.addEventListener("click", function (event) {
+          event.preventDefault();
+          openModal(trigger.getAttribute("data-modal"));
+        });
+      });
+      document.querySelectorAll("[data-close-modal]").forEach(function (element) {
+        element.addEventListener("click", function () { closeModal(); });
+      });
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && activeModal) closeModal();
+      });
+      var yearEl = document.getElementById("currentYear");
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+    })();
   </script>
+<script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"52dcb4519d8d4457a4f931d7fad889d2","r":1,"spa":2}' integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" type="module"></script>
 </body>
 </html>
